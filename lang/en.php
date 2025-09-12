@@ -2,7 +2,7 @@
 
 $lang = [
     "title" => "Initial Page",
-    "about" => "About Me",
+    "about" => "About me",
     "start" => "Start",
     "portfolio" => "Portfolio",
     "contact" => "Contact",
@@ -11,5 +11,8 @@ $lang = [
     "lang-icon-alt" => "Change language display to portuguese",
     "to-github" => "Link to my github profile",
     "open-sidebar-description" => "Open sidebar",
+    "close-sidebar-description" => "Close sidebar",
+    "main-page-title" => "Andre Carvalho - Developer Portfolio",
+    "switch-mode-alt" => "Switch between dark and light mode",
 ];
 ?>

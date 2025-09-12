@@ -22,7 +22,7 @@ include "../lang/$language.php";
         </div>
         <div id="header-icons" role="banner">
             <span id="page-mode" class="header-item" role="button" tabindex="0">
-                <img src="../assets/icons/light-mode.png" alt="Change display mode dark/light" width="20">
+                <img src="../assets/icons/light-mode.png" alt="<?=$lang['switch-mode-alt']?>" width="20">
             </span>
             <span id="display-lang" class="header-item" role="banner">
                 <a title="<?=$lang['lang-icon-alt']?>" class="header-item"
@@ -30,20 +30,19 @@ include "../lang/$language.php";
                         alt="<?=$lang['lang-icon-alt']?>" width="20"></a>
             </span>
             <span id="github-profile" class="header-item" role="banner">
-                <a title="<?=$lang['to-github']?>" alt="<?=$lang['to-github']?>" href="https://github.com/andrec2709/"
-                    target="_blank"><img src="../assets/icons/github-mark-white.png" alt="Link to my github profile"
-                        width="20"></a>
+                <a title="<?=$lang['to-github']?>"  href="https://github.com/andrec2709/" target="_blank">
+                    <img src="../assets/icons/github-mark-white.png" alt="<?=$lang['to-github']?>" width="20">
+                </a>
             </span>
-            <span id="open-sidebar-icon" class="header-item" role="button" tabindex="0"
-                title="<?=$lang['open-sidebar-description']?>" alt="<?=$lang['open-sidebar-description']?>">
-                <img src="../assets/icons/open.png" alt="Link to my github profile" width="20">
+            <span id="open-sidebar-icon" class="header-item" role="button" tabindex="0" title="<?=$lang['open-sidebar-description']?>">
+                <img src="../assets/icons/open.png" alt="<?=$lang['open-sidebar-description']?>" width="20">
             </span>
         </div>
     </div>
     <div id="sidebar-narrow">
         <div id="header-options-sidebar">
             <span id="close-sidebar-icon" class="header-item" role="button" tabindex="0">
-                <img src="../assets/icons/close.png" alt="Link to my github profile" width="20">
+                <img src="../assets/icons/close.png" alt="<?=$lang['close-sidebar-description']?>" width="20">
             </span>
             <span id="start-sidebar" class="header-item" role="button" tabindex="0">
                 <?= $lang['start'];?>
@@ -59,9 +58,8 @@ include "../lang/$language.php";
             </span>
 
             <span id="github-profile-sidebar" class="header-item" role="banner">
-                <a title="<?=$lang['to-github']?>" alt="<?=$lang['to-github']?>" href="https://github.com/andrec2709/"
-                    target="_blank">Github
-                    <img src="../assets/icons/github-mark-white.png" alt="Link to my github profile">
+                <a title="<?=$lang['to-github']?>" href="https://github.com/andrec2709/" target="_blank">Github
+                    <img src="../assets/icons/github-mark-white.png" alt="<?=$lang['to-github']?>">
                 </a>
             </span>
 
