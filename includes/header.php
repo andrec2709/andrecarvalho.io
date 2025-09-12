@@ -5,18 +5,20 @@ include "../lang/$language.php";
 
 <header>
     <div id="header-wide">
-        <span id="page-logo" class="header-item">andrecarvalho<span class="highlight">.io</span></span>
+        <div id="logo-container">
+            <span id="page-logo" class="header-item">andrecarvalho<span class="highlight">.io</span></span>
+        </div>
         <div id="header-options">
-            <span id="start" class="header-item" role="button" tabindex="0">
+            <span id="start" class="header-item" role="banner">
                <a href="../pages/index.php?lang=<?=$language?>"><?= $lang['start'];?></a> 
             </span>
-            <span id="portfolio" class="header-item" role="button" tabindex="0">
+            <span id="portfolio" class="header-item" role="banner">
                <a href="../pages/portfolio.php?lang=<?=$language?>"><?= $lang['portfolio'];?></a> 
             </span>
-            <span id="contact" class="header-item" role="button" tabindex="0">
+            <span id="contact" class="header-item" role="banner">
                <a href="../pages/contact.php?lang=<?=$language?>"><?= $lang['contact'];?></a> 
             </span>
-            <span id="about-me" class="header-item" role="button" tabindex="0">
+            <span id="about-me" class="header-item" role="banner">
                <a href="../pages/about.php?lang=<?=$language?>"><?= $lang['about'];?></a> 
             </span>
         </div>
@@ -30,36 +32,36 @@ include "../lang/$language.php";
                         alt="<?=$lang['lang-icon-alt']?>" width="20"></a>
             </span>
             <span id="github-profile" class="header-item" role="banner">
-                <a title="<?=$lang['to-github']?>"  href="https://github.com/andrec2709/" target="_blank">
-                    <img src="../assets/icons/github-mark-white.png" alt="<?=$lang['to-github']?>" width="20">
+                <a title="<?=$lang['to-github-alt']?>"  href="https://github.com/andrec2709/" target="_blank">
+                    <img src="../assets/icons/github-mark-white.png" alt="<?=$lang['to-github-alt']?>" width="20">
                 </a>
             </span>
-            <span id="open-sidebar-icon" class="header-item" role="button" tabindex="0" title="<?=$lang['open-sidebar-description']?>">
-                <img src="../assets/icons/open.png" alt="<?=$lang['open-sidebar-description']?>" width="20">
-            </span>
+            <button id="open-sidebar-icon" class="header-item sidebar-open-close" title="<?=$lang['open-sidebar-description']?>">
+                <img src="../assets/icons/open.png" role="banner" alt="<?=$lang['open-sidebar-alt']?>" width="20">
+            </button>
         </div>
     </div>
     <div id="sidebar-narrow">
         <div id="header-options-sidebar">
-            <span id="close-sidebar-icon" class="header-item" role="button" tabindex="0">
-                <img src="../assets/icons/close.png" alt="<?=$lang['close-sidebar-description']?>" width="20">
+            <button id="close-sidebar-icon" class="header-item sidebar-open-close">
+                <img src="../assets/icons/close.png" alt="<?=$lang['close-sidebar-alt']?>" width="20">
+            </button>
+            <span id="start-sidebar" class="header-item" role="banner">
+               <a href="../pages/index.php?lang=<?=$language?>"><?= $lang['start'];?></a> 
             </span>
-            <span id="start-sidebar" class="header-item" role="button" tabindex="0">
-                <?= $lang['start'];?>
+            <span id="portfolio-sidebar" class="header-item" role="banner">
+               <a href="../pages/portfolio.php?lang=<?=$language?>"><?= $lang['portfolio'];?></a> 
             </span>
-            <span id="portfolio-sidebar" class="header-item" role="button" tabindex="0">
-                <?= $lang['portfolio'];?>
+            <span id="contact-sidebar" class="header-item" role="banner">
+               <a href="../pages/portfolio.php?lang=<?=$language?>"><?= $lang['contact'];?></a> 
             </span>
-            <span id="contact-sidebar" class="header-item" role="button" tabindex="0">
-                <?= $lang['contact'];?>
-            </span>
-            <span id="about-me-sidebar" class="header-item" role="button" tabindex="0">
-                <?= $lang['about'];?>
+            <span id="about-me-sidebar" class="header-item" role="banner">
+               <a href="../pages/portfolio.php?lang=<?=$language?>"><?= $lang['about'];?></a> 
             </span>
 
             <span id="github-profile-sidebar" class="header-item" role="banner">
-                <a title="<?=$lang['to-github']?>" href="https://github.com/andrec2709/" target="_blank">Github
-                    <img src="../assets/icons/github-mark-white.png" alt="<?=$lang['to-github']?>">
+                <a title="<?=$lang['to-github-alt']?>" href="https://github.com/andrec2709/" target="_blank">Github
+                    <img src="../assets/icons/github-mark-white.png" alt="<?=$lang['to-github-alt']?>">
                 </a>
             </span>
 
