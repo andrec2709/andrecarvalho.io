@@ -22,8 +22,6 @@ include "../lang/$language.php";
 
 		<?php include '../includes/construction.php';?>
 
-		Test webhook
-
 		<script src="../scripts/main.js"></script>
 	</body>
 </html>
