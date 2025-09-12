@@ -5,8 +5,8 @@ include "../lang/$language.php";
 
 <header>
     <div id="header-wide">
-        <div id="logo-container">
-            <span id="page-logo" class="header-item">andrecarvalho<span class="highlight">.io</span></span>
+        <div id="logo-container" class="header-item">
+            <a href="../pages/index.php?lang=<?=$language?>"><span id="page-logo">andrecarvalho<span class="highlight">.io</span></span></a>
         </div>
         <div id="header-options">
             <span id="start" class="header-item" role="banner">
