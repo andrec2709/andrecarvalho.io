@@ -3,7 +3,7 @@ $language = ($_GET['lang'] == 'pt') ? 'pt' : 'en';
 include "../lang/$language.php";
 ?>
 
-<header>
+<header id="header-main-container">
     <div id="header-wide">
         <div id="logo-container" class="header-item">
             <a href="../pages/index.php?lang=<?=$language?>"><span id="page-logo">andrecarvalho<span class="highlight">.io</span></span></a>

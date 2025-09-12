@@ -57,9 +57,10 @@ body {
     font-family: sans-serif;
 }
 
-header{
+#header-main-container{
     position: sticky;
     top: 0;
+    z-index: 9999;
 }
 
 #header-wide {
@@ -263,7 +264,7 @@ header{
         visibility: visible;
         position: fixed;
         right: -15rem;
-        opacity: 0;
+
     }
 
     #start-sidebar{
@@ -347,6 +348,7 @@ header{
 .under-construction-txt{
     text-align: center;
     font-family: "Lexend";
+    opacity: 40%;
 }
 
 .h-under-construction{
@@ -362,6 +364,7 @@ header{
 #under-construction-img{
     width: 300px;
     opacity: 30%;
+    
 }
 
 #under-construction-container{
