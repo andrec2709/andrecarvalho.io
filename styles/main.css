@@ -179,7 +179,7 @@ body {
 
 }
 
-#header-options-sidebar span a{
+#header-options-sidebar span a, .header-item a{
     color: var(--header-fg-color);
     text-decoration: none;
 }

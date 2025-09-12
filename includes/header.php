@@ -8,16 +8,16 @@ include "../lang/$language.php";
         <span id="page-logo" class="header-item">andrecarvalho<span class="highlight">.io</span></span>
         <div id="header-options">
             <span id="start" class="header-item" role="button" tabindex="0">
-                <?= $lang['start'];?>
+               <a href="../pages/index.php?lang=<?=$language?>"><?= $lang['start'];?></a> 
             </span>
             <span id="portfolio" class="header-item" role="button" tabindex="0">
-                <?= $lang['portfolio'];?>
+               <a href="../pages/portfolio.php?lang=<?=$language?>"><?= $lang['portfolio'];?></a> 
             </span>
             <span id="contact" class="header-item" role="button" tabindex="0">
-                <?= $lang['contact'];?>
+               <a href="../pages/contact.php?lang=<?=$language?>"><?= $lang['contact'];?></a> 
             </span>
             <span id="about-me" class="header-item" role="button" tabindex="0">
-                <?= $lang['about'];?>
+               <a href="../pages/about.php?lang=<?=$language?>"><?= $lang['about'];?></a> 
             </span>
         </div>
         <div id="header-icons" role="banner">
