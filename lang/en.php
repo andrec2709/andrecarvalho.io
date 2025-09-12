@@ -64,7 +64,7 @@ $lang = [
 // <---------------- Header Content [END] ---------------------------------------------------------------->
 
 
-    "thank you" => "Thank you for your visit",
+    "thank you" => "Thank you for your visit.",
     "construction" => nl2br("This webpage is currently under construction.\nPlease come back in the near future to check its content."),
 
 ];

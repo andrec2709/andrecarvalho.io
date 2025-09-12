@@ -299,7 +299,6 @@ header{
     #open-sidebar-icon {
         visibility: visible;
         position: relative;
-        margin-right: 1.2rem;
 
     }
 
@@ -307,7 +306,9 @@ header{
         width: 90%;
     }
 
+
 }
+
 
 /* --------------------- Classes ----------------------------------> */
 
@@ -346,11 +347,20 @@ header{
 .under-construction-txt{
     text-align: center;
     font-family: "Lexend";
-    font-size: 4vw;
+}
+
+.h-under-construction{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.p-under-construction{
+    font-size: 1.2rem;
+    margin-top: 3rem;
 }
 
 #under-construction-img{
-    width: 50%;
+    width: 300px;
     opacity: 30%;
 }
 
@@ -360,7 +370,22 @@ header{
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin-top: 5rem;
+    margin-top: 8rem;
+}
+
+
+@media screen and (width <= 480px){
+    .h-under-construction{
+        font-size: 1.3rem;
+    }
+
+    .p-under-construction{
+        font-size: .75rem;
+    }
+
+    #under-construction-img{
+        width: 200px;
+    }
 }
 
 

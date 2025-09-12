@@ -20,6 +20,7 @@ include "../lang/$language.php";
 	<body>
 		<?php include '../includes/header.php';?>
 
+		<?php include '../includes/construction.php';?>
 
 		<script src="../scripts/main.js"></script>
 	</body>
