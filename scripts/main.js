@@ -5,13 +5,49 @@ let sidebar_close_icon = document.getElementById("close-sidebar-icon");
 let sidebar = document.getElementById("sidebar-narrow");
 let togglebtn = document.getElementById("page-mode");
 let prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
-localStorage.setItem("prefmode", prefersDark.matches == true ? "dark" : "light");
-
+let github_btn = document.getElementById("github-profile");
+let github_btn_sidebar = document.getElementById("github-profile-sidebar");
+let displaylang_btn = document.getElementById("display-lang");
 
 let under_construction_img = document.getElementById("under-construction-img");
 
 
+// <-------- Functions ------------->
+
+async function getSessionInfo(){
+
+    const response = await fetch("../api/SessionInfo.php");
+    return response;
+}
+
+
+async function setSessionValue(key, value){
+
+    const response = await fetch("../api/UpdateSessionValue.php", {
+        headers: {"Content-Type":"application/json"},
+        method: "POST",
+        body: JSON.stringify({ key: key, value: value }),
+        credentials: "include"
+
+    });
+
+    return response;
+}
+
 // <----------- Events ------------->
+
+// Sets display language (based on session prefs)
+displaylang_btn.addEventListener("click", async () => {
+
+    const session = await getSessionInfo();
+    const curr_lang = await session.json();
+    
+    let new_lang = curr_lang.language === 'pt' ? 'en' : 'pt';
+    const response = await setSessionValue('language', new_lang);
+
+    window.open(`?lang=${new_lang}`, "_self");
+
+})
 
 // Show sidebar functionality
 header_sidebar_open_icon.addEventListener('click', () => {
@@ -29,20 +65,22 @@ sidebar_close_icon.addEventListener('click', () => {
 });
 
 const clickEvent = new Event("click");
-togglebtn.dispatchEvent(clickEvent);
 
 // Toggle Light/Dark mode
-togglebtn.addEventListener('click', () => {
-    // TODO: implement logic for toggle mode
+togglebtn.addEventListener('click', async () => {
+
+    const session = await getSessionInfo();
+    const session_json = await session.json();
+
 
     let elements = document.getElementsByClassName("theme-dependant");
     let changeEvent = new Event("change")
     
-    let prefmode = localStorage.getItem("prefmode");
+    let prefmode = session_json.theme;
 
     if ( prefmode == "light"){
         document.body.style.backgroundColor = "var(--main-bg-color-dark)";
-        localStorage.setItem("prefmode", "dark");
+        await setSessionValue('theme', 'dark');
         prefersDark.dispatchEvent(changeEvent);
         
         for (index = 0; index < elements.length; index++){
@@ -52,7 +90,7 @@ togglebtn.addEventListener('click', () => {
         };
     } else{
         document.body.style.backgroundColor = "var(--main-bg-color-light)";
-        localStorage.setItem("prefmode", "light");
+        await setSessionValue('theme', 'light');
         prefersDark.dispatchEvent(changeEvent);
 
         for (index = 0; index < elements.length; index++){
@@ -64,10 +102,29 @@ togglebtn.addEventListener('click', () => {
 });
 
 // Changes content when user pref for light/dark mode (browser/system-wide) changes
-prefersDark.addEventListener("change", () => {
-    under_construction_img.setAttribute('src', localStorage.getItem("prefmode") == "dark" ? "../assets/img/under-construction-dark.png" : "../assets/img/under-construction-light.png");
+prefersDark.addEventListener("change", async () => {
+    const session = await getSessionInfo();
+    const session_json = await session.json();
+
+    under_construction_img.setAttribute('src', session_json.theme == "dark" ? "../assets/img/under-construction-dark.png" : "../assets/img/under-construction-light.png");
+
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    under_construction_img.setAttribute('src', (prefersDark['matches'] == true) ? "../assets/img/under-construction-dark.png" : "../assets/img/under-construction-light.png");
+document.addEventListener("DOMContentLoaded", async () => {
+    const session = await getSessionInfo();
+    const session_json = await session.json();
+
+    document.body.style.backgroundColor = session_json.theme == "dark" ? "var(--main-bg-color-dark)" : "var(--main-bg-color-light)";
+    under_construction_img.setAttribute('src', session_json.theme == "dark" ? "../assets/img/under-construction-dark.png" : "../assets/img/under-construction-light.png");
+    
 })
+
+github_btn.addEventListener("click", async () => {
+    window.open("https://www.github.com/andrec2709", "_blank");
+});
+
+github_btn_sidebar.addEventListener("click", async () => {
+    window.open("https://www.github.com/andrec2709", "_blank");
+});
+
+
