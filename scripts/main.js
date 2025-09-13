@@ -8,6 +8,7 @@ let prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 let github_btn = document.getElementById("github-profile");
 let github_btn_sidebar = document.getElementById("github-profile-sidebar");
 let displaylang_btn = document.getElementById("display-lang");
+let start_btn = document.getElementById("start");
 
 let under_construction_img = document.getElementById("under-construction-img");
 
@@ -127,4 +128,9 @@ github_btn_sidebar.addEventListener("click", async () => {
     window.open("https://www.github.com/andrec2709", "_blank");
 });
 
+start_btn.addEventListener("click", async () => {
+    const session = await getSessionInfo();
+    const session_json = await session.json();
 
+    window.open(`../pages/index.php?lang=${session_json.language}`, "_self",);
+});

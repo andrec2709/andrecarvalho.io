@@ -1,9 +1,3 @@
-<?php
-$language = ($_GET['lang'] == 'pt') ? 'pt' : 'en';
-include "../lang/$language.php";
-?>
-
-
 <!DOCTYPE html>
 
 <html lang="<?=$language?>">
@@ -13,7 +7,7 @@ include "../lang/$language.php";
 		<meta name="keywords" content="portfolio, developer, hire, freelance, showcase">
 		<meta name="author" content="Andre Carvalho Filho">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title><?=$lang['main-page-title']?></title>
+		<title><?=$lang['contact-page-title']?></title>
 		<link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" href="../styles/main.css">
 	</head>

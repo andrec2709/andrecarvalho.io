@@ -1,13 +1,3 @@
-<?php
-session_start();
-
-
-
-$language = $_SESSION['language'];
-include "../lang/$language.php";
-
-?>
-
 <div id="under-construction-container">
 <h1 class="h-under-construction under-construction-txt theme-dependant <?=$_SESSION['theme']?>"><?=$lang['thank you']?></h1>
 <img id="under-construction-img" src="../assets/img/under-construction-dark.png" alt="Image showing that this page is not yet ready">

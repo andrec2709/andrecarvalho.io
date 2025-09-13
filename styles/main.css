@@ -76,7 +76,13 @@ body {
     font-weight: normal;
 }
 
-#logo-container{
+#page-logo {
+    font-family: "MontSerrat Alternates";
+    background-color: transparent;
+    border: 0;
+    font-weight: 600;
+    font-size: 1.15rem;
+    text-align: left;
     width: fit-content;
     height: 100%;
     display: flex;
@@ -85,16 +91,6 @@ body {
     justify-content: left;
     position: absolute;
     left: 1rem;
-
-}
-
-#page-logo {
-    font-family: "MontSerrat Alternates";
-    font-weight: 600;
-    font-size: 1.15rem;
-    text-align: left;
-    width: 100%;
-    height: 100%;
 }
 
 #header-icons {
@@ -120,9 +116,11 @@ body {
     height: 100%;
 }
 
-button[class="header-item"]{
+button.header-item{
     background-color: transparent;
+    font-weight: bold;
     border: 0;
+    font-size: 1rem;
 }
 
 /* ------------------------------------------- */
@@ -319,7 +317,7 @@ button[class="header-item"]{
 
     }
 
-    #logo-container{
+    #page-logo{
         width: 90%;
     }
 
@@ -335,6 +333,7 @@ button[class="header-item"]{
 
 .header-item{
     cursor: pointer;
+    color: var(--header-fg-color);
 }
 
 /* <---------------------------------------------------------------- */

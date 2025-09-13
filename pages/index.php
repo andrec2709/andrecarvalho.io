@@ -1,9 +1,3 @@
-<?php
-$language = ($_GET['lang'] == 'pt') ? 'pt' : 'en';
-include "../lang/$language.php";
-?>
-
-
 <!DOCTYPE html>
 
 <html lang="<?=$language?>">
