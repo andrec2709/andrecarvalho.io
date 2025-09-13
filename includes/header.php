@@ -1,14 +1,6 @@
 <?php
 
-session_start();
-
-if (!isset($_SESSION['language'])){
-    $_SESSION['language'] = $_GET['lang'] === 'pt' ? 'pt' : 'en';
-}
-
-$language = $_SESSION['language'];
-include "../lang/$language.php";
-
+include "../api/StartSession.php";
 
 ?>
 

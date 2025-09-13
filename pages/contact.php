@@ -1,3 +1,11 @@
+<?php
+
+include "../api/StartSession.php";
+
+?>
+
+
+
 <!DOCTYPE html>
 
 <html lang="<?=$language?>">

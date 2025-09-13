@@ -1,3 +1,10 @@
+<?php
+
+include "../api/StartSession.php";
+
+?>
+
+
 <!DOCTYPE html>
 
 <html lang="<?=$language?>">
@@ -7,7 +14,7 @@
 		<meta name="keywords" content="portfolio, developer, hire, freelance, showcase">
 		<meta name="author" content="Andre Carvalho Filho">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title><?=$lang['contact-page-title']?></title>
+		<title><?=$lang['about-page-title']?></title>
 		<link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" href="../styles/main.css">
 	</head>

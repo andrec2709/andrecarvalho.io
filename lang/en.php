@@ -9,7 +9,7 @@ $lang = [
 
     "main-page-title" => "Start Page",
     "portfolio-page-title" => "Developer's Portfolio - Andre Carvalho",
-    "contact-page-title" => "Developer Contact - Andre Carvalho",
+    "contact-page-title" => "Developer's Contact - Andre Carvalho",
     "about-page-title" => "About me - Andre Carvalho",
 
 // <-------------- Titles [END] --------------------------->
