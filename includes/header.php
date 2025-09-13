@@ -12,31 +12,31 @@ include "../api/StartSession.php";
 
         <div id="header-options">
 
-            <button id="start" class="header-item"><?= $lang['start'];?></button>
+            <button id="start" class="header-item" aria-label="Go to main page"><?= $lang['start'];?></button>
 
-            <button id="portfolio" class="header-item"><?= $lang['portfolio'];?></button>
+            <button id="portfolio" class="header-item" aria-label="Go to portfolio page"><?= $lang['portfolio'];?></button>
 
-            <button id="contact" class="header-item"><?= $lang['contact'];?></button>
+            <button id="contact" class="header-item" aria-label="Go to contact page"><?= $lang['contact'];?></button>
             
-            <button id="about-me" class="header-item"><?= $lang['about'];?></button>
+            <button id="about-me" class="header-item" aria-label="Go to about page"><?= $lang['about'];?></button>
 
         </div>
 
-        <div id="header-icons" role="banner">
+        <div id="header-icons">
 
-            <button id="page-mode" class="header-item">
+            <button id="page-mode" class="header-item" aria-label="change the display theme">
                 <img src="../assets/icons/light-mode.png" alt="<?=$lang['switch-mode-alt']?>" width="20">
             </button>
 
-            <button id="display-lang" class="header-item">
+            <button id="display-lang" class="header-item" aria-label="Change the display language">
                     <img src="../assets/icons/<?=$language?>.png" alt="<?=$lang['lang-icon-alt']?>" width="20">
             </button>
 
-            <button id="github-profile" class="header-item">
+            <button id="github-profile" class="header-item" aria-label="Go to my github profile">
                 <img src="../assets/icons/github-mark-white.png" alt="<?=$lang['to-github-alt']?>" width="20">
             </button>
 
-            <button id="open-sidebar-icon" class="header-item sidebar-open-close" title="<?=$lang['open-sidebar-description']?>">
+            <button id="open-sidebar-icon" class="header-item sidebar-open-close" title="<?=$lang['open-sidebar-description']?>" aria-label="Open the sidebar">
                 <img src="../assets/icons/open.png" role="banner" alt="<?=$lang['open-sidebar-alt']?>" width="20">
             </button>
 
@@ -52,23 +52,23 @@ include "../api/StartSession.php";
                 <img src="../assets/icons/close.png" alt="<?=$lang['close-sidebar-alt']?>" width="20">
             </button>
 
-            <button id="start-sidebar" class="header-item sidebar-item">
+            <button id="start-sidebar" class="header-item sidebar-item" aria-label="Go to main page">
                <a href="../pages/index.php?lang=<?=$language?>"><?= $lang['start'];?></a> 
             </button>
 
-            <button id="portfolio-sidebar" class="header-item sidebar-item">
+            <button id="portfolio-sidebar" class="header-item sidebar-item" aria-label="Go to portfolio page">
                <a href="../pages/portfolio.php?lang=<?=$language?>"><?= $lang['portfolio'];?></a> 
             </button>
 
-            <button id="contact-sidebar" class="header-item sidebar-item">
+            <button id="contact-sidebar" class="header-item sidebar-item" aria-label="Go to contact page">
                <a href="../pages/portfolio.php?lang=<?=$language?>"><?= $lang['contact'];?></a> 
             </button>
 
-            <button id="about-me-sidebar" class="header-item sidebar-item">
+            <button id="about-me-sidebar" class="header-item sidebar-item" aria-label="Go to about page">
                <a href="../pages/portfolio.php?lang=<?=$language?>"><?= $lang['about'];?></a> 
             </button>
 
-            <button id="github-profile-sidebar" class="header-item sidebar-item">
+            <button id="github-profile-sidebar" class="header-item sidebar-item" aria-label="Go to my github profile">
                 Github <img src="../assets/icons/github-mark-white.png" alt="<?=$lang['to-github-alt']?>">
             </button>
 
