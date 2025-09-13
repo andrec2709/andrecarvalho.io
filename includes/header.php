@@ -14,11 +14,11 @@ include "../api/StartSession.php";
 
             <button id="start" class="header-item"><?= $lang['start'];?></button>
 
-            <button id="portfolio" class="header-item" role="banner"><?= $lang['portfolio'];?></button>
+            <button id="portfolio" class="header-item"><?= $lang['portfolio'];?></button>
 
-            <button id="contact" class="header-item" role="banner"><?= $lang['contact'];?></button>
+            <button id="contact" class="header-item"><?= $lang['contact'];?></button>
             
-            <button id="about-me" class="header-item" role="banner"><?= $lang['about'];?></button>
+            <button id="about-me" class="header-item"><?= $lang['about'];?></button>
 
         </div>
 
