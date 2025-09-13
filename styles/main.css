@@ -118,9 +118,11 @@ body {
 
 button.header-item{
     background-color: transparent;
-    font-weight: bold;
+    font-weight: 600;
+    color: var(--header-fg-color);
     border: 0;
     font-size: 1rem;
+    margin-left: 1rem;
 }
 
 /* ------------------------------------------- */

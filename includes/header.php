@@ -12,23 +12,13 @@ include "../api/StartSession.php";
 
         <div id="header-options">
 
-            <!-- <span id="start" class="header-item" role="banner"> -->
-               <!-- <a href="../pages/index.php?lang=<?=$language?>"><?= $lang['start'];?></a>  -->
-            <!-- </span> -->
-
             <button id="start" class="header-item"><?= $lang['start'];?></button>
 
-            <span id="portfolio" class="header-item" role="banner">
-               <a href="../pages/portfolio.php?lang=<?=$language?>"><?= $lang['portfolio'];?></a> 
-            </span>
+            <button id="portfolio" class="header-item" role="banner"><?= $lang['portfolio'];?></button>
 
-            <span id="contact" class="header-item" role="banner">
-               <a href="../pages/contact.php?lang=<?=$language?>"><?= $lang['contact'];?></a> 
-            </span>
+            <button id="contact" class="header-item" role="banner"><?= $lang['contact'];?></button>
             
-            <span id="about-me" class="header-item" role="banner">
-               <a href="../pages/about.php?lang=<?=$language?>"><?= $lang['about'];?></a> 
-            </span>
+            <button id="about-me" class="header-item" role="banner"><?= $lang['about'];?></button>
 
         </div>
 

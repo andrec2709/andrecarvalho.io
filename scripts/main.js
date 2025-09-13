@@ -9,6 +9,11 @@ let github_btn = document.getElementById("github-profile");
 let github_btn_sidebar = document.getElementById("github-profile-sidebar");
 let displaylang_btn = document.getElementById("display-lang");
 let start_btn = document.getElementById("start");
+let portfolio_btn = document.getElementById("portfolio");
+let contact_btn = document.getElementById("contact");
+let about_btn = document.getElementById("about-me");
+let pagelogo_btn = document.getElementById("page-logo");
+
 
 let under_construction_img = document.getElementById("under-construction-img");
 
@@ -33,6 +38,14 @@ async function setSessionValue(key, value){
     });
 
     return response;
+}
+
+async function openWithLang(url, target = "_self") {
+    
+    const session = await getSessionInfo();
+    const session_json = await session.json();
+
+    window.open(`${url}?lang=${session_json.language}`, target);
 }
 
 // <----------- Events ------------->
@@ -128,9 +141,24 @@ github_btn_sidebar.addEventListener("click", async () => {
     window.open("https://www.github.com/andrec2709", "_blank");
 });
 
-start_btn.addEventListener("click", async () => {
-    const session = await getSessionInfo();
-    const session_json = await session.json();
 
-    window.open(`../pages/index.php?lang=${session_json.language}`, "_self",);
+start_btn.addEventListener("click", async () => {
+    await openWithLang("../pages/index.php");
 });
+
+portfolio_btn.addEventListener("click", async () => {
+    await openWithLang("../pages/portfolio.php");
+});
+
+contact_btn.addEventListener("click", async () => {
+    await openWithLang("../pages/contact.php");
+});
+
+about_btn.addEventListener("click", async () => {
+    await openWithLang("../pages/about.php");
+});
+
+pagelogo_btn.addEventListener("click", async () => {
+    await openWithLang("../pages/index.php");
+});
+
