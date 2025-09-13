@@ -392,3 +392,12 @@ body {
 
 
 /* <------------------ "Under Construction" Styling [END] --------------> */
+
+
+.dark{
+    color: var(--main-fg-color-dark);
+}
+
+.light{
+    color: var(--main-fg-color-light);
+}
