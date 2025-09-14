@@ -27,7 +27,7 @@ $lang = [
 
 // <-------------- Keywords [START] --------------------------->
 
-    "page-keywords" => "portfolio, developer, dev, hire, offers, curriculum, solo developer, html, css, javascript, php, c++, github, technology, freelancer, freelance, freelancing",
+    "page-keywords" => "andre carvalho, andre, carvalho, portfolio, developer, dev, hire, offers, curriculum, solo developer, html, css, javascript, php, c++, github, technology, freelancer, freelance, freelancing",
 
 // <-------------- Keywords [END] --------------------------->
 
