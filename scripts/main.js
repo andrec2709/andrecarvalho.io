@@ -95,7 +95,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const session_json = await session.json();
 
     document.body.style.backgroundColor = session_json.theme == "dark" ? "var(--main-bg-color-dark)" : "var(--main-bg-color-light)";
-    under_construction_img.setAttribute('src', session_json.theme == "dark" ? "../assets/img/under-construction-dark.png" : "../assets/img/under-construction-light.png");
     
 })
 
