@@ -77,13 +77,80 @@ async function openWithLang(url, target = "_self") {
 
 // <----------- Events ------------->
 
+
+prefersDark.addEventListener("change", async () => {
+
+    // Changes content when user pref for light/dark mode (browser/system-wide) changes
+
+    const session = await getSessionInfo();
+    const session_json = await session.json();
+
+    under_construction_img.setAttribute('src', session_json.theme == "dark" ? "../assets/img/under-construction-dark.png" : "../assets/img/under-construction-light.png");
+
+});
+
+document.addEventListener("DOMContentLoaded", async () => {
+
+    const session = await getSessionInfo();
+    const session_json = await session.json();
+
+    document.body.style.backgroundColor = session_json.theme == "dark" ? "var(--main-bg-color-dark)" : "var(--main-bg-color-light)";
+    under_construction_img.setAttribute('src', session_json.theme == "dark" ? "../assets/img/under-construction-dark.png" : "../assets/img/under-construction-light.png");
+    
+})
+
+
+// Header buttons
+
+
+togglebtn.addEventListener('click', async () => {
+
+    // Toggle Light/Dark mode
+
+    const session = await getSessionInfo();
+    const session_json = await session.json();
+
+    let elements = document.getElementsByClassName("theme-dependant");
+
+    let changeEvent = new Event("change")
+    
+    let prefmode = session_json.theme;
+
+    if ( prefmode == "light"){
+        
+        document.body.style.backgroundColor = "var(--main-bg-color-dark)";
+        await setSessionValue('theme', 'dark');
+        prefersDark.dispatchEvent(changeEvent);
+        
+        for (index = 0; index < elements.length; index++){
+            
+            elements.item(index).classList.remove("light");
+            elements.item(index).classList.add("dark");
+
+        };
+    } else{
+
+        document.body.style.backgroundColor = "var(--main-bg-color-light)";
+        await setSessionValue('theme', 'light');
+        prefersDark.dispatchEvent(changeEvent);
+
+        for (index = 0; index < elements.length; index++){
+        
+            elements.item(index).classList.remove("dark");
+            elements.item(index).classList.add("light");
+        
+        }
+    }
+
+});
+
 displaylang_btn.addEventListener("click", async () => {
 
     // Sets display language (based on session prefs)
 
     const session = await getSessionInfo();
     const curr_lang = await session.json();
-    
+ 
     let new_lang = curr_lang.language === 'pt' ? 'en' : 'pt';
     const response = await setSessionValue('language', new_lang);
 
@@ -108,64 +175,6 @@ sidebar_close_icon.addEventListener('click', () => {
     sidebar.style.opacity = "0";
 
 });
-
-togglebtn.addEventListener('click', async () => {
-
-    // Toggle Light/Dark mode
-
-    const session = await getSessionInfo();
-    const session_json = await session.json();
-
-
-    let elements = document.getElementsByClassName("theme-dependant");
-    let changeEvent = new Event("change")
-    
-    let prefmode = session_json.theme;
-
-    if ( prefmode == "light"){
-        document.body.style.backgroundColor = "var(--main-bg-color-dark)";
-        await setSessionValue('theme', 'dark');
-        prefersDark.dispatchEvent(changeEvent);
-        
-        for (index = 0; index < elements.length; index++){
-            elements.item(index).classList.remove("light");
-            elements.item(index).classList.add("dark");
-            console.log(elements.item(index).classList);
-        };
-    } else{
-        document.body.style.backgroundColor = "var(--main-bg-color-light)";
-        await setSessionValue('theme', 'light');
-        prefersDark.dispatchEvent(changeEvent);
-
-        for (index = 0; index < elements.length; index++){
-            elements.item(index).classList.remove("dark");
-            elements.item(index).classList.add("light");
-            console.log(elements.item(index).classList);
-        }
-    }
-
-});
-
-prefersDark.addEventListener("change", async () => {
-
-    // Changes content when user pref for light/dark mode (browser/system-wide) changes
-
-    const session = await getSessionInfo();
-    const session_json = await session.json();
-
-    under_construction_img.setAttribute('src', session_json.theme == "dark" ? "../assets/img/under-construction-dark.png" : "../assets/img/under-construction-light.png");
-
-});
-
-document.addEventListener("DOMContentLoaded", async () => {
-
-    const session = await getSessionInfo();
-    const session_json = await session.json();
-
-    document.body.style.backgroundColor = session_json.theme == "dark" ? "var(--main-bg-color-dark)" : "var(--main-bg-color-light)";
-    under_construction_img.setAttribute('src', session_json.theme == "dark" ? "../assets/img/under-construction-dark.png" : "../assets/img/under-construction-light.png");
-    
-})
 
 github_btn.addEventListener("click", async () => {
     
@@ -232,6 +241,10 @@ pagelogo_btn.addEventListener("click", async () => {
     await openWithLang("../pages/index.php");
 
 });
+
+
+//
+
 
 // <-------------------------------->
 
