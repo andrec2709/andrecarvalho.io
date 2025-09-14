@@ -2,55 +2,47 @@
 
 $lang = [
 
-// <---------------- Page Metadata [START] ---------------------------------------------------------------->
+// ------------------ Page Metadata  --------------------
 
 
-// <-------------- Titles [START] -------------------------->
+// Titles
 
     "main-page-title" => "Start Page",
     "portfolio-page-title" => "Developer's Portfolio - Andre Carvalho",
     "contact-page-title" => "Developer's Contact - Andre Carvalho",
     "about-page-title" => "About me - Andre Carvalho",
 
-// <-------------- Titles [END] --------------------------->
 
-
-// <-------------- Descriptions [START] --------------------------->
+// Descriptions
 
     "main-page-description" => "Welcome to the main page of my website, please feel free to check the Portfolio and 'About me' sections for more details. You can also find how to contact me via the 'Contact' page.",
     "portfolio-page-description" => "Here you can find my work and personal projects as a developer.",
     "contact-page-description" => "If you wish to contact me, to make a job offer or any other inquiries, you can find out how on this section.",
     "about-page-description" => "Here you can find more descriptive information about me and my skills.",
 
-// <-------------- Descriptions [END] --------------------------->
 
-
-// <-------------- Keywords [START] --------------------------->
+// Keywords
 
     "page-keywords" => "andre carvalho, andre, carvalho, portfolio, developer, dev, hire, offers, curriculum, solo developer, html, css, javascript, php, c++, github, technology, freelancer, freelance, freelancing",
 
-// <-------------- Keywords [END] --------------------------->
 
-
-// <---------------- Page Metadata [END] ---------------------------------------------------------------->
+// ------------------------------------------------------
 
 
 
 
-// <---------------- Header Content [START] ---------------------------------------------------------------->
+// ------------------ Header Content  --------------------
 
 
-// <---------------- Options [START] ---------------------------------------------------------------->
+// Options  
 
     "about" => "About me",
     "start" => "Start",
     "portfolio" => "Portfolio",
     "contact" => "Contact",
 
-// <---------------- Options [END] ---------------------------------------------------------------->
 
-
-// <---------------- Alternatives [START] ---------------------------------------------------------------->
+// Alternatives  
 
     "switch-mode-alt" => "Switch between dark and light mode",
     "lang-icon-alt" => "Change language display to portuguese",
@@ -58,14 +50,31 @@ $lang = [
     "open-sidebar-alt" => "Open sidebar",
     "close-sidebar-alt" => "Close sidebar",
 
-// <---------------- Alternatives [END] ---------------------------------------------------------------->
     
-    
-// <---------------- Header Content [END] ---------------------------------------------------------------->
+// -------------------------------------------------------
 
+
+// ------------------ Under Construction --------------------
 
     "thank you" => "Thank you for your visit.",
     "construction" => nl2br("This webpage is currently under construction.\nPlease come back in the near future to check its content."),
+
+// -------------------------------------------------------
+
+
+// ------------------------ Contact Page -------------------------------
+
+    "heading_1" => "Let's work together",
+    "paragraph_1" => nl2br("The best way to reach me is by e-mail, at 11andrecarvalho@gmail.com.\n\nI’m open to job opportunities, freelance projects, and collaboration with other developers."),
+    "heading_2" => "Useful links",
+    "heading_3" => "Contact me",
+    "name" => "Name",
+    "email" => "E-mail",
+    "message" => "Message",
+    "send" => "Send",
+
+// ---------------------------------------------------------------------
+
 
 ];
 ?>

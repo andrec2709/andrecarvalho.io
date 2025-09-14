@@ -21,8 +21,16 @@ include "../api/StartSession.php";
 	</head>
 	<body>
 		<?php include '../includes/header.php';?>
-
-		<?php include '../includes/construction.php';?>
+		<div class="main-content">
+			<h1 class="theme-dependant <?=$_SESSION['theme']?>"><?=$lang['heading_1']?></h1>
+			<p class="theme-dependant <?=$_SESSION['theme']?>"><?=$lang['paragraph_1']?></p>
+			<h2 class="theme-dependant <?=$_SESSION['theme']?>"><?=$lang['heading_2']?></h2>
+			<ul>
+				<li class="theme-dependant no-bp <?=$_SESSION['theme']?>">Github</li>
+				<li class="theme-dependant no-bp <?=$_SESSION['theme']?>">Linkedin</li>
+			</ul>
+		</div>
+		<!-- <?php include '../includes/construction.php';?> -->
 
 		<script src="../scripts/main.js"></script>
 	</body>
