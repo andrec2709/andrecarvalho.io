@@ -266,22 +266,27 @@ p:not(.special-page){
     line-height: 1rem;
     border-left: 2px solid var(--main-fg-color-light);
     word-break: normal;
+    text-align: left;
+    
 }
 
 p.dark:not(.special-page){
     border-left: 2px solid var(--main-fg-color-dark);
 }
 
-p.dark a.p-link {
+p.dark a.p-link, li.dark a.p-link {
     color: #397fff;
+    text-decoration: none;
 }
 
-p.light a.p-link{
+p.light a.p-link, li.light a.p-link{
     color: #2906a8;
+    text-decoration: none;
 }
 
-.p-link.dark{
-    color: var(--main-fg-color-dark);
+a.p-link img{
+    vertical-align: middle;
+    width: 20px;
 }
 
 li.no-bp{

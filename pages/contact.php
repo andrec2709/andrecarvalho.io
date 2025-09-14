@@ -26,8 +26,18 @@ include "../api/StartSession.php";
 			<p class="theme-dependant <?=$_SESSION['theme']?>"><?=$lang['paragraph_1']?></p>
 			<h2 class="theme-dependant <?=$_SESSION['theme']?>"><?=$lang['heading_2']?></h2>
 			<ul>
-				<li class="theme-dependant no-bp <?=$_SESSION['theme']?>">Github</li>
-				<li class="theme-dependant no-bp <?=$_SESSION['theme']?>">Linkedin</li>
+				<li class="theme-dependant no-bp <?=$_SESSION['theme']?>">
+					<a class="p-link" href="https://github.com/andrec2709" target="_blank">
+						<img id="github-icon" class="github-img-icon" src="" alt="Link to my github profile">
+						&nbsp;Github
+					</a>
+				</li>
+				<li class="theme-dependant no-bp <?=$_SESSION['theme']?>">
+					<a class="p-link" href="https://www.linkedin.com/in/andrecarvalhofilho/" target="_blank">
+						<img id="linkedin-icon" class="linkedin-img-icon" src="" alt="">
+						&nbsp;Linkedin
+					</a>
+				</li>
 			</ul>
 		</div>
 		<!-- <?php include '../includes/construction.php';?> -->

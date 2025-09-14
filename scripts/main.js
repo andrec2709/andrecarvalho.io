@@ -28,6 +28,12 @@ let pagelogo_btn = document.getElementById("page-logo");
 
 //
 
+// contact.php
+
+let github_icon = document.getElementById("github-icon");
+let linkedin_icon = document.getElementById("linkedin-icon")
+//
+
 
 // Others
 
@@ -72,6 +78,16 @@ async function openWithLang(url, target = "_self") {
 
 }
 
+function isPage(pagename){
+
+    let url = window.location.href;
+
+    let regex = new RegExp(`${pagename}`, "gi");
+
+    return url.search(regex) != -1 ? true : false;
+
+}
+
 // <-------------------------------->
 
 
@@ -85,7 +101,23 @@ prefersDark.addEventListener("change", async () => {
     const session = await getSessionInfo();
     const session_json = await session.json();
 
-    under_construction_img.setAttribute('src', session_json.theme == "dark" ? "../assets/img/under-construction-dark.png" : "../assets/img/under-construction-light.png");
+    if (isPage("contact.php")){
+        
+        github_icon.setAttribute(
+            'src',
+            session_json.theme == "dark"
+            ? "../assets/icons/github-mark-white.png"
+            : "../assets/icons/github-mark.png"
+        );        
+
+        linkedin_icon.setAttribute(
+            'src',
+            session_json.theme == "dark"
+            ? "../assets/icons/InBug-White.png"
+            : "../assets/icons/InBug-Black.png"
+        );        
+
+    }
 
 });
 
@@ -96,12 +128,40 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     document.body.style.backgroundColor = session_json.theme == "dark" ? "var(--main-bg-color-dark)" : "var(--main-bg-color-light)";
     
-    under_construction_img.setAttribute(
-        'src', 
-        session_json.theme == "dark" 
-        ? "../assets/img/under-construction-dark.png" 
-        : "../assets/img/under-construction-light.png"
-    );
+    if (isPage("contact.php")){
+        
+        github_icon.setAttribute(
+            'src',
+            session_json.theme == "dark"
+            ? "../assets/icons/github-mark-white.png"
+            : "../assets/icons/github-mark.png"
+        );        
+
+        linkedin_icon.setAttribute(
+            'src',
+            session_json.theme == "dark"
+            ? "../assets/icons/InBug-White.png"
+            : "../assets/icons/InBug-Black.png"
+        );        
+
+    }
+
+    if (under_construction_img != null){
+    
+        under_construction_img.setAttribute(
+            'src',
+            session_json.theme == "dark" 
+            ? "../assets/img/under-construction-dark.png" 
+            : "../assets/img/under-construction-light.png");
+
+        under_construction_img.setAttribute(
+            'src', 
+            session_json.theme == "dark" 
+            ? "../assets/img/under-construction-dark.png" 
+            : "../assets/img/under-construction-light.png"
+        );
+
+    }
     
 })
 
