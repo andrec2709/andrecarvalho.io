@@ -1,3 +1,5 @@
+
+
 /* ---------------------- Custom font declarations --------------------------- */
 
 @font-face {
@@ -11,11 +13,14 @@
 }
 
 
+/* <------------------------------------------------> */
 
 
 /* <-------- Global variables and colors -----------> */
 
 :root{
+
+
 /* Header/Sidebar vars/colors */
 
     --header-bg-color: #0e0e0e;
@@ -27,12 +32,14 @@
 
 /*  */
 
+
 /* Dark mode vars/colors */
 
     --main-bg-color-dark:#091214;
     --main-fg-color-dark: #b7b7b7;
 
 /*  */
+
 
 /* Light mode vars/colors */
 
@@ -41,8 +48,14 @@
 
 /*  */
 
+
 }
 
+
+/* <------------------------------------------------> */
+
+
+/* <---------------------- General --------------------------> */
 
 
 * {
@@ -54,6 +67,21 @@ body {
     padding: 0;
     font-family: sans-serif;
 }
+
+.dark{
+    color: var(--main-fg-color-dark);
+}
+
+.light{
+    color: var(--main-fg-color-light);
+}
+
+
+/* <------------------------------------------------> */
+
+
+/* <----------------------- Header -------------------------> */
+
 
 #header-main-container{
     position: sticky;
@@ -84,7 +112,7 @@ body {
     align-items: center;
     justify-content: left;
     position: absolute;
-    left: 1rem;
+    left: 0;
 }
 
 #header-icons {
@@ -119,8 +147,10 @@ body {
     visibility: hidden;
     position: absolute;
 }
+
     
-/* --------------------------- Sidebar styling ------------------------- */
+/* Sidebar styling */
+
 
 #sidebar-narrow{
     visibility: hidden;
@@ -176,7 +206,55 @@ body {
     margin-bottom: 1rem;
 }
 
-/* ------------------------------------------------------------------------ */
+.highlight{
+    color: var(--header-highlight-color);
+}
+
+
+/* <------------------------------------------------> */
+
+
+/* <------------------ "Under Construction" --------------> */
+
+
+.under-construction-txt{
+    text-align: center;
+    font-family: "Lexend";
+}
+
+.h-under-construction{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.p-under-construction{
+    font-size: 1.2rem;
+    margin-top: 3rem;
+}
+
+#under-construction-img{
+    width: 300px;
+    opacity: 30%;
+    
+}
+
+#under-construction-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 8rem;
+}
+
+
+/* <------------------------------------------------> */
+
+
+
+
+/* <-------------------- Media ----------------------------> */
+
 
 @media (width >= 750px) {
 
@@ -252,64 +330,6 @@ body {
 
 }
 
-.highlight{
-    color: var(--header-highlight-color);
-}
-
-
-/* -------------- Light/Dark mode specifics ------------------------> */
-
-@media (prefers-color-scheme: dark){
-    body{
-        background-color: var(--main-bg-color-dark);
-        color: var(--main-fg-color-dark);
-    }
-}
-
-@media (prefers-color-scheme: light){
-    body{
-        background-color: var(--main-bg-color-light);
-        color: var(--main-fg-color-light);
-    }
-}
-
-/* <----------------------------------------------------------------  */
-
-
-
-/* <------------------ "Under Construction" --------------> */
-
-.under-construction-txt{
-    text-align: center;
-    font-family: "Lexend";
-}
-
-.h-under-construction{
-    font-size: 2rem;
-    margin-bottom: 2rem;
-}
-
-.p-under-construction{
-    font-size: 1.2rem;
-    margin-top: 3rem;
-}
-
-#under-construction-img{
-    width: 300px;
-    opacity: 30%;
-    
-}
-
-#under-construction-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin-top: 8rem;
-}
-
-
 @media screen and (width <= 480px){
     .h-under-construction{
         font-size: 1.3rem;
@@ -330,14 +350,26 @@ body {
     }
 }
 
-
-/* <------------------ "Under Construction" --------------> */
-
-
-.dark{
-    color: var(--main-fg-color-dark);
+@media screen and (width <= 300px){
+    #page-logo{
+        visibility: hidden;
+    }
 }
 
-.light{
-    color: var(--main-fg-color-light);
+@media (prefers-color-scheme: dark){
+    body{
+        background-color: var(--main-bg-color-dark);
+        color: var(--main-fg-color-dark);
+    }
 }
+
+@media (prefers-color-scheme: light){
+    body{
+        background-color: var(--main-bg-color-light);
+        color: var(--main-fg-color-light);
+    }
+}
+
+
+/* <------------------------------------------------> */
+
