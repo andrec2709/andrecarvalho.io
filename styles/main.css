@@ -137,6 +137,10 @@ body {
     font-size: 1rem;
     margin-left: 1rem;
     cursor: pointer;
+
+    transition-property: opacity, scale;
+    transition-duration: .1s, .01s;
+    transition-timing-function: cubic-bezier(1, .4, .5, .8), cubic-bezier(.2, 0, .3, 1);
 }
 
 .header-item img{
@@ -187,6 +191,11 @@ body {
     font-weight: bold;
     margin-bottom: .5rem;
     color: var(--header-fg-color);
+    position: relative;
+    left: 0;
+    transition-property: left;
+    transition-duration: .03s;
+    transition-timing-function: cubic-bezier(.1, .8, .9, .5);
 }
 
 #github-profile-sidebar img {
@@ -251,6 +260,23 @@ body {
 /* <------------------------------------------------> */
 
 
+/* <-------------------- Actions ----------------------------> */
+
+
+.header-item:hover:not(#page-logo){
+    opacity: 60%;
+}
+
+.header-item:active:not(.sidebar-item){
+    scale: .95;
+}
+
+.sidebar-item:active{
+    left: -1rem;
+}
+
+
+/* <------------------------------------------------> */
 
 
 /* <-------------------- Media ----------------------------> */
