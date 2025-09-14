@@ -13,6 +13,10 @@ let portfolio_btn = document.getElementById("portfolio");
 let contact_btn = document.getElementById("contact");
 let about_btn = document.getElementById("about-me");
 let pagelogo_btn = document.getElementById("page-logo");
+let start_btn_sidebar = document.getElementById("start-sidebar");
+let portfolio_btn_sidebar = document.getElementById("portfolio-sidebar");
+let contact_btn_sidebar = document.getElementById("contact-sidebar");
+let about_btn_sidebar = document.getElementById("about-me-sidebar");
 
 
 let under_construction_img = document.getElementById("under-construction-img");
@@ -155,6 +159,22 @@ contact_btn.addEventListener("click", async () => {
 });
 
 about_btn.addEventListener("click", async () => {
+    await openWithLang("../pages/about.php");
+});
+
+start_btn_sidebar.addEventListener("click", async () => {
+    await openWithLang("../pages/index.php");
+});
+
+portfolio_btn_sidebar.addEventListener("click", async () => {
+    await openWithLang("../pages/portfolio.php");
+});
+
+contact_btn_sidebar.addEventListener("click", async () => {
+    await openWithLang("../pages/contact.php");
+});
+
+about_btn_sidebar.addEventListener("click", async () => {
     await openWithLang("../pages/about.php");
 });
 
