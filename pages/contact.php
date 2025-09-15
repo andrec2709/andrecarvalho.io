@@ -67,8 +67,7 @@ include "../api/StartSession.php";
 				<label for="message" class="theme-dependant form-label <?=$_SESSION['theme']?>"><?=$lang['message']?>:</label>
 				<textarea name="message" id="message" id="" class="theme-dependant form-input-text <?=$_SESSION['theme']?>"></textarea>
 			
-				<!-- <input type="submit" data-sitekey="<?=$recaptchaSite?>" class="g-recaptcha theme-dependant form-submit <?=$_SESSION['theme']?>" value="<?=$lang['send']?>"> -->
-				<button data-sitekey="<?=$recaptchaSite?>" class="g-recaptcha form-submit <?=$_SESSION['theme']?>" data-callback="onSubmit"><?=$lang['send']?></button>
+				<button data-sitekey="<?=$recaptchaSite?>" class="theme-dependant g-recaptcha form-submit <?=$_SESSION['theme']?>" data-callback="onSubmit"><?=$lang['send']?></button>
 
 			</form>
 
