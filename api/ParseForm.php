@@ -1,9 +1,11 @@
 <?php
 
+include __DIR__ . "/../config.php";
+
 $url = "https://www.google.com/recaptcha/api/siteverify";
 
 $data = [
-    "secret" => getenv('RECAPTCHA_SECRET'),
+    "secret" => $recaptchaSecret,
     "response" => $_POST['g-recaptcha-response'],
     "remoteip" => $_SERVER['REMOTE_ADDR'],
 ];
