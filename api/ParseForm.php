@@ -3,7 +3,7 @@
 $url = "https://www.google.com/recaptcha/api/siteverify";
 
 $data = [
-    "secret" => "6Ld3jcorAAAAABBfRclMdqZkUcqKlFz7W1_zxUF4",
+    "secret" => getenv('RECAPTCHA_SECRET'),
     "response" => $_POST['g-recaptcha-response'],
     "remoteip" => $_SERVER['REMOTE_ADDR'],
 ];
