@@ -57,22 +57,22 @@ include "../api/StartSession.php";
 
 			<form method="post" action="" id="contact-me-form">
 
-				<label for="username" class="theme-dependant form-label <?=$_SESSION['theme']?>"><?=$lang['name']?>:</label><br>
+				<label for="username" class="theme-dependant form-label <?=$_SESSION['theme']?>"><?=$lang['name']?>:</label>
 				<input maxlength="120" type="text" id="username" name="username" class="form-input-text theme-dependant <?=$_SESSION['theme']?>" aria-label="<?=$lang['name']?>">
 				
-				<br><br>
-
-				<label for="email" class="theme-dependant form-label <?=$_SESSION['theme']?>">E-mail:</label><br>
+				<label for="email" class="theme-dependant form-label <?=$_SESSION['theme']?>">E-mail:</label>
 				<input maxlength="240" type="email" id="email" name="email" class="form-input-email theme-dependant <?=$_SESSION['theme']?>" aria-label="e-mail">
 
-				<br><br>
-
-				<label for="message" class="theme-dependant form-label <?=$_SESSION['theme']?>"><?=$lang['message']?>:</label><br>
+				<label for="message" class="theme-dependant form-label <?=$_SESSION['theme']?>"><?=$lang['message']?>:</label>
 				<textarea name="message" id="message" id="" class="theme-dependant form-input-text <?=$_SESSION['theme']?>"></textarea>
+			
+				<input type="submit" data-sitekey="6Ld3jcorAAAAAKfobNXfT7XsXH8Y9cFsEnPpUFwI" class="g-recaptcha theme-dependant form-submit <?=$_SESSION['theme']?>" value="<?=$lang['send']?>">
+
 			</form>
 
 		</div>
 
+		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 		<script src="../scripts/main.js"></script>
 	</body>
 </html>

@@ -313,6 +313,8 @@ li.no-bp{
 #contact-me-form{
     margin-left: 1rem;
     margin-right: 1rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .form-label{
@@ -329,10 +331,12 @@ li.no-bp{
     font-size: 1.1rem;
     font-family: "Manrope";
     width: 100%;
+    margin-bottom: 1rem;
 }
 
 textarea.form-input-text{
     resize: vertical;
+    min-height: 5rem;
     height: 20rem;
 }
 
@@ -348,6 +352,40 @@ textarea.form-input-text{
 
 .form-input-text:focus, .form-input-email:focus{
     outline: none;
+}
+
+.form-submit{
+    border: none;
+    font-family: "Manrope";
+    font-size: 1.2rem;
+    padding: .4rem .8rem .4rem .8rem;
+    width: 10rem;
+    border-radius: 2px;
+    position: relative;
+    align-self: flex-end;
+    margin-top: 1rem;
+
+    transition-property: filter;
+    transition-duration: .1s;
+    transition-timing-function: ease-out;
+}
+
+.form-submit.light{
+    color: var(--main-fg-color-dark);
+    background-color: var(--main-bg-color-dark);
+}
+
+.form-submit.dark{
+    color: var(--main-fg-color-light);
+    background-color: var(--main-fg-heading-color-dark);
+}
+
+.form-submit:hover{
+    filter: brightness(80%);
+}
+
+.form-submit:active{
+    filter: brightness(60%);
 }
 
 /* <---------------------------------------------------------> */
