@@ -88,11 +88,36 @@ function isPage(pagename){
 
 }
 
+async function onSubmit(token){
+    document.getElementById("contact-me-form").requestSubmit();
+}
+
 // <-------------------------------->
 
 
 // <----------- Events ------------->
 
+if (isPage("contact.php")){
+
+document.getElementById("contact-me-form").addEventListener("submit", function(e) {
+
+    e.preventDefault();
+    
+    const formData = new FormData(this);
+
+    fetch("../api/ParseForm.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Server response: ", data);
+    })
+    .catch(error => console.error("Error: ", error));
+
+});
+
+}
 
 prefersDark.addEventListener("change", async () => {
 

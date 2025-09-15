@@ -18,6 +18,7 @@ include "../api/StartSession.php";
 		<title><?=$lang['contact-page-title']?></title>
 		<link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" href="../styles/main.css">
+		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	</head>
 	<body>
  
@@ -55,7 +56,7 @@ include "../api/StartSession.php";
 
 			<h2 class="theme-dependant <?=$_SESSION['theme']?>"><?=$lang['heading_3']?></h2>
 
-			<form method="post" action="../api/ParseForm.php" id="contact-me-form">
+			<form id="contact-me-form" method="post"  action="?">
 
 				<label for="username" class="theme-dependant form-label <?=$_SESSION['theme']?>"><?=$lang['name']?>:</label>
 				<input maxlength="120" type="text" id="username" name="username" class="form-input-text theme-dependant <?=$_SESSION['theme']?>" aria-label="<?=$lang['name']?>">
@@ -66,13 +67,13 @@ include "../api/StartSession.php";
 				<label for="message" class="theme-dependant form-label <?=$_SESSION['theme']?>"><?=$lang['message']?>:</label>
 				<textarea name="message" id="message" id="" class="theme-dependant form-input-text <?=$_SESSION['theme']?>"></textarea>
 			
-				<input type="submit" data-sitekey="<?=$recaptchaSite?>" class="g-recaptcha theme-dependant form-submit <?=$_SESSION['theme']?>" value="<?=$lang['send']?>">
+				<!-- <input type="submit" data-sitekey="<?=$recaptchaSite?>" class="g-recaptcha theme-dependant form-submit <?=$_SESSION['theme']?>" value="<?=$lang['send']?>"> -->
+				<button data-sitekey="<?=$recaptchaSite?>" class="g-recaptcha form-submit <?=$_SESSION['theme']?>" data-callback="onSubmit"><?=$lang['send']?></button>
 
 			</form>
 
 		</div>
 
-		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 		<script src="../scripts/main.js"></script>
 	</body>
 </html>
