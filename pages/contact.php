@@ -20,27 +20,58 @@ include "../api/StartSession.php";
 		<link rel="stylesheet" href="../styles/main.css">
 	</head>
 	<body>
+ 
 		<?php include '../includes/header.php';?>
+
 		<div class="main-content">
+
 			<h1 class="theme-dependant <?=$_SESSION['theme']?>"><?=$lang['heading_1']?></h1>
+
 			<p class="theme-dependant <?=$_SESSION['theme']?>"><?=$lang['paragraph_1']?></p>
+
 			<h2 class="theme-dependant <?=$_SESSION['theme']?>"><?=$lang['heading_2']?></h2>
+
 			<ul>
+
 				<li class="theme-dependant no-bp <?=$_SESSION['theme']?>">
+
 					<a class="p-link" href="https://github.com/andrec2709" target="_blank">
-						<img id="github-icon" class="github-img-icon" src="" alt="Link to my github profile">
+						<img id="github-icon" class="github-img-icon" src="" alt="Github">
 						&nbsp;Github
 					</a>
+
 				</li>
+
 				<li class="theme-dependant no-bp <?=$_SESSION['theme']?>">
+
 					<a class="p-link" href="https://www.linkedin.com/in/andrecarvalhofilho/" target="_blank">
-						<img id="linkedin-icon" class="linkedin-img-icon" src="" alt="">
+						<img id="linkedin-icon" class="linkedin-img-icon" src="" alt="Linkedin">
 						&nbsp;Linkedin
 					</a>
+
 				</li>
+
 			</ul>
+
+			<h2 class="theme-dependant <?=$_SESSION['theme']?>"><?=$lang['heading_3']?></h2>
+
+			<form method="post" action="" id="contact-me-form">
+
+				<label for="username" class="theme-dependant form-label <?=$_SESSION['theme']?>"><?=$lang['name']?>:</label><br>
+				<input maxlength="120" type="text" id="username" name="username" class="form-input-text theme-dependant <?=$_SESSION['theme']?>" aria-label="<?=$lang['name']?>">
+				
+				<br><br>
+
+				<label for="email" class="theme-dependant form-label <?=$_SESSION['theme']?>">E-mail:</label><br>
+				<input maxlength="240" type="email" id="email" name="email" class="form-input-email theme-dependant <?=$_SESSION['theme']?>" aria-label="e-mail">
+
+				<br><br>
+
+				<label for="message" class="theme-dependant form-label <?=$_SESSION['theme']?>"><?=$lang['message']?>:</label><br>
+				<textarea name="message" id="message" id="" class="theme-dependant form-input-text <?=$_SESSION['theme']?>"></textarea>
+			</form>
+
 		</div>
-		<!-- <?php include '../includes/construction.php';?> -->
 
 		<script src="../scripts/main.js"></script>
 	</body>

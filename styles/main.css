@@ -47,8 +47,7 @@
     --main-bg-color-dark:#091214;
     --main-fg-color-dark: #b7b7b7;
     --main-fg-heading-color-dark: #15b383;
-    /* --main-fg-heading-color-dark: #00c98c; */
-
+    --main-bg-color-dark-form-input: #162c31;
 /*  */
 
 
@@ -56,7 +55,7 @@
 
     --main-bg-color-light: #b0bec1;
     --main-fg-color-light: #212222;
-
+    --main-bg-color-light-form-input: #e2eff1;
 /*  */
 
 
@@ -243,7 +242,7 @@ body {
     flex-direction: column;
     margin-left: 25vw;
     margin-right: 25vw;
-    /* background-color: #004cff; */
+    margin-bottom: 10rem;
 }
 
 h1, h2{
@@ -311,6 +310,45 @@ li.no-bp{
     list-style-type: none;
 }
 
+#contact-me-form{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.form-label{
+    font-family: "Manrope";
+    font-size: 1.05rem;
+    line-height: 2rem;
+}
+
+.form-input-text, .form-input-email{
+    height: 2.3rem;
+    border-radius: 2px;
+    border: none;
+    padding: .3rem;
+    font-size: 1.1rem;
+    font-family: "Manrope";
+    width: 100%;
+}
+
+textarea.form-input-text{
+    resize: vertical;
+    height: 20rem;
+}
+
+.form-input-text.light, .form-input-email.light{
+    border: 1px solid #838c8d;
+    background-color: var(--main-bg-color-light-form-input);
+}
+
+.form-input-text.dark, .form-input-email.dark{
+    background-color: var(--main-bg-color-dark-form-input);
+    border: 1px solid #25505a;
+}
+
+.form-input-text:focus, .form-input-email:focus{
+    outline: none;
+}
 
 /* <---------------------------------------------------------> */
 
