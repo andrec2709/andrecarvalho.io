@@ -1,6 +1,5 @@
 <?php
 
-include __DIR__ . "/../config.php";
 
 $url = "https://www.google.com/recaptcha/api/siteverify";
 
