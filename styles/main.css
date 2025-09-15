@@ -241,13 +241,13 @@ body {
 .main-content{
     display: flex;
     flex-direction: column;
-    margin-left: 25%;
-    margin-right: 25%;
+    margin-left: 25vw;
+    margin-right: 25vw;
     /* background-color: #004cff; */
 }
 
 h1, h2{
-    margin-left: 1rem;
+    margin-left: clamp(min(1rem, 1vw), 1rem, 1rem);
     font-size: clamp(1.8rem, 2.2vw, 4rem);
     font-family: "Outfit";
     font-weight: 600;
@@ -264,14 +264,14 @@ p:not(.special-page){
     font-size: 1.1rem;
     font-family: "Manrope";
     line-height: 1rem;
-    border-left: 2px solid var(--main-fg-color-light);
+    border-left: 1px solid var(--main-fg-color-light);
     word-break: normal;
     text-align: left;
     
 }
 
 p.dark:not(.special-page){
-    border-left: 2px solid var(--main-fg-color-dark);
+    border-left: 1px solid var(--main-fg-color-dark);
 }
 
 p.dark a.p-link, li.dark a.p-link {
@@ -282,6 +282,20 @@ p.dark a.p-link, li.dark a.p-link {
 p.light a.p-link, li.light a.p-link{
     color: #2906a8;
     text-decoration: none;
+}
+
+a.p-link{
+    transition-property: opacity;
+    transition-duration: .1s;
+    transition-timing-function: cubic-bezier(1, .4, .5, .8);
+}
+
+a.p-link:hover{
+    opacity: 70%;
+}
+
+a.p-link:active{
+    opacity: 50%;
 }
 
 a.p-link img{
@@ -359,20 +373,11 @@ li.no-bp{
 
 /* <-------------------- Media ----------------------------> */
 
-@media screen and (width >= 2100px) {
+@media screen and (width <= 1000px) {
     .main-content{
-        margin-left: 30%;
-        margin-right:30%;
+        margin-left: 2.5vw;
+        margin-right: 2.5vw;
     }
-}
-
-@media screen and (width < 1050px){
-
-    .main-content{
-        margin-left: 12.5%;
-        margin-right: 12.5%;
-    }
-    
 }
 
 @media (width >= 750px) {
