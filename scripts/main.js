@@ -88,10 +88,6 @@ function isPage(pagename){
 
 }
 
-async function onSubmit(token){
-    console.log("test");
-}
-
 // <-------------------------------->
 
 

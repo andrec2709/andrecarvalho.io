@@ -55,7 +55,7 @@ include "../api/StartSession.php";
 
 			<h2 class="theme-dependant <?=$_SESSION['theme']?>"><?=$lang['heading_3']?></h2>
 
-			<form method="post" action="" id="contact-me-form" onsubmit="onSubmit()">
+			<form method="post" action="../api/ParseForm.php" id="contact-me-form">
 
 				<label for="username" class="theme-dependant form-label <?=$_SESSION['theme']?>"><?=$lang['name']?>:</label>
 				<input maxlength="120" type="text" id="username" name="username" class="form-input-text theme-dependant <?=$_SESSION['theme']?>" aria-label="<?=$lang['name']?>">
