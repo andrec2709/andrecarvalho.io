@@ -7,37 +7,32 @@ $url = "https://www.google.com/recaptcha/api/siteverify";
 $data = [
     "secret" => $recaptchaSecret,
     "response" => $_POST['g-recaptcha-response'],
-    "remoteip" => $_SERVER['REMOTE_ADDR'],
 ];
 
-// $ch = curl_init();
+$ch = curl_init();
 
-// curl_setopt($ch, CURLOPT_URL, $url);
-// curl_setopt($ch, CURLOPT_POST, true);
-// curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
-// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-// $response = curl_exec($ch);
+$response = curl_exec($ch);
 
-// if (curl_errno($ch)){
-//     echo curl_error($ch);
-// }
-// else{
-//     $decoded = json_decode($response, true);
+if (curl_errno($ch)){
+    echo curl_error($ch);
+}
+else{
+    $decoded = json_decode($response, true);
 
-//     if ($decoded['success'] === true){
-//         echo "test";
-//         mail(
-//             "11andrecarvalho@gmail.com",
-//             "Contact via andrecarvalho.io",
-//             $_POST['message'],
-//             "From: {$_POST['email']}"
-//         );
+    if ($decoded['success'] === true){
+        $headers = "From: 11andrecarvalho@gmail.com";
+        mail("11andrecarvalho@gmail.com", "test email", "just a test", $headers);
 
-//     }
-// }
+       
+        echo json_encode(['success' => $decoded['success']]);
 
-echo json_encode(["a" => 1, "b" => 2]);
+    }
+}
 
 ?>
 
