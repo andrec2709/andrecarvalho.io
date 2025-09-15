@@ -119,6 +119,23 @@ prefersDark.addEventListener("change", async () => {
 
     }
 
+    if (under_construction_img != null){
+    
+        under_construction_img.setAttribute(
+            'src',
+            session_json.theme == "dark" 
+            ? "../assets/img/under-construction-dark.png" 
+            : "../assets/img/under-construction-light.png");
+
+        under_construction_img.setAttribute(
+            'src', 
+            session_json.theme == "dark" 
+            ? "../assets/img/under-construction-dark.png" 
+            : "../assets/img/under-construction-light.png"
+        );
+
+    }
+
 });
 
 document.addEventListener("DOMContentLoaded", async () => {
