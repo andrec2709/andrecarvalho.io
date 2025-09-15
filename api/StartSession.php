@@ -9,6 +9,10 @@ if (!isset($_SESSION['language'])){
     $_SESSION['language'] = $_GET['lang'] === 'pt' ? 'pt' : 'en';
 }
 
+if (!isset($_SESSION['theme'])){
+    $_SESSION['theme'] = "dark";
+}
+
 $language = $_SESSION['language'];
 include "../lang/$language.php";
 
