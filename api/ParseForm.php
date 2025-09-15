@@ -21,7 +21,12 @@ if (curl_errno($ch)){
     echo curl_error($ch);
 }
 else{
-    error_log($response);
+    $email = mail(
+        "11andrecarvalho@gmail.com",
+        "Contact viaa andrecarvalho.io",
+        $_POST['message'],
+        "From: {$_POST['email']}"
+    );
 }
 
 
