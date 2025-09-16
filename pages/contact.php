@@ -65,7 +65,7 @@ include "../api/StartSession.php";
 				<input required maxlength="240" type="email" id="email" name="email" class="form-input-email theme-dependant <?=$_SESSION['theme']?>" aria-label="e-mail">
 
 				<label for="message" class="theme-dependant form-label <?=$_SESSION['theme']?>"><?=$lang['message']?>:</label>
-				<textarea required oninvalid="fieldMissing" name="message" id="message" id="" class="theme-dependant form-input-text <?=$_SESSION['theme']?>"></textarea>
+				<textarea required name="message" id="message" id="" class="theme-dependant form-input-text <?=$_SESSION['theme']?>"></textarea>
 			
 				<button data-sitekey="<?=$recaptchaSite?>" class="theme-dependant g-recaptcha form-submit <?=$_SESSION['theme']?>" data-callback="onSubmit"><?=$lang['send']?></button>
 
