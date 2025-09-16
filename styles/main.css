@@ -380,6 +380,7 @@ textarea.form-input-text{
     background-color: var(--main-fg-heading-color-dark);
 }
 
+
 .form-submit:hover{
     filter: brightness(80%);
 }
@@ -390,6 +391,34 @@ textarea.form-input-text{
 
 .grecaptcha-badge{
     visibility: hidden;
+}
+
+#alert-container{
+    padding: 8px;
+    width: 200px;
+    height: 50px;
+    background-color: rgb(221, 21, 21);
+    position: fixed;
+    left: calc(50vw - 100px);
+    bottom: -60px;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    z-index: 100;
+    opacity: 0;
+    transition-property: opacity, bottom;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+
+}
+
+#alert-message{
+    font-family: "Manrope";
+    color: #0e0e0e;
+    font-size: 1.05rem;
 }
 
 /* <---------------------------------------------------------> */

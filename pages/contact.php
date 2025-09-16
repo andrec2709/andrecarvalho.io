@@ -23,6 +23,7 @@ include "../api/StartSession.php";
 	<body>
  
 		<?php include '../includes/header.php';?>
+		<?php include '../includes/alert.php';?>
 
 		<div class="main-content">
 
@@ -56,19 +57,20 @@ include "../api/StartSession.php";
 
 			<h2 class="theme-dependant <?=$_SESSION['theme']?>"><?=$lang['heading_3']?></h2>
 
-			<form id="contact-me-form" method="post"  action="?">
+			<form id="contact-me-form" method="post">
 
 				<label for="username" class="theme-dependant form-label <?=$_SESSION['theme']?>"><?=$lang['name']?>:</label>
-				<input required maxlength="120" type="text" id="username" name="username" class="form-input-text theme-dependant <?=$_SESSION['theme']?>" aria-label="<?=$lang['name']?>">
+				<input maxlength="120" type="text" id="username" name="username" class="form-input-text theme-dependant <?=$_SESSION['theme']?>" aria-label="<?=$lang['name']?>">
 				
 				<label for="email" class="theme-dependant form-label <?=$_SESSION['theme']?>">E-mail:</label>
-				<input required maxlength="240" type="email" id="email" name="email" class="form-input-email theme-dependant <?=$_SESSION['theme']?>" aria-label="e-mail">
+				<input maxlength="240" type="email" id="email" name="email" class="form-input-email theme-dependant <?=$_SESSION['theme']?>" aria-label="e-mail">
 
 				<label for="message" class="theme-dependant form-label <?=$_SESSION['theme']?>"><?=$lang['message']?>:</label>
-				<textarea required name="message" id="message" id="" class="theme-dependant form-input-text <?=$_SESSION['theme']?>"></textarea>
+				<textarea name="message" id="message" id="" class="theme-dependant form-input-text <?=$_SESSION['theme']?>"></textarea>
 			
-				<button data-sitekey="<?=$recaptchaSite?>" class="theme-dependant g-recaptcha form-submit <?=$_SESSION['theme']?>" data-callback="onSubmit"><?=$lang['send']?></button>
+				<button id="submit-form-btn" data-sitekey="<?=$recaptchaSite?>" data-callback="onSubmit" class="g-recaptcha theme-dependant form-submit <?=$_SESSION['theme']?>"><?=$lang['send']?></button>
 
+			
 			</form>
 
 		</div>

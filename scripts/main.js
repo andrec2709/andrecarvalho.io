@@ -88,48 +88,54 @@ function isPage(pagename){
 
 }
 
-async function onSubmit(token){
-    document.getElementById("contact-me-form").requestSubmit();
+async function invalidMessage(){
+    let alert_widget = document.getElementById("alert-container");
+    let alert_message = document.getElementById("alert-message");
+    const session = await getSessionInfo();
+    const session_json = await session.json();
+
+    switch (session_json.language) {
+        case "pt":
+            alert_message.innerText = "Por favor preencha todos os campos";
+            break;
+    
+        default:
+            alert_message.innerText = "Please fill out all fields";
+            break;
+    }
+
+    alert_widget.style.opacity = "100";
+    alert_widget.style.bottom = "30px";
+
+    setTimeout(() => {
+        alert_widget.style.opacity = "0";
+        alert_widget.style.bottom = "-60px";
+    }, 2000);
 }
 
-function fieldMissing(){
-    console.log("testing...");
+async function onSubmit(){
+
+        let username = document.getElementById("username");
+        let email = document.getElementById("email");
+        let message = document.getElementById("message");
+        
+
+        if (username.value === "" || email.value === "" || message.value === ""){
+            await invalidMessage();
+            document.getElementById("submit-form-btn").disabled = false;
+            grecaptcha.reset();
+        }
+        else{
+            alert("here..");
+            document.getElementById("contact-me-form").submit();   
+        }
+
 }
 // <-------------------------------->
 
 
 // <----------- Events ------------->
 
-if (isPage("contact.php")){
-
-    document.getElementById("contact-me-form").addEventListener("submit", async function(e) {
-
-        e.preventDefault();
-        
-        const formData = new FormData(this);
-
-        const response = await fetch("../api/ParseForm.php", {
-            method: "POST",
-            body: formData
-        })
-        
-        const result = await response.json();
-
-        if (result.success){
-            console.log("success");
-            this.reset();
-            grecaptcha.reset();
-        }
-        else{
-            console.log("error...");
-            console.log(result.error);
-            grecaptcha.reset();
-        }
-
-
-    });
-
-}
 
 prefersDark.addEventListener("change", async () => {
 
