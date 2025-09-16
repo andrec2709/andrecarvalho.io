@@ -126,7 +126,6 @@ async function onSubmit(){
             grecaptcha.reset();
         }
         else{
-            alert("here..");
             document.getElementById("contact-me-form").submit();   
         }
 
