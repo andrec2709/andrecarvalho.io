@@ -95,12 +95,12 @@ async function invalidMessage(state){
 
     const session = await getSessionInfo();
     const session_json = await session.json();
-
+    console.log(state);
     switch (state) {
         case 0:
             alert_widget.classList.add("success");
             alert_message.innerText = "Sent successfully";
-        
+            break;
         case 1:
             alert_message.innerText = "Por favor preencha todos os campos";
             break;
