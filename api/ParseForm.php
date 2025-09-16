@@ -25,11 +25,14 @@ else{
     $decoded = json_decode($response, true);
 
     if ($decoded['success'] === true){
+        $to = "contato@andrecarvalho.io";
+        $subject = "Test!!!";
+        $message = "Test message!!!";
         $headers = "From: 11andrecarvalho@gmail.com";
-        mail("11andrecarvalho@gmail.com", "test email", "just a test", $headers);
+        $resp = mail($to, $subject, $message, $headers);
 
        
-        echo json_encode(['success' => $decoded['success']]);
+        echo json_encode(['success' => $resp]);
 
     }
 }
