@@ -92,6 +92,9 @@ async function onSubmit(token){
     document.getElementById("contact-me-form").requestSubmit();
 }
 
+function fieldMissing(){
+    console.log("testing...");
+}
 // <-------------------------------->
 
 
@@ -99,23 +102,32 @@ async function onSubmit(token){
 
 if (isPage("contact.php")){
 
-document.getElementById("contact-me-form").addEventListener("submit", function(e) {
+    document.getElementById("contact-me-form").addEventListener("submit", async function(e) {
 
-    e.preventDefault();
-    
-    const formData = new FormData(this);
+        e.preventDefault();
+        
+        const formData = new FormData(this);
 
-    fetch("../api/ParseForm.php", {
-        method: "POST",
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log("Server response: ", data);
-    })
-    .catch(error => console.error("Error: ", error));
+        const response = await fetch("../api/ParseForm.php", {
+            method: "POST",
+            body: formData
+        })
+        
+        const result = await response.json();
 
-});
+        if (result.success){
+            console.log("success");
+            this.reset();
+            grecaptcha.reset();
+        }
+        else{
+            console.log("error...");
+            console.log(result.error);
+            grecaptcha.reset();
+        }
+
+
+    });
 
 }
 

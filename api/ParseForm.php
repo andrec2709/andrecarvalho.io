@@ -32,8 +32,9 @@ else{
         $headers = "From: " . $_POST["email"];
         
         $resp = mail($to, $subject, $msg, $headers);
-
         echo json_encode(['success' => $resp]);
+        // header("Location: ../pages/contact.php?status=success");
+        // exit;
 
     }
 }

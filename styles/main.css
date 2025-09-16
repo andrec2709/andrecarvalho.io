@@ -388,6 +388,10 @@ textarea.form-input-text{
     filter: brightness(60%);
 }
 
+.grecaptcha-badge{
+    visibility: hidden;
+}
+
 /* <---------------------------------------------------------> */
 
 
