@@ -101,7 +101,7 @@ async function invalidMessage(state){
             alert_widget.classList.add("success");
             alert_message.innerText = "Sent successfully";
         
-        case "pt":
+        case 1:
             alert_message.innerText = "Por favor preencha todos os campos";
             break;
     
@@ -127,11 +127,12 @@ async function onSubmit(){
         
 
         if (username.value === "" || email.value === "" || message.value === ""){
-            await invalidMessage();
+            await invalidMessage(1);
             document.getElementById("submit-form-btn").disabled = false;
             grecaptcha.reset();
         }
         else{
+            await invalidMessage(0);
             document.getElementById("contact-me-form").requestSubmit();   
         }
 
