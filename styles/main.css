@@ -415,6 +415,15 @@ textarea.form-input-text{
 
 }
 
+#alert-container.success{
+    background-color: #07855f;
+}
+
+#alert-container.success #alert-message{
+    color:#b0bec1;
+    
+}
+
 #alert-message{
     font-family: "Manrope";
     color: #0e0e0e;

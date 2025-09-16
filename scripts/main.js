@@ -88,13 +88,19 @@ function isPage(pagename){
 
 }
 
-async function invalidMessage(){
+async function invalidMessage(state){
     let alert_widget = document.getElementById("alert-container");
     let alert_message = document.getElementById("alert-message");
+    
+
     const session = await getSessionInfo();
     const session_json = await session.json();
 
-    switch (session_json.language) {
+    switch (state) {
+        case 0:
+            alert_widget.classList.add("success");
+            alert_message.innerText = "Sent successfully";
+        
         case "pt":
             alert_message.innerText = "Por favor preencha todos os campos";
             break;
