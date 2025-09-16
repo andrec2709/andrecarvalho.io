@@ -74,6 +74,8 @@ include "../api/StartSession.php";
 
 		</div>
 
+		<?php include '../includes/footer.php';?>
+
 		<script src="../scripts/main.js"></script>
 	</body>
 </html>

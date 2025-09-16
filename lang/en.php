@@ -65,7 +65,7 @@ $lang = [
 // ------------------------ Contact Page -------------------------------
 
     "heading_1" => "Let's work together",
-    "paragraph_1" => nl2br("The best way to reach me is by e-mail, at <a class=\"p-link\" href=\"mailto:11andrecarvalho@gmail.com\" target=\"_blank\">11andrecarvalho@gmail.com</a>.\n\nI’m open to job opportunities, freelance projects, and collaboration with other developers."),
+    "paragraph_1" => nl2br("The best way to reach me is by e-mail, at <a class=\"p-link\" href=\"contato@andrecarvalho.io\" target=\"_blank\">contato@andrecarvalho.io</a>.\n\nI’m open to job opportunities, freelance projects, and collaboration with other developers."),
     "heading_2" => "Useful links",
     "heading_3" => "Contact me",
     "name" => "Name",

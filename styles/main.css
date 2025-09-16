@@ -257,7 +257,7 @@ h1.dark:not(.special-page), h2.dark{
 
 }
 
-p:not(.special-page){
+p:not(.special-page, .p-footer){
     margin-left: 1rem;
     padding-left: 1rem;
     font-size: 1.1rem;
@@ -269,7 +269,7 @@ p:not(.special-page){
     
 }
 
-p.dark:not(.special-page){
+p.dark:not(.special-page,.p-footer){
     border-left: 1px solid var(--main-fg-color-dark);
 }
 
@@ -428,6 +428,26 @@ textarea.form-input-text{
     font-size: 1.05rem;
 }
 
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 12rem;
+}
+
+.p-footer{
+    font-family: "Manrope";
+    font-size: 1rem;
+}
+
+.p-footer a{
+    color: unset;
+}
+
+.p-footer:not(:last-of-type){
+    margin-right: 1rem;
+}
+
 /* <---------------------------------------------------------> */
 
 
@@ -581,6 +601,32 @@ textarea.form-input-text{
 
     #under-construction-img{
         width: 200px;
+    }
+
+}
+
+@media screen and (width <= 480px){
+    footer{
+        display: grid;
+        columns: 2;
+        align-items: unset;
+        justify-content: unset;
+        padding-bottom: 1rem;
+    }
+
+    .p-footer:first-of-type{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        margin: 0;
+        margin-left: 1rem;
+    }
+
+    .p-footer:not(:first-of-type){
+        height: fit-content;
+        text-align: right;
+        grid-column-start: 2;
+        margin: 0;
+        margin-right: 2rem;
     }
 
 }
