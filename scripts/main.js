@@ -98,11 +98,13 @@ async function invalidMessage(state){
     console.log(state);
     switch (state) {
         case 0:
+            alert_widget.classList.remove("failed");
             alert_widget.classList.add("success");
             alert_message.innerText = "Sent successfully";
             break;
         case 1:
-            alert_widget.classList.replace("success", "failed")
+            alert_widget.classList.remove("success");
+            alert_widget.classList.add("failed")
             alert_message.innerText = "Por favor preencha todos os campos";
             break;
     
