@@ -22,16 +22,17 @@ if (curl_errno($ch)){
     echo curl_error($ch);
 }
 else{
-    $decoded = json_decode($response, true);
+    $resp_decoded = json_decode($response, true);
 
-    if ($decoded['success'] === true){
+    if ($resp_decoded['success'] === true){
+
         $to = "contato@andrecarvalho.io";
-        $subject = "Test!!!";
-        $message = "Test message!!!";
-        $headers = "From: 11andrecarvalho@gmail.com";
-        $resp = mail($to, $subject, $message, $headers);
+        $subject = "E-mail from " . $_POST["username"] . " via andrecarvalho.io";
+        $msg = $_POST["message"];
+        $headers = "From: " . $_POST["email"];
+        
+        $resp = mail($to, $subject, $msg, $headers);
 
-       
         echo json_encode(['success' => $resp]);
 
     }

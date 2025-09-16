@@ -99,7 +99,7 @@ async function onSubmit(token){
 
 if (isPage("contact.php")){
 
-document.getElementById("contact-me-form").addEventListener("submit", function(e) {
+document.getElementById("contact-me-form").addEventListener("submit", e => {
 
     e.preventDefault();
     
