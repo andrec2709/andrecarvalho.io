@@ -100,18 +100,25 @@ async function invalidMessage(state){
         case 0:
             alert_widget.classList.remove("failed");
             alert_widget.classList.add("success");
-            alert_message.innerText = "Sent successfully";
-            break;
+            
+            alert_message.innerText = 
+            session_json.language == "pt" 
+            ? "Enviado" : "Sent";
+            
+                break;
+
         case 1:
             alert_widget.classList.remove("success");
             alert_widget.classList.add("failed")
-            alert_message.innerText = "Por favor preencha todos os campos";
-            break;
-    
-        default:
-            alert_message.innerText = "Please fill out all fields";
+            
+            alert_message.innerText = 
+            session_json.language == "pt"
+            ? "Por favor preencha todos os campos"
+            : "Please fill out all fields";
+
             break;
     }
+
 
     alert_widget.style.opacity = "100";
     alert_widget.style.bottom = "30px";
