@@ -137,7 +137,7 @@ async function onSubmit(){
 
 if (isPage("contact.php")){
     document.getElementById("contact-me-form").addEventListener("submit", async function(e) {
-        
+        e.preventDefault();
         let formdt = new FormData(this);
 
         const response = await fetch("../api/ParseForm.php", {
