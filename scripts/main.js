@@ -145,6 +145,8 @@ if (isPage("contact.php")){
             method: "POST"
         });
 
+        grecaptcha.reset();
+        this.reset();
 
     });
 }
