@@ -126,7 +126,7 @@ async function onSubmit(){
             grecaptcha.reset();
         }
         else{
-            document.getElementById("contact-me-form").submit();   
+            document.getElementById("contact-me-form").requestSubmit();   
         }
 
 }
@@ -134,6 +134,20 @@ async function onSubmit(){
 
 
 // <----------- Events ------------->
+
+if (isPage("contact.php")){
+    document.getElementById("contact-me-form").addEventListener("submit", async function(e) {
+        
+        let formdt = new FormData(this);
+
+        const response = await fetch("../api/ParseForm.php", {
+            body: formdt,
+            method: "POST"
+        });
+
+
+    });
+}
 
 
 prefersDark.addEventListener("change", async () => {
