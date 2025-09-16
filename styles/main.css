@@ -409,8 +409,8 @@ textarea.form-input-text{
     z-index: 100;
     opacity: 0;
     transition-property: opacity, bottom;
-    transition-duration: .3s;
-    transition-timing-function: ease-in-out;
+    transition-duration: .4s;
+    transition-timing-function: cubic-bezier(.5, 2, .9, 1);
 
 }
 

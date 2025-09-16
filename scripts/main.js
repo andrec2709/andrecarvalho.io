@@ -121,12 +121,12 @@ async function invalidMessage(state){
 
 
     alert_widget.style.opacity = "100";
-    alert_widget.style.bottom = "30px";
+    alert_widget.style.bottom = "70px";
 
     setTimeout(() => {
         alert_widget.style.opacity = "0";
         alert_widget.style.bottom = "-60px";
-    }, 2000);
+    }, 4000);
 }
 
 async function onSubmit(){
