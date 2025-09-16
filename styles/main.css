@@ -397,7 +397,6 @@ textarea.form-input-text{
     padding: 8px;
     width: 200px;
     height: 50px;
-    background-color: rgb(221, 21, 21);
     position: fixed;
     left: calc(50vw - 100px);
     bottom: -60px;
@@ -415,13 +414,17 @@ textarea.form-input-text{
 
 }
 
+#alert-container.failed{
+    background-color: rgb(221, 21, 21);
+}
+
 #alert-container.success{
     background-color: #07855f;
 }
 
 #alert-container.success #alert-message{
     color:#b0bec1;
-    
+
 }
 
 #alert-message{

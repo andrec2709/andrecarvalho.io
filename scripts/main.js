@@ -102,6 +102,7 @@ async function invalidMessage(state){
             alert_message.innerText = "Sent successfully";
             break;
         case 1:
+            alert_widget.classList.replace("success", "failed")
             alert_message.innerText = "Por favor preencha todos os campos";
             break;
     
