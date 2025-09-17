@@ -89,13 +89,13 @@ function isPage(pagename){
 }
 
 async function invalidMessage(state){
+
     let alert_widget = document.getElementById("alert-container");
     let alert_message = document.getElementById("alert-message");
     
 
     const session = await getSessionInfo();
     const session_json = await session.json();
-    console.log(state);
     switch (state) {
         case 0:
             alert_widget.classList.remove("failed");
@@ -105,7 +105,7 @@ async function invalidMessage(state){
             session_json.language == "pt" 
             ? "Enviado" : "Sent";
             
-                break;
+            break;
 
         case 1:
             alert_widget.classList.remove("success");
@@ -117,6 +117,18 @@ async function invalidMessage(state){
             : "Please fill out all fields";
 
             break;
+        
+        case 2:
+            alert_widget.classList.remove("success");
+            alert_widget.classList.add("failed");
+
+            alert_message.innerText = 
+            session_json.language == "pt"
+            ? "E-mail inválido"
+            : "Invalid e-mail";
+
+            break;
+
     }
 
 
@@ -127,6 +139,7 @@ async function invalidMessage(state){
         alert_widget.style.opacity = "0";
         alert_widget.style.bottom = "-60px";
     }, 4000);
+
 }
 
 async function onSubmit(){
@@ -135,9 +148,17 @@ async function onSubmit(){
         let email = document.getElementById("email");
         let message = document.getElementById("message");
         
+        const pattern = /^((?!.*\.\.|.*\.@|^\.|^-)[a-zA-Z0-9._+%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/g;
+        // let emailregex = new RegExp(pattern);
 
         if (username.value === "" || email.value === "" || message.value === ""){
             await invalidMessage(1);
+            document.getElementById("submit-form-btn").disabled = false;
+            grecaptcha.reset();
+        }
+        else if (email.value.search(pattern) === -1){
+            console.log("Invalid e-mail");
+            await invalidMessage(2);
             document.getElementById("submit-form-btn").disabled = false;
             grecaptcha.reset();
         }
@@ -153,6 +174,7 @@ async function onSubmit(){
 // <----------- Events ------------->
 
 if (isPage("contact.php")){
+
     document.getElementById("contact-me-form").addEventListener("submit", async function(e) {
         e.preventDefault();
         let formdt = new FormData(this);
@@ -166,6 +188,7 @@ if (isPage("contact.php")){
         this.reset();
 
     });
+
 }
 
 
