@@ -18,6 +18,7 @@ include "../api/StartSession.php";
 		<title><?=$lang['contact-page-title']?></title>
 		<link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" href="../styles/main.css">
+		<link rel="stylesheet" href="../styles/contact.css">
 		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	</head>
 	<body>
@@ -66,7 +67,7 @@ include "../api/StartSession.php";
 				<input maxlength="240" type="email" id="email" name="email" class="form-input-email theme-dependant <?=$_SESSION['theme']?>" aria-label="e-mail">
 
 				<label for="message" class="theme-dependant form-label <?=$_SESSION['theme']?>"><?=$lang['message']?>:</label>
-				<textarea name="message" id="message" id="" class="theme-dependant form-input-text <?=$_SESSION['theme']?>"></textarea>
+				<textarea name="message" id="message" class="theme-dependant form-input-text <?=$_SESSION['theme']?>"></textarea>
 			
 				<button id="submit-form-btn" data-sitekey="<?=$recaptchaSite?>" data-callback="onSubmit" class="g-recaptcha theme-dependant form-submit <?=$_SESSION['theme']?>"><?=$lang['send']?></button>
 			
@@ -77,5 +78,6 @@ include "../api/StartSession.php";
 		<?php include '../includes/footer.php';?>
 
 		<script src="../scripts/main.js"></script>
+		<script src="../scripts/contact.js"></script>
 	</body>
 </html>
