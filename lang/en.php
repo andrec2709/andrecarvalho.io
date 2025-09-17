@@ -76,5 +76,32 @@ $lang = [
 // ---------------------------------------------------------------------
 
 
+// ----------------------------About Page-------------------------------
+
+    "about_heading_2" => "Skill Assessment",
+    "about_p_1" => "Here is a list of things I know, but not limited to:",
+    "about_li_1" => "HTML, CSS, Javascript, PHP.<a href=\"#about_li_1_note\" class=\"p-link\">*</a>",
+    "about_li_1_note" => "* This website's source code is archived in <a href=\"https://github.com/andrec2709/andrecarvalho.io\" target=\"_blank\" class=\"p-link\">this Github repository</a>, feel free to check it.",
+    "about_li_2" => "Electron.",
+    "about_li_3" => "Python.",
+    "about_li_4" => "SQL.",
+    "about_li_5" => "Advanced Excel / Automation with VBA.",
+    "about_li_6" => "Powershell.",
+    "about_li_7" => "Bash Scripting.",
+    "about_li_8" => "Knowledge on both Windows and Linux based operating systems.",
+    "about_li_9" => "Basic C++.",
+    "about_li_10" => "Basic Java.",
+    "about_p_2" => "I have a solid foundation in programming, so given enough time, I can learn any language, framework, library, etc.<br><br><br>Moreover, I have some experience with UI/UX design as well. This website was designed inside Penpot before I began coding it. All icons were created by me using Inkscape.",
+    "about_li_11" => "Penpot.",
+    "about_li_12" => "Inkscape.",
+    "about_li_13" => "Figma.",
+    "about_li_14" => "Gimp.",
+    "about_li_15" => "Photoshop.",
+    "about_li_16" => "Blender.",
+    "about_li_17" => "Others.",
+    "note" => "Note",
+    "about_p_3" => "Please check my github repositories for further reference.",
+
+// ---------------------------------------------------------------------
 ];
 ?>

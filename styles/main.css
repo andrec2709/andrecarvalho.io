@@ -269,16 +269,23 @@ p:not(.special-page, .p-footer){
     
 }
 
+
 p.dark:not(.special-page,.p-footer){
     border-left: 1px solid var(--main-fg-color-dark);
 }
 
-p.dark a.p-link, li.dark a.p-link {
+p.footnote.dark, p.footnote.light{
+    border: none;
+    margin-left: 0;
+    font-style: italic;
+}
+
+p.dark a.p-link, ul.dark a.p-link {
     color: #397fff;
     text-decoration: none;
 }
 
-p.light a.p-link, li.light a.p-link{
+p.light a.p-link, ul.light a.p-link{
     color: #2906a8;
     text-decoration: none;
 }
@@ -302,12 +309,24 @@ a.p-link img{
     width: 20px;
 }
 
-li.no-bp{
+ul.no-bp{
     font-family: "Manrope";
     font-size: 1.1rem;
     margin-left: 1rem;
     line-height: 2rem;
     list-style-type: none;
+}
+
+ul.custom-list{
+    font-family: "Manrope";
+    font-size: 1.1rem;
+    margin-left: 1rem;
+    line-height: 2rem;
+    list-style-type: none;
+}
+
+ul.custom-list li::marker{
+    content: "\27E3\ ";
 }
 
 footer{

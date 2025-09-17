@@ -34,9 +34,9 @@ include "../api/StartSession.php";
 
 			<h2 class="theme-dependant <?=$_SESSION['theme']?>"><?=$lang['heading_2']?></h2>
 
-			<ul>
+			<ul class="theme-dependant no-bp <?=$_SESSION['theme']?>">
 
-				<li class="theme-dependant no-bp <?=$_SESSION['theme']?>">
+				<li>
 
 					<a class="p-link" href="https://github.com/andrec2709" target="_blank">
 						<img id="github-icon" class="github-img-icon" src="" alt="Github">
@@ -45,7 +45,7 @@ include "../api/StartSession.php";
 
 				</li>
 
-				<li class="theme-dependant no-bp <?=$_SESSION['theme']?>">
+				<li>
 
 					<a class="p-link" href="https://www.linkedin.com/in/andrecarvalhofilho/" target="_blank">
 						<img id="linkedin-icon" class="linkedin-img-icon" src="" alt="Linkedin">
