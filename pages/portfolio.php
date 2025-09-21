@@ -25,38 +25,38 @@ include "../api/StartSession.php";
 <body>
 	<?php include '../includes/header.php'; ?>
 
-	<div class="features-container">
-		<div class="repo-card-main">
-			<p class="repo-card-title repo-card-text">Most commits</p>
-			<div class="repo-card-content-container">
-				<div class="repo-card-img-container">
-					<img src="../assets/img/59283668.jpeg" alt="" class="repo-card-img">
-				</div>
-				<div class="repo-card-descriptive-container">
-					<p class="repo-card-name repo-card-text">my-git-repository</p>
-					<p class="repo-card-description repo-card-text">something about this repository</p>
-					<p class="repo-card-last-up repo-card-text">last updated: 2/2/9999 00:00:00</p>
+
+	<div class="main-content">
+		<div class="features-container">
+			<div class="repo-card-main">
+				<p class="repo-card-title repo-card-text">Most commits</p>
+				<div class="repo-card-content-container">
+					<div class="repo-card-img-container">
+						<img src="../assets/img/59283668.jpeg" alt="" class="repo-card-img">
+					</div>
+					<div class="repo-card-descriptive-container">
+						<p class="repo-card-name repo-card-text">my-git-repository</p>
+						<p class="repo-card-description repo-card-text">something about this repository about this...</p>
+						<p class="repo-card-last-up repo-card-text">last updated: 2/2/9999 00:00:00</p>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="repo-card-main">
-			<p class="repo-card-title repo-card-text">Most commits</p>
-			<div class="repo-card-content-container">
-				<div class="repo-card-img-container">
-					<img src="../assets/img/59283668.jpeg" alt="" class="repo-card-img">
-				</div>
-				<div class="repo-card-descriptive-container">
-					<p class="repo-card-name repo-card-text">my-git-repository</p>
-					<p class="repo-card-description repo-card-text">something about this repository</p>
-					<p class="repo-card-last-up repo-card-text">last updated: 2/2/9999 00:00:00</p>
+			<div class="repo-card-main">
+				<p class="repo-card-title repo-card-text">Most commits</p>
+				<div class="repo-card-content-container">
+					<div class="repo-card-img-container">
+						<img src="../assets/img/59283668.jpeg" alt="" class="repo-card-img">
+					</div>
+					<div class="repo-card-descriptive-container">
+						<p class="repo-card-name repo-card-text">my-git-repository</p>
+						<p class="repo-card-description repo-card-text">something about this repository</p>
+						<p class="repo-card-last-up repo-card-text">last updated: 2/2/9999 00:00:00</p>
+					</div>
 				</div>
 			</div>
-		</div>
-
-		<div class="main-content">
-
 		</div>
 	</div>
+
 
 	<?php include '../includes/footer.php'; ?>
 

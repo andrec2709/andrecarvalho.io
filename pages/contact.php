@@ -28,11 +28,11 @@ include "../api/StartSession.php";
 
 		<div class="main-content">
 
-			<h1 class="theme-dependant <?=$_SESSION['theme']?>"><?=$lang['heading_1']?></h1>
+			<h1 class="theme-dependant <?=$_SESSION['theme']?> custom-heading"><?=$lang['heading_1']?></h1>
 
-			<p class="theme-dependant <?=$_SESSION['theme']?>"><?=$lang['paragraph_1']?></p>
+			<p class="theme-dependant <?=$_SESSION['theme']?> custom-para"><?=$lang['paragraph_1']?></p>
 
-			<h2 class="theme-dependant <?=$_SESSION['theme']?>"><?=$lang['heading_2']?></h2>
+			<h2 class="theme-dependant <?=$_SESSION['theme']?> custom-heading"><?=$lang['heading_2']?></h2>
 
 			<ul class="theme-dependant no-bp <?=$_SESSION['theme']?>">
 
@@ -56,7 +56,7 @@ include "../api/StartSession.php";
 
 			</ul>
 
-			<h2 class="theme-dependant <?=$_SESSION['theme']?>"><?=$lang['heading_3']?></h2>
+			<h2 class="theme-dependant <?=$_SESSION['theme']?> custom-heading"><?=$lang['heading_3']?></h2>
 
 			<form id="contact-me-form" method="post">
 

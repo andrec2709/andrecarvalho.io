@@ -23,11 +23,11 @@ include "../api/StartSession.php";
 
 		<div class="main-content">
 
-			<h1 class="<?=$_SESSION['theme']?> theme-dependant "><?=$lang['about']?></h1>
+			<h1 class="<?=$_SESSION['theme']?> theme-dependant custom-heading"><?=$lang['about']?></h1>
 
-			<h2 class="<?=$_SESSION['theme']?> theme-dependant"><?=$lang['about_heading_2']?></h2>
+			<h2 class="<?=$_SESSION['theme']?> theme-dependant custom-heading"><?=$lang['about_heading_2']?></h2>
 
-			<p class="<?=$_SESSION['theme']?> theme-dependant"><?=$lang['about_p_1']?></p>
+			<p class="<?=$_SESSION['theme']?> theme-dependant custom-para"><?=$lang['about_p_1']?></p>
 
 			<ul class="<?=$_SESSION['theme']?> theme-dependant custom-list">
 				<li><?=$lang['about_li_1']?></li>
@@ -42,7 +42,7 @@ include "../api/StartSession.php";
 				<li><?=$lang['about_li_10']?></li>
 			</ul>
 
-				<p class="<?=$_SESSION['theme']?> theme-dependant"><?=$lang['about_p_2']?></p>
+				<p class="<?=$_SESSION['theme']?> theme-dependant custom-para"><?=$lang['about_p_2']?></p>
 
 			<ul class="<?=$_SESSION['theme']?> theme-dependant custom-list">
 				<li><?=$lang['about_li_11']?></li>
@@ -54,9 +54,9 @@ include "../api/StartSession.php";
 				<li><?=$lang['about_li_17']?></li>
 			</ul>
 
-			<h2 class="theme-dependant <?=$_SESSION['theme']?>"><?=$lang['note']?></h2>
+			<h2 class="theme-dependant <?=$_SESSION['theme']?> custom-heading"><?=$lang['note']?></h2>
 			
-			<p class="theme-dependant <?=$_SESSION['theme']?>"><?=$lang['about_p_3']?></p>
+			<p class="theme-dependant <?=$_SESSION['theme']?> custom-para"><?=$lang['about_p_3']?></p>
 			
 			<br><br>
 			

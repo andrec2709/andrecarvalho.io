@@ -2,11 +2,13 @@
     background-color: #162c31;
     border: 1px solid #25505a;
     width: fit-content;
-    height: fit-content;
+    min-width: 30rem;
+    height: 10rem;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: start;
     border-radius: 2px;
+    overflow: hidden;
 }
 
 .repo-card-content-container{
@@ -16,7 +18,8 @@
 }
 
 .repo-card-img-container{
-    width: clamp(7rem, 4vw, 12rem);
+    width: 20%;
+    max-width: 7rem;
     aspect-ratio: 1 / 1;
     display: flex;
     flex-direction: row;
@@ -33,7 +36,6 @@
 }
 
 p.repo-card-text{
-    border: none;
     padding: 0;
     margin: 0;
 }
@@ -58,9 +60,10 @@ p.repo-card-title{
     flex-direction: column;
     justify-content: space-around; 
     /* background-color: green; */
-    width: 100%;
+    width: 80%;
     margin-left: 1rem;
     height: max-content;
+    overflow: hidden;
 }
 
 p.repo-card-name{
@@ -80,6 +83,7 @@ p.repo-card-description{
     font-size: .9rem;
     margin-bottom: 1rem;
     /* background-color: darkred; */
+    overflow: hidden;
 }
 
 p.repo-card-last-up{
@@ -92,7 +96,7 @@ p.repo-card-last-up{
 
 .features-container{
     width: 100%;
-    background-color: darkred;
+    /* background-color: darkred; */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -101,4 +105,40 @@ p.repo-card-last-up{
 
 .repo-card-main:first-of-type{
     margin-right: 2rem;
+}
+
+@media screen and (width <= 1000px){
+    .features-container{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .repo-card-main:first-of-type{
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (width <= 490px) {
+    .repo-card-main{
+        min-width: unset;
+        width: 18rem;
+    }
+
+    p.repo-card-title{
+        font-size: 1.1rem;        
+    }
+
+    p.repo-card-name{
+        font-size: .9rem;
+    }
+
+    p.repo-card-description{
+        font-size: .8rem;
+    }
+
+    p.repo-card-last-up{
+        font-size: .8rem;
+    }
 }

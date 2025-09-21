@@ -245,19 +245,18 @@ body {
     margin-bottom: 10rem;
 }
 
-h1, h2{
+.custom-heading{
     margin-left: clamp(min(1rem, 1vw), 1rem, 1rem);
     font-size: clamp(1.8rem, 2.2vw, 4rem);
     font-family: "Outfit";
     font-weight: 600;
 }
 
-h1.dark:not(.special-page), h2.dark{
+.custom-heading.dark{
     color: var(--main-fg-heading-color-dark);
-
 }
 
-p:not(.special-page, .p-footer){
+.custom-para{
     margin-left: 1rem;
     padding-left: 1rem;
     font-size: 1.1rem;
@@ -270,11 +269,11 @@ p:not(.special-page, .p-footer){
 }
 
 
-p.dark:not(.special-page,.p-footer){
+.custom-para.dark{
     border-left: 1px solid var(--main-fg-color-dark);
 }
 
-p.footnote.dark, p.footnote.light{
+.custom-para.footnote.dark, p.footnote.light{
     border: none;
     margin-left: 0;
     font-style: italic;
