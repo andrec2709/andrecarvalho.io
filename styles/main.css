@@ -46,8 +46,10 @@
 
     --main-bg-color-dark:#091214;
     --main-fg-color-dark: #b7b7b7;
+    --main-para-border-color-dark: #b7b7b7;
     --main-fg-heading-color-dark: #15b383;
     --main-bg-color-dark-form-input: #162c31;
+    --main-link-color-dark: #397fff;
 /*  */
 
 
@@ -55,7 +57,10 @@
 
     --main-bg-color-light: #b0bec1;
     --main-fg-color-light: #212222;
+    --main-para-border-color-light: #212222;
+    --main-fg-heading-color-light: #212222;
     --main-bg-color-light-form-input: #e2eff1;
+    --main-link-color-light: #2906a8;
 /*  */
 
 
@@ -250,10 +255,11 @@ body {
     font-size: clamp(1.8rem, 2.2vw, 4rem);
     font-family: "Outfit";
     font-weight: 600;
+    color: var(--main-fg-heading-color-dark);
 }
 
-.custom-heading.dark{
-    color: var(--main-fg-heading-color-dark);
+.custom-heading.light{
+    color: var(--main-fg-heading-color-light);
 }
 
 .custom-para{
@@ -262,30 +268,29 @@ body {
     font-size: 1.1rem;
     font-family: "Manrope";
     line-height: 1rem;
-    border-left: 1px solid var(--main-fg-color-light);
+    border-left: 1px solid var(--main-para-border-color-dark);
     word-break: normal;
     text-align: left;
     
 }
 
-
-.custom-para.dark{
-    border-left: 1px solid var(--main-fg-color-dark);
+.custom-para.light{
+    border-left: 1px solid var(--main-para-border-color-light);
 }
 
-.custom-para.footnote.dark, p.footnote.light{
+.footnote{
     border: none;
     margin-left: 0;
     font-style: italic;
 }
 
 p.dark a.p-link, ul.dark a.p-link {
-    color: #397fff;
+    color: var(--main-link-color-dark);
     text-decoration: none;
 }
 
 p.light a.p-link, ul.light a.p-link{
-    color: #2906a8;
+    color: var(--main-link-color-light);
     text-decoration: none;
 }
 

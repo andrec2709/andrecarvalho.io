@@ -1,144 +1,84 @@
-.repo-card-main{
-    background-color: #162c31;
-    border: 1px solid #25505a;
-    width: fit-content;
-    min-width: 30rem;
-    height: 10rem;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    border-radius: 2px;
-    overflow: hidden;
-}
-
-.repo-card-content-container{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-}
-
-.repo-card-img-container{
-    width: 20%;
-    max-width: 7rem;
-    aspect-ratio: 1 / 1;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    padding: .2rem;
-}
-
-.repo-card-img{
-    width: 100%;
-    border-radius: 100%;
-    border: 2px solid #25505a;
-}
-
-p.repo-card-text{
-    padding: 0;
-    margin: 0;
-}
-
-p.repo-card-title{
-    border-bottom: 2px solid #25505a;
-    width: 100%;
-    height: 3rem;
-    display: flex;
-    align-items: end;
-    padding-bottom: .8rem;
-    padding-left: 1rem;
-    color: #15b383;
-    font-size: 1.3rem;
-    font-weight: 600;
-}
-
-
-
-.repo-card-descriptive-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around; 
-    /* background-color: green; */
-    width: 80%;
-    margin-left: 1rem;
-    height: max-content;
-    overflow: hidden;
-}
-
-p.repo-card-name{
-    font-weight: 600;
-    height: 20%;
-    font-size: 1.1rem;
-    /* background-color: olive; */
-    display: flex;
-    align-items: center;
-    margin-top: .4rem;
-    margin-bottom: 1rem;
-}
-
-p.repo-card-description{
-    font-weight: 300;
-    height: 70%;
-    font-size: .9rem;
-    margin-bottom: 1rem;
-    /* background-color: darkred; */
-    overflow: hidden;
-}
-
-p.repo-card-last-up{
-    font-size: .9rem;
-    height: 10%;
-    font-weight: 300;
-    /* background-color: blueviolet; */
-    margin-bottom: 1rem;
-}
-
-.features-container{
-    width: 100%;
-    /* background-color: darkred; */
+.feature-container{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 
-.repo-card-main:first-of-type{
+.portfolio-gh-logo{
+    width: 10rem;
+    align-self: center;
+    margin-bottom: 2rem;
+}
+
+.f-card-main:first-of-type{
     margin-right: 2rem;
 }
 
-@media screen and (width <= 1000px){
-    .features-container{
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .repo-card-main:first-of-type{
-        margin-right: 0;
-        margin-bottom: 2rem;
-    }
+.f-card-main{
+    background-color: #162c31;
+    border: 1px solid #25505a;
+    font-family: "Manrope";
+    width: clamp(15rem, 95vw, 20rem);
 }
 
-@media screen and (width <= 490px) {
-    .repo-card-main{
-        min-width: unset;
-        width: 18rem;
+.f-card-main.light{
+    background-color: #9fabae;
+}
+
+.f-card-main p {
+    margin: 0;
+}
+
+.f-card-title{
+    border-bottom: 1px solid #25505a;
+    padding-left: .3rem;
+    padding-top: .3rem;
+    color: #15b383;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.f-card-title.light{
+    color: #0e0e0e;
+}
+
+.f-card-content{
+    padding-left: .5rem;
+    padding-right: .5rem;
+    line-height: 1.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+    font-weight: 300;
+}
+
+.f-card-name{
+    font-size: 1.2rem;
+    padding-top: .5rem;
+}
+
+.f-card-desc{
+    padding-bottom: 1rem;
+    font-size: .9rem;
+}
+
+.f-card-date{
+
+    font-size: .8rem;
+    text-align: right;
+}
+
+@media screen and (width <= 680px) {
+    .feature-container{
+        flex-direction: column;
+        
     }
 
-    p.repo-card-title{
-        font-size: 1.1rem;        
+    .f-card-main:first-of-type{
+        margin-bottom: 2rem;
+        margin-right: 0;
     }
 
-    p.repo-card-name{
-        font-size: .9rem;
-    }
 
-    p.repo-card-description{
-        font-size: .8rem;
-    }
-
-    p.repo-card-last-up{
-        font-size: .8rem;
-    }
 }

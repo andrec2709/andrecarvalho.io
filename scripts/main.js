@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
 togglebtn.addEventListener('click', async () => {
-
+    console.log(document.documentElement.getAttribute("data-theme"));
     // Toggle Light/Dark mode
 
     const session = await getSessionInfo();
@@ -205,8 +205,16 @@ togglebtn.addEventListener('click', async () => {
         
         for (index = 0; index < elements.length; index++){
             
-            elements.item(index).classList.remove("light");
-            elements.item(index).classList.add("dark");
+            let lm = elements.item(index);
+
+            if (lm.tagName === "IMG"){
+                const dk_opt = lm.getAttribute("data-dark-img");
+                
+                lm.setAttribute("src", dk_opt);
+            }
+
+            lm.classList.remove("light");
+            lm.classList.add("dark");
 
         };
     } else{
@@ -217,6 +225,14 @@ togglebtn.addEventListener('click', async () => {
 
         for (index = 0; index < elements.length; index++){
         
+            let lm = elements.item(index);
+
+            if (lm.tagName === "IMG"){
+                const li_opt = lm.getAttribute("data-light-img");
+                
+                lm.setAttribute("src", li_opt);
+            }
+
             elements.item(index).classList.remove("dark");
             elements.item(index).classList.add("light");
         
