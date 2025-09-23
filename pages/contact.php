@@ -38,7 +38,7 @@ include "../api/StartSession.php";
 
 				<li>
 
-					<a class="p-link" href="https://github.com/andrec2709" target="_blank">
+					<a class="p-link theme-dependant <?=$_SESSION['theme']?>" href="https://github.com/andrec2709" target="_blank">
 						<img id="github-icon" class="github-img-icon" src="" alt="Github">
 						&nbsp;Github
 					</a>
@@ -47,7 +47,7 @@ include "../api/StartSession.php";
 
 				<li>
 
-					<a class="p-link" href="https://www.linkedin.com/in/andrecarvalhofilho/" target="_blank">
+					<a class="p-link theme-dependant <?=$_SESSION['theme']?>" href="https://www.linkedin.com/in/andrecarvalhofilho/" target="_blank">
 						<img id="linkedin-icon" class="linkedin-img-icon" src="" alt="Linkedin">
 						&nbsp;Linkedin
 					</a>

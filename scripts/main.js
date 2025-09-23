@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
 togglebtn.addEventListener('click', async () => {
-    console.log(document.documentElement.getAttribute("data-theme"));
+    
     // Toggle Light/Dark mode
 
     const session = await getSessionInfo();
@@ -196,6 +196,12 @@ togglebtn.addEventListener('click', async () => {
     let changeEvent = new Event("change")
     
     let prefmode = session_json.theme;
+
+    // const change_to = prefmode == "light" ? "dark" : "light";
+
+    // const html = document.documentElement;
+
+
 
     if ( prefmode == "light"){
         

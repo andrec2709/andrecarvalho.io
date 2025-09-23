@@ -269,6 +269,7 @@ body {
     font-family: "Manrope";
     line-height: 1rem;
     border-left: 1px solid var(--main-para-border-color-dark);
+    color: var(--main-fg-color-dark);
     word-break: normal;
     text-align: left;
     
@@ -276,6 +277,7 @@ body {
 
 .custom-para.light{
     border-left: 1px solid var(--main-para-border-color-light);
+    color: var(--main-fg-color-light);
 }
 
 .footnote{
@@ -284,36 +286,33 @@ body {
     font-style: italic;
 }
 
-p.dark a.p-link, ul.dark a.p-link {
+.p-link{
     color: var(--main-link-color-dark);
     text-decoration: none;
-}
-
-p.light a.p-link, ul.light a.p-link{
-    color: var(--main-link-color-light);
-    text-decoration: none;
-}
-
-a.p-link{
     transition-property: opacity;
     transition-duration: .1s;
     transition-timing-function: cubic-bezier(1, .4, .5, .8);
 }
 
-a.p-link:hover{
+.p-link.light{
+    color: var(--main-link-color-light);
+    text-decoration: none;
+}
+
+.p-link:hover{
     opacity: 70%;
 }
 
-a.p-link:active{
+.p-link:active{
     opacity: 50%;
 }
 
-a.p-link img{
+.p-link img{
     vertical-align: middle;
     width: 20px;
 }
 
-ul.no-bp{
+.no-bp{
     font-family: "Manrope";
     font-size: 1.1rem;
     margin-left: 1rem;
@@ -321,7 +320,7 @@ ul.no-bp{
     list-style-type: none;
 }
 
-ul.custom-list{
+.custom-list{
     font-family: "Manrope";
     font-size: 1.1rem;
     margin-left: 1rem;
@@ -329,7 +328,7 @@ ul.custom-list{
     list-style-type: none;
 }
 
-ul.custom-list li::marker{
+.custom-list li::marker{
     content: "\27E3\ ";
 }
 

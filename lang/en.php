@@ -65,7 +65,7 @@ $lang = [
 // ------------------------ Contact Page -------------------------------
 
     "heading_1" => "Let's work together",
-    "paragraph_1" => nl2br("The best way to reach me is by e-mail, at <a class=\"p-link\" href=\"contato@andrecarvalho.io\" target=\"_blank\">contato@andrecarvalho.io</a>.\n\nI’m open to job opportunities, freelance projects, and collaboration with other developers."),
+    "paragraph_1" => nl2br("The best way to reach me is by e-mail, at <a class=\"p-link {$_SESSION['theme']} theme-dependant\" href=\"contato@andrecarvalho.io\" target=\"_blank\">contato@andrecarvalho.io</a>.\n\nI’m open to job opportunities, freelance projects, and collaboration with other developers."),
     "heading_2" => "Useful links",
     "heading_3" => "Contact me",
     "name" => "Name",
@@ -80,8 +80,8 @@ $lang = [
 
     "about_heading_2" => "Skill Assessment",
     "about_p_1" => "Here is a list of things I know, but not limited to:",
-    "about_li_1" => "HTML, CSS, Javascript, PHP.<a href=\"#about_li_1_note\" class=\"p-link\">*</a>",
-    "about_li_1_note" => "* This website's source code is archived in <a href=\"https://github.com/andrec2709/andrecarvalho.io\" target=\"_blank\" class=\"p-link\">this Github repository</a>, feel free to check it.",
+    "about_li_1" => "HTML, CSS, Javascript, PHP.<a href=\"#about_li_1_note\" class=\"p-link {$_SESSION['theme']} theme-dependant\">*</a>",
+    "about_li_1_note" => "* This website's source code is archived in <a href=\"https://github.com/andrec2709/andrecarvalho.io\" target=\"_blank\" class=\"p-link {$_SESSION['theme']} theme-dependant\">this Github repository</a>, feel free to check it.",
     "about_li_2" => "Electron.",
     "about_li_3" => "Python.",
     "about_li_4" => "SQL.",
