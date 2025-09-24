@@ -9,6 +9,7 @@
     width: 10rem;
     align-self: center;
     margin-bottom: 2rem;
+    user-select: none;
 }
 
 .f-card-main:first-of-type{

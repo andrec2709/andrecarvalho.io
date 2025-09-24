@@ -12,9 +12,6 @@ $lang = [
     "close-sidebar-description" => "Fechar o menu lateral",
     "main-page-title" => "Andre Carvalho - Portfólio de Desenvolvedor",
     "switch-mode-alt" => "Alternar entre modo claro e escuro",
-];
-
-$lang = [
 
 // ------------------ Page Metadata  --------------------
 

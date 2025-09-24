@@ -21,12 +21,8 @@
     font-family: "Manrope";
     width: 100%;
     margin-bottom: 1rem;
-}
-
-textarea.form-input-text{
-    resize: vertical;
-    min-height: 5rem;
-    height: 20rem;
+    background-color: var(--main-bg-color-dark-form-input);
+    border: 1px solid #25505a;
 }
 
 .form-input-text.light, .form-input-email.light{
@@ -34,9 +30,10 @@ textarea.form-input-text{
     background-color: var(--main-bg-color-light-form-input);
 }
 
-.form-input-text.dark, .form-input-email.dark{
-    background-color: var(--main-bg-color-dark-form-input);
-    border: 1px solid #25505a;
+textarea.form-input-text{
+    resize: vertical;
+    min-height: 5rem;
+    height: 20rem;
 }
 
 .form-input-text:focus, .form-input-email:focus{
@@ -57,18 +54,14 @@ textarea.form-input-text{
     transition-property: filter;
     transition-duration: .1s;
     transition-timing-function: ease-out;
+    color: var(--main-fg-color-light);
+    background-color: var(--main-fg-heading-color-dark);
 }
 
 .form-submit.light{
     color: var(--main-fg-color-dark);
     background-color: var(--main-bg-color-dark);
 }
-
-.form-submit.dark{
-    color: var(--main-fg-color-light);
-    background-color: var(--main-fg-heading-color-dark);
-}
-
 
 .form-submit:hover{
     filter: brightness(80%);

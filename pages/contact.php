@@ -8,7 +8,7 @@ include "../api/StartSession.php";
 
 <!DOCTYPE html>
 
-<html lang="<?=$language?>">
+<html lang="<?=$language?>" data-theme="<?=$_SESSION['theme']?>">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="description" content="In case you decide to reach out to me, for job opportunities and offers, please check the contact information on this page">
@@ -21,25 +21,25 @@ include "../api/StartSession.php";
 		<link rel="stylesheet" href="../styles/contact.css">
 		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	</head>
-	<body>
+	<body class="theme-dependant">
  
 		<?php include '../includes/header.php';?>
 		<?php include '../includes/alert.php';?>
 
 		<div class="main-content">
 
-			<h1 class="theme-dependant <?=$_SESSION['theme']?> custom-heading"><?=$lang['heading_1']?></h1>
+			<h1 class="theme-dependant custom-heading"><?=$lang['heading_1']?></h1>
 
-			<p class="theme-dependant <?=$_SESSION['theme']?> custom-para"><?=$lang['paragraph_1']?></p>
+			<p class="theme-dependant custom-para"><?=$lang['paragraph_1']?></p>
 
-			<h2 class="theme-dependant <?=$_SESSION['theme']?> custom-heading"><?=$lang['heading_2']?></h2>
+			<h2 class="theme-dependant custom-heading"><?=$lang['heading_2']?></h2>
 
-			<ul class="theme-dependant no-bp <?=$_SESSION['theme']?>">
+			<ul class="theme-dependant no-bp">
 
 				<li>
 
-					<a class="p-link theme-dependant <?=$_SESSION['theme']?>" href="https://github.com/andrec2709" target="_blank">
-						<img id="github-icon" class="github-img-icon" src="" alt="Github">
+					<a class="p-link theme-dependant" href="https://github.com/andrec2709" target="_blank">
+						<img id="github-icon" class="github-img-icon theme-dependant" data-dark-img="../assets/icons/github-mark-white.png" data-light-img="../assets/icons/github-mark.png" alt="Github">
 						&nbsp;Github
 					</a>
 
@@ -47,8 +47,8 @@ include "../api/StartSession.php";
 
 				<li>
 
-					<a class="p-link theme-dependant <?=$_SESSION['theme']?>" href="https://www.linkedin.com/in/andrecarvalhofilho/" target="_blank">
-						<img id="linkedin-icon" class="linkedin-img-icon" src="" alt="Linkedin">
+					<a class="p-link theme-dependant" href="https://www.linkedin.com/in/andrecarvalhofilho/" target="_blank">
+						<img id="linkedin-icon" class="linkedin-img-icon theme-dependant" data-dark-img="../assets/icons/InBug-White.png" data-light-img="../assets/icons/InBug-Black.png" alt="Linkedin">
 						&nbsp;Linkedin
 					</a>
 
@@ -56,20 +56,20 @@ include "../api/StartSession.php";
 
 			</ul>
 
-			<h2 class="theme-dependant <?=$_SESSION['theme']?> custom-heading"><?=$lang['heading_3']?></h2>
+			<h2 class="theme-dependant custom-heading"><?=$lang['heading_3']?></h2>
 
 			<form id="contact-me-form" method="post">
 
-				<label for="username" class="theme-dependant form-label <?=$_SESSION['theme']?>"><?=$lang['name']?>:</label>
-				<input maxlength="120" type="text" id="username" name="username" class="form-input-text theme-dependant <?=$_SESSION['theme']?>" aria-label="<?=$lang['name']?>">
+				<label for="username" class="theme-dependant form-label"><?=$lang['name']?>:</label>
+				<input maxlength="120" type="text" id="username" name="username" class="form-input-text theme-dependant" aria-label="<?=$lang['name']?>">
 				
-				<label for="email" class="theme-dependant form-label <?=$_SESSION['theme']?>">E-mail:</label>
-				<input maxlength="240" type="email" id="email" name="email" class="form-input-email theme-dependant <?=$_SESSION['theme']?>" aria-label="e-mail">
+				<label for="email" class="theme-dependant form-label">E-mail:</label>
+				<input maxlength="240" type="email" id="email" name="email" class="form-input-email theme-dependant" aria-label="e-mail">
 
-				<label for="message" class="theme-dependant form-label <?=$_SESSION['theme']?>"><?=$lang['message']?>:</label>
-				<textarea name="message" id="message" class="theme-dependant form-input-text <?=$_SESSION['theme']?>"></textarea>
+				<label for="message" class="theme-dependant form-label"><?=$lang['message']?>:</label>
+				<textarea name="message" id="message" class="theme-dependant form-input-text"></textarea>
 			
-				<button id="submit-form-btn" data-sitekey="<?=$recaptchaSite?>" data-callback="onSubmit" class="g-recaptcha theme-dependant form-submit <?=$_SESSION['theme']?>"><?=$lang['send']?></button>
+				<button id="submit-form-btn" data-sitekey="<?=$recaptchaSite?>" data-callback="onSubmit" class="g-recaptcha theme-dependant form-submit"><?=$lang['send']?></button>
 			
 			</form>
 

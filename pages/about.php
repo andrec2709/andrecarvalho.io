@@ -7,7 +7,7 @@ include "../api/StartSession.php";
 
 <!DOCTYPE html>
 
-<html lang="<?=$language?>">
+<html lang="<?=$language?>" data-theme="<?=$_SESSION['theme']?>">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="description" content="This is my portfolio as a developer, please feel free to check my personal projects on github,  also check the 'about me' page for more information">
@@ -18,18 +18,18 @@ include "../api/StartSession.php";
 		<link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" href="../styles/main.css">
 	</head>
-	<body>
+	<body class="theme-dependant">
 		<?php include '../includes/header.php';?>
 
 		<div class="main-content">
 
-			<h1 class="<?=$_SESSION['theme']?> theme-dependant custom-heading"><?=$lang['about']?></h1>
+			<h1 class="theme-dependant custom-heading"><?=$lang['about']?></h1>
 
-			<h2 class="<?=$_SESSION['theme']?> theme-dependant custom-heading"><?=$lang['about_heading_2']?></h2>
+			<h2 class="theme-dependant custom-heading"><?=$lang['about_heading_2']?></h2>
 
-			<p class="<?=$_SESSION['theme']?> theme-dependant custom-para"><?=$lang['about_p_1']?></p>
+			<p class="theme-dependant custom-para"><?=$lang['about_p_1']?></p>
 
-			<ul class="<?=$_SESSION['theme']?> theme-dependant custom-list">
+			<ul class="theme-dependant custom-list">
 				<li><?=$lang['about_li_1']?></li>
 				<li><?=$lang['about_li_2']?></li>
 				<li><?=$lang['about_li_3']?></li>
@@ -42,9 +42,9 @@ include "../api/StartSession.php";
 				<li><?=$lang['about_li_10']?></li>
 			</ul>
 
-				<p class="<?=$_SESSION['theme']?> theme-dependant custom-para"><?=$lang['about_p_2']?></p>
+				<p class="theme-dependant custom-para"><?=$lang['about_p_2']?></p>
 
-			<ul class="<?=$_SESSION['theme']?> theme-dependant custom-list">
+			<ul class="theme-dependant custom-list">
 				<li><?=$lang['about_li_11']?></li>
 				<li><?=$lang['about_li_12']?></li>
 				<li><?=$lang['about_li_13']?></li>
@@ -54,13 +54,13 @@ include "../api/StartSession.php";
 				<li><?=$lang['about_li_17']?></li>
 			</ul>
 
-			<h2 class="theme-dependant <?=$_SESSION['theme']?> custom-heading"><?=$lang['note']?></h2>
+			<h2 class="theme-dependant custom-heading"><?=$lang['note']?></h2>
 			
-			<p class="theme-dependant <?=$_SESSION['theme']?> custom-para"><?=$lang['about_p_3']?></p>
+			<p class="theme-dependant custom-para"><?=$lang['about_p_3']?></p>
 			
 			<br><br>
 			
-			<p id="about_li_1_note" class="theme-dependant <?=$_SESSION['theme']?> footnote"><?=$lang['about_li_1_note']?></p>
+			<p id="about_li_1_note" class="theme-dependant footnote"><?=$lang['about_li_1_note']?></p>
 		</div>
 
 

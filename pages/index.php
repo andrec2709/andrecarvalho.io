@@ -8,7 +8,7 @@ include "../api/StartSession.php";
 
 <!DOCTYPE html>
 
-<html lang="<?=$language?>">
+<html lang="<?=$language?>" data-theme="<?=$_SESSION['theme']?>">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="description" content="This is my portfolio as a developer, please feel free to check my personal projects on github,  also check the 'about me' page for more information">
@@ -19,7 +19,7 @@ include "../api/StartSession.php";
 		<link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" href="../styles/main.css">
 	</head>
-	<body>
+	<body class="theme-dependant <?=$_SESSION['theme']?>">
 		<?php include '../includes/header.php';?>
 
 		<?php include '../includes/construction.php';?>

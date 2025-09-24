@@ -88,6 +88,39 @@ function isPage(pagename){
 
 }
 
+async function loadPrefTheme(pageload = false){
+
+    let html = document.documentElement;
+    let theme = html.getAttribute('data-theme');
+
+    const lms = document.getElementsByClassName('theme-dependant');
+
+    if (!pageload){
+        
+        theme = theme == 'light' ? 'dark' : 'light';
+        await setSessionValue('theme', theme);
+        html.setAttribute('data-theme', theme);
+
+    }
+    
+    for (i = 0; i < lms.length; i++){
+        let lm = lms.item(i);
+
+        if (lm.tagName === "IMG"){
+            let opt = lm.getAttribute(`data-${theme}-img`);
+            lm.setAttribute('src', opt);
+        }
+        else{
+            if (theme == 'light'){
+                lm.classList.add('light');
+            }
+            else{
+                lm.classList.remove('light');
+            }
+        }
+    }
+
+}
 
 // <-------------- Events ---------------->
 
@@ -96,87 +129,13 @@ prefersDark.addEventListener("change", async () => {
 
     // Changes content when user pref for light/dark mode (browser/system-wide) changes
 
-    const session = await getSessionInfo();
-    const session_json = await session.json();
-
-    if (isPage("contact.php")){
-        
-        github_icon.setAttribute(
-            'src',
-            session_json.theme == "dark"
-            ? "../assets/icons/github-mark-white.png"
-            : "../assets/icons/github-mark.png"
-        );        
-
-        linkedin_icon.setAttribute(
-            'src',
-            session_json.theme == "dark"
-            ? "../assets/icons/InBug-White.png"
-            : "../assets/icons/InBug-Black.png"
-        );        
-
-    }
-
-    if (under_construction_img != null){
-    
-        under_construction_img.setAttribute(
-            'src',
-            session_json.theme == "dark" 
-            ? "../assets/img/under-construction-dark.png" 
-            : "../assets/img/under-construction-light.png");
-
-        under_construction_img.setAttribute(
-            'src', 
-            session_json.theme == "dark" 
-            ? "../assets/img/under-construction-dark.png" 
-            : "../assets/img/under-construction-light.png"
-        );
-
-    }
+    loadPrefTheme();
 
 });
 
 document.addEventListener("DOMContentLoaded", async () => {
 
-    const session = await getSessionInfo();
-    const session_json = await session.json();
-
-    document.body.style.backgroundColor = session_json.theme == "dark" ? "var(--main-bg-color-dark)" : "var(--main-bg-color-light)";
-    
-    if (isPage("contact.php")){
-        
-        github_icon.setAttribute(
-            'src',
-            session_json.theme == "dark"
-            ? "../assets/icons/github-mark-white.png"
-            : "../assets/icons/github-mark.png"
-        );        
-
-        linkedin_icon.setAttribute(
-            'src',
-            session_json.theme == "dark"
-            ? "../assets/icons/InBug-White.png"
-            : "../assets/icons/InBug-Black.png"
-        );        
-
-    }
-
-    if (under_construction_img != null){
-    
-        under_construction_img.setAttribute(
-            'src',
-            session_json.theme == "dark" 
-            ? "../assets/img/under-construction-dark.png" 
-            : "../assets/img/under-construction-light.png");
-
-        under_construction_img.setAttribute(
-            'src', 
-            session_json.theme == "dark" 
-            ? "../assets/img/under-construction-dark.png" 
-            : "../assets/img/under-construction-light.png"
-        );
-
-    }
+    loadPrefTheme(true);
     
 })
 
@@ -186,64 +145,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 togglebtn.addEventListener('click', async () => {
     
-    // Toggle Light/Dark mode
-
-    const session = await getSessionInfo();
-    const session_json = await session.json();
-
-    let elements = document.getElementsByClassName("theme-dependant");
-
-    let changeEvent = new Event("change")
-    
-    let prefmode = session_json.theme;
-
-    // const change_to = prefmode == "light" ? "dark" : "light";
-
-    // const html = document.documentElement;
-
-
-
-    if ( prefmode == "light"){
-        
-        document.body.style.backgroundColor = "var(--main-bg-color-dark)";
-        await setSessionValue('theme', 'dark');
-        prefersDark.dispatchEvent(changeEvent);
-        
-        for (index = 0; index < elements.length; index++){
-            
-            let lm = elements.item(index);
-
-            if (lm.tagName === "IMG"){
-                const dk_opt = lm.getAttribute("data-dark-img");
-                
-                lm.setAttribute("src", dk_opt);
-            }
-
-            lm.classList.remove("light");
-            lm.classList.add("dark");
-
-        };
-    } else{
-
-        document.body.style.backgroundColor = "var(--main-bg-color-light)";
-        await setSessionValue('theme', 'light');
-        prefersDark.dispatchEvent(changeEvent);
-
-        for (index = 0; index < elements.length; index++){
-        
-            let lm = elements.item(index);
-
-            if (lm.tagName === "IMG"){
-                const li_opt = lm.getAttribute("data-light-img");
-                
-                lm.setAttribute("src", li_opt);
-            }
-
-            elements.item(index).classList.remove("dark");
-            elements.item(index).classList.add("light");
-        
-        }
-    }
+    loadPrefTheme();
 
 });
 

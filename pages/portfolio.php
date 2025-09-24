@@ -25,27 +25,27 @@ include "../api/StartSession.php";
 	<link rel="stylesheet" href="../styles/portfolio.css">
 </head>
 
-<body>
+<body class="theme-dependant">
 	<?php include '../includes/header.php'; ?>
 
 
 	<div class="main-content">
-		<img data-dark-img="../assets/img/github-mark-white.png" data-light-img="../assets/img/github-mark.png" class="portfolio-gh-logo theme-dependant" src="../assets/img/github-mark-white.png" alt="">
+		<img data-dark-img="../assets/img/github-mark-white.png" data-light-img="../assets/img/github-mark.png" class="portfolio-gh-logo theme-dependant" src="../assets/img/github-mark-white.png" alt="github logo" draggable="false">
 		<div class="feature-container">
-			<div class="f-card-main theme-dependant <?=$_SESSION['theme']?>">
-				<p class="f-card-title theme-dependant <?=$_SESSION['theme']?>">Most commits</p>
-				<p class="f-card-name f-card-content theme-dependant <?=$_SESSION['theme']?>">my-repository-name</p>
-				<p class="f-card-desc f-card-content theme-dependant <?=$_SESSION['theme']?>">This is a description for
+			<div class="f-card-main theme-dependant">
+				<p class="f-card-title theme-dependant">Most commits</p>
+				<p class="f-card-name f-card-content theme-dependant">my-repository-name</p>
+				<p class="f-card-desc f-card-content theme-dependant">This is a description for
 					my repository, testingaaa</p>
-				<p class="f-card-date f-card-content theme-dependant <?=$_SESSION['theme']?>">Updated: 1/1/9999 00:00:00
+				<p class="f-card-date f-card-content theme-dependant">Updated: 1/1/9999 00:00:00
 				</p>
 			</div>
-			<div class="f-card-main theme-dependant <?=$_SESSION['theme']?>">
-				<p class="f-card-title theme-dependant <?=$_SESSION['theme']?>">Last updated</p>
-				<p class="f-card-name f-card-content theme-dependant <?=$_SESSION['theme']?>">my-repository-name</p>
-				<p class="f-card-desc f-card-content theme-dependant <?=$_SESSION['theme']?>">This is a description for
+			<div class="f-card-main theme-dependant">
+				<p class="f-card-title theme-dependant">Last updated</p>
+				<p class="f-card-name f-card-content theme-dependant">my-repository-name</p>
+				<p class="f-card-desc f-card-content theme-dependant">This is a description for
 					my repository, testingapsdokaspdokadspaaa</p>
-				<p class="f-card-date f-card-content theme-dependant <?=$_SESSION['theme']?>">Updated: 1/1/9999 00:00:00
+				<p class="f-card-date f-card-content theme-dependant">Updated: 1/1/9999 00:00:00
 				</p>
 			</div>
 
