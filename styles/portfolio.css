@@ -1,8 +1,10 @@
+
 .feature-container{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    align-self: center;
 }
 
 .portfolio-gh-logo{
@@ -18,13 +20,13 @@
 
 .f-card-main{
     background-color: #162c31;
-    border: 1px solid #25505a;
+    border: 1px solid var(--portfolio-item-border-color-dark);
     font-family: "Manrope";
     width: clamp(15rem, 95vw, 20rem);
 }
 
 .f-card-main.light{
-    background-color: #9fabae;
+    background-color: var(--portfolio-item-bg-color-light);
 }
 
 .f-card-main p {
@@ -32,7 +34,7 @@
 }
 
 .f-card-title{
-    border-bottom: 1px solid #25505a;
+    border-bottom: 1px solid var(--portfolio-item-border-color-dark);
     padding-left: .3rem;
     padding-top: .3rem;
     color: #15b383;
@@ -65,10 +67,69 @@
 }
 
 .f-card-date{
-
     font-size: .8rem;
     text-align: right;
 }
+
+#repos-list-heading{
+    margin: 0;
+    margin-top: 2rem;
+    font-size: clamp(1.8rem, 2.2vw, 2.5rem);
+    font-family: "Outfit";
+}
+
+#repos-list{
+    background-color: var(--portfolio-item-bg-color-dark);
+    border: 1px solid var(--portfolio-item-border-color-dark);
+    font-family: "Manrope";
+    font-weight: 300;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+#repos-list.light{
+    background-color: var(--portfolio-item-bg-color-light);
+    border: 1px solid var(--portfolio-item-border-color-light);
+}
+
+.repos-list-item{
+    border-bottom: 1px solid var(--portfolio-item-border-color-dark);
+}
+
+.repos-list-item.light{
+    border-bottom: 1px solid var(--portfolio-item-border-color-light);
+}
+
+.repos-list-item p{
+    margin: 0;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 650px;
+}
+
+.repos-list-item-name{
+    font-size: 1.2rem;
+    padding-top: .5rem;
+}
+
+.repos-list-item-desc{
+    font-size: .9rem;
+    padding-bottom: 1rem;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.repos-list-item-date{
+    font-size: .8rem;
+    text-align: right;
+    padding-bottom: .5rem;
+}
+
+
 
 @media screen and (width <= 680px) {
     .feature-container{
@@ -79,6 +140,10 @@
     .f-card-main:first-of-type{
         margin-bottom: 2rem;
         margin-right: 0;
+    }
+
+    .repos-list-item p{
+        max-width: 300px;
     }
 
 

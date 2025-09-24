@@ -50,6 +50,8 @@
     --main-fg-heading-color-dark: #15b383;
     --main-bg-color-dark-form-input: #162c31;
     --main-link-color-dark: #397fff;
+    --portfolio-item-bg-color-dark: #162c31;
+    --portfolio-item-border-color-dark: #25505a;
 /*  */
 
 
@@ -61,6 +63,8 @@
     --main-fg-heading-color-light: #212222;
     --main-bg-color-light-form-input: #e2eff1;
     --main-link-color-light: #2906a8;
+    --portfolio-item-bg-color-light: #9fabae;
+    --portfolio-item-border-color-light: #25505a;
 /*  */
 
 
@@ -82,6 +86,9 @@ body {
     padding: 0;
     font-family: sans-serif;
     background-color: var(--main-bg-color-dark);
+    display: flex;
+    flex-direction: column;
+
 }
 
 body.light{
@@ -246,9 +253,12 @@ body.light{
 .main-content{
     display: flex;
     flex-direction: column;
-    margin-left: 25vw;
-    margin-right: 25vw;
+    width: fit-content;
+    align-self: center;
+    margin-right: min(3vw, 25rem);
+    margin-left: min(3vw, 25rem);
     margin-bottom: 10rem;
+
 }
 
 .custom-heading{

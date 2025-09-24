@@ -31,24 +31,24 @@ include "../api/StartSession.php";
 
 	<div class="main-content">
 		<img data-dark-img="../assets/img/github-mark-white.png" data-light-img="../assets/img/github-mark.png" class="portfolio-gh-logo theme-dependant" src="../assets/img/github-mark-white.png" alt="github logo" draggable="false">
-		<div class="feature-container">
-			<div class="f-card-main theme-dependant">
-				<p class="f-card-title theme-dependant">Most commits</p>
-				<p class="f-card-name f-card-content theme-dependant">my-repository-name</p>
-				<p class="f-card-desc f-card-content theme-dependant">This is a description for
-					my repository, testingaaa</p>
-				<p class="f-card-date f-card-content theme-dependant">Updated: 1/1/9999 00:00:00
-				</p>
-			</div>
-			<div class="f-card-main theme-dependant">
-				<p class="f-card-title theme-dependant">Last updated</p>
-				<p class="f-card-name f-card-content theme-dependant">my-repository-name</p>
-				<p class="f-card-desc f-card-content theme-dependant">This is a description for
-					my repository, testingapsdokaspdokadspaaa</p>
-				<p class="f-card-date f-card-content theme-dependant">Updated: 1/1/9999 00:00:00
-				</p>
+		<div id="feature-container" class="feature-container">
+			
+
+		</div>
+		<h3 id="repos-list-heading" class=" theme-dependant custom-heading">My public repositories</h3>
+		<div id="repos-list" class="theme-dependant">
+			
+			<div class="repos-list-item theme-dependant">
+				<p class="repos-list-item-name theme-dependant">my-repository-name</p>
+				<p class="repos-list-item-desc theme-dependant">This is akkkkkkkkkkkasodijqowiejqowiejqoweijqoeijqweoiqjeoqiejoqijeo descripsaddddsssss...</p>
+				<p class="repos-list-item-date theme-dependant">Updated: 1/1/9999 00:00:00</p>
 			</div>
 
+			<div class="repos-list-item theme-dependant">
+				<p class="repos-list-item-name theme-dependant">my-repositorkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkky-name</p>
+				<p class="repos-list-item-desc theme-dependant">This is akkkkkkkkkkkasodijqowiejqkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkowiejqoweijqoeijqweoiqjeoqiejoqijeo descripsaddddsssss...</p>
+				<p class="repos-list-item-date theme-dependant">Updataaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaed: 1/1/9999 00:00:00</p>
+			</div>
 		</div>
 
 	</div>
