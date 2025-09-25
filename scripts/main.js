@@ -135,7 +135,9 @@ prefersDark.addEventListener("change", async () => {
 
 document.addEventListener("DOMContentLoaded", async () => {
 
+
     loadPrefTheme(true);
+
     
 })
 
