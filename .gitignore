@@ -1,0 +1,7 @@
+.github/
+config.php
+andrecarvalho.io.code-workspace
+fiveserver.config.js
+error_log
+*.log
+.env
