@@ -5,3 +5,4 @@ fiveserver.config.js
 error_log
 *.log
 .env
+.htaccess
