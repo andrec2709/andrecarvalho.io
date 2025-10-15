@@ -1,0 +1,179 @@
+
+.feature-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.portfolio-gh-logo{
+    width: 10rem;
+    align-self: center;
+    margin-bottom: 2rem;
+    user-select: none;
+}
+
+.f-card-main:first-of-type{
+    margin-right: 2rem;
+}
+
+.f-card-main{
+    background-color: var(--portfolio-item-bg-color-dark);
+    border: 1px solid var(--portfolio-item-border-color-dark);
+    font-family: "Manrope";
+    width: clamp(15rem, 95vw, 20rem);
+    cursor: pointer;
+
+    transition-property: background-color;
+    transition-duration: .2s;
+    transition-timing-function: ease-in-out;
+}
+
+.f-card-main.light{
+    background-color: var(--portfolio-item-bg-color-light);
+}
+
+.f-card-main.light:hover{
+    background-color: color-mix(in srgb, var(--portfolio-item-bg-color-light) 85%, white);
+}
+
+.f-card-main:hover{
+    background-color: color-mix(in srgb, var(--portfolio-item-bg-color-dark) 85%, black);
+}
+
+.f-card-main p {
+    margin: 0;
+}
+
+.f-card-title{
+    border-bottom: 1px solid var(--portfolio-item-border-color-dark);
+    padding-left: .3rem;
+    padding-top: .3rem;
+    color: #15b383;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.f-card-title.light{
+    color: #0e0e0e;
+}
+
+.f-card-content{
+    padding-left: .5rem;
+    padding-right: .5rem;
+    line-height: 1.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+    font-weight: 300;
+}
+
+.f-card-name{
+    font-size: 1.2rem;
+    padding-top: .5rem;
+}
+
+.f-card-desc{
+    padding-bottom: 1rem;
+    font-size: .9rem;
+}
+
+.f-card-date{
+    font-size: .8rem;
+    text-align: right;
+}
+
+#repos-list-heading{
+    margin: 0;
+    margin-top: 2rem;
+    font-size: clamp(1.8rem, 2.2vw, 2.5rem);
+    font-family: "Outfit";
+}
+
+#repos-list{
+    background-color: var(--portfolio-item-bg-color-dark);
+    border: 1px solid var(--portfolio-item-border-color-dark);
+    font-family: "Manrope";
+    font-weight: 300;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+#repos-list.light{
+    background-color: var(--portfolio-item-bg-color-light);
+    border: 1px solid var(--portfolio-item-border-color-light);
+}
+
+.repos-list-item{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--portfolio-item-border-color-dark);
+    cursor: pointer;
+
+    transition-property: background-color;
+    transition-duration: .2s;
+    transition-timing-function: ease-in-out;
+}
+
+.repos-list-item.light{
+    border-bottom: 1px solid var(--portfolio-item-border-color-light);
+}
+
+.repos-list-item.light:hover{
+    background-color: color-mix(in srgb, var(--portfolio-item-bg-color-light) 85%, white);
+}
+
+.repos-list-item:hover{
+    background-color: color-mix(in srgb, var(--portfolio-item-bg-color-dark) 85%, black);
+}
+
+.repos-list-item p{
+    margin: 0;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 650px;
+}
+
+.repos-list-item-name{
+    font-size: 1.2rem;
+    padding-top: .5rem;
+}
+
+.repos-list-item-desc{
+    font-size: .9rem;
+    padding-bottom: 1rem;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.repos-list-item-date{
+    font-size: .8rem;
+    text-align: right;
+    padding-bottom: .5rem;
+}
+
+
+
+@media screen and (width <= 680px) {
+    .feature-container{
+        flex-direction: column;
+        
+    }
+
+    .f-card-main:first-of-type{
+        margin-bottom: 2rem;
+        margin-right: 0;
+    }
+
+    .repos-list-item p{
+        max-width: min(500px, 90vw);
+        min-width: 280px;
+    }
+
+
+}

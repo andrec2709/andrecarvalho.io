@@ -1,0 +1,114 @@
+
+#contact-me-form{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label{
+    font-family: "Manrope";
+    font-size: 1.05rem;
+    line-height: 2rem;
+}
+
+.form-input-text, .form-input-email{
+    height: 2.3rem;
+    border-radius: 2px;
+    border: none;
+    padding: .3rem;
+    font-size: 1.1rem;
+    font-family: "Manrope";
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: var(--main-bg-color-dark-form-input);
+    border: 1px solid #25505a;
+    color: var(--main-fg-color-dark);
+}
+
+.form-input-text.light, .form-input-email.light{
+    border: 1px solid #838c8d;
+    background-color: var(--main-bg-color-light-form-input);
+    color: var(--main-fg-color-light);
+}
+
+textarea.form-input-text{
+    resize: vertical;
+    min-height: 5rem;
+    height: 20rem;
+}
+
+.form-input-text:focus, .form-input-email:focus{
+    outline: none;
+}
+
+.form-submit{
+    border: none;
+    font-family: "Manrope";
+    font-size: 1.2rem;
+    padding: .4rem .8rem .4rem .8rem;
+    width: 10rem;
+    border-radius: 2px;
+    position: relative;
+    align-self: flex-end;
+    margin-top: 1rem;
+
+    transition-property: filter;
+    transition-duration: .1s;
+    transition-timing-function: ease-out;
+    color: var(--main-fg-color-light);
+    background-color: var(--main-fg-heading-color-dark);
+}
+
+.form-submit.light{
+    color: var(--main-fg-color-dark);
+    background-color: var(--main-bg-color-dark);
+}
+
+.form-submit:hover{
+    filter: brightness(80%);
+}
+
+.form-submit:active{
+    filter: brightness(60%);
+}
+
+.grecaptcha-badge{
+    visibility: hidden;
+}
+
+#alert-container{
+    padding: 8px;
+    width: 200px;
+    height: 50px;
+    position: fixed;
+    left: calc(50vw - 100px);
+    bottom: -60px;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    z-index: 100;
+    opacity: 0;
+    transition-property: opacity, bottom;
+    transition-duration: .4s;
+    transition-timing-function: cubic-bezier(.5, 2, .9, 1);
+    visibility: hidden;
+
+}
+
+#alert-container.failed{
+    background-color: rgb(255, 0, 0);
+}
+
+#alert-container.success{
+    background-color: #0bbb86;
+}
+
+#alert-message{
+    font-family: "Manrope";
+    color: #0e0e0e;
+    font-size: 1.05rem;
+}

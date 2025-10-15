@@ -1,0 +1,579 @@
+
+
+/* ---------------------- Custom font declarations --------------------------- */
+
+@font-face {
+    font-family: "MontSerrat Alternates";
+    src: url("../assets/fonts/Montserrat_Alternates/MontserratAlternates-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Lexend";
+    src: url("../assets/fonts/Lexend/Lexend-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: "Outfit";
+    src: url("../assets/fonts/Outfit/Outfit-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: "Manrope";
+    src: url("../assets/fonts/Outfit/Outfit-VariableFont_wght.ttf");
+}
+
+/* <------------------------------------------------> */
+
+
+/* <-------- Global variables and colors -----------> */
+
+:root{
+
+
+/* Header/Sidebar vars/colors */
+
+    --header-bg-color: #0e0e0e;
+    --header-fg-color: #e7e7e7;
+    --header-highlight-color: #15b383;
+    --header-icon-size: 20px;
+
+    --sidebar-bg-color: #181818;
+
+/*  */
+
+
+/* Dark mode colors */
+
+    --main-bg-color-dark:#091214;
+    --main-fg-color-dark: #b7b7b7;
+    --main-para-border-color-dark: #b7b7b7;
+    --main-fg-heading-color-dark: #15b383;
+    --main-bg-color-dark-form-input: #162c31;
+    --main-link-color-dark: #397fff;
+    --portfolio-item-bg-color-dark: #162c31;
+    --portfolio-item-border-color-dark: #25505a;
+/*  */
+
+
+/* Light mode colors */
+
+    --main-bg-color-light: #b0bec1;
+    --main-fg-color-light: #212222;
+    --main-para-border-color-light: #212222;
+    --main-fg-heading-color-light: #212222;
+    --main-bg-color-light-form-input: #e2eff1;
+    --main-link-color-light: #2906a8;
+    --portfolio-item-bg-color-light: #9fabae;
+    --portfolio-item-border-color-light: #25505a;
+/*  */
+
+
+}
+
+
+/* <------------------------------------------------> */
+
+
+/* <---------------------- General --------------------------> */
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: var(--main-bg-color-dark);
+    display: flex;
+    flex-direction: column;
+
+}
+
+body.light{
+    background-color: var(--main-bg-color-light);
+}
+
+.light{
+    color: var(--main-fg-color-light);
+}
+
+
+/* <------------------------------------------------> */
+
+
+/* <----------------------- Header -------------------------> */
+
+
+#header-main-container{
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    margin-bottom: 4rem;
+}
+
+#header-wide {
+    width: 100%;
+    height: 2.5rem;
+    background-color: var(--header-bg-color);
+    color: var(--header-fg-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: "Lexend";
+}
+
+#page-logo {
+    font-family: "MontSerrat Alternates";
+    font-size: 1.15rem;
+    text-align: left;
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    position: absolute;
+    left: 0;
+}
+
+#header-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    position: absolute;
+    right: 1rem;
+}
+
+#display-lang{
+    padding: 0;
+}
+
+
+.header-item{
+    background-color: transparent;
+    font-weight: 600;
+    color: var(--header-fg-color);
+    border: 0;
+    font-size: 1rem;
+    margin-left: 1rem;
+    cursor: pointer;
+
+    transition-property: opacity, scale;
+    transition-duration: .1s, .01s;
+    transition-timing-function: cubic-bezier(1, .4, .5, .8), cubic-bezier(.2, 0, .3, 1);
+}
+
+.header-item img{
+    width: 20px;
+}
+
+#open-sidebar-icon {
+    visibility: hidden;
+    position: absolute;
+}
+
+    
+/* Sidebar styling */
+
+
+#sidebar-narrow{
+    visibility: hidden;
+    position: absolute;
+
+    font-family: "Lexend";
+    color: var(--header-fg-color);
+    background-color: var(--sidebar-bg-color);
+    width: 15rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition-property: right, opacity;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(1, .4, .5, .8);
+    top: 0;
+}
+
+#header-options-sidebar{
+    display: flex;
+    flex-direction: column;
+    width: inherit;
+    text-align: left;
+    padding-left: 2rem;
+    padding-top: 1rem; 
+    line-height: 2rem;   
+}
+
+.sidebar-item{
+    text-align: left;
+    background-color: transparent;
+    border: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: .5rem;
+    color: var(--header-fg-color);
+    position: relative;
+    left: 0;
+    transition-property: left;
+    transition-duration: .03s;
+    transition-timing-function: cubic-bezier(.1, .8, .9, .5);
+}
+
+#github-profile-sidebar img {
+    position: relative;
+    top: 5px;
+    margin-left: .5rem;
+    width: 20px;
+}
+
+#close-sidebar-icon{
+    position: relative;
+    left: -2.5rem;
+    top: -.4rem;
+    width: fit-content;
+    height: fit-content;
+    line-height: 0;
+    margin-bottom: 1rem;
+}
+
+.highlight{
+    color: var(--header-highlight-color);
+}
+
+
+/* <------------------------------------------------> */
+
+
+/* <-------------------- Elements ----------------------------> */
+
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    align-self: center;
+    margin-right: min(3vw, 25rem);
+    margin-left: min(3vw, 25rem);
+    margin-bottom: 10rem;
+
+}
+
+.custom-heading{
+    margin-left: clamp(min(1rem, 1vw), 1rem, 1rem);
+    font-size: clamp(1.8rem, 2.2vw, 4rem);
+    font-family: "Outfit";
+    font-weight: 600;
+    color: var(--main-fg-heading-color-dark);
+}
+
+.custom-heading.light{
+    color: var(--main-fg-heading-color-light);
+}
+
+.custom-para{
+    margin-left: 1rem;
+    padding-left: 1rem;
+    font-size: 1.1rem;
+    font-family: "Manrope";
+    line-height: 1rem;
+    border-left: 1px solid var(--main-para-border-color-dark);
+    color: var(--main-fg-color-dark);
+    word-break: normal;
+    text-align: left;
+    
+}
+
+.custom-para.light{
+    border-left: 1px solid var(--main-para-border-color-light);
+    color: var(--main-fg-color-light);
+}
+
+.footnote{
+    border: none;
+    margin-left: 0;
+    font-style: italic;
+}
+
+.p-link{
+    color: var(--main-link-color-dark);
+    text-decoration: none;
+    transition-property: opacity;
+    transition-duration: .1s;
+    transition-timing-function: cubic-bezier(1, .4, .5, .8);
+}
+
+.p-link.light{
+    color: var(--main-link-color-light);
+    text-decoration: none;
+}
+
+.p-link:hover{
+    opacity: 70%;
+}
+
+.p-link:active{
+    opacity: 50%;
+}
+
+.p-link img{
+    vertical-align: middle;
+    width: 20px;
+}
+
+.no-bp{
+    font-family: "Manrope";
+    font-size: 1.1rem;
+    margin-left: 1rem;
+    line-height: 2rem;
+    list-style-type: none;
+}
+
+.custom-list{
+    font-family: "Manrope";
+    font-size: 1.1rem;
+    margin-left: 1rem;
+    line-height: 2rem;
+    list-style-type: none;
+    opacity: 85%;
+}
+
+.custom-list li::marker{
+    content: "\27E3\ ";
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 12rem;
+}
+
+.p-footer{
+    font-family: "Manrope";
+    font-size: 1rem;
+}
+
+.p-footer a{
+    color: unset;
+}
+
+.p-footer:not(:last-of-type){
+    margin-right: 1rem;
+}
+
+/* <---------------------------------------------------------> */
+
+
+/* <------------------ "Under Construction" --------------> */
+
+
+.under-construction-txt{
+    text-align: center;
+    font-family: "Lexend";
+}
+
+.h-under-construction{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.p-under-construction{
+    font-size: 1.2rem;
+    margin-top: 3rem;
+}
+
+#under-construction-img{
+    width: 300px;
+    opacity: 30%;
+    
+}
+
+#under-construction-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 8rem;
+}
+
+
+/* <------------------------------------------------> */
+
+
+/* <-------------------- Actions ----------------------------> */
+
+
+.header-item:hover:not(#page-logo){
+    opacity: 60%;
+}
+
+.header-item:active:not(.sidebar-item){
+    scale: .95;
+}
+
+.sidebar-item:active{
+    left: -1rem;
+}
+
+
+/* <------------------------------------------------> */
+
+
+/* <-------------------- Media ----------------------------> */
+
+@media screen and (width <= 1000px) {
+    .main-content{
+        margin-left: 2.5vw;
+        margin-right: 2.5vw;
+    }
+}
+
+@media (width >= 750px) {
+
+    #header-options {
+        width: 70%;
+        position: absolute;
+        right: 10rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: right;
+    }
+
+    #header-icons {
+        width: 10rem;
+    }
+
+}
+
+@media screen and (width < 750px){
+    
+    #github-profile{
+        visibility: hidden;
+        position: absolute;
+    }
+
+    #header-options {
+        visibility: hidden;
+        position: absolute;
+    }
+
+    #sidebar-narrow{
+        visibility: visible;
+        position: fixed;
+        right: -15rem;
+    }
+
+    #start-sidebar{
+        visibility: visible;
+        position: relative;
+    }
+
+    #portfolio-sidebar{
+        visibility: visible;
+        position: relative;
+    }
+
+    #contact-sidebar{
+        visibility: visible;
+        position: relative;
+    }
+
+    #about-me-sidebar{
+        visibility: visible;
+        position: relative;
+    }
+
+    #github-profile-sidebar{
+        visibility: visible;
+        position: relative;
+    }
+
+    .sidebar-open-close{
+        background-color: transparent;
+        border: 0;
+    }
+
+    #open-sidebar-icon {
+        visibility: visible;
+        position: relative;
+
+    }
+
+}
+
+@media screen and (width <= 500px){
+    .h-under-construction{
+        font-size: 1.3rem;
+    }
+
+    .p-under-construction{
+        font-size: .75rem;
+    }
+
+    #under-construction-img{
+        width: 200px;
+    }
+
+}
+
+@media screen and (width <= 480px){
+    footer{
+        display: grid;
+        columns: 2;
+        align-items: unset;
+        justify-content: unset;
+        padding-bottom: 1rem;
+    }
+
+    .p-footer:first-of-type{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        margin: 0;
+        margin-left: 1rem;
+    }
+
+    .p-footer:not(:first-of-type){
+        height: fit-content;
+        text-align: right;
+        grid-column-start: 2;
+        margin: 0;
+        margin-right: 2rem;
+    }
+
+}
+
+
+@media screen and (width <= 335px){
+    #header-icons .header-item{
+        margin-left: .5rem;
+    }
+}
+
+@media screen and (width <= 300px){
+    #page-logo{
+        visibility: hidden;
+    }
+}
+
+@media (prefers-color-scheme: dark){
+    body{
+        background-color: var(--main-bg-color-dark);
+        color: var(--main-fg-color-dark);
+    }
+}
+
+@media (prefers-color-scheme: light){
+    body{
+        background-color: var(--main-bg-color-light);
+        color: var(--main-fg-color-light);
+    }
+}
+
+
+/* <------------------------------------------------> */
+
