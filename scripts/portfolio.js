@@ -22,7 +22,7 @@ class BaseCard extends HTMLElement{
 }
 
 class FCard extends BaseCard {
-    
+
     title;
 
     constructor(){
@@ -31,7 +31,7 @@ class FCard extends BaseCard {
 
     connectedCallback(){
 
-        this.setAttribute('class', 'f-card-main theme-dependant');
+        this.setAttribute('class', 'f-card-main repos-common theme-dependant');
 
         const card_title = document.createElement('p');
         card_title.setAttribute('class', 'f-card-title theme-dependant');
@@ -81,7 +81,7 @@ class RepoCard extends BaseCard{
     }
 
     connectedCallback(){
-        this.setAttribute('class', 'repos-list-item theme-dependant');
+        this.setAttribute('class', 'repos-list-item repos-common theme-dependant');
 
         const card_name = document.createElement('p');
         card_name.setAttribute('class', 'repos-list-item-name theme-dependant');
@@ -167,7 +167,8 @@ async function populateRepoList(){
             most_recent_repo = repo;
         }
 
-        console.log(`Date1: ${repo['updated_at']} -- Date2: ${most_recent_repo['updated_at']} -- `, repo['date'] > most_recent_repo['date']);
+        // Debugging
+        // console.log(`Date1: ${repo['updated_at']} -- Date2: ${most_recent_repo['updated_at']} -- `, repo['date'] > most_recent_repo['date']);
 
     });
 

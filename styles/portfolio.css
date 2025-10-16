@@ -24,10 +24,6 @@
     font-family: "Manrope";
     width: clamp(15rem, 95vw, 20rem);
     cursor: pointer;
-
-    transition-property: background-color;
-    transition-duration: .2s;
-    transition-timing-function: ease-in-out;
 }
 
 .f-card-main.light{
@@ -50,7 +46,7 @@
     border-bottom: 1px solid var(--portfolio-item-border-color-dark);
     padding-left: .3rem;
     padding-top: .3rem;
-    color: #15b383;
+    color: var(--main-fg-heading-color-dark);
     font-size: 1.2rem;
     font-weight: 500;
 }
@@ -110,10 +106,6 @@
     flex-direction: column;
     border-bottom: 1px solid var(--portfolio-item-border-color-dark);
     cursor: pointer;
-
-    transition-property: background-color;
-    transition-duration: .2s;
-    transition-timing-function: ease-in-out;
 }
 
 .repos-list-item.light{
@@ -157,7 +149,8 @@
     padding-bottom: .5rem;
 }
 
-
+/* .repos-common {
+} */
 
 @media screen and (width <= 680px) {
     .feature-container{
