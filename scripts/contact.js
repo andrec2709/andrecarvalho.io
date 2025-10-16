@@ -84,10 +84,11 @@ async function onSubmit(){
 document.getElementById("contact-me-form").addEventListener("submit", async function(e) {
     e.preventDefault();
     let formdt = new FormData(this);
-
     const response = await fetch("../api/ParseForm.php", {
         body: formdt,
         method: "POST"
+    }).catch((e) => {
+        console.log(e);
     });
 
     grecaptcha.reset();
