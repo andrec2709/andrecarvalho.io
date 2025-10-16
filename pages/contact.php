@@ -19,7 +19,7 @@ include __DIR__ . "/../api/StartSession.php";
 		<link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" href="../styles/main.css">
 		<link rel="stylesheet" href="../styles/contact.css">
-		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+		<script src="https://www.google.com/recaptcha/enterprise.js?render=<?=$recaptchaSite?>"></script>
 	</head>
 	<body class="theme-dependant">
  
@@ -69,7 +69,7 @@ include __DIR__ . "/../api/StartSession.php";
 				<label for="message" class="theme-dependant form-label"><?=$lang['message']?>:</label>
 				<textarea name="message" id="message" class="theme-dependant form-input-text"></textarea>
 			
-				<button id="submit-form-btn" data-sitekey="<?=$recaptchaSite?>" data-callback="onSubmit" class="g-recaptcha theme-dependant form-submit"><?=$lang['send']?></button>
+				<button id="submit-form-btn" data-sitekey="<?=$recaptchaSite?>" data-callback="onSubmit" data-action="submit" class="g-recaptcha theme-dependant form-submit"><?=$lang['send']?></button>
 			
 			</form>
 

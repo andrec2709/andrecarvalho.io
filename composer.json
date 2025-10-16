@@ -1,0 +1,12 @@
+{
+    "name": "andre/andrecarvalho.io",
+    "authors": [
+        {
+            "name": "andre",
+            "email": "11andrecarvalho@gmail.com"
+        }
+    ],
+    "require": {
+        "google/cloud-recaptcha-enterprise": "^2.1"
+    }
+}

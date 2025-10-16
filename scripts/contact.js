@@ -54,7 +54,9 @@ async function invalidMessage(state){
 
 }
 
-async function onSubmit(){
+let recaptchaToken = null;
+
+async function onSubmit(token){
 
         let username = document.getElementById("username");
         let email = document.getElementById("email");
@@ -66,16 +68,17 @@ async function onSubmit(){
         if (username.value === "" || email.value === "" || message.value === ""){
             await invalidMessage(1);
             document.getElementById("submit-form-btn").disabled = false;
-            grecaptcha.reset();
+            grecaptcha.enterprise.reset();
         }
         else if (email.value.search(pattern) === -1){
             console.log("Invalid e-mail");
             await invalidMessage(2);
             document.getElementById("submit-form-btn").disabled = false;
-            grecaptcha.reset();
+            grecaptcha.enterprise.reset();
         }
         else{
             await invalidMessage(0);
+            recaptchaToken = token;
             document.getElementById("contact-me-form").requestSubmit();   
         }
 
@@ -83,7 +86,10 @@ async function onSubmit(){
 
 document.getElementById("contact-me-form").addEventListener("submit", async function(e) {
     e.preventDefault();
+
     let formdt = new FormData(this);
+    formdt.append("token", recaptchaToken);
+
     const response = await fetch("../api/ParseForm.php", {
         body: formdt,
         method: "POST"
@@ -91,7 +97,7 @@ document.getElementById("contact-me-form").addEventListener("submit", async func
         console.log(e);
     });
 
-    grecaptcha.reset();
+    grecaptcha.enterprise.reset();
     this.reset();
 
 });

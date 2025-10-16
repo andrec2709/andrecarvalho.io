@@ -1,41 +1,89 @@
 <?php
-
+require __DIR__ . '/../vendor/autoload.php';
 include __DIR__ . "/../config.php";
 
-$url = "https://www.google.com/recaptcha/api/siteverify";
+use Google\Cloud\RecaptchaEnterprise\V1\Client\RecaptchaEnterpriseServiceClient;
+use Google\Cloud\RecaptchaEnterprise\V1\Event;
+use Google\Cloud\RecaptchaEnterprise\V1\Assessment;
+use Google\Cloud\RecaptchaEnterprise\V1\CreateAssessmentRequest;
+use Google\Cloud\RecaptchaEnterprise\V1\TokenProperties\InvalidReason;
 
-$data = [
-    "secret" => $recaptchaSecret,
-    "response" => $_POST['g-recaptcha-response'],
-];
 
-$ch = curl_init();
+/**
+ * Create an assessment to analyze the risk of a UI action.
+ * @param string $recaptchaKey The reCAPTCHA key associated with the site/app
+ * @param string $token The generated token obtained from the client.
+ * @param string $project Your Google Cloud Project ID.
+ * @param string $action Action name corresponding to the token.
+ */
+function create_assessment(
+    string $recaptchaKey,
+    string $token,
+    string $project,
+    string $action
+): void {
+    // Create the reCAPTCHA client.
+    // TODO: Cache the client generation code (recommended) or call client.close() before exiting the method.
+    $client = new RecaptchaEnterpriseServiceClient();
+    $projectName = $client->projectName($project);
 
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    // Set the properties of the event to be tracked.
+    $event = (new Event())
+        ->setSiteKey($recaptchaKey)
+        ->setToken($token);
 
-$response = curl_exec($ch);
+    // Build the assessment request.
+    $assessment = (new Assessment())
+        ->setEvent($event);
 
-if (curl_errno($ch)){
-    echo curl_error($ch);
-}
-else{
-    $resp_decoded = json_decode($response, true);
+    $request = (new CreateAssessmentRequest())
+        ->setParent($projectName)
+        ->setAssessment($assessment);
 
-    if ($resp_decoded['success'] === true){
+    try {
+        $response = $client->createAssessment($request);
 
-        $to = "contato@andrecarvalho.io";
-        $subject = "E-mail from " . $_POST["username"] . " via andrecarvalho.io";
-        $msg = $_POST["message"];
-        $headers = "From: " . $_POST["email"];
-        
-        $resp = mail($to, $subject, $msg, $headers);
-        echo json_encode(['success' => $resp]);
+        // Check if the token is valid.
+        if ($response->getTokenProperties()->getValid() == false) {
+            error_log('The CreateAssessment() call failed because the token was invalid for the following reason: ');
+            error_log(InvalidReason::name($response->getTokenProperties()->getInvalidReason()));
+            return;
+        }
 
+        // Check if the expected action was executed.
+        if ($response->getTokenProperties()->getAction() == $action) {
+            // Get the risk score and the reason(s).
+            // For more information on interpreting the assessment, see:
+            // https://cloud.google.com/recaptcha-enterprise/docs/interpret-assessment
+            error_log('The score for the protection action is:');
+            error_log($response->getRiskAnalysis()->getScore());
+
+            if ($response->getRiskAnalysis()->getScore() >= .35){
+
+                $to = "contato@andrecarvalho.io";
+                $subject = "E-mail from " . $_POST["username"] . " via andrecarvalho.io";
+                $msg = $_POST["message"];
+                $headers = "From: " . $_POST["email"];
+
+                $resp = mail($to, $subject, $msg, $headers);
+                echo json_encode(['success' => $resp]);
+
+            }
+
+        } else {
+            error_log('The action attribute in your reCAPTCHA tag does not match the action you are expecting to score');
+            error_log("Action is -> " . $response->getTokenProperties()->getAction());
+        }
+    } catch (exception $e) {
+        error_log('CreateAssessment() call failed with the following error: ');
+        error_log($e);
     }
 }
 
-?>
-
+// TODO: Replace the token and reCAPTCHA action variables before running the sample.
+create_assessment(
+    $recaptchaSite,
+    $_POST["token"],
+    $projectID,
+    'submit'
+);
