@@ -32,6 +32,8 @@ class FCard extends BaseCard {
     connectedCallback(){
 
         this.setAttribute('class', 'f-card-main repos-common theme-dependant');
+        this.setAttribute('role', 'button');
+        this.setAttribute('tabindex', '0');
 
         const card_title = document.createElement('p');
         card_title.setAttribute('class', 'f-card-title theme-dependant');
@@ -82,6 +84,8 @@ class RepoCard extends BaseCard{
 
     connectedCallback(){
         this.setAttribute('class', 'repos-list-item repos-common theme-dependant');
+        this.setAttribute('role', 'button');
+        this.setAttribute('tabindex', '0');
 
         const card_name = document.createElement('p');
         card_name.setAttribute('class', 'repos-list-item-name theme-dependant');
