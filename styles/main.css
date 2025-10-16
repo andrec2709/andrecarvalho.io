@@ -262,7 +262,7 @@ body.light{
 }
 
 .custom-heading{
-    margin-left: clamp(min(1rem, 1vw), 1rem, 1rem);
+    margin-left: 1rem;
     font-size: clamp(1.8rem, 2.2vw, 4rem);
     font-family: "Outfit";
     font-weight: 600;
@@ -274,12 +274,10 @@ body.light{
 }
 
 .custom-para{
-    margin-left: 1rem;
-    padding-left: 1rem;
+    margin-left: 2rem;
     font-size: 1.1rem;
     font-family: "Manrope";
     line-height: 1rem;
-    border-left: 1px solid var(--main-para-border-color-dark);
     color: var(--main-fg-color-dark);
     word-break: normal;
     text-align: left;
@@ -287,7 +285,6 @@ body.light{
 }
 
 .custom-para.light{
-    border-left: 1px solid var(--main-para-border-color-light);
     color: var(--main-fg-color-light);
 }
 
@@ -334,15 +331,21 @@ body.light{
 .custom-list{
     font-family: "Manrope";
     font-size: 1.1rem;
-    margin-left: 1rem;
+    margin-left: 3rem;
     line-height: 2rem;
     list-style-type: none;
     opacity: 85%;
 }
 
-.custom-list li::marker{
-    content: "\27E3\ ";
-}
+.custom-list li::marker {
+    content: "\1F784\    ";
+    color: white;
+ }
+
+.custom-list.light li::marker {
+    content: "\1F784\    ";
+    color: black;
+ }
 
 footer{
     display: flex;
