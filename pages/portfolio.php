@@ -20,9 +20,9 @@ include __DIR__ . "/../api/StartSession.php";
 	<title>
 		<?= $lang['portfolio-page-title'] ?>
 	</title>
-	<link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" href="/styles/main.css">
-	<link rel="stylesheet" href="/styles/portfolio.css">
+	<link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../styles/main.css">
+	<link rel="stylesheet" href="../styles/portfolio.css">
 </head>
 
 <body class="theme-dependant">
@@ -46,8 +46,8 @@ include __DIR__ . "/../api/StartSession.php";
 
 	<?php include __DIR__ . '/../includes/footer.php'; ?>
 
-	<script src="/scripts/portfolio.js"></script>
-	<script src="/scripts/main.js"></script>
+	<script src="../scripts/portfolio.js"></script>
+	<script src="../scripts/main.js"></script>
 </body>
 
 </html>
