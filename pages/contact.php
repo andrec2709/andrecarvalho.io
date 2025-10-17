@@ -16,15 +16,15 @@ include __DIR__ . "/../api/StartSession.php";
 		<meta name="author" content="Andre Carvalho Filho">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title><?=$lang['contact-page-title']?></title>
-		<link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
-		<link rel="stylesheet" href="../styles/main.css">
-		<link rel="stylesheet" href="../styles/contact.css">
+		<link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="/styles/main.css">
+		<link rel="stylesheet" href="/styles/contact.css">
 		<script src="https://www.google.com/recaptcha/enterprise.js?render=<?=$recaptchaSite?>"></script>
 	</head>
 	<body class="theme-dependant">
  
-		<?php include '../includes/header.php';?>
-		<?php include '../includes/alert.php';?>
+		<?php include __DIR__ . '/../includes/header.php';?>
+		<?php include __DIR__ . '/../includes/alert.php';?>
 
 		<div class="main-content">
 
@@ -75,9 +75,9 @@ include __DIR__ . "/../api/StartSession.php";
 
 		</div>
 
-		<?php include '../includes/footer.php';?>
+		<?php include __DIR__ . '/../includes/footer.php';?>
 
-		<script src="../scripts/main.js"></script>
-		<script src="../scripts/contact.js"></script>
+		<script src="/scripts/main.js"></script>
+		<script src="/scripts/contact.js"></script>
 	</body>
 </html>

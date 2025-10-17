@@ -1,4 +1,13 @@
 
+let recaptchaToken = null;
+let username = document.getElementById("username");
+let email = document.getElementById("email");
+let message = document.getElementById("message");
+
+const inputEvent = new Event('input');
+
+let formFields = [username, email, message];
+
 async function invalidMessage(state){
 
     let alert_widget = document.getElementById("alert-container");
@@ -54,53 +63,45 @@ async function invalidMessage(state){
 
 }
 
-let recaptchaToken = null;
 
 async function onSubmit(token){
 
-        let username = document.getElementById("username");
-        let email = document.getElementById("email");
-        let message = document.getElementById("message");
+    formFields.forEach(element => {
+        element.dispatchEvent(inputEvent);
+    });
 
-        let group = [username, email, message];
-        
-        group.forEach(element => {
-            if (element.checkValidity()){
-                element.classList.remove('invalid');
-            }
-        });
+    const pattern = /^((?!.*\.\.|.*\.@|^\.|^-)[a-zA-Z0-9._+%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/g;
 
-        const pattern = /^((?!.*\.\.|.*\.@|^\.|^-)[a-zA-Z0-9._+%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/g;
-        // let emailregex = new RegExp(pattern);
+    if (username.value === "" || email.value === "" || message.value === ""){
+        await invalidMessage(1);
 
-        if (username.value === "" || email.value === "" || message.value === ""){
-            await invalidMessage(1);
+        document.getElementById("submit-form-btn").disabled = false;
+        grecaptcha.enterprise.reset();
+    }
+    else if (email.value.search(pattern) === -1){
+        await invalidMessage(2);
 
-            group.forEach(element => {
-
-                if (element.value === ""){
-                    element.classList.add('invalid');
-                }
-            });
-
-            document.getElementById("submit-form-btn").disabled = false;
-            grecaptcha.enterprise.reset();
-        }
-        else if (email.value.search(pattern) === -1){
-            await invalidMessage(2);
-
-            email.classList.add('invalid');
-
-            document.getElementById("submit-form-btn").disabled = false;
-            grecaptcha.enterprise.reset();
-        }
-        else{
-            await invalidMessage(0);
-            recaptchaToken = token;
-            document.getElementById("contact-me-form").requestSubmit();   
-        }
-
+        document.getElementById("submit-form-btn").disabled = false;
+        grecaptcha.enterprise.reset();
+    }
+    else{
+        await invalidMessage(0);
+        recaptchaToken = token;
+        document.getElementById("contact-me-form").requestSubmit();   
+    }
 }
+
+formFields.forEach(element => {
+
+    element.addEventListener('input', (e) => {
+        
+        if (element.checkValidity()){
+            element.classList.remove('invalid');
+        } else {
+            element.classList.add('invalid');
+        }
+    });
+});
 
 document.getElementById("contact-me-form").addEventListener("submit", async function(e) {
     e.preventDefault();
@@ -117,5 +118,4 @@ document.getElementById("contact-me-form").addEventListener("submit", async func
 
     grecaptcha.enterprise.reset();
     this.reset();
-
 });

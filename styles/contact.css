@@ -38,6 +38,10 @@ textarea.form-input-text{
     height: 20rem;
 }
 
+.form-input-text.invalid, .form-input-email.invalid {
+    border-color: rgb(141, 0, 0);
+}
+
 .form-input-text:focus, .form-input-email:focus{
     outline: none;
     border-color: #2f9b84;
@@ -45,10 +49,6 @@ textarea.form-input-text{
 
 .form-input-text.light:focus, .form-input-email.light:focus{
     border-color: #000000;
-}
-
-.form-input-text.invalid, .form-input-email.invalid {
-    border-color: red;
 }
 
 .form-submit{

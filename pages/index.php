@@ -16,14 +16,16 @@ include __DIR__ . "/../api/StartSession.php";
 		<meta name="author" content="Andre Carvalho Filho">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title><?=$lang['main-page-title']?></title>
-		<link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
-		<link rel="stylesheet" href="../styles/main.css">
+		<link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="/styles/main.css">
 	</head>
 	<body class="theme-dependant <?=$_SESSION['theme']?>">
-		<?php include '../includes/header.php';?>
+		<?php include __DIR__ . '/../includes/header.php';?>
 
-		<?php include '../includes/construction.php';?>
+		<?php include __DIR__ . '/../includes/construction.php';?>
 
-		<script src="../scripts/main.js"></script>
+		&nbsp;
+		<?php include __DIR__ . '/../includes/footer.php';?>
+		<script src="/scripts/main.js"></script>
 	</body>
 </html>
