@@ -99,6 +99,13 @@ body.light{
     color: var(--main-fg-color-light);
 }
 
+html {
+    visibility: hidden;
+}
+
+html.ready {
+    visibility: visible;
+}
 
 /* <------------------------------------------------> */
 
