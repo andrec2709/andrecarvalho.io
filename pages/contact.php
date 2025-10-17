@@ -61,13 +61,13 @@ include __DIR__ . "/../api/StartSession.php";
 			<form id="contact-me-form" method="post">
 
 				<label for="username" class="theme-dependant form-label"><?=$lang['name']?>:</label>
-				<input maxlength="120" type="text" id="username" name="username" class="form-input-text theme-dependant" aria-label="<?=$lang['name']?>">
+				<input required maxlength="120" type="text" id="username" name="username" class="form-input-text theme-dependant" aria-label="<?=$lang['name']?>">
 				
 				<label for="email" class="theme-dependant form-label">E-mail:</label>
-				<input maxlength="240" type="email" id="email" name="email" class="form-input-email theme-dependant" aria-label="e-mail">
+				<input required maxlength="240" type="email" id="email" name="email" class="form-input-email theme-dependant" aria-label="e-mail">
 
 				<label for="message" class="theme-dependant form-label"><?=$lang['message']?>:</label>
-				<textarea name="message" id="message" class="theme-dependant form-input-text"></textarea>
+				<textarea required name="message" id="message" class="theme-dependant form-input-text"></textarea>
 			
 				<button id="submit-form-btn" data-sitekey="<?=$recaptchaSite?>" data-callback="onSubmit" data-action="submit" class="g-recaptcha theme-dependant form-submit"><?=$lang['send']?></button>
 			

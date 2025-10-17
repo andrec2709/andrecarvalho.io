@@ -61,18 +61,36 @@ async function onSubmit(token){
         let username = document.getElementById("username");
         let email = document.getElementById("email");
         let message = document.getElementById("message");
+
+        let group = [username, email, message];
         
+        group.forEach(element => {
+            if (element.checkValidity()){
+                element.classList.remove('invalid');
+            }
+        });
+
         const pattern = /^((?!.*\.\.|.*\.@|^\.|^-)[a-zA-Z0-9._+%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/g;
         // let emailregex = new RegExp(pattern);
 
         if (username.value === "" || email.value === "" || message.value === ""){
             await invalidMessage(1);
+
+            group.forEach(element => {
+
+                if (element.value === ""){
+                    element.classList.add('invalid');
+                }
+            });
+
             document.getElementById("submit-form-btn").disabled = false;
             grecaptcha.enterprise.reset();
         }
         else if (email.value.search(pattern) === -1){
-            console.log("Invalid e-mail");
             await invalidMessage(2);
+
+            email.classList.add('invalid');
+
             document.getElementById("submit-form-btn").disabled = false;
             grecaptcha.enterprise.reset();
         }
