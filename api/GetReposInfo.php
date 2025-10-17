@@ -1,7 +1,8 @@
 <?php
 
-include __DIR__ . '/../config.php';
+$CONFIG_PATH = getenv('CONFIG_PATH');
 
+include $CONFIG_PATH;
 
 $mysqli = new mysqli("localhost", $mysqlUser, $mysqlSecret, $mysqlDB, 3306);
 

@@ -1,6 +1,9 @@
 <?php
 require __DIR__ . '/../vendor/autoload.php';
-include __DIR__ . "/../config.php";
+
+$CONFIG_PATH = getenv('CONFIG_PATH');
+
+include $CONFIG_PATH;
 
 use Google\Cloud\RecaptchaEnterprise\V1\Client\RecaptchaEnterpriseServiceClient;
 use Google\Cloud\RecaptchaEnterprise\V1\Event;

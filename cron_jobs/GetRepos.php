@@ -1,6 +1,8 @@
 <?php
 
-include __DIR__ . "/../config.php";
+$CONFIG_PATH = getenv('CONFIG_PATH');
+
+include $CONFIG_PATH;
 
 $url = "https://api.github.com/users/andrec2709/repos";
 

@@ -1,6 +1,8 @@
 <?php
 
-include __DIR__ . "/../config.php";
+$CONFIG_PATH = getenv('CONFIG_PATH');
+
+include $CONFIG_PATH;
 
 
 if (session_status() === PHP_SESSION_NONE){
