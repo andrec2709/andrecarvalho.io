@@ -138,6 +138,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     loadPrefTheme(true);
     document.documentElement.classList.add('ready');
+    document.body.classList.add('loaded');
 
     
 })
