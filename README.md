@@ -52,5 +52,7 @@ If you wish to run this project locally, here is what you will have to do:
 			  UNIQUE KEY `total_commits_unique` (`id`),
 			  CONSTRAINT `total_commits_ibfk_1` FOREIGN KEY (`id`) REFERENCES `repos` (`id`)
 			) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+	
+3. Make sure you have [Composer](https://getcomposer.org/doc/00-intro.md) set up, in order to install the google cloud recaptcha dependencies.
 
 With this setup, you should be able to run the project locally.
