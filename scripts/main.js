@@ -1,32 +1,55 @@
+// translation handler
+class I18n {
+
+    constructor() {
+        if (I18n.instance) return I18n.instance;
+        this.lang = localStorage.getItem('lang') || 'en';
+        I18n.instance = this;
+    
+    }
+
+    static getInstance() {
+        if (!I18n.instance) {
+            I18n.instance = new I18n();
+        }
+        return I18n.instance;
+    }
+
+    get(key){
+        return key.split('.').reduce((obj, part) => obj?.[part], this.translations);
+    }
+
+    apply() {
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            console.log(el);
+            const key = el.getAttribute('data-i18n');
+            const text = this.get(key);
+
+            if (text) el.innerHTML = text;
+        });
+    }
+
+    async setLang(lang) {
+        localStorage.setItem('lang', lang);
+        this.lang = lang;
+        await setSessionValue('language', lang);
+        this.apply();
+    }
+
+    async loadLang(lang) {
+        const response = await fetch(`/lang/${lang}.json`);
+        this.translations = await response.json();
+        this.setLang(lang);
+    }
+}
+
 // <------ Global variables -------->
 
-
-// Sidebar
-
-let sidebar_close_icon = document.getElementById("close-sidebar-icon");
-let sidebar = document.getElementById("sidebar-narrow");
-let github_btn_sidebar = document.getElementById("github-profile-sidebar");
-let start_btn_sidebar = document.getElementById("start-sidebar");
-let portfolio_btn_sidebar = document.getElementById("portfolio-sidebar");
-let contact_btn_sidebar = document.getElementById("contact-sidebar");
-let about_btn_sidebar = document.getElementById("about-me-sidebar");
-
 //
-
-
-// Main Header
-
-let header_sidebar_open_icon = document.getElementById("open-sidebar-icon");
-let togglebtn = document.getElementById("page-mode");
-let github_btn = document.getElementById("github-profile");
-let displaylang_btn = document.getElementById("display-lang");
-let start_btn = document.getElementById("start");
-let portfolio_btn = document.getElementById("portfolio");
-let contact_btn = document.getElementById("contact");
-let about_btn = document.getElementById("about-me");
-let pagelogo_btn = document.getElementById("page-logo");
-
-//
+const i18n = new I18n();
+let pref_btn_container = document.getElementsByClassName('pref-btn-container').item(0);
+let theme_options = document.getElementById('theme-options');
+let lang_options = document.getElementById('lang-options');
 
 // contact.php
 
@@ -38,7 +61,6 @@ let linkedin_icon = document.getElementById("linkedin-icon")
 // Others
 
 let prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
-let under_construction_img = document.getElementById("under-construction-img");
 
 //
 
@@ -122,139 +144,90 @@ async function loadPrefTheme(pageload = false){
 
 }
 
+function showMenu(e) {
+    let thisMenu;
+
+    switch (e.dataset.menu) {
+        case 'theme':
+            thisMenu = document.getElementById("theme-options");
+            document.getElementById('lang-options').classList.remove('opened');
+            break;
+        case 'lang':
+            thisMenu = document.getElementById('lang-options');
+            document.getElementById('theme-options').classList.remove('opened');
+            break;
+    }
+
+    let height = parseInt(getComputedStyle(thisMenu).height.replace('px', ''));
+    
+
+    if (!thisMenu.classList.contains('opened')) {
+        thisMenu.hidden = false;
+    }
+
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            thisMenu.classList.toggle('opened');
+        });
+    });
+
+}
+
+function setTheme(e){
+    const current = localStorage.getItem('theme') || 'light';
+    const toTheme = e.dataset.value;
+
+    localStorage.setItem('theme', toTheme);
+    document.documentElement.classList.replace(`theme-${current}`, `theme-${toTheme}`);
+}
+
+function toggleSidebar(e){
+    let sidebar = document.getElementsByClassName('nav-sidebar').item(0);
+    if (e.dataset.action === 'open'){
+        sidebar.classList.add('opened');
+    } else {
+        sidebar.classList.remove('opened');
+    }
+}
+
+function toggleLang(e){
+    i18n.loadLang(e.dataset.value);
+}
+
+
 // <-------------- Events ---------------->
 
 
 prefersDark.addEventListener("change", async () => {
 
     // Changes content when user pref for light/dark mode (browser/system-wide) changes
-
     loadPrefTheme();
 
 });
 
 document.addEventListener("DOMContentLoaded", async () => {
 
-
     loadPrefTheme(true);
-    document.documentElement.classList.add('ready');
-    document.body.classList.add('loaded');
-
     
 })
 
-
-// Header buttons
-
-
-togglebtn.addEventListener('click', async () => {
-    
-    loadPrefTheme();
-
+theme_options.addEventListener('transitionend', (e) => {
+    if (!theme_options.classList.contains('opened')) {
+        theme_options.hidden = true;
+    }
+});
+lang_options.addEventListener('transitionend', (e) => {
+    if (!lang_options.classList.contains('opened')) {
+        lang_options.hidden = true;
+    }
 });
 
-displaylang_btn.addEventListener("click", async () => {
-
-    // Sets display language (based on session prefs)
-
-    const session = await getSessionInfo();
-    const curr_lang = await session.json();
- 
-    let new_lang = curr_lang.language === 'pt' ? 'en' : 'pt';
-    const response = await setSessionValue('language', new_lang);
-
-    window.open(`?lang=${new_lang}`, "_self");
-
-})
-
-header_sidebar_open_icon.addEventListener('click', () => {
-
-    // Show sidebar functionality
-   
-    sidebar.style.right = "0";
-    sidebar.style.opacity = "1";
-
+document.addEventListener('click', (e) => {
+    if (!pref_btn_container.contains(e.target)){
+        theme_options.classList.remove('opened');
+        lang_options.classList.remove('opened');
+    }
 });
-
-sidebar_close_icon.addEventListener('click', () => {
-    
-    // Close sidebar functionality
-
-    sidebar.style.right = "-15rem";
-    sidebar.style.opacity = "0";
-
-});
-
-github_btn.addEventListener("click", async () => {
-    
-    window.open("https://www.github.com/andrec2709", "_blank");
-
-});
-
-github_btn_sidebar.addEventListener("click", async () => {
-
-    window.open("https://www.github.com/andrec2709", "_blank");
-
-});
-
-start_btn.addEventListener("click", async () => {
-
-    await openWithLang("../pages/index.php");
-
-});
-
-portfolio_btn.addEventListener("click", async () => {
-
-    await openWithLang("../pages/portfolio.php");
-
-});
-
-contact_btn.addEventListener("click", async () => {
-
-    await openWithLang("../pages/contact.php");
-
-});
-
-about_btn.addEventListener("click", async () => {
-
-    await openWithLang("../pages/about.php");
-
-});
-
-start_btn_sidebar.addEventListener("click", async () => {
-
-    await openWithLang("../pages/index.php");
-
-});
-
-portfolio_btn_sidebar.addEventListener("click", async () => {
-
-    await openWithLang("../pages/portfolio.php");
-
-});
-
-contact_btn_sidebar.addEventListener("click", async () => {
-
-    await openWithLang("../pages/contact.php");
-
-});
-
-about_btn_sidebar.addEventListener("click", async () => {
-
-    await openWithLang("../pages/about.php");
-
-});
-
-pagelogo_btn.addEventListener("click", async () => {
-
-    await openWithLang("../pages/index.php");
-
-});
-
-
-//
 
 
 // <-------------------------------->
-
-

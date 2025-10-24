@@ -2,10 +2,10 @@
 
 $lang = [
 
-// ------------------ Page Metadata  --------------------
+    // ------------------ Page Metadata  --------------------
 
 
-// Titles
+    // Titles
 
     "main-page-title" => "Start Page",
     "portfolio-page-title" => "Developer's Portfolio - Andre Carvalho",
@@ -13,7 +13,7 @@ $lang = [
     "about-page-title" => "About me - Andre Carvalho",
 
 
-// Descriptions
+    // Descriptions
 
     "main-page-description" => "Welcome to the main page of my website, please feel free to check the Portfolio and 'About me' sections for more details. You can also find how to contact me via the 'Contact' page.",
     "portfolio-page-description" => "Here you can find my work and personal projects as a developer.",
@@ -21,20 +21,20 @@ $lang = [
     "about-page-description" => "Here you can find more descriptive information about me and my skills.",
 
 
-// Keywords
+    // Keywords
 
     "page-keywords" => "andre carvalho, andre, carvalho, portfolio, developer, dev, hire, offers, curriculum, solo developer, html, css, javascript, php, c++, github, technology, freelancer, freelance, freelancing",
 
 
-// ------------------------------------------------------
+    // ------------------------------------------------------
 
 
 
 
-// ------------------ Header Content  --------------------
+    // ------------------ Header Content  --------------------
 
 
-// Options  
+    // Options  
 
     "about" => "About me",
     "start" => "Start",
@@ -42,7 +42,7 @@ $lang = [
     "contact" => "Contact",
 
 
-// Alternatives  
+    // Alternatives  
 
     "switch-mode-alt" => "Switch between dark and light mode",
     "lang-icon-alt" => "Change language display to portuguese",
@@ -50,19 +50,19 @@ $lang = [
     "open-sidebar-alt" => "Open sidebar",
     "close-sidebar-alt" => "Close sidebar",
 
-    
-// -------------------------------------------------------
+
+    // -------------------------------------------------------
 
 
-// ------------------ Under Construction --------------------
+    // ------------------ Under Construction --------------------
 
     "thank you" => "Thank you for your visit.",
     "construction" => nl2br("This webpage is currently under construction.\nPlease come back in the near future to check its content."),
 
-// -------------------------------------------------------
+    // -------------------------------------------------------
 
 
-// ------------------------ Contact Page -------------------------------
+    // ------------------------ Contact Page -------------------------------
 
     "heading_1" => "Let's work together",
     "paragraph_1" => nl2br("The best way to reach me is by e-mail, at <a class=\"p-link theme-dependant\" href=\"mailto:contato@andrecarvalho.io\" target=\"_blank\">contato@andrecarvalho.io</a>.\n\nI’m open to job opportunities, freelance projects, and collaboration with other developers."),
@@ -73,15 +73,15 @@ $lang = [
     "message" => "Message",
     "send" => "Send",
 
-// ---------------------------------------------------------------------
+    // ---------------------------------------------------------------------
 
 
-// ----------------------------About Page-------------------------------
+    // ----------------------------About Page-------------------------------
 
     "about_heading_2" => "Skill Assessment",
     "about_p_1" => "Here is a list of things I know, but not limited to:",
-    "about_li_1" => "HTML, CSS, Javascript, PHP.<a href=\"#about_li_1_note\" class=\"p-link theme-dependant\">*</a>",
-    "about_li_1_note" => "* This website's source code is archived in <a href=\"https://github.com/andrec2709/andrecarvalho.io\" target=\"_blank\" class=\"p-link theme-dependant\">this Github repository</a>, feel free to check it.",
+    "about_li_1" => "HTML, CSS, Javascript, PHP.<a href=\"#about_li_1_note\" class=\"p-link theme-dependant\"><sup>[1]</sup></a>",
+    "about_li_1_note" => "<sup>[1]</sup> This website's source code is archived in <a href=\"https://github.com/andrec2709/andrecarvalho.io\" target=\"_blank\" class=\"p-link theme-dependant\">this Github repository</a>, feel free to check it.",
     "about_li_2" => "Electron.",
     "about_li_3" => "Python.",
     "about_li_4" => "SQL.",
@@ -102,6 +102,5 @@ $lang = [
     "note" => "Note",
     "about_p_3" => "Please check my github repositories for further reference.",
 
-// ---------------------------------------------------------------------
+    // ---------------------------------------------------------------------
 ];
-?>

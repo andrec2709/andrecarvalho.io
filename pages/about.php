@@ -7,66 +7,128 @@ include __DIR__ . "/../api/StartSession.php";
 
 <!DOCTYPE html>
 
-<html lang="<?=$language?>" data-theme="<?=$_SESSION['theme']?>">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="description" content="This is my portfolio as a developer, please feel free to check my personal projects on github,  also check the 'about me' page for more information">
-		<meta name="keywords" content="portfolio, developer, hire, freelance, showcase">
-		<meta name="author" content="Andre Carvalho Filho">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title><?=$lang['about-page-title']?></title>
-		<link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
-		<link rel="stylesheet" href="../styles/main.css">
-	</head>
-	<body class="theme-dependant">
-		<?php include __DIR__ . '/../includes/header.php';?>
+<html lang="<?= $language ?>" data-theme="<?= $_SESSION['theme'] ?>">
 
-		<div class="main-content">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description"
+		content="This is my portfolio as a developer, please feel free to check my personal projects on github,  also check the 'about me' page for more information">
+	<meta name="keywords" content="portfolio, developer, hire, freelance, showcase">
+	<meta name="author" content="Andre Carvalho Filho">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title data-i18n="about.title">
+		<?= $lang['about']['title'] ?>
+	</title>
+	<link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../styles/main.css">
+	<script>
+		const theme = localStorage.getItem('theme') || 'light';
+		document.documentElement.classList.add(`theme-${theme}`);
+	</script>
+</head>
 
-			<h1 class="theme-dependant custom-heading"><?=$lang['about']?></h1>
+<body class="theme-dependant">
+	<?php include __DIR__ . '/../includes/header.php'; ?>
 
-			<h2 class="theme-dependant custom-heading"><?=$lang['about_heading_2']?></h2>
+	<main class="main-content">
 
-			<p class="theme-dependant custom-para"><?=$lang['about_p_1']?></p>
+		<h1 class="theme-dependant custom-heading" data-i18n="about.heading_1">
+			<?= $lang['about']['heading_1'] ?>
+		</h1>
+
+		<section>
+			<h2 class="theme-dependant custom-heading" data-i18n="about.heading_2">
+				<?= $lang['about']['heading_2'] ?>
+			</h2>
+
+			<p class="theme-dependant custom-para" data-i18n="about.p_1">
+				<?= $lang['about']['p_1'] ?>
+			</p>
 
 			<ul class="theme-dependant custom-list">
-				<li><?=$lang['about_li_1']?></li>
-				<li><?=$lang['about_li_2']?></li>
-				<li><?=$lang['about_li_3']?></li>
-				<li><?=$lang['about_li_4']?></li>
-				<li><?=$lang['about_li_5']?></li>
-				<li><?=$lang['about_li_6']?></li>
-				<li><?=$lang['about_li_7']?></li>
-				<li><?=$lang['about_li_8']?></li>
-				<li><?=$lang['about_li_9']?></li>
-				<li><?=$lang['about_li_10']?></li>
+				<li data-i18n="about.li_1">
+					<?= $lang['about']['li_1'] ?>
+				</li>
+				<li data-i18n="about.li_2">
+					<?= $lang['about']['li_2'] ?>
+				</li>
+				<li data-i18n="about.li_3">
+					<?= $lang['about']['li_3'] ?>
+				</li>
+				<li data-i18n="about.li_4">
+					<?= $lang['about']['li_4'] ?>
+				</li>
+				<li data-i18n="about.li_5">
+					<?= $lang['about']['li_5'] ?>
+				</li>
+				<li data-i18n="about.li_6">
+					<?= $lang['about']['li_6'] ?>
+				</li>
+				<li data-i18n="about.li_7">
+					<?= $lang['about']['li_7'] ?>
+				</li>
+				<li data-i18n="about.li_8">
+					<?= $lang['about']['li_8'] ?>
+				</li>
+				<li data-i18n="about.li_9">
+					<?= $lang['about']['li_9'] ?>
+				</li>
+				<li data-i18n="about.li_10">
+					<?= $lang['about']['li_10'] ?>
+				</li>
 			</ul>
 
-				<p class="theme-dependant custom-para"><?=$lang['about_p_2']?></p>
+			<p class="theme-dependant custom-para" data-i18n="about.p_2">
+				<?= $lang['about']['p_2'] ?>
+			</p>
 
 			<ul class="theme-dependant custom-list">
-				<li><?=$lang['about_li_11']?></li>
-				<li><?=$lang['about_li_12']?></li>
-				<li><?=$lang['about_li_13']?></li>
-				<li><?=$lang['about_li_14']?></li>
-				<li><?=$lang['about_li_15']?></li>
-				<li><?=$lang['about_li_16']?></li>
-				<li><?=$lang['about_li_17']?></li>
+				<li data-i18n="about.li_11">
+					<?= $lang['about']['li_11'] ?>
+				</li>
+				<li data-i18n="about.li_12">
+					<?= $lang['about']['li_12'] ?>
+				</li>
+				<li data-i18n="about.li_13">
+					<?= $lang['about']['li_13'] ?>
+				</li>
+				<li data-i18n="about.li_14">
+					<?= $lang['about']['li_14'] ?>
+				</li>
+				<li data-i18n="about.li_15">
+					<?= $lang['about']['li_15'] ?>
+				</li>
+				<li data-i18n="about.li_16">
+					<?= $lang['about']['li_16'] ?>
+				</li>
+				<li data-i18n="about.li_17">
+					<?= $lang['about']['li_17'] ?>
+				</li>
 			</ul>
 
-			<h2 class="theme-dependant custom-heading"><?=$lang['note']?></h2>
-			
-			<p class="theme-dependant custom-para"><?=$lang['about_p_3']?></p>
-			
+			<h2 class="theme-dependant custom-heading" data-i18n="about.note">
+				<?= $lang['about']['note'] ?>
+			</h2>
+
+			<p class="theme-dependant custom-para" data-i18n="about.p_3">
+				<?= $lang['about']['p_3'] ?>
+			</p>
+
 			<br><br>
-			
-			<p id="about_li_1_note" class="theme-dependant footnote"><?=$lang['about_li_1_note']?></p>
-		</div>
+
+			<p id="about_li_1_note" class="theme-dependant footnote" data-i18n="about.li_1_note">
+				<?= $lang['about']['li_1_note'] ?>
+			</p>
+
+		</section>
+
+	</main>
 
 
-		<?php include __DIR__ . '/../includes/footer.php';?>
+	<?php include __DIR__ . '/../includes/footer.php'; ?>
 
 
-		<script src="../scripts/main.js"></script>
-	</body>
+	<script src="../scripts/main.js"></script>
+</body>
+
 </html>

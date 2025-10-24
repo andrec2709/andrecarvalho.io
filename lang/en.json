@@ -1,0 +1,59 @@
+{
+	"header": {
+		"start": "Start",
+		"contact": "Contact",
+		"about": "About",
+		"portfolio": "Portfolio"
+	},
+    "footer": {
+        "contact": "Contact",
+        "about": "About"
+    },
+	"lang_options": {
+		"pt": "Portuguese",
+		"en": "English"
+	},
+	"contact": {
+		"title": "Developer's Contact - Andre Carvalho",
+		"heading_1": "Let's work together",
+		"paragraph_1": "The best way to reach me is by e-mail, at <a class=\"p-link theme-dependant\" href=\"mailto:contato@andrecarvalho.io\" target=\"_blank\">contato@andrecarvalho.io</a>.<br><br>I’m open to job opportunities, freelance projects, and collaboration with other developers.",
+		"heading_2": "Useful links",
+		"heading_3": "Contact me",
+		"name": "Name",
+		"message": "Message",
+		"send": "Send"
+	},
+	"about": {
+		"title": "About me - Andre Carvalho",
+		"heading_1": "About me",
+		"heading_2": "Skill Assessment",
+		"p_1": "Here is a list of things I know, but not limited to:",
+		"li_1": "HTML, CSS, Javascript, PHP.<a href=\"#about_li_1_note\" class=\"p-link theme-dependant\"><sup>[1]</sup></a>",
+		"li_2": "Electron.",
+		"li_3": "Python.",
+		"li_4": "SQL.",
+		"li_5": "Advanced Excel / Automation with VBA.",
+		"li_6": "Powershell.",
+		"li_7": "Bash Scripting.",
+		"li_8": "Knowledge on both Windows and Linux based operating systems.",
+		"li_9": "Basic C++.",
+		"li_10": "Basic Java.",
+		"p_2": "I have a solid foundation in programming, so given enough time, I can learn any language, framework, library, etc.<br><br><br>Moreover, I have some experience with UI/UX design as well. This website was designed inside Penpot before I began coding it. All icons were created by me using Inkscape.",
+		"li_11": "Penpot.",
+		"li_12": "Inkscape.",
+		"li_13": "Figma.",
+		"li_14": "Gimp.",
+		"li_15": "Photoshop.",
+		"li_16": "Blender.",
+		"li_17": "Others.",
+		"note": "Note",
+		"p_3": "Please check my github repositories for further reference.",
+		"li_1_note": "<sup>[1]</sup> This website's source code is archived in <a href=\"https://github.com/andrec2709/andrecarvalho.io\" target=\"_blank\" class=\"p-link theme-dependant\">this Github repository</a>, feel free to check it."
+	},
+	"index": {
+		"title": "Start Page"
+	},
+	"portfolio": {
+		"title": "Developer's Portfolio - Andre Carvalho"
+	}
+}

@@ -21,6 +21,6 @@ else{
     echo json_encode(['status' => 'error', 'message' => 'Invalid request method']);
 }
 
-error_log($_SESSION['language']);
+// error_log($_SESSION['language']);
 
 ?>

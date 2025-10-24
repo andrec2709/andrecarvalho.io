@@ -18,7 +18,8 @@ if (!isset($_SESSION['theme'])){
 }
 
 $language = $_SESSION['language'];
-include "../lang/$language.php";
 
+$lang = json_decode(file_get_contents( __DIR__ . "/../lang/$language.json"), true);
 
+// error_log("\$_SESSION['language'] is = " . $_SESSION['language'] . $lang['header']['start']);
 ?>

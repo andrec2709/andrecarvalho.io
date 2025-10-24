@@ -1,0 +1,59 @@
+{
+	"header": {
+		"start": "Início",
+		"contact": "Contato",
+		"about": "Sobre",
+		"portfolio": "Portfólio"
+	},
+    "footer": {
+        "contact": "Contato",
+        "about": "Sobre"
+    },
+	"lang_options": {
+		"pt": "Português",
+		"en": "Inglês"
+	},
+	"contact": {
+		"title": "Contato do Desenvolvedor - Andre Carvalho",
+		"heading_1": "Vamos trabalhar juntos",
+		"paragraph_1": "A melhor forma de entrar em contato comigo é através do e-mail <a class=\"p-link theme-dependant\" href=\"mailto:contato@andrecarvalho.io\" target=\"_blank\">contato@andrecarvalho.io</a>.<br><br>Estou aberto para oportunidades de trabalho, freelance, e colaboração com outros desenvolvedores.",
+		"heading_2": "Links Úteis",
+		"heading_3": "Entre em contato",
+		"name": "Nome",
+		"message": "Mensagem",
+		"send": "Enviar"
+	},
+	"about": {
+		"title": "Sobre mim - Andre Carvalho",
+		"heading_1": "Sobre mim",
+		"heading_2": "Conhecimentos",
+		"p_1": "Esta é uma lista de coisas que sei, porém não se limitando a elas:",
+		"li_1": "HTML, CSS, Javascript, PHP.<a href=\"#about_li_1_note\" class=\"p-link theme-dependant\"><sup>[1]</sup></a>",
+		"li_2": "Electron.",
+		"li_3": "Python.",
+		"li_4": "SQL.",
+		"li_5": "Excel Avançado / Automação com VBA.",
+		"li_6": "Powershell.",
+		"li_7": "Scripting em Bash.",
+		"li_8": "Conhecimento tanto em Windows quanto distribuições Linux.",
+		"li_9": "C++ básico.",
+		"li_10": "Java básico.",
+		"p_2": "Eu tenho uma base sólida em programação, então com tempo suficiente consigo aprender qualquer linguagem, framework, etc.<br><br><br>Além disso, eu tenho experiência com design UI/UX também. O design deste website foi projetado por mim no Penpot, assim como os ícones criados utilizando Inkscape.",
+		"li_11": "Penpot.",
+		"li_12": "Inkscape.",
+		"li_13": "Figma.",
+		"li_14": "Gimp.",
+		"li_15": "Photoshop.",
+		"li_16": "Blender.",
+		"li_17": "Outros.",
+		"note": "Nota",
+		"p_3": "Para mais referências por favor consultar meus repositórios no Github.",
+		"li_1_note": "* O código fonte desta página está arquivado <a href=\"https://github.com/andrec2709/andrecarvalho.io\" target=\"_blank\" class=\"p-link theme-dependant\">neste repositório do Github</a>, por favor verifique-o."
+	},
+	"index": {
+		"title": "Página inicial"
+	},
+	"portfolio": {
+		"title": "Portfólio do Desenvolvedor - Andre Carvalho"
+	}
+}

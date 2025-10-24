@@ -8,7 +8,7 @@ include __DIR__ . "/../api/StartSession.php";
 
 <!DOCTYPE html>
 
-<html lang="<?= $language ?>" data-theme="<?=$_SESSION['theme']?>">
+<html lang="<?= $language ?>" data-theme="<?= $_SESSION['theme'] ?>">
 
 <head>
 	<meta charset="UTF-8">
@@ -17,12 +17,16 @@ include __DIR__ . "/../api/StartSession.php";
 	<meta name="keywords" content="portfolio, developer, hire, freelance, showcase">
 	<meta name="author" content="Andre Carvalho Filho">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>
-		<?= $lang['portfolio-page-title'] ?>
+	<title data-i18n="portfolio.title">
+		<?= $lang['portfolio']['title'] ?>
 	</title>
 	<link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="../styles/main.css">
 	<link rel="stylesheet" href="../styles/portfolio.css">
+	<script>
+		const theme = localStorage.getItem('theme') || 'light';
+		document.documentElement.classList.add(`theme-${theme}`);
+	</script>
 </head>
 
 <body class="theme-dependant">
