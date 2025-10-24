@@ -13,10 +13,14 @@
 		"pt": "Português",
 		"en": "Inglês"
 	},
+	"construction": {
+		"thank_you": "Obrigado por sua visita.",
+		"under_construction": "Esta página está sendo construída no momento.<br>Por favor retorne em breve para ver seu conteúdo."
+	},
 	"contact": {
 		"title": "Contato do Desenvolvedor - Andre Carvalho",
 		"heading_1": "Vamos trabalhar juntos",
-		"paragraph_1": "A melhor forma de entrar em contato comigo é através do e-mail <a class=\"p-link theme-dependant\" href=\"mailto:contato@andrecarvalho.io\" target=\"_blank\">contato@andrecarvalho.io</a>.<br><br>Estou aberto para oportunidades de trabalho, freelance, e colaboração com outros desenvolvedores.",
+		"paragraph_1": "A melhor forma de entrar em contato comigo é através do e-mail <a class=\"p-link \" href=\"mailto:contato@andrecarvalho.io\" target=\"_blank\">contato@andrecarvalho.io</a>.<br><br>Estou aberto para oportunidades de trabalho, freelance, e colaboração com outros desenvolvedores.",
 		"heading_2": "Links Úteis",
 		"heading_3": "Entre em contato",
 		"name": "Nome",
@@ -28,7 +32,7 @@
 		"heading_1": "Sobre mim",
 		"heading_2": "Conhecimentos",
 		"p_1": "Esta é uma lista de coisas que sei, porém não se limitando a elas:",
-		"li_1": "HTML, CSS, Javascript, PHP.<a href=\"#about_li_1_note\" class=\"p-link theme-dependant\"><sup>[1]</sup></a>",
+		"li_1": "HTML, CSS, Javascript, PHP.<a href=\"#about_li_1_note\" class=\"p-link \"><sup>[1]</sup></a>",
 		"li_2": "Electron.",
 		"li_3": "Python.",
 		"li_4": "SQL.",
@@ -48,7 +52,7 @@
 		"li_17": "Outros.",
 		"note": "Nota",
 		"p_3": "Para mais referências por favor consultar meus repositórios no Github.",
-		"li_1_note": "* O código fonte desta página está arquivado <a href=\"https://github.com/andrec2709/andrecarvalho.io\" target=\"_blank\" class=\"p-link theme-dependant\">neste repositório do Github</a>, por favor verifique-o."
+		"li_1_note": "* O código fonte desta página está arquivado <a href=\"https://github.com/andrec2709/andrecarvalho.io\" target=\"_blank\" class=\"p-link \">neste repositório do Github</a>, por favor verifique-o."
 	},
 	"index": {
 		"title": "Página inicial"

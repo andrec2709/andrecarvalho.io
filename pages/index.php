@@ -25,7 +25,7 @@ include __DIR__ . "/../api/StartSession.php";
 	</script>
 </head>
 
-<body class="theme-dependant <?= $_SESSION['theme'] ?>">
+<body class=" <?= $_SESSION['theme'] ?>">
 	<?php include __DIR__ . '/../includes/header.php'; ?>
 
 	<?php include __DIR__ . '/../includes/construction.php'; ?>

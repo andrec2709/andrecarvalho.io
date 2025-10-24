@@ -13,10 +13,14 @@
 		"pt": "Portuguese",
 		"en": "English"
 	},
+	"construction": {
+		"thank_you": "Thank you for your visit.",
+		"under_construction": "This webpage is currently under construction.\nPlease come back in the near future to check its content."
+	},
 	"contact": {
 		"title": "Developer's Contact - Andre Carvalho",
 		"heading_1": "Let's work together",
-		"paragraph_1": "The best way to reach me is by e-mail, at <a class=\"p-link theme-dependant\" href=\"mailto:contato@andrecarvalho.io\" target=\"_blank\">contato@andrecarvalho.io</a>.<br><br>I’m open to job opportunities, freelance projects, and collaboration with other developers.",
+		"paragraph_1": "The best way to reach me is by e-mail, at <a class=\"p-link \" href=\"mailto:contato@andrecarvalho.io\" target=\"_blank\">contato@andrecarvalho.io</a>.<br><br>I’m open to job opportunities, freelance projects, and collaboration with other developers.",
 		"heading_2": "Useful links",
 		"heading_3": "Contact me",
 		"name": "Name",
@@ -28,7 +32,7 @@
 		"heading_1": "About me",
 		"heading_2": "Skill Assessment",
 		"p_1": "Here is a list of things I know, but not limited to:",
-		"li_1": "HTML, CSS, Javascript, PHP.<a href=\"#about_li_1_note\" class=\"p-link theme-dependant\"><sup>[1]</sup></a>",
+		"li_1": "HTML, CSS, Javascript, PHP.<a href=\"#about_li_1_note\" class=\"p-link \"><sup>[1]</sup></a>",
 		"li_2": "Electron.",
 		"li_3": "Python.",
 		"li_4": "SQL.",
@@ -48,7 +52,7 @@
 		"li_17": "Others.",
 		"note": "Note",
 		"p_3": "Please check my github repositories for further reference.",
-		"li_1_note": "<sup>[1]</sup> This website's source code is archived in <a href=\"https://github.com/andrec2709/andrecarvalho.io\" target=\"_blank\" class=\"p-link theme-dependant\">this Github repository</a>, feel free to check it."
+		"li_1_note": "<sup>[1]</sup> This website's source code is archived in <a href=\"https://github.com/andrec2709/andrecarvalho.io\" target=\"_blank\" class=\"p-link \">this Github repository</a>, feel free to check it."
 	},
 	"index": {
 		"title": "Start Page"

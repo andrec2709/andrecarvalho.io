@@ -76,7 +76,7 @@ $lang = [
 // ------------------------ Contact Page -------------------------------
 
     "heading_1" => "Vamos trabalhar juntos",
-    "paragraph_1" => nl2br("A melhor forma de entrar em contato comigo é através do e-mail <a class=\"p-link theme-dependant\" href=\"mailto:contato@andrecarvalho.io\" target=\"_blank\">contato@andrecarvalho.io</a>.\n\nEstou aberto para oportunidades de trabalho, freelance, e colaboração com outros desenvolvedores."),
+    "paragraph_1" => nl2br("A melhor forma de entrar em contato comigo é através do e-mail <a class=\"p-link \" href=\"mailto:contato@andrecarvalho.io\" target=\"_blank\">contato@andrecarvalho.io</a>.\n\nEstou aberto para oportunidades de trabalho, freelance, e colaboração com outros desenvolvedores."),
     "heading_2" => "Links Úteis",
     "heading_3" => "Entre em contato",
     "name" => "Nome",
@@ -92,8 +92,8 @@ $lang = [
 
     "about_heading_2" => "Conhecimentos",
     "about_p_1" => "Esta é uma lista de coisas que sei, porém não se limitando a elas:",
-    "about_li_1" => "HTML, CSS, Javascript, PHP.<a href=\"#about_li_1_note\" class=\"p-link theme-dependant\">*</a>",
-    "about_li_1_note" => "* O código fonte desta página está arquivado <a href=\"https://github.com/andrec2709/andrecarvalho.io\" target=\"_blank\" class=\"p-link theme-dependant\">neste repositório do Github</a>, por favor verifique-o.",
+    "about_li_1" => "HTML, CSS, Javascript, PHP.<a href=\"#about_li_1_note\" class=\"p-link \">*</a>",
+    "about_li_1_note" => "* O código fonte desta página está arquivado <a href=\"https://github.com/andrec2709/andrecarvalho.io\" target=\"_blank\" class=\"p-link \">neste repositório do Github</a>, por favor verifique-o.",
     "about_li_2" => "Electron.",
     "about_li_3" => "Python.",
     "about_li_4" => "SQL.",

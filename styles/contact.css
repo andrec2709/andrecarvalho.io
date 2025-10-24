@@ -8,8 +8,9 @@
 
 .form-label{
     font-family: "Manrope";
-    font-size: 1.05rem;
+    font-size: 1rem;
     line-height: 2rem;
+    color: var(--color-onbackground);
 }
 
 .form-input-text, .form-input-email{
@@ -21,15 +22,9 @@
     font-family: "Manrope";
     width: 100%;
     margin-bottom: 1rem;
-    background-color: var(--main-bg-color-dark-form-input);
-    border: 1px solid #25505a;
-    color: var(--main-fg-color-dark);
-}
-
-.form-input-text.light, .form-input-email.light{
-    border: 1px solid #838c8d;
-    background-color: var(--main-bg-color-light-form-input);
-    color: var(--main-fg-color-light);
+    background-color: var(--color-background-input-field);
+    border: 1px solid var(--color-background-variant-2);
+    color: var(--color-onbackground-input-field);
 }
 
 textarea.form-input-text{
@@ -44,11 +39,7 @@ textarea.form-input-text{
 
 .form-input-text:focus, .form-input-email:focus{
     outline: none;
-    border-color: #2f9b84;
-}
-
-.form-input-text.light:focus, .form-input-email.light:focus{
-    border-color: #000000;
+    border-color: var(--color-primary);
 }
 
 .form-submit{
@@ -65,13 +56,8 @@ textarea.form-input-text{
     transition-property: filter;
     transition-duration: .1s;
     transition-timing-function: ease-out;
-    color: var(--main-fg-color-light);
-    background-color: var(--main-fg-heading-color-dark);
-}
-
-.form-submit.light{
-    color: var(--main-fg-color-dark);
-    background-color: var(--main-bg-color-dark);
+    color: var(--color-onprimary);
+    background-color: var(--color-primary);
 }
 
 .form-submit:hover{

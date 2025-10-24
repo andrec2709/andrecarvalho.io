@@ -29,23 +29,21 @@ include __DIR__ . "/../api/StartSession.php";
 	</script>
 </head>
 
-<body class="theme-dependant">
+<body>
 	<?php include __DIR__ . '/../includes/header.php'; ?>
 
 
-	<div class="main-content">
-		<img data-dark-img="../assets/img/github-mark-white.png" data-light-img="../assets/img/github-mark.png"
-			class="portfolio-gh-logo theme-dependant" src="../assets/img/github-mark-white.png" alt="github logo"
-			draggable="false">
+	<main class="main-content">
+		<img class="portfolio-gh-logo icon" src="../assets/img/github-mark.png" alt="github logo" draggable="false">
 		<div id="feature-container" class="feature-container">
 
 
 		</div>
-		<h3 id="repos-list-heading" class=" theme-dependant custom-heading">My public repositories</h3>
-		<div id="repos-list" class="theme-dependant">
+		<h2 class="repos-list-heading">My public repositories</h2>
+		<div id="repos-list">
 		</div>
 
-	</div>
+	</main>
 
 
 	<?php include __DIR__ . '/../includes/footer.php'; ?>

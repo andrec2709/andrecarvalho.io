@@ -19,23 +19,16 @@
 }
 
 .f-card-main{
-    background-color: var(--portfolio-item-bg-color-dark);
-    border: 1px solid var(--portfolio-item-border-color-dark);
+    background-color: var(--color-tertiary-variant);
+    border: 1px solid var(--color-tertiary-variant-3);
     font-family: "Manrope";
     width: clamp(15rem, 95vw, 20rem);
     cursor: pointer;
 }
 
-.f-card-main.light{
-    background-color: var(--portfolio-item-bg-color-light);
-}
-
-.f-card-main.light:hover{
-    background-color: color-mix(in srgb, var(--portfolio-item-bg-color-light) 85%, white);
-}
 
 .f-card-main:hover{
-    background-color: color-mix(in srgb, var(--portfolio-item-bg-color-dark) 85%, black);
+    background-color: color-mix(in srgb, var(--color-tertiary-variant) 85%, black);
 }
 
 .f-card-main p {
@@ -43,16 +36,12 @@
 }
 
 .f-card-title{
-    border-bottom: 1px solid var(--portfolio-item-border-color-dark);
+    border-bottom: 1px solid var(--color-tertiary-variant-3);
     padding-left: .3rem;
     padding-top: .3rem;
-    color: var(--main-fg-heading-color-dark);
+    color: var(--color-primary);
     font-size: 1.2rem;
     font-weight: 500;
-}
-
-.f-card-title.light{
-    color: #0e0e0e;
 }
 
 .f-card-content{
@@ -80,7 +69,7 @@
     text-align: right;
 }
 
-#repos-list-heading{
+.repos-list-heading{
     margin: 0;
     margin-top: 2rem;
     font-size: clamp(1.8rem, 2.2vw, 2.5rem);
@@ -88,36 +77,22 @@
 }
 
 #repos-list{
-    background-color: var(--portfolio-item-bg-color-dark);
-    border: 1px solid var(--portfolio-item-border-color-dark);
+    background-color: var(--color-tertiary-variant);
+    border: 1px solid var(--color-tertiary-variant-3);
     font-family: "Manrope";
     font-weight: 300;
     width: 100%;
     margin-top: 1rem;
 }
 
-#repos-list.light{
-    background-color: var(--portfolio-item-bg-color-light);
-    border: 1px solid var(--portfolio-item-border-color-light);
-}
-
 .repos-list-item{
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid var(--portfolio-item-border-color-dark);
+    border-bottom: 1px solid var(--color-tertiary-variant-3);
     cursor: pointer;
 }
-
-.repos-list-item.light{
-    border-bottom: 1px solid var(--portfolio-item-border-color-light);
-}
-
-.repos-list-item.light:hover{
-    background-color: color-mix(in srgb, var(--portfolio-item-bg-color-light) 85%, white);
-}
-
 .repos-list-item:hover{
-    background-color: color-mix(in srgb, var(--portfolio-item-bg-color-dark) 85%, black);
+    background-color: color-mix(in srgb, var(--color-tertiary-variant) 85%, black);
 }
 
 .repos-list-item p{
@@ -149,8 +124,6 @@
     padding-bottom: .5rem;
 }
 
-/* .repos-common {
-} */
 
 @media screen and (width <= 680px) {
     .feature-container{

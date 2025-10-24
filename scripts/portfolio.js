@@ -31,21 +31,21 @@ class FCard extends BaseCard {
 
     connectedCallback(){
 
-        this.setAttribute('class', 'f-card-main repos-common theme-dependant');
+        this.setAttribute('class', 'f-card-main repos-common ');
         this.setAttribute('role', 'button');
         this.setAttribute('tabindex', '0');
 
         const card_title = document.createElement('p');
-        card_title.setAttribute('class', 'f-card-title theme-dependant');
+        card_title.setAttribute('class', 'f-card-title ');
         
         const card_name = document.createElement('p');
-        card_name.setAttribute('class', 'f-card-name f-card-content theme-dependant');
+        card_name.setAttribute('class', 'f-card-name f-card-content ');
         
         const card_desc = document.createElement('p');
-        card_desc.setAttribute('class', 'f-card-desc f-card-content theme-dependant');
+        card_desc.setAttribute('class', 'f-card-desc f-card-content ');
         
         const card_date = document.createElement('p');
-        card_date.setAttribute('class', 'f-card-date f-card-content theme-dependant');
+        card_date.setAttribute('class', 'f-card-date f-card-content ');
 
         this.appendChild(card_title);
         this.appendChild(card_name);
@@ -83,18 +83,18 @@ class RepoCard extends BaseCard{
     }
 
     connectedCallback(){
-        this.setAttribute('class', 'repos-list-item repos-common theme-dependant');
+        this.setAttribute('class', 'repos-list-item repos-common ');
         this.setAttribute('role', 'button');
         this.setAttribute('tabindex', '0');
 
         const card_name = document.createElement('p');
-        card_name.setAttribute('class', 'repos-list-item-name theme-dependant');
+        card_name.setAttribute('class', 'repos-list-item-name ');
         
         const card_desc = document.createElement('p');
-        card_desc.setAttribute('class', 'repos-list-item-desc theme-dependant');
+        card_desc.setAttribute('class', 'repos-list-item-desc ');
         
         const card_date = document.createElement('p');
-        card_date.setAttribute('class', 'repos-list-item-date theme-dependant');
+        card_date.setAttribute('class', 'repos-list-item-date ');
 
         this.appendChild(card_name);
         this.appendChild(card_desc);

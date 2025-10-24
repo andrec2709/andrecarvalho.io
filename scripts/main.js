@@ -115,7 +115,7 @@ async function loadPrefTheme(pageload = false){
     let html = document.documentElement;
     let theme = html.getAttribute('data-theme');
 
-    const lms = document.getElementsByClassName('theme-dependant');
+    const lms = document.getElementsByClassName('');
 
     if (!pageload){
         
@@ -129,6 +129,7 @@ async function loadPrefTheme(pageload = false){
         let lm = lms.item(i);
 
         if (lm.tagName === "IMG"){
+            console.log(theme);
             let opt = lm.getAttribute(`data-${theme}-img`);
             lm.setAttribute('src', opt);
         }

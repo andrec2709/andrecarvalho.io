@@ -27,25 +27,25 @@ include __DIR__ . "/../api/StartSession.php";
 	</script>
 </head>
 
-<body class="theme-dependant">
+<body >
 	<?php include __DIR__ . '/../includes/header.php'; ?>
 
 	<main class="main-content">
 
-		<h1 class="theme-dependant custom-heading" data-i18n="about.heading_1">
+		<h1 data-i18n="about.heading_1">
 			<?= $lang['about']['heading_1'] ?>
 		</h1>
 
 		<section>
-			<h2 class="theme-dependant custom-heading" data-i18n="about.heading_2">
+			<h2 data-i18n="about.heading_2">
 				<?= $lang['about']['heading_2'] ?>
 			</h2>
 
-			<p class="theme-dependant custom-para" data-i18n="about.p_1">
+			<p class=" " data-i18n="about.p_1">
 				<?= $lang['about']['p_1'] ?>
 			</p>
 
-			<ul class="theme-dependant custom-list">
+			<ul class=" custom-list">
 				<li data-i18n="about.li_1">
 					<?= $lang['about']['li_1'] ?>
 				</li>
@@ -78,11 +78,11 @@ include __DIR__ . "/../api/StartSession.php";
 				</li>
 			</ul>
 
-			<p class="theme-dependant custom-para" data-i18n="about.p_2">
+			<p class=" " data-i18n="about.p_2">
 				<?= $lang['about']['p_2'] ?>
 			</p>
 
-			<ul class="theme-dependant custom-list">
+			<ul class=" custom-list">
 				<li data-i18n="about.li_11">
 					<?= $lang['about']['li_11'] ?>
 				</li>
@@ -106,17 +106,17 @@ include __DIR__ . "/../api/StartSession.php";
 				</li>
 			</ul>
 
-			<h2 class="theme-dependant custom-heading" data-i18n="about.note">
+			<h2 data-i18n="about.note">
 				<?= $lang['about']['note'] ?>
 			</h2>
 
-			<p class="theme-dependant custom-para" data-i18n="about.p_3">
+			<p class=" " data-i18n="about.p_3">
 				<?= $lang['about']['p_3'] ?>
 			</p>
 
 			<br><br>
 
-			<p id="about_li_1_note" class="theme-dependant footnote" data-i18n="about.li_1_note">
+			<p id="about_li_1_note" class=" footnote" data-i18n="about.li_1_note">
 				<?= $lang['about']['li_1_note'] ?>
 			</p>
 
