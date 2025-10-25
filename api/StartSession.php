@@ -4,6 +4,7 @@ $CONFIG_PATH = getenv('CONFIG_PATH');
 
 include $CONFIG_PATH;
 
+$DEFAULT_THEME = 'purple';
 
 if (session_status() === PHP_SESSION_NONE){
     session_start();
@@ -26,5 +27,4 @@ $language = $_SESSION['language'];
 
 $lang = json_decode(file_get_contents( __DIR__ . "/../lang/$language.json"), true);
 
-// error_log("\$_SESSION['language'] is = " . $_SESSION['language'] . $lang['header']['start']);
 ?>

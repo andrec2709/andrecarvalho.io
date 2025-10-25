@@ -22,7 +22,7 @@ include __DIR__ . "/../api/StartSession.php";
 	<link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="../styles/main.css">
 	<script>
-		const theme = localStorage.getItem('theme') || 'light';
+		const theme = localStorage.getItem('theme') || '<?= $DEFAULT_THEME ?>';
 		document.documentElement.classList.add(`theme-${theme}`);
 	</script>
 </head>

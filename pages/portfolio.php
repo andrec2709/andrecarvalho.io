@@ -24,7 +24,7 @@ include __DIR__ . "/../api/StartSession.php";
 	<link rel="stylesheet" href="../styles/main.css">
 	<link rel="stylesheet" href="../styles/portfolio.css">
 	<script>
-		const theme = localStorage.getItem('theme') || 'light';
+		const theme = localStorage.getItem('theme') || '<?= $DEFAULT_THEME ?>';
 		document.documentElement.classList.add(`theme-${theme}`);
 	</script>
 </head>

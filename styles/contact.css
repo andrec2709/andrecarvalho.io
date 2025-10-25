@@ -1,3 +1,16 @@
+.main-content {
+    flex-direction: row;
+    justify-content: center;
+}
+
+.contact-section {
+    width: 50%;
+    max-width: 70rem;
+}
+
+.information-section {
+    margin-right: 2rem;
+}
 
 #contact-me-form{
     margin-left: 1rem;
@@ -102,4 +115,20 @@ textarea.form-input-text{
 #alert-message{
     color: #0e0e0e;
     font-size: 1.05rem;
+}
+
+@media screen and (width < 1280px) {
+    .main-content {
+        flex-direction: column;
+        justify-content: unset;
+    }
+
+    .contact-section {
+        width: 100%;
+        margin-left: unset;
+    }
+
+    .information-section {
+        margin-right: 0;
+    }
 }

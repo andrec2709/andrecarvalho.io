@@ -33,6 +33,7 @@ class I18n {
         localStorage.setItem('lang', lang);
         this.lang = lang;
         await setSessionValue('language', lang);
+        document.documentElement.setAttribute('lang', lang);
         this.apply();
     }
 
@@ -54,7 +55,7 @@ let lang_options = document.getElementById('lang-options');
 // contact.php
 
 let github_icon = document.getElementById("github-icon");
-let linkedin_icon = document.getElementById("linkedin-icon")
+let linkedin_icon = document.getElementById("linkedin-icon");
 //
 
 

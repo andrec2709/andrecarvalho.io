@@ -25,7 +25,7 @@ include __DIR__ . "/../api/StartSession.php";
 	<link rel="stylesheet" href="../styles/contact.css">
 	<script src="https://www.google.com/recaptcha/enterprise.js?render=<?= $recaptchaSite ?>"></script>
 	<script>
-		const theme = localStorage.getItem('theme') || 'light';
+		const theme = localStorage.getItem('theme') || '<?= $DEFAULT_THEME ?>';
 		document.documentElement.classList.add(`theme-${theme}`);
 	</script>
 
@@ -37,7 +37,7 @@ include __DIR__ . "/../api/StartSession.php";
 	<?php include __DIR__ . '/../includes/alert.php'; ?>
 
 	<main class="main-content">
-		<section>
+		<section class="information-section">
 			<h1 data-i18n="contact.heading_1">
 				<?= $lang['contact']['heading_1'] ?>
 			</h1>
