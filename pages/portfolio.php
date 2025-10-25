@@ -35,13 +35,13 @@ include __DIR__ . "/../api/StartSession.php";
 
 	<main class="main-content">
 		<img class="portfolio-gh-logo icon" src="../assets/img/github-mark.png" alt="github logo" draggable="false">
-		<div id="feature-container" class="feature-container">
+		<section id="feature-container" class="feature-container">
 
 
-		</div>
+		</section>
 		<h2 class="repos-list-heading">My public repositories</h2>
-		<div id="repos-list">
-		</div>
+		<section id="repos-list">
+		</section>
 
 	</main>
 

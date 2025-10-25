@@ -1,26 +1,6 @@
 /* ---------------------- Custom font declarations --------------------------- */
 
 @font-face {
-    font-family: "MontSerrat Alternates";
-    src: url("../assets/fonts/Montserrat_Alternates/MontserratAlternates-Bold.ttf");
-}
-
-@font-face {
-    font-family: "Lexend";
-    src: url("../assets/fonts/Lexend/Lexend-VariableFont_wght.ttf");
-}
-
-@font-face {
-    font-family: "Outfit";
-    src: url("../assets/fonts/Outfit/Outfit-VariableFont_wght.ttf");
-}
-
-@font-face {
-    font-family: "Manrope";
-    src: url("../assets/fonts/Outfit/Outfit-VariableFont_wght.ttf");
-}
-
-@font-face {
     font-family: "Jost";
     src: url("/assets/fonts/Jost/Jost-VariableFont_wght.ttf");
 }
@@ -124,6 +104,34 @@
   --icon-invert-onbackground: invert();
 }
 
+:root.theme-purple {
+  /* Base backgrounds */
+  --color-background: #c5c5c5;
+  --color-on-background: #121617;
+
+  /* Surfaces & containers */
+  --color-surface: #86A3A4;
+  --color-on-surface: #121617;
+  --color-surface-container: #b3c1c2;
+  --color-on-surface-container: #121617;
+
+  /* Accents */
+  --color-primary: #7400b8;
+  --color-on-primary: #cccccc;
+  --color-primary-container: #5e098f;
+  --color-on-primary-container: #cccccc;
+  --color-secondary: #000bac;
+  --color-on-secondary: #c5c5c5;
+
+  /* Text variations */
+  --color-text-muted: #222222;
+  --color-outline: #284a6f; /* for borders, dividers, etc. */
+
+  /* Icons */
+  --icon-invert: invert();
+  --icon-invert-onbackground: none;
+}
+
 /* <------------------------------------------------> */
 
 
@@ -132,7 +140,7 @@
 
 * {
     box-sizing: border-box;
-    font-family: "Jost";
+    font-family: "TikTok Sans";
     transition: background-color .2s ease, color .2s ease;
 }
 
@@ -274,7 +282,6 @@ header {
     background-color: var(--color-surface);
     padding: 0;
     border-radius: 10px;
-    font-family: sans-serif;
     position: fixed;
     right: clamp(5rem, 20vw, 10rem);
     bottom: 1rem;
@@ -290,7 +297,6 @@ header {
     color: var(--color-on-surface);
     border: none;
     width: 100%;
-    font-family: sans-serif;
     padding: .5rem 2rem .5rem 1rem;
 }
 
@@ -307,12 +313,11 @@ h1,
 h2 {
     color: var(--color-primary);
     font-size: 2rem;
-    font-family: sans-serif;
+    font-family: 'TikTok Sans';
 }
 
 p {
     color: var(--color-on-background);
-    font-family: sans-serif;
 }
 
 .sidebar-btn {
@@ -416,7 +421,6 @@ p {
 }
 
 .no-bp {
-    font-family: "Manrope";
     font-size: 1.1rem;
     margin-left: 1rem;
     line-height: 2rem;
@@ -424,7 +428,6 @@ p {
 }
 
 .custom-list {
-    font-family: "Manrope";
     font-size: 1.1rem;
     line-height: 2rem;
     color: var(--color-on-background);
@@ -438,7 +441,6 @@ footer {
 }
 
 .p-footer {
-    font-family: "Manrope";
     font-size: 1rem;
 }
 
@@ -458,7 +460,6 @@ footer {
 
 .under-construction-txt {
     text-align: center;
-    font-family: "Lexend";
 }
 
 .h-under-construction {

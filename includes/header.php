@@ -45,7 +45,7 @@ include __DIR__ . "/../api/StartSession.php";
             <a href="/pages/about.php" data-i18n="header.about"><?= $lang['header']['about'] ?></a>
             <a href="/pages/contact.php" data-i18n="header.contact"><?= $lang['header']['contact'] ?></a>
         </div>
-        <button id="open-sidebar" class="sidebar-btn" onclick="toggleSidebar(this)" data-action="open"><img src="/assets/icons/sidebar-open.png" alt=""></button>
+        <button aria-label="open sidebar" id="open-sidebar" class="sidebar-btn" onclick="toggleSidebar(this)" data-action="open"><img src="/assets/icons/sidebar-open.png" alt=""></button>
     </nav>
     <div class="pref-btn-container">
         <button id="lang-pref" class="pref-btn" data-menu="lang" onclick="showMenu(this)"><img src="/assets/icons/translate-icon.png"
@@ -56,6 +56,7 @@ include __DIR__ . "/../api/StartSession.php";
             <li><button data-value="light" onclick="setTheme(this)">Light theme</button></li>
             <li><button data-value="dark" onclick="setTheme(this)">Dark theme</button></li>
             <li><button data-value="abyss" onclick="setTheme(this)">Abyss</button></li>
+            <li><button data-value="purple" onclick="setTheme(this)">Purple</button></li>
         </ul>
         <ul id="lang-options" class="list-options" hidden>
             <li><button data-value="en" onclick="toggleLang(this)" data-i18n="lang_options.en"><?= $lang['lang_options']['en'] ?></button></li>
@@ -63,7 +64,7 @@ include __DIR__ . "/../api/StartSession.php";
         </ul>
     </div>
     <nav class="nav-sidebar">
-        <button id="close-sidebar" class="sidebar-btn" onclick="toggleSidebar(this)" data-action="close"><img src="/assets/icons/sidebar-close.png" alt=""></button>
+        <button aria-label="close sidebar" id="close-sidebar" class="sidebar-btn" onclick="toggleSidebar(this)" data-action="close"><img src="/assets/icons/sidebar-close.png" alt=""></button>
         <div class="nav-links sidebar">
             <a href="/pages/index.php" data-i18n="header.start"><?= $lang['header']['start'] ?></a>
             <a href="/pages/portfolio.php" data-i18n="header.portfolio"><?= $lang['header']['portfolio'] ?></a>
