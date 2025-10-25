@@ -55,6 +55,7 @@ include __DIR__ . "/../api/StartSession.php";
         <ul id="theme-options" class="list-options" hidden>
             <li><button data-value="light" onclick="setTheme(this)">Light theme</button></li>
             <li><button data-value="dark" onclick="setTheme(this)">Dark theme</button></li>
+            <li><button data-value="abyss" onclick="setTheme(this)">Abyss</button></li>
         </ul>
         <ul id="lang-options" class="list-options" hidden>
             <li><button data-value="en" onclick="toggleLang(this)" data-i18n="lang_options.en"><?= $lang['lang_options']['en'] ?></button></li>

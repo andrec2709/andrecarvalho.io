@@ -19,8 +19,8 @@
 }
 
 .f-card-main{
-    background-color: var(--color-tertiary-variant);
-    border: 1px solid var(--color-tertiary-variant-3);
+    background-color: var(--color-surface-container);
+    border: 1px solid var(--color-outline);
     font-family: "Manrope";
     width: clamp(15rem, 95vw, 20rem);
     cursor: pointer;
@@ -28,7 +28,7 @@
 
 
 .f-card-main:hover{
-    background-color: color-mix(in srgb, var(--color-tertiary-variant) 85%, black);
+    background-color: color-mix(in srgb, var(--color-surface-container) 85%, black);
 }
 
 .f-card-main p {
@@ -36,7 +36,7 @@
 }
 
 .f-card-title{
-    border-bottom: 1px solid var(--color-tertiary-variant-3);
+    border-bottom: 1px solid var(--color-outline);
     padding-left: .3rem;
     padding-top: .3rem;
     color: var(--color-primary);
@@ -77,8 +77,8 @@
 }
 
 #repos-list{
-    background-color: var(--color-tertiary-variant);
-    border: 1px solid var(--color-tertiary-variant-3);
+    background-color: var(--color-surface-container);
+    border: 1px solid var(--color-outline);
     font-family: "Manrope";
     font-weight: 300;
     width: 100%;
@@ -88,11 +88,11 @@
 .repos-list-item{
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid var(--color-tertiary-variant-3);
+    border-bottom: 1px solid var(--color-outline);
     cursor: pointer;
 }
 .repos-list-item:hover{
-    background-color: color-mix(in srgb, var(--color-tertiary-variant) 85%, black);
+    background-color: color-mix(in srgb, var(--color-surface-container) 85%, black);
 }
 
 .repos-list-item p{
