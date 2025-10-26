@@ -13,8 +13,8 @@ include __DIR__ . "/../api/StartSession.php";
 <head>
 	<meta charset="UTF-8">
 	<meta name="description"
-		content="In case you decide to reach out to me, for job opportunities and offers, please check the contact information on this page">
-	<meta name="keywords" content="portfolio, developer, hire, freelance, showcase, opportunities, contact">
+		content="<?= $lang['contact']['description'] ?>">
+	<meta name="keywords" content="<?= $lang['contact']['keywords'] ?>">
 	<meta name="author" content="Andre Carvalho Filho">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title data-i18n="contact.title">

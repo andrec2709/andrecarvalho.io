@@ -19,6 +19,8 @@
 	},
 	"contact": {
 		"title": "Developer's Contact - Andre Carvalho",
+		"description": "If you wish to contact me, to make a job offer or any other inquiries, you can find out how on this section.",
+		"keywords": "andre carvalho, andre, carvalho, portfolio, developer, dev, hire, offers, curriculum, solo developer, html, css, javascript, php, c++, github, technology, freelancer, freelance, freelancing",
 		"heading_1": "Let's work together",
 		"paragraph_1": "The best way to reach me is by e-mail, at <a class=\"p-link \" href=\"mailto:contato@andrecarvalho.io\" target=\"_blank\">contato@andrecarvalho.io</a>.<br><br>I’m open to job opportunities, freelance projects, and collaboration with other developers.",
 		"heading_2": "Useful links",
@@ -29,6 +31,8 @@
 	},
 	"about": {
 		"title": "About me - Andre Carvalho",
+		"description": "Here you can find more descriptive information about me and my skills.",
+		"keywords": "andre carvalho, andre, carvalho, portfolio, developer, dev, hire, offers, curriculum, solo developer, html, css, javascript, php, c++, github, technology, freelancer, freelance, freelancing",
 		"heading_1": "About me",
 		"heading_2": "Skill Assessment",
 		"p_1": "Here is a list of things I know, but not limited to:",
@@ -55,9 +59,13 @@
 		"li_1_note": "<sup>[1]</sup> This website's source code is archived in <a href=\"https://github.com/andrec2709/andrecarvalho.io\" target=\"_blank\" class=\"p-link \">this Github repository</a>, feel free to check it."
 	},
 	"index": {
-		"title": "Start Page"
+		"title": "Start Page",
+		"description": "Welcome to the main page of my website, please feel free to check the Portfolio and 'About me' sections for more details. You can also find how to contact me via the 'Contact' page.",
+		"keywords": "andre carvalho, andre, carvalho, portfolio, developer, dev, hire, offers, curriculum, solo developer, html, css, javascript, php, c++, github, technology, freelancer, freelance, freelancing"
 	},
 	"portfolio": {
-		"title": "Developer's Portfolio - Andre Carvalho"
+		"title": "Developer's Portfolio - Andre Carvalho",
+		"description": "Here you can find my work and personal projects as a developer.",
+		"keywords": "andre carvalho, andre, carvalho, portfolio, developer, dev, hire, offers, curriculum, solo developer, html, css, javascript, php, c++, github, technology, freelancer, freelance, freelancing"
 	}
 }

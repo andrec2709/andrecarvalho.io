@@ -80,10 +80,10 @@
     --color-outline: #49635e;
 
     /* Callouts */
-    --color-callout-note-bg: #b4b4b4;
+    --color-callout-note-bg: #bcbdf3;
     --color-callout-note-title: #0019a7;
     --color-callout-note-content: #1a1a1a;
-    --color-callout-note-border: #181818;
+    --color-callout-note-border: #0b2bdf;
 
     /* Icons */
     --icon-invert: invert();
