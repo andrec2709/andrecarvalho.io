@@ -151,9 +151,9 @@
 
     /* Callouts */
     --color-callout-note-bg: #bcb5fc;
-    --color-callout-note-title: #571515;
-    --color-callout-note-content: #1b1b1b;
-    --color-callout-note-border: #6e5e81;
+    --color-callout-note-title: #050092;
+    --color-callout-note-content: #000000;
+    --color-callout-note-border: #7300ff;
 
     /* Icons */
     --icon-invert: invert();
