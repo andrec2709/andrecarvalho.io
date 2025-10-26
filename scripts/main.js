@@ -44,6 +44,96 @@ class I18n {
     }
 }
 
+class CallOut extends HTMLElement {
+    supportedTypes = ['note'];
+    
+    static get observedAttributes(){
+        return ['class', 'cout-title', 'cout-content', 'cout-type', 'title-i18n', 'content-i18n'];
+    }
+    
+    constructor() {
+        super();
+    }
+
+    attributeChangedCallback(name, oldValue, newValue){
+        if (!(oldValue !== newValue)) {
+            return;
+        }
+        
+        switch (name) {
+            case 'cout-title':
+                const calloutTitle = this.getElementsByClassName('callout-title').item(0);
+                
+                if (calloutTitle) calloutTitle.innerHTML = newValue;
+                
+                break;
+            case 'cout-content':
+                const calloutContent = this.getElementsByClassName('callout-content').item(0);
+
+                if (calloutContent) calloutContent.innerHTML = newValue;
+
+                break;
+            case 'cout-type':
+                const calloutIcon = this.getElementsByClassName('callout-icon').item(0);
+
+                if (calloutIcon) this.defineCalloutType(calloutIcon, newValue, oldValue);
+
+                break;
+        }
+
+    }
+
+    connectedCallback(){
+        const callout_icon = document.createElement('img');
+        const callout_title = document.createElement('p');
+        const callout_content = document.createElement('p');
+        const callout_type = this.getAttribute('cout-type');
+
+        this.defineCalloutType(callout_icon, callout_type);
+
+        callout_icon.classList.add('callout-icon');
+        callout_icon.classList.add('callout-item');
+        callout_icon.setAttribute('aria-label', 'callout icon')
+
+        callout_title.innerHTML = this.getAttribute('cout-title');
+        callout_title.classList.add('callout-title');
+        callout_title.classList.add('callout-item');
+        callout_title.dataset.i18n = this.getAttribute('title-i18n');
+
+        callout_content.innerHTML = this.getAttribute('cout-content');
+        callout_content.classList.add('callout-content');
+        callout_content.classList.add('callout-item');
+        callout_content.dataset.i18n = this.getAttribute('content-i18n');
+
+
+        this.appendChild(callout_icon);
+        this.appendChild(callout_title);
+        this.appendChild(callout_content);
+
+    }
+
+    defineCalloutType(lm, newValue, oldValue = "") {
+
+        if (!this.supportedTypes.includes(newValue)){
+            return;
+        }        
+
+        switch (newValue) {
+            case 'note':
+                lm.src = '/assets/icons/pen.png';
+                break;
+        }
+
+        if (oldValue) {
+            this.classList.replace(oldValue, newValue);
+        } else {
+            this.classList.add(newValue);
+        }
+    }
+}
+
+customElements.define('call-out', CallOut);
+
 // <------ Global variables -------->
 
 //

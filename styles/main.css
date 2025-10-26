@@ -21,115 +21,143 @@
 }
 
 :root.theme-dark {
-  /* Base backgrounds */
-  --color-background: #131313;
-  --color-on-background: #f1f1f1;
+    /* Base backgrounds */
+    --color-background: #131313;
+    --color-on-background: #f1f1f1;
 
-  /* Surfaces & containers */
-  --color-surface: #2b2b2b;
-  --color-on-surface: #f1f1f1;
-  --color-surface-container: #213031;
-  --color-on-surface-container: #f1f1f1;
+    /* Surfaces & containers */
+    --color-surface: #2b2b2b;
+    --color-on-surface: #f1f1f1;
+    --color-surface-container: #213031;
+    --color-on-surface-container: #f1f1f1;
 
-  /* Accents */
-  --color-primary: #0ad89a;
-  --color-on-primary: #131313;
-  --color-primary-container: #0abd87;
-  --color-on-primary-container: #131313;
-  --color-secondary: #4649f0;
-  --color-on-secondary: #f1f1f1;
+    /* Accents */
+    --color-primary: #0ad89a;
+    --color-on-primary: #131313;
+    --color-primary-container: #0abd87;
+    --color-on-primary-container: #131313;
+    --color-secondary: #4695f0;
+    --color-on-secondary: #f1f1f1;
 
-  /* Text variations */
-  --color-text-muted: #c4c4c4;
-  --color-outline: #49635e; /* for borders, dividers, etc. */
+    /* Text variations */
+    --color-text-muted: #c4c4c4;
+    /* for borders, dividers, etc. */
+    --color-outline: #49635e;
 
-  /* Icons */
-  --icon-invert: none;
-  --icon-invert-onbackground: invert();
+    /* Callouts */
+    --color-callout-note-bg: #002e31;
+    --color-callout-note-title: #00cf8a;
+    --color-callout-note-content: #c1d2da;
+    --color-callout-note-border: #058666;
+
+    /* Icons */
+    --icon-invert: none;
+    --icon-invert-onbackground: invert();
 }
 
 :root.theme-light {
-  /* Base backgrounds */
-  --color-background: #cccccc;
-  --color-on-background: #0f0f0f;
+    /* Base backgrounds */
+    --color-background: #cccccc;
+    --color-on-background: #0f0f0f;
 
-  /* Surfaces & containers */
-  --color-surface: #b3b3b3;
-  --color-on-surface: #1a1a1a;
-  --color-surface-container: #cacaca;
-  --color-on-surface-container: #202020;
+    /* Surfaces & containers */
+    --color-surface: #b3b3b3;
+    --color-on-surface: #1a1a1a;
+    --color-surface-container: #cacaca;
+    --color-on-surface-container: #202020;
 
-  /* Accents */
-  --color-primary: #181818;
-  --color-on-primary: #cfcfcf;
-  --color-primary-container: #252525;
-  --color-on-primary-container: #cccccc;
-  --color-secondary: #1418f0;
-  --color-on-secondary: #f1f1f1;
+    /* Accents */
+    --color-primary: #181818;
+    --color-on-primary: #cfcfcf;
+    --color-primary-container: #252525;
+    --color-on-primary-container: #cccccc;
+    --color-secondary: #1418f0;
+    --color-on-secondary: #f1f1f1;
 
-  /* Text variations */
-  --color-text-muted: #272727;
-  --color-outline: #49635e; /* for borders, dividers, etc. */
+    /* Text variations */
+    --color-text-muted: #272727;
+    /* for borders, dividers, etc. */
+    --color-outline: #49635e;
 
-  /* Icons */
-  --icon-invert: invert();
-  --icon-invert-onbackground: none;
+    /* Callouts */
+    --color-callout-note-bg: #b4b4b4;
+    --color-callout-note-title: #0019a7;
+    --color-callout-note-content: #1a1a1a;
+    --color-callout-note-border: #181818;
+
+    /* Icons */
+    --icon-invert: invert();
+    --icon-invert-onbackground: none;
 }
 
 :root.theme-abyss {
-  /* Base backgrounds */
-  --color-background: #0a0a24;
-  --color-on-background: #c0c0c0;
+    /* Base backgrounds */
+    --color-background: #0a0a24;
+    --color-on-background: #c0c0c0;
 
-  /* Surfaces & containers */
-  --color-surface: #151b3d;
-  --color-on-surface: #c0c0c0;
-  --color-surface-container: #151b3d;
-  --color-on-surface-container: #c0c0c0;
+    /* Surfaces & containers */
+    --color-surface: #151b3d;
+    --color-on-surface: #c0c0c0;
+    --color-surface-container: #151b3d;
+    --color-on-surface-container: #c0c0c0;
 
-  /* Accents */
-  --color-primary: #45acab;
-  --color-on-primary: #141414;
-  --color-primary-container: #3b8898;
-  --color-on-primary-container: #141414;
-  --color-secondary: #3b8898;
-  --color-on-secondary: #141414;
+    /* Accents */
+    --color-primary: #45acab;
+    --color-on-primary: #141414;
+    --color-primary-container: #3b8898;
+    --color-on-primary-container: #141414;
+    --color-secondary: #3b8898;
+    --color-on-secondary: #141414;
 
-  /* Text variations */
-  --color-text-muted: #b3b3b3;
-  --color-outline: #284a6f; /* for borders, dividers, etc. */
+    /* Text variations */
+    --color-text-muted: #b3b3b3;
+    /* for borders, dividers, etc. */
+    --color-outline: #284a6f;
 
-  /* Icons */
-  --icon-invert: none;
-  --icon-invert-onbackground: invert();
+    /* Callouts */
+    --color-callout-note-bg: #021549;
+    --color-callout-note-title: #00c3e6;
+    --color-callout-note-content: #c1d2da;
+    --color-callout-note-border: #054886;
+
+    /* Icons */
+    --icon-invert: none;
+    --icon-invert-onbackground: invert();
 }
 
 :root.theme-purple {
-  /* Base backgrounds */
-  --color-background: #c5c5c5;
-  --color-on-background: #121617;
+    /* Base backgrounds */
+    --color-background: #c5c5c5;
+    --color-on-background: #121617;
 
-  /* Surfaces & containers */
-  --color-surface: #86A3A4;
-  --color-on-surface: #121617;
-  --color-surface-container: #b3c1c2;
-  --color-on-surface-container: #121617;
+    /* Surfaces & containers */
+    --color-surface: #86A3A4;
+    --color-on-surface: #121617;
+    --color-surface-container: #b3c1c2;
+    --color-on-surface-container: #121617;
 
-  /* Accents */
-  --color-primary: #7400b8;
-  --color-on-primary: #cccccc;
-  --color-primary-container: #5e098f;
-  --color-on-primary-container: #cccccc;
-  --color-secondary: #000bac;
-  --color-on-secondary: #c5c5c5;
+    /* Accents */
+    --color-primary: #7400b8;
+    --color-on-primary: #cccccc;
+    --color-primary-container: #5e098f;
+    --color-on-primary-container: #cccccc;
+    --color-secondary: #000bac;
+    --color-on-secondary: #c5c5c5;
 
-  /* Text variations */
-  --color-text-muted: #222222;
-  --color-outline: #284a6f; /* for borders, dividers, etc. */
+    /* Text variations */
+    --color-text-muted: #222222;
+    /* for borders, dividers, etc. */
+    --color-outline: #284a6f;
 
-  /* Icons */
-  --icon-invert: invert();
-  --icon-invert-onbackground: none;
+    /* Callouts */
+    --color-callout-note-bg: #bcb5fc;
+    --color-callout-note-title: #571515;
+    --color-callout-note-content: #1b1b1b;
+    --color-callout-note-border: #6e5e81;
+
+    /* Icons */
+    --icon-invert: invert();
+    --icon-invert-onbackground: none;
 }
 
 /* <------------------------------------------------> */
@@ -357,22 +385,6 @@ p {
     opacity: 1;
 }
 
-@media (width <=600px) {
-    .nav-links.wide {
-        display: none;
-    }
-}
-
-@media (width > 600px) {
-    #open-sidebar {
-        display: none;
-    }
-
-    .nav-sidebar {
-        display: none;
-    }
-}
-
 /* <------------------------------------------------> */
 
 
@@ -455,6 +467,60 @@ footer {
     margin-right: 1rem;
 }
 
+call-out {
+    display: grid;
+    width: fit-content;
+    grid-template:
+        ". . . ." .8rem
+        ". a b ." 2rem
+        ". c c ." max-content
+        ". . . ." 1rem / 1rem 20px minmax(10rem, 30rem) 1rem;
+    border-radius: 10px;
+}
+
+.callout-icon {
+    width: 20px;
+    filter: var(--icon-invert-onbackground);
+    grid-area: a;
+}
+
+.callout-title {
+    font-weight: 500;
+    grid-area: b;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-wrap: nowrap;
+    width: inherit;
+    margin: 0;
+    padding: 0;
+    margin-left: 1rem;
+}
+
+.callout-content {
+    margin: 0;
+    font-size: .95rem;
+    grid-area: c;
+    text-wrap: wrap;
+    width: inherit;
+}
+
+call-out.note{
+    background-color: var(--color-callout-note-bg);
+    border: 1px solid var(--color-callout-note-border);
+}
+
+call-out.note .callout-title {
+    color: var(--color-callout-note-title);
+}
+
+call-out.note .callout-content {
+    color: var(--color-callout-note-content);
+}
+
+call-out.note .callout-content a {
+    color: var(--color-callout-note-title);
+}
+
 /* <---------------------------------------------------------> */
 
 
@@ -497,7 +563,23 @@ footer {
 /* <-------------------- Media ----------------------------> */
 
 
-@media screen and (width <= 500px) {
+@media (width <=600px) {
+    .nav-links.wide {
+        display: none;
+    }
+}
+
+@media (width > 600px) {
+    #open-sidebar {
+        display: none;
+    }
+
+    .nav-sidebar {
+        display: none;
+    }
+}
+
+@media screen and (width <=500px) {
     .h-under-construction {
         font-size: 1.3rem;
     }

@@ -27,7 +27,7 @@ include __DIR__ . "/../api/StartSession.php";
 	</script>
 </head>
 
-<body >
+<body>
 	<?php include __DIR__ . '/../includes/header.php'; ?>
 
 	<main class="main-content">
@@ -106,13 +106,13 @@ include __DIR__ . "/../api/StartSession.php";
 				</li>
 			</ul>
 
-			<h2 data-i18n="about.note">
-				<?= $lang['about']['note'] ?>
-			</h2>
-
-			<p class=" " data-i18n="about.p_3">
-				<?= $lang['about']['p_3'] ?>
-			</p>
+			<call-out
+				cout-type="note"
+				cout-title="<?= $lang['about']['note'] ?>"
+				cout-content="<?= $lang['about']['p_3'] ?>"
+				title-i18n="about.note"
+				content-i18n="about.p_3">
+			</call-out>
 
 			<br><br>
 
