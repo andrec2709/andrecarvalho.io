@@ -472,9 +472,9 @@ call-out {
     width: fit-content;
     grid-template:
         ". . . ." .8rem
-        ". a b ." 2rem
+        ". a b ." 2.5rem
         ". c c ." max-content
-        ". . . ." 1rem / 1rem 20px minmax(10rem, 30rem) 1rem;
+        ". . . ." 2rem / 1rem 20px minmax(10rem, 30rem) 1rem;
     border-radius: 10px;
 }
 
