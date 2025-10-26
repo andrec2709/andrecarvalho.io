@@ -17,6 +17,7 @@ include __DIR__ . "/../api/StartSession.php";
 	<meta name="author" content="Andre Carvalho Filho">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title data-i18n="index.title"><?= $lang['index']['title'] ?></title>
+	<link rel="canonical" href="https://andrecarvalho.io/">
 	<link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="../styles/main.css">
 	<script>

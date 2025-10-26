@@ -19,6 +19,7 @@ include __DIR__ . "/../api/StartSession.php";
 	<title data-i18n="about.title">
 		<?= $lang['about']['title'] ?>
 	</title>
+	<link rel="canonical" href="https://andrecarvalho.io/pages/about.php">
 	<link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="../styles/main.css">
 	<script>
