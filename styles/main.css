@@ -61,16 +61,16 @@
     --color-on-background: #0f0f0f;
 
     /* Surfaces & containers */
-    --color-surface: #b3b3b3;
+    --color-surface: #c0c0e7;
     --color-on-surface: #1a1a1a;
     --color-surface-container: #cacaca;
     --color-on-surface-container: #202020;
 
     /* Accents */
-    --color-primary: #181818;
-    --color-on-primary: #cfcfcf;
-    --color-primary-container: #252525;
-    --color-on-primary-container: #cccccc;
+    --color-primary: #0c00ad;
+    --color-on-primary: #DCDCDC;
+    --color-primary-container: #080080;
+    --color-on-primary-container: #DCDCDC;
     --color-secondary: #1418f0;
     --color-on-secondary: #f1f1f1;
 
