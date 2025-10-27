@@ -120,7 +120,7 @@ class CallOut extends HTMLElement {
 
         switch (newValue) {
             case 'note':
-                lm.src = '/assets/icons/pen.png';
+                lm.src = '/assets/icons/pen.svg';
                 break;
         }
 

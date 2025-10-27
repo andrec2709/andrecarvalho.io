@@ -21,7 +21,7 @@ include __DIR__ . "/../api/StartSession.php";
 		<?= $lang['portfolio']['title'] ?>
 	</title>
 	<link rel="canonical" href="https://andrecarvalho.io/pages/portfolio.php">
-	<link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.svg" type="image/x-icon">
 	<link rel="stylesheet" href="../styles/main.css">
 	<link rel="stylesheet" href="../styles/portfolio.css">
 	<script>

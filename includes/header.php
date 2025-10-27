@@ -45,12 +45,12 @@ include __DIR__ . "/../api/StartSession.php";
             <a href="/pages/about.php" data-i18n="header.about"><?= $lang['header']['about'] ?></a>
             <a href="/pages/contact.php" data-i18n="header.contact"><?= $lang['header']['contact'] ?></a>
         </div>
-        <button aria-label="open sidebar" id="open-sidebar" class="sidebar-btn" onclick="toggleSidebar(this)" data-action="open"><img src="/assets/icons/sidebar-open.png" alt=""></button>
+        <button aria-label="open sidebar" id="open-sidebar" class="sidebar-btn" onclick="toggleSidebar(this)" data-action="open"><img src="/assets/icons/sidebar-open.svg" alt=""></button>
     </nav>
     <div class="pref-btn-container">
-        <button id="lang-pref" class="pref-btn" data-menu="lang" onclick="showMenu(this)"><img src="/assets/icons/translate-icon.png"
+        <button id="lang-pref" class="pref-btn" data-menu="lang" onclick="showMenu(this)"><img src="/assets/icons/translate-icon.svg"
                 alt="" aria-label="choose language"></button>
-        <button id="theme-pref" class="pref-btn" data-menu="theme" onclick="showMenu(this)"><img src="/assets/icons/theme-icon.png"
+        <button id="theme-pref" class="pref-btn" data-menu="theme" onclick="showMenu(this)"><img src="/assets/icons/theme-icon.svg"
                 alt="" aria-label="choose theme"></button>
         <ul id="theme-options" class="list-options" hidden>
             <li><button data-value="light" onclick="setTheme(this)">Light theme</button></li>
@@ -64,7 +64,7 @@ include __DIR__ . "/../api/StartSession.php";
         </ul>
     </div>
     <nav class="nav-sidebar">
-        <button aria-label="close sidebar" id="close-sidebar" class="sidebar-btn" onclick="toggleSidebar(this)" data-action="close"><img src="/assets/icons/sidebar-close.png" alt=""></button>
+        <button aria-label="close sidebar" id="close-sidebar" class="sidebar-btn" onclick="toggleSidebar(this)" data-action="close"><img src="/assets/icons/sidebar-close.svg" alt=""></button>
         <div class="nav-links sidebar">
             <a href="/pages/index.php" data-i18n="header.start"><?= $lang['header']['start'] ?></a>
             <a href="/pages/portfolio.php" data-i18n="header.portfolio"><?= $lang['header']['portfolio'] ?></a>
