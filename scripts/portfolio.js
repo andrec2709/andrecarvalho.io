@@ -198,7 +198,6 @@ async function populateRepoList(){
         window.open(`https://github.com/andrec2709/${most_recent_repo['repo_name']}`);
     });
 
-    loadPrefTheme(true);
 }
 
 populateRepoList();

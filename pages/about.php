@@ -7,7 +7,7 @@ include __DIR__ . "/../api/StartSession.php";
 
 <!DOCTYPE html>
 
-<html lang="<?= $language ?>" data-theme="<?= $_SESSION['theme'] ?>">
+<html lang="<?= $language ?>">
 
 <head>
 	<meta charset="UTF-8">

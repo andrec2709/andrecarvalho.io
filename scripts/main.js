@@ -137,7 +137,9 @@ customElements.define('call-out', CallOut);
 // <------ Global variables -------->
 
 //
+// translation handler
 const i18n = new I18n();
+
 let pref_btn_container = document.getElementsByClassName('pref-btn-container').item(0);
 let theme_options = document.getElementById('theme-options');
 let lang_options = document.getElementById('lang-options');
@@ -201,41 +203,6 @@ function isPage(pagename){
 
 }
 
-async function loadPrefTheme(pageload = false){
-
-    let html = document.documentElement;
-    let theme = html.getAttribute('data-theme');
-
-    const lms = document.getElementsByClassName('');
-
-    if (!pageload){
-        
-        theme = theme == 'light' ? 'dark' : 'light';
-        await setSessionValue('theme', theme);
-        html.setAttribute('data-theme', theme);
-
-    }
-    
-    for (i = 0; i < lms.length; i++){
-        let lm = lms.item(i);
-
-        if (lm.tagName === "IMG"){
-            console.log(theme);
-            let opt = lm.getAttribute(`data-${theme}-img`);
-            lm.setAttribute('src', opt);
-        }
-        else{
-            if (theme == 'light'){
-                lm.classList.add('light');
-            }
-            else{
-                lm.classList.remove('light');
-            }
-        }
-    }
-
-}
-
 function showMenu(e) {
     let thisMenu;
 
@@ -251,12 +218,12 @@ function showMenu(e) {
     }
 
     let height = parseInt(getComputedStyle(thisMenu).height.replace('px', ''));
-    
 
     if (!thisMenu.classList.contains('opened')) {
         thisMenu.hidden = false;
     }
 
+    // nested rAF so it properly works on firefox too
     requestAnimationFrame(() => {
         requestAnimationFrame(() => {
             thisMenu.classList.toggle('opened');
@@ -266,7 +233,10 @@ function showMenu(e) {
 }
 
 function setTheme(e){
-    const current = localStorage.getItem('theme') || 'light';
+    // When user clicks a theme from the dropdown menu, it runs this functions.
+    // If the default theme is ever changed here, you must also change it inside StartSession.php ($DEFAULT_THEME var),
+    // otherwise, first ever load will present unexpected behavior.
+    const current = localStorage.getItem('theme') || 'purple';
     const toTheme = e.dataset.value;
 
     localStorage.setItem('theme', toTheme);
@@ -289,31 +259,19 @@ function toggleLang(e){
 
 // <-------------- Events ---------------->
 
-
-prefersDark.addEventListener("change", async () => {
-
-    // Changes content when user pref for light/dark mode (browser/system-wide) changes
-    loadPrefTheme();
-
-});
-
-document.addEventListener("DOMContentLoaded", async () => {
-
-    loadPrefTheme(true);
-    
-})
-
+// Makes sure element is removed from the document on end of transition
 theme_options.addEventListener('transitionend', (e) => {
     if (!theme_options.classList.contains('opened')) {
         theme_options.hidden = true;
     }
 });
+// Makes sure element is removed from the document on end of transition
 lang_options.addEventListener('transitionend', (e) => {
     if (!lang_options.classList.contains('opened')) {
         lang_options.hidden = true;
     }
 });
-
+// Closes the menus when clicking out of them
 document.addEventListener('click', (e) => {
     if (!pref_btn_container.contains(e.target)){
         theme_options.classList.remove('opened');
