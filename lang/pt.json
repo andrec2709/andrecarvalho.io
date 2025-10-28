@@ -56,8 +56,8 @@
 		"li_16": "Blender.",
 		"li_17": "Outros.",
 		"note": "Nota",
-		"p_3": "Para mais referências por favor consultar meus repositórios no Github.",
-		"li_1_note": "* O código fonte desta página está arquivado <a href=\"https://github.com/andrec2709/andrecarvalho.io\" target=\"_blank\" class=\"p-link \">neste repositório do Github</a>, por favor verifique-o."
+		"p_3": "Para mais referências das minhas habilidades e conhecimentos, você também pode consultar a página do meu <a href=/pages/portfolio.php>portfólio e repositórios do Github.</a>",
+		"li_1_note": "* O código fonte desta página está arquivado <a href=https://github.com/andrec2709/andrecarvalho.io target=_blank class=p-link>neste repositório do Github</a>, por favor verifique-o."
 	},
 	"index": {
 		"title": "Página inicial",

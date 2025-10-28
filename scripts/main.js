@@ -25,6 +25,7 @@ class I18n {
             const key = el.getAttribute('data-i18n');
             const text = this.get(key);
 
+            console.log(`text >> ${text}`);
             if (text) el.innerHTML = text;
         });
     }
