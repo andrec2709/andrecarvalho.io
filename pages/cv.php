@@ -33,7 +33,7 @@ include __DIR__ . "/../api/StartSession.php";
 	<?php include __DIR__ . '/../includes/header.php'; ?>
 
 	<main class="main-content">
-		<button id="download-button" class="custom-button" data-i18n="cv.save_pdf"><?= $lang['cv']['save_pdf'] ?></button>
+		<button id="download-button" class="custom-button" data-i18n="cv.save_pdf" onclick="print()"><?= $lang['cv']['save_pdf'] ?></button>
 		<div id="cv" class="cv-container">
 			<section id="name-role-section">
 				<h1 class="name-cv">Andre Carvalho Filho</h1>

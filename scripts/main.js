@@ -144,7 +144,6 @@ const i18n = new I18n();
 let pref_btn_container = document.getElementsByClassName('pref-btn-container').item(0);
 let theme_options = document.getElementById('theme-options');
 let lang_options = document.getElementById('lang-options');
-let download_btn = document.getElementById('download-button');
 
 // Others
 
@@ -295,10 +294,6 @@ window.addEventListener('beforeprint', (e) => {
 
 window.addEventListener('afterprint', (e) => {
     setTheme(themeBeforePrint, true);
-});
-
-download_btn.addEventListener('click', (e) => {
-    print();
 });
 
 // <-------------------------------->
