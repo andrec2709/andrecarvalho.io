@@ -97,7 +97,7 @@ include __DIR__ . "/../api/StartSession.php";
 				<textarea required name="message" id="message" class=" form-input-text"></textarea>
 
 				<button id="submit-form-btn" data-sitekey="<?= $recaptchaSite ?>" data-callback="onSubmit"
-					data-action="submit" class="g-recaptcha  form-submit" data-i18n="contact.send">
+					data-action="submit" class="g-recaptcha custom-button" data-i18n="contact.send">
 					<?= $lang['contact']['send'] ?>
 				</button>
 

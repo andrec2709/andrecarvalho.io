@@ -5,10 +5,11 @@
 		"about": "About",
 		"portfolio": "Portfolio"
 	},
-    "footer": {
-        "contact": "Contact",
-        "about": "About"
-    },
+	"footer": {
+		"contact": "Contact",
+		"about": "About",
+		"cv": "Resumé"
+	},
 	"lang_options": {
 		"pt": "Portuguese",
 		"en": "English"
@@ -67,5 +68,36 @@
 		"title": "Developer's Portfolio - Andre Carvalho",
 		"description": "Here you can find my work and personal projects as a developer.",
 		"keywords": "andre carvalho, andre, carvalho, portfolio, developer, dev, hire, offers, curriculum, solo developer, html, css, javascript, php, c++, github, technology, freelancer, freelance, freelancing"
+	},
+	"cv": {
+		"title": "Curriculum Andre Carvalho Filho",
+		"description": "Here you will find my curriculum vitae, with my professional experiences, profile summary, and technical skills.",
+		"keywords": "andre carvalho, andre, carvalho, developer, software, dev, hire, oportunities, work, job, curriculum, freelance, freelancer",
+		"role": "Software Developer",
+		"contact": "Contato",
+		"phone": "Phone: ",
+		"location": "Location: ",
+		"location_val": "Curitiba - Paraná, Brazil",
+		"tech_skills": "Technical Skills",
+		"langs": "Languages",
+		"langs_val": "JavaScript, HTML, CSS, PHP, TypeScript, SQL, Kotlin, C++ (basic), Java (basic), VBA, Powershell, Bash",
+		"fws": "Frameworks",
+		"fws_val": "React, Node.js, Electron",
+		"dbs": "Databases",
+		"dbs_val": "MySQL (basic)",
+		"oth_tools": "Other tools",
+		"oth_tools_val": "Git, Tailwind CSS, Figma, Penpot, Inkscape",
+		"pro_sum": "Profile Summary",
+		"pro_sum_desc": "I'm a software developer, looking for my first opportunity in the Software development industry. My focus is always writing clean, modular and scalable code.<br><br>I am seeking challenging opportunities to improve my technical expertise and earn experience in the area. I am fluent both in English and Portuguese.",
+		"pro_exp": "Professional Experience",
+		"item1_company": "Cisco (via Foundever)",
+		"item1_date": "Feb 2024 - Dec 2024",
+		"item1_role": "Pre-sales Specialist - Enterprise Team",
+		"item1_desc": "I provided technical assistance to partners and internal teams regarding the Cisco Enterprise portfolio. Our support covered a wide range of topics, including differences between DNA subscriptions, supported features and protocols for specific network equipment, transceiver compatibility, and more.<br><br>I also worked on creating predictive site surveys using Ekahau. Customers would send us floor plans, and we used the software to design predictive wireless network solutions tailored to their spaces.<br><br>After Cisco ended the team I was part of, I was transferred to the Compliance Team (see below).",
+		"item2_company": "Cisco (via Foundever)",
+		"item2_date": "Dec 2024 - Sept 2025",
+		"item2_role": "Compliance Specialist",
+		"item2_desc": "As a Compliance Agent, my role was to ensure that services being ordered complied with Cisco's policies and did not fall under the Non-Entitlement Policy.<br><br>We inspected network equipment—specifically environmental system commands—to verify that the devices were functioning correctly and were legitimate Cisco products",
+		"save_pdf": "Save as PDF"
 	}
 }

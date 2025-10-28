@@ -5,10 +5,11 @@
 		"about": "Sobre",
 		"portfolio": "Portfólio"
 	},
-    "footer": {
-        "contact": "Contato",
-        "about": "Sobre"
-    },
+	"footer": {
+		"contact": "Contato",
+		"about": "Sobre",
+		"cv": "Currículo"
+	},
 	"lang_options": {
 		"pt": "Português",
 		"en": "Inglês"
@@ -67,5 +68,36 @@
 		"title": "Portfólio do Desenvolvedor - Andre Carvalho",
 		"description": "Aqui você pode encontrar meu trabalho e projetos pessoais como desenvolvedor.",
 		"keywords": "andre carvalho, andre, carvalho, portfólio, desenvolvedor, dev, contratar, contratação, oportunidades, trabalho, curriculo, desenvolvedor solo, freelancer, freelance, html, css, javascript, php, c++, github, tecnologia"
+	},
+	"cv": {
+		"title": "Currículo Andre Carvalho Filho",
+		"description": "Aqui você encontra meu currículo, com minhas experiências profissionais, habilidades e objetivos.",
+		"keywords": "andre carvalho, andre, carvalho, desenvolvedor, software, dev, contratar, contratação, oportunidades, trabalho, curriculo, freelance, freelancer",
+		"role": "Desenvolvedor de Software",
+		"contact": "Contato",
+		"phone": "Celular: ",
+		"location": "Cidade: ",
+		"location_val": "Curitiba - Paraná, Brasil",
+		"tech_skills": "Habilidades Técnicas",
+		"langs": "Linguagens",
+		"langs_val": "JavaScript, HTML, CSS, PHP, TypeScript, SQL, Kotlin, C++ (básico), Java (básico), VBA, Powershell, Bash",
+		"fws": "Frameworks",
+		"fws_val": "React, Node.js, Electron",
+		"dbs": "Bancos de Dados",
+		"dbs_val": "MySQL (básico)",
+		"oth_tools": "Outras ferramentas",
+		"oth_tools_val": "Git, Tailwind CSS, Figma, Penpot, Inkscape",
+		"pro_sum": "Resumo",
+		"pro_sum_desc": "Eu sou um desenvolvedor de software, buscando minha primeira oportunidade na indústria de desenvolvimento. Meu foco sempre será escrever código limpo, modular e escalável.<br><br>Estou na busca por oportunidades desafiadores para ganhar experiência na área e melhorar meus conhecimentos técnicos. Eu sou fluente tanto em Inglês quanto em Português.",
+		"pro_exp": "Experiência",
+		"item1_company": "Cisco (via Foundever)",
+		"item1_date": "Fev 2024 - Dez 2024",
+		"item1_role": "Especialista em Pré-Vendas - Time Enterprise",
+		"item1_desc": "Eu dava assistência técnica a parceiros e times internos, relativo ao portfólio \"Enterprise\" dos produtos da Cisco. Nosso suporte cobria uma gama alta de tópicos, incluindo diferenças entre subscrições DNA, tecnologias e protocolos suportados por determinado equipamento de rede, compatibilidade de transceivers, e mais.<br><br>Eu também trabalhei criando soluções dentro do Ekahau. O cliente nos enviava plantas da sua filial, e criávamos o design preditivo de uma rede wireless específica para eles.<br><br>Depois que a Cisco encerrou a operação deste time, eu fui transferido ao time de Compliance (veja abaixo).",
+		"item2_company": "Cisco (via Foundever)",
+		"item2_date": "Dez 2024 - Set 2025",
+		"item2_role": "Especialista de Compliance",
+		"item2_desc": "Como um agente de Compliance, minha função era garantir que serviços sendo adquiridos estavam de acordo com as políticas da Cisco e não se enquadravam na sua \"Política de Não-Concessão\".<br><br>Nós inspecionávamos equipamentos de rede - especificamente comandos ambientais do sistema - com o propósito de verificar seu funcionamento pleno e que se tratavam de dispositivos legítimos da Cisco.",
+		"save_pdf": "Salvar como PDF"
 	}
 }

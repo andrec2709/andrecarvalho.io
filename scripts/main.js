@@ -44,6 +44,7 @@ class I18n {
     }
 }
 
+// Callouts
 class CallOut extends HTMLElement {
     supportedTypes = ['note'];
     
@@ -143,17 +144,12 @@ const i18n = new I18n();
 let pref_btn_container = document.getElementsByClassName('pref-btn-container').item(0);
 let theme_options = document.getElementById('theme-options');
 let lang_options = document.getElementById('lang-options');
-
-// contact.php
-
-let github_icon = document.getElementById("github-icon");
-let linkedin_icon = document.getElementById("linkedin-icon");
-//
-
+let download_btn = document.getElementById('download-button');
 
 // Others
 
 let prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+let themeBeforePrint = getTheme();
 
 //
 
@@ -232,15 +228,26 @@ function showMenu(e) {
 
 }
 
-function setTheme(e){
+function setTheme(theme, isString = false){
     // When user clicks a theme from the dropdown menu, it runs this functions.
     // If the default theme is ever changed here, you must also change it inside StartSession.php ($DEFAULT_THEME var),
     // otherwise, first ever load will present unexpected behavior.
-    const current = localStorage.getItem('theme') || 'purple';
-    const toTheme = e.dataset.value;
+    const current = getTheme();
+    let toTheme;
+    
+    if (isString) {
+        toTheme = theme;
+    } else {
+        toTheme = theme.dataset.value;
+    }
 
     localStorage.setItem('theme', toTheme);
     document.documentElement.classList.replace(`theme-${current}`, `theme-${toTheme}`);
+}
+
+function getTheme(){
+    const current = localStorage.getItem('theme') || 'purple';
+    return current;
 }
 
 function toggleSidebar(e){
@@ -279,5 +286,19 @@ document.addEventListener('click', (e) => {
     }
 });
 
+window.addEventListener('beforeprint', (e) => {
+    themeBeforePrint = getTheme();
+    
+    setTheme('purple', true);
+
+});
+
+window.addEventListener('afterprint', (e) => {
+    setTheme(themeBeforePrint, true);
+});
+
+download_btn.addEventListener('click', (e) => {
+    print();
+});
 
 // <-------------------------------->

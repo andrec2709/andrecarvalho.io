@@ -53,31 +53,6 @@ textarea.form-input-text{
     border-color: var(--color-primary);
 }
 
-.form-submit{
-    border: none;
-    font-size: 1.2rem;
-    padding: .4rem .8rem .4rem .8rem;
-    width: 10rem;
-    border-radius: 2px;
-    position: relative;
-    align-self: flex-end;
-    margin-top: 1rem;
-
-    transition-property: filter;
-    transition-duration: .1s;
-    transition-timing-function: ease-out;
-    color: var(--color-on-primary);
-    background-color: var(--color-primary);
-}
-
-.form-submit:hover{
-    filter: brightness(80%);
-}
-
-.form-submit:active{
-    filter: brightness(60%);
-}
-
 .grecaptcha-badge{
     visibility: hidden;
 }
