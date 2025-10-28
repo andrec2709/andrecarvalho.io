@@ -87,8 +87,6 @@ class CallOut extends HTMLElement {
 
     connectedCallback(){
         const callout_icon = document.createElement('img');
-        const callout_title = document.createElement('p');
-        const callout_content = document.createElement('p');
         const callout_type = this.getAttribute('cout-type');
 
         this.defineCalloutType(callout_icon, callout_type);
@@ -97,20 +95,7 @@ class CallOut extends HTMLElement {
         callout_icon.classList.add('callout-item');
         callout_icon.setAttribute('aria-label', 'callout icon')
 
-        callout_title.innerHTML = this.getAttribute('cout-title');
-        callout_title.classList.add('callout-title');
-        callout_title.classList.add('callout-item');
-        callout_title.dataset.i18n = this.getAttribute('title-i18n');
-
-        callout_content.innerHTML = this.getAttribute('cout-content');
-        callout_content.classList.add('callout-content');
-        callout_content.classList.add('callout-item');
-        callout_content.dataset.i18n = this.getAttribute('content-i18n');
-
-
-        this.appendChild(callout_icon);
-        this.appendChild(callout_title);
-        this.appendChild(callout_content);
+        this.prepend(callout_icon);
 
     }
 

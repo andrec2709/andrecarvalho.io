@@ -107,12 +107,9 @@ include __DIR__ . "/../api/StartSession.php";
 				</li>
 			</ul>
 
-			<call-out
-				cout-type="note"
-				cout-title="<?= $lang['about']['note'] ?>"
-				cout-content="<?= $lang['about']['p_3'] ?>"
-				title-i18n="about.note"
-				content-i18n="about.p_3">
+			<call-out cout-type="note">
+				<p data-i18n="about.note" class="callout-title callout-item"><?= $lang['about']['note'] ?></p>
+				<p data-i18n="about.p_3" class="callout-content callout-item"><?= $lang['about']['p_3'] ?></p>
 			</call-out>
 
 			<br><br>
