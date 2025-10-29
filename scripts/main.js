@@ -79,7 +79,8 @@ class CallOut extends HTMLElement {
 
         callout_icon.classList.add('callout-icon');
         callout_icon.classList.add('callout-item');
-        callout_icon.setAttribute('aria-label', 'callout icon')
+        callout_icon.setAttribute('aria-label', 'callout icon');
+        callout_icon.setAttribute('alt', "Callout icon");
 
         this.prepend(callout_icon);
 
