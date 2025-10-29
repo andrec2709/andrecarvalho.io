@@ -8,7 +8,7 @@
 	"footer": {
 		"contact": "Contact",
 		"about": "About",
-		"cv": "Resumé"
+		"cv": "My CV"
 	},
 	"lang_options": {
 		"pt": "Portuguese",
@@ -16,7 +16,7 @@
 	},
 	"construction": {
 		"thank_you": "Thank you for your visit.",
-		"under_construction": "This webpage is currently under construction.\nPlease come back in the near future to check its content."
+		"under_construction": "This webpage is currently under construction.<br>Please come back in the near future to check its content."
 	},
 	"contact": {
 		"title": "Developer's Contact - Andre Carvalho",

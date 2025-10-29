@@ -21,11 +21,9 @@ class I18n {
 
     apply() {
         document.querySelectorAll('[data-i18n]').forEach(el => {
-            console.log(el);
             const key = el.getAttribute('data-i18n');
             const text = this.get(key);
 
-            console.log(`text >> ${text}`);
             if (text) el.innerHTML = text;
         });
     }
@@ -162,25 +160,6 @@ async function setSessionValue(key, value){
     });
 
     return response;
-
-}
-
-async function openWithLang(url, target = "_self") {
-    
-    const session = await getSessionInfo();
-    const session_json = await session.json();
-
-    window.open(`${url}?lang=${session_json.language}`, target);
-
-}
-
-function isPage(pagename){
-
-    let url = window.location.href;
-
-    let regex = new RegExp(`${pagename}`, "gi");
-
-    return url.search(regex) != -1 ? true : false;
 
 }
 
