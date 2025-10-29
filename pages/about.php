@@ -33,12 +33,19 @@ include __DIR__ . "/../api/StartSession.php";
 
 	<main class="main-content">
 
-		<h1 data-i18n="about.heading_1">
-			<?= $lang['about']['heading_1'] ?>
-		</h1>
+		<section>
+			<h1 data-i18n="about.heading_1">
+				<?= $lang['about']['heading_1'] ?>
+			</h1>
+			<p data-i18n="about.about_me_p_1"><?= $lang['about']['about_me_p_1'] ?></p>
+			<p data-i18n="about.about_me_p_2"><?= $lang['about']['about_me_p_2'] ?></p>
+			<p data-i18n="about.about_me_p_3"><?= $lang['about']['about_me_p_3'] ?></p>
+			<p data-i18n="about.about_me_p_4"><?= $lang['about']['about_me_p_4'] ?></p>
+
+		</section>
 
 		<section>
-			<h2 data-i18n="about.heading_2">
+			<h2 id="assessment" data-i18n="about.heading_2">
 				<?= $lang['about']['heading_2'] ?>
 			</h2>
 
