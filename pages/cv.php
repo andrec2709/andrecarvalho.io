@@ -38,6 +38,7 @@ include __DIR__ . "/../api/StartSession.php";
 			<section id="name-role-section">
 				<h1 class="name-cv">Andre Carvalho Filho</h1>
 				<h2 class="role-cv" data-i18n="cv.role"><?= $lang['cv']['role'] ?></h2>
+				<em class="footnote" data-i18n="cv.origin"><?= $lang['cv']['origin'] ?></em>
 			</section>
 			<div class="cv-content">
 				<div class="left-side">

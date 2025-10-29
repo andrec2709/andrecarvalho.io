@@ -1,3 +1,10 @@
+em.footnote {
+    font-size: .8rem;
+    display: none;
+    padding: 0;
+    margin: 0;
+}
+
 .custom-button {
     align-self: center;
 }
@@ -108,6 +115,10 @@ h4.field-cv>em {
 
     .cv-container {
         max-width: 800px;
+    }
+
+    em.footnote {
+        display: unset;
     }
 
 }

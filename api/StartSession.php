@@ -4,7 +4,7 @@ $CONFIG_PATH = getenv('CONFIG_PATH');
 
 include $CONFIG_PATH;
 
-$DEFAULT_THEME = 'purple';
+$DEFAULT_THEME = 'light';
 
 if (session_status() === PHP_SESSION_NONE){
     session_start();

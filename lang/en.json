@@ -23,7 +23,7 @@
 		"description": "If you wish to contact me, to make a job offer or any other inquiries, you can find out how on this section.",
 		"keywords": "andre carvalho, andre, carvalho, portfolio, developer, dev, hire, offers, curriculum, solo developer, html, css, javascript, php, c++, github, technology, freelancer, freelance, freelancing",
 		"heading_1": "Let's work together",
-		"paragraph_1": "The best way to reach me is by e-mail, at <a class=\"p-link \" href=\"mailto:contato@andrecarvalho.io\" target=\"_blank\">contato@andrecarvalho.io</a>.<br><br>I’m open to job opportunities, freelance projects, and collaboration with other developers.",
+		"paragraph_1": "The best way to reach me is by e-mail, at <a class=p-link href=mailto:contato@andrecarvalho.io target=_blank rel=\"noopener noreferrer\">contato@andrecarvalho.io</a>.<br><br>I’m open to job opportunities, freelance projects, and collaboration with other developers.",
 		"heading_2": "Useful links",
 		"heading_3": "Contact me",
 		"name": "Name",
@@ -38,7 +38,7 @@
 		"about_me_p_1": "Hi, I'm Andre Carvalho, a 24-year-old developer from the south of Brazil.",
 		"about_me_p_2": "I've been surrounded by computers for as long as I can remember, and over the years, I've developed a wide range of skills related to technology and digital creation. From image and video editing to 3D modeling and animation in Blender, vector design in Inkscape, and game development with Godot, I've always enjoyed exploring new ways to bring ideas to life through computers.",
 		"about_me_p_3": "I began programming around the age of 17, starting with Python, which helped me build a solid foundation in core programming concepts such as variables, functions, and object-oriented principles. Since then, I've continued expanding my knowledge across different tools, technologies, and programming languages.",
-		"about_me_p_4": "For more details about my technical skills and professional experience, please take a look at my <a class=p-link href=#assessment>Skill Assessment</a> and <a class=p-link href=/pages/cv.php>CV</a>.",
+		"about_me_p_4": "For more details about my technical skills and professional experience, please take a look at my <a class=p-link href=#assessment>Skill Assessment</a> and <a class=p-link href=/pages/cv.php target=_blank rel=\"noopener noreferrer\">CV</a>.",
 		"heading_2": "Skill Assessment",
 		"p_1": "Here is a list of things I know, but not limited to:",
 		"li_1": "HTML, CSS, Javascript, PHP.<a href=\"#about_li_1_note\" class=\"p-link \"><sup>[1]</sup></a>",
@@ -61,7 +61,7 @@
 		"li_17": "Others.",
 		"note": "Note",
 		"p_3": "For further reference on my knowledge and skills, you can also check my <a href=/pages/portfolio.php>portfolio and Github repositories page.</a>",
-		"li_1_note": "<sup>[1]</sup> This website's source code is archived in <a href=\"https://github.com/andrec2709/andrecarvalho.io\" target=\"_blank\" class=\"p-link \">this Github repository</a>, feel free to check it."
+		"li_1_note": "<sup>[1]</sup> This website's source code is archived in <a href=https://github.com/andrec2709/andrecarvalho.io target=_blank class=p-link rel=\"noopener noreferrer\">this Github repository</a>, feel free to check it."
 	},
 	"index": {
 		"title": "Start Page",
@@ -78,6 +78,7 @@
 		"description": "Here you will find my curriculum vitae, with my professional experiences, profile summary, and technical skills.",
 		"keywords": "andre carvalho, andre, carvalho, developer, software, dev, hire, oportunities, work, job, curriculum, freelance, freelancer",
 		"role": "Software Developer",
+		"origin": "My website: <a class=p-link href=https://andrecarvalho.io rel=\"noopener noreferrer\">andrecarvalho.io</a>",
 		"contact": "Contact",
 		"phone": "Phone: ",
 		"location": "Location: ",
@@ -101,7 +102,7 @@
 		"item2_company": "Cisco (via Foundever)",
 		"item2_date": "Dec 2024 - Sept 2025",
 		"item2_role": "Compliance Specialist",
-		"item2_desc": "As a Compliance Agent, my role was to ensure that services being ordered complied with Cisco's policies and did not fall under the Non-Entitlement Policy.<br><br>We inspected network equipment—specifically environmental system commands—to verify that the devices were functioning correctly and were legitimate Cisco products",
+		"item2_desc": "As a Compliance Agent, my role was to ensure that services being ordered complied with Cisco's policies and did not fall under their Non-Entitlement Policy.<br><br>We inspected network equipment — specifically environmental system commands — to verify that the devices were functioning correctly and were legitimate Cisco products.",
 		"save_pdf": "Save as PDF"
 	}
 }

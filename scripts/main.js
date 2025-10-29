@@ -48,7 +48,7 @@ class CallOut extends HTMLElement {
     supportedTypes = ['note'];
     
     static get observedAttributes(){
-        return ['class', 'cout-title', 'cout-content', 'cout-type', 'title-i18n', 'content-i18n'];
+        return ['class', 'cout-type'];
     }
     
     constructor() {
@@ -61,18 +61,6 @@ class CallOut extends HTMLElement {
         }
         
         switch (name) {
-            case 'cout-title':
-                const calloutTitle = this.getElementsByClassName('callout-title').item(0);
-                
-                if (calloutTitle) calloutTitle.innerHTML = newValue;
-                
-                break;
-            case 'cout-content':
-                const calloutContent = this.getElementsByClassName('callout-content').item(0);
-
-                if (calloutContent) calloutContent.innerHTML = newValue;
-
-                break;
             case 'cout-type':
                 const calloutIcon = this.getElementsByClassName('callout-icon').item(0);
 
@@ -132,6 +120,7 @@ let lang_options = document.getElementById('lang-options');
 // Others
 
 let prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+const defaultTheme = 'light';
 let themeBeforePrint = getTheme();
 
 //
@@ -194,8 +183,6 @@ function showMenu(e) {
 
 function setTheme(theme, isString = false){
     // When user clicks a theme from the dropdown menu, it runs this functions.
-    // If the default theme is ever changed here, you must also change it inside StartSession.php ($DEFAULT_THEME var),
-    // otherwise, first ever load will present unexpected behavior.
     const current = getTheme();
     let toTheme;
     
@@ -210,7 +197,7 @@ function setTheme(theme, isString = false){
 }
 
 function getTheme(){
-    const current = localStorage.getItem('theme') || 'purple';
+    const current = localStorage.getItem('theme') || defaultTheme;
     return current;
 }
 
@@ -253,7 +240,7 @@ document.addEventListener('click', (e) => {
 window.addEventListener('beforeprint', (e) => {
     themeBeforePrint = getTheme();
     
-    setTheme('purple', true);
+    setTheme(defaultTheme, true);
 
 });
 

@@ -404,7 +404,6 @@ p {
 }
 
 .footnote {
-    border: none;
     margin-left: 0;
     font-style: italic;
     color: var(--color-text-muted);
