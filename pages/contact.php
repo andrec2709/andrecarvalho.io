@@ -17,6 +17,20 @@ include __DIR__ . "/../api/StartSession.php";
 	<meta name="keywords" content="<?= $lang['contact']['keywords'] ?>">
 	<meta name="author" content="Andre Carvalho Filho">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<meta property="og:url" content="https://andrecarvalho.io/pages/contact.php">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="<?= $lang['contact']['title'] ?>">
+	<meta property="og:description" content="<?= $lang['contact']['description'] ?>">
+	<meta property="og:image" content="/assets/img/logo-with-bg.svg">
+
+	<meta name="twitter:card" content="summary">
+	<meta property="twitter:domain" content="andrecarvalho.io">
+	<meta property="twitter:url" content="https://andrecarvalho.io/pages/contact.php">
+	<meta name="twitter:title" content="<?= $lang['contact']['title'] ?>">
+	<meta name="twitter:description" content="<?= $lang['contact']['description'] ?>">
+	<meta name="twitter:image" content="/assets/img/logo-with-bg.svg">
+
 	<title data-i18n="contact.title">
 		<?= $lang['contact']['title'] ?>
 	</title>
