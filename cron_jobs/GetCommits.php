@@ -1,6 +1,8 @@
 <?php
 
+
 $CONFIG_PATH = getenv('CONFIG_PATH');
+error_log("CONFIG_PATH IS -->>" . $CONFIG_PATH);
 
 include $CONFIG_PATH;
 
