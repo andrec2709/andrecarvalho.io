@@ -71,7 +71,8 @@
 	"portfolio": {
 		"title": "Developer's Portfolio - Andre Carvalho",
 		"description": "Here you can find my work and personal projects as a developer.",
-		"keywords": "andre carvalho, andre, carvalho, portfolio, developer, dev, hire, offers, curriculum, solo developer, html, css, javascript, php, c++, github, technology, freelancer, freelance, freelancing"
+		"keywords": "andre carvalho, andre, carvalho, portfolio, developer, dev, hire, offers, curriculum, solo developer, html, css, javascript, php, c++, github, technology, freelancer, freelance, freelancing",
+		"my_repos": "My Public Repositories"
 	},
 	"cv": {
 		"title": "Curriculum Andre Carvalho Filho",

@@ -55,7 +55,7 @@ include __DIR__ . "/../api/StartSession.php";
 			<section id="feature-container" class="feature-container">
 			</section>
 
-			<h2 class="repos-list-heading">My public repositories</h2>
+			<h2 class="repos-list-heading" data-i18n="portfolio.my_repos"><?= $lang['portfolio']['my_repos'] ?></h2>
 
 			<section id="repos-list">
 			</section>

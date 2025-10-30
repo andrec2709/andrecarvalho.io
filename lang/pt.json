@@ -71,7 +71,8 @@
 	"portfolio": {
 		"title": "Portfólio do Desenvolvedor - Andre Carvalho",
 		"description": "Aqui você pode encontrar meu trabalho e projetos pessoais como desenvolvedor.",
-		"keywords": "andre carvalho, andre, carvalho, portfólio, desenvolvedor, dev, contratar, contratação, oportunidades, trabalho, curriculo, desenvolvedor solo, freelancer, freelance, html, css, javascript, php, c++, github, tecnologia"
+		"keywords": "andre carvalho, andre, carvalho, portfólio, desenvolvedor, dev, contratar, contratação, oportunidades, trabalho, curriculo, desenvolvedor solo, freelancer, freelance, html, css, javascript, php, c++, github, tecnologia",
+		"my_repos": "Meus Repositórios Públicos"
 	},
 	"cv": {
 		"title": "Currículo Andre Carvalho Filho",
