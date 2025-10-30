@@ -25,6 +25,7 @@ class I18n {
             const text = this.get(key);
 
             if (text) el.innerHTML = text;
+            if (el.dataset.extra) el.innerHTML += el.dataset.extra;
         });
     }
 

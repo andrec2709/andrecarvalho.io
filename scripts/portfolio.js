@@ -1,4 +1,6 @@
 class BaseCard extends HTMLElement{
+    // Common properties and methods for FCard and RepoCard
+    
     static observedAttributes = ["class"];
 
     name;
@@ -22,6 +24,7 @@ class BaseCard extends HTMLElement{
 }
 
 class FCard extends BaseCard {
+    // "Feature Card"
 
     title;
 
@@ -127,6 +130,8 @@ customElements.define("f-card", FCard);
 
 
 async function getData(){
+    // Gets information about the public repositories, and their total commits
+
     const response = await fetch("../api/GetReposInfo.php");
 
     const res_json = await response.json();
@@ -137,7 +142,9 @@ async function getData(){
 
 async function populateRepoList(){
     const pub_repos = await getData();
+    // Container for featured cards
     const fcont = document.getElementById("feature-container");
+    // Container for all public repositories
     const repolist = document.getElementById("repos-list");
 
     let most_commits_repo = null;
@@ -146,16 +153,20 @@ async function populateRepoList(){
 
     pub_repos.forEach(repo => {
 
+        // Generating each repository's card
         const rc = document.createElement('repo-card');
+
         repolist.appendChild(rc);
+
         rc.setProp('name', repo['repo_name']);
         rc.setProp('desc', repo['description'] === null ? "No description available" : repo['description']);
         rc.setProp('date', repo['updated_at']);
-
+        // Redirect to repo's page on click
         rc.addEventListener('click', (e) => {
             window.open(`https://github.com/andrec2709/${repo['repo_name']}`);
         });
 
+        // Assigns first repo as most_commits_repo, and then starts comparing total nº of commits on next iterations
         if (most_commits_repo === null){
             most_commits_repo = repo;
             
@@ -164,6 +175,7 @@ async function populateRepoList(){
             most_commits_repo = repo;
         }
 
+        // Assigns first repo as most_recent_repo, and then starts comparing last updated repo on next iterations
         if (most_recent_repo === null){
             most_recent_repo = repo;
         }
@@ -171,24 +183,39 @@ async function populateRepoList(){
             most_recent_repo = repo;
         }
 
-        // Debugging
-        // console.log(`Date1: ${repo['updated_at']} -- Date2: ${most_recent_repo['updated_at']} -- `, repo['date'] > most_recent_repo['date']);
-
     });
 
+    // Creates first "feature" card (Most commits);
     const fc = document.createElement('f-card');
     fcont.appendChild(fc);
-    fc.setProp("title", `Most commits: ${most_commits_repo['commits']}`);
+
+    // Determined preferred language for first time load
+    const pref_lang = (localStorage.getItem('lang') || 'en') == 'en' ? 'en' : 'pt';
+    const most_commits = pref_lang == 'en' ? 'Most commits: ' : 'Mais commits: ';
+    const last_up = pref_lang == 'en' ? 'Last updated' : 'Última atualização';
+
+    // Defining content of the elements
+    fc.setProp("title", `${most_commits} ${most_commits_repo['commits']}`);
     fc.setProp("name", most_commits_repo['repo_name']);
     fc.setProp("desc", most_commits_repo['description'] === null ? "No description available" : most_commits_repo['description']);
     fc.setProp("date", most_commits_repo['updated_at']);
+    
+    // Sets i18n (translation) key
+    fc.firstChild.dataset.i18n = "portfolio.most_commits";
+    // This holds the count of total commits itself, it will be appended to the i18n key when the user switches languages
+    fc.firstChild.dataset.extra = most_commits_repo['commits'];
 
+    // Creates second "feature" card (Last updated)
     const fc2 = document.createElement('f-card');
     fcont.appendChild(fc2);
-    fc2.setProp("title", "Last updated");
+
+    // Defining content of the elements
+    fc2.setProp("title", last_up);
     fc2.setProp("name", most_recent_repo['repo_name']);
     fc2.setProp("desc", most_recent_repo['description'] === null ? "No description available" : most_recent_repo['description']);
     fc2.setProp("date", most_recent_repo['updated_at']);
+    // Sets i18n (translation) key
+    fc2.firstChild.dataset.i18n = "portfolio.last_up";
 
     fc.addEventListener('click', (e) => {
         window.open(`https://github.com/andrec2709/${most_commits_repo['repo_name']}`);
