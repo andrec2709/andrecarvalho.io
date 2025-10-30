@@ -18,7 +18,7 @@ include __DIR__ . "/../api/StartSession.php";
 	<meta name="author" content="Andre Carvalho Filho">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<meta property="og:url" content="https://andrecarvalho.io/pages/contact.php">
+	<meta property="og:url" content="https://andrecarvalho.io/contact">
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="<?= $lang['contact']['title'] ?>">
 	<meta property="og:description" content="<?= $lang['contact']['description'] ?>">
@@ -26,7 +26,7 @@ include __DIR__ . "/../api/StartSession.php";
 
 	<meta name="twitter:card" content="summary">
 	<meta property="twitter:domain" content="andrecarvalho.io">
-	<meta property="twitter:url" content="https://andrecarvalho.io/pages/contact.php">
+	<meta property="twitter:url" content="https://andrecarvalho.io/contact">
 	<meta name="twitter:title" content="<?= $lang['contact']['title'] ?>">
 	<meta name="twitter:description" content="<?= $lang['contact']['description'] ?>">
 	<meta name="twitter:image" content="/assets/img/logo-with-bg.svg">
@@ -34,10 +34,10 @@ include __DIR__ . "/../api/StartSession.php";
 	<title data-i18n="contact.title">
 		<?= $lang['contact']['title'] ?>
 	</title>
-	<link rel="canonical" href="https://andrecarvalho.io/pages/contact.php">
+	<link rel="canonical" href="https://andrecarvalho.io/contact">
 	<link rel="icon" href="/favicon.svg" type="image/x-icon">
-	<link rel="stylesheet" href="../styles/main.css">
-	<link rel="stylesheet" href="../styles/contact.css">
+	<link rel="stylesheet" href="/styles/main.css">
+	<link rel="stylesheet" href="/styles/contact.css">
 	<script src="https://www.google.com/recaptcha/enterprise.js?render=<?= $recaptchaSite ?>"></script>
 	<script>
 		const theme = localStorage.getItem('theme') || '<?= $DEFAULT_THEME ?>';

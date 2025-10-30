@@ -6,7 +6,7 @@ include __DIR__ . "/../api/StartSession.php";
 
 <header>
     <nav class="nav-horizontal">
-        <a href="/pages/index.php" id="logo-container">
+        <a href="/index" id="logo-container">
             <svg aria-label="logo" width="45.218628mm" height="37.469528mm" viewBox="0 0 45.218628 37.469528"
                 version="1.1" id="svg1" inkscape:version="1.4.2 (ebf0e94, 2025-05-08)"
                 sodipodi:docname="logos-test.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -40,10 +40,10 @@ include __DIR__ . "/../api/StartSession.php";
             andrecarvalho<mark>.io</mark>
         </a>
         <div class="nav-links wide">
-            <a href="/pages/index.php" data-i18n="header.start"><?= $lang['header']['start'] ?></a>
-            <a href="/pages/portfolio.php" data-i18n="header.portfolio"><?= $lang['header']['portfolio'] ?></a>
-            <a href="/pages/about.php" data-i18n="header.about"><?= $lang['header']['about'] ?></a>
-            <a href="/pages/contact.php" data-i18n="header.contact"><?= $lang['header']['contact'] ?></a>
+            <a href="/index" data-i18n="header.start"><?= $lang['header']['start'] ?></a>
+            <a href="/portfolio" data-i18n="header.portfolio"><?= $lang['header']['portfolio'] ?></a>
+            <a href="/about" data-i18n="header.about"><?= $lang['header']['about'] ?></a>
+            <a href="/contact" data-i18n="header.contact"><?= $lang['header']['contact'] ?></a>
         </div>
         <button aria-label="open sidebar" id="open-sidebar" class="sidebar-btn" onclick="toggleSidebar(this)" data-action="open"><img src="/assets/icons/sidebar-open.svg" alt="open sidebar"></button>
     </nav>
@@ -66,10 +66,10 @@ include __DIR__ . "/../api/StartSession.php";
     <nav class="nav-sidebar">
         <button aria-label="close sidebar" id="close-sidebar" class="sidebar-btn" onclick="toggleSidebar(this)" data-action="close"><img src="/assets/icons/sidebar-close.svg" alt="close sidebar"></button>
         <div class="nav-links sidebar">
-            <a href="/pages/index.php" data-i18n="header.start"><?= $lang['header']['start'] ?></a>
-            <a href="/pages/portfolio.php" data-i18n="header.portfolio"><?= $lang['header']['portfolio'] ?></a>
-            <a href="/pages/about.php" data-i18n="header.about"><?= $lang['header']['about'] ?></a>
-            <a href="/pages/contact.php" data-i18n="header.contact"><?= $lang['header']['contact'] ?></a>
+            <a href="/index" data-i18n="header.start"><?= $lang['header']['start'] ?></a>
+            <a href="/portfolio" data-i18n="header.portfolio"><?= $lang['header']['portfolio'] ?></a>
+            <a href="/about" data-i18n="header.about"><?= $lang['header']['about'] ?></a>
+            <a href="/contact" data-i18n="header.contact"><?= $lang['header']['contact'] ?></a>
         </div>
     </nav>
 </header>

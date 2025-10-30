@@ -18,7 +18,7 @@ include __DIR__ . "/../api/StartSession.php";
 	<meta name="author" content="Andre Carvalho Filho">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<meta property="og:url" content="https://andrecarvalho.io/pages/portfolio.php">
+	<meta property="og:url" content="https://andrecarvalho.io/portfolio">
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="<?= $lang['portfolio']['title'] ?>">
 	<meta property="og:description" content="<?= $lang['portfolio']['description'] ?>">
@@ -26,7 +26,7 @@ include __DIR__ . "/../api/StartSession.php";
 
 	<meta name="twitter:card" content="summary">
 	<meta property="twitter:domain" content="andrecarvalho.io">
-	<meta property="twitter:url" content="https://andrecarvalho.io/pages/portfolio.php">
+	<meta property="twitter:url" content="https://andrecarvalho.io/portfolio">
 	<meta name="twitter:title" content="<?= $lang['portfolio']['title'] ?>">
 	<meta name="twitter:description" content="<?= $lang['portfolio']['description'] ?>">
 	<meta name="twitter:image" content="/assets/img/logo-with-bg.svg">
@@ -34,10 +34,10 @@ include __DIR__ . "/../api/StartSession.php";
 	<title data-i18n="portfolio.title">
 		<?= $lang['portfolio']['title'] ?>
 	</title>
-	<link rel="canonical" href="https://andrecarvalho.io/pages/portfolio.php">
+	<link rel="canonical" href="https://andrecarvalho.io/portfolio">
 	<link rel="icon" href="/favicon.svg" type="image/x-icon">
-	<link rel="stylesheet" href="../styles/main.css">
-	<link rel="stylesheet" href="../styles/portfolio.css">
+	<link rel="stylesheet" href="/styles/main.css">
+	<link rel="stylesheet" href="/styles/portfolio.css">
 	<script>
 		const theme = localStorage.getItem('theme') || '<?= $DEFAULT_THEME ?>';
 		document.documentElement.classList.add(`theme-${theme}`);

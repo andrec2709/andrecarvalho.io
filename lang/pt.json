@@ -38,7 +38,7 @@
 		"about_me_p_1": "Olá, meu nome é Andre Carvalho, sou um desenvolvedor de 24 anos vivendo no sul do Brasil.",
 		"about_me_p_2": "Desde muito cedo, sempre estive cercado por computadores. Ao longo dos anos, desenvolvi uma ampla variedade de habilidades relacionadas à tecnologia e à criação digital. De edição de imagem e vídeo a modelagem e animação 3D no Blender, design vetorial no Inkscape e desenvolvimento de jogos com o Godot, sempre gostei de explorar novas formas de dar vida a ideias através do computador.",
 		"about_me_p_3": "Comecei a programar por volta dos 17 anos, tendo o Python como minha primeira linguagem. Ele foi essencial para consolidar os fundamentos da programação, como variáveis, funções e princípios de orientação a objetos. Desde então, venho expandindo meus conhecimentos em diversas ferramentas, tecnologias e linguagens de programação.",
-		"about_me_p_4": "Para mais detalhes sobre minhas habilidades técnicas e experiências profissionais, confira meus <a class=p-link href=#assessment>Conhecimentos</a> e <a class=p-link href=/pages/cv.php target=_blank rel=\"noopener noreferrer\">currículo</a>.",
+		"about_me_p_4": "Para mais detalhes sobre minhas habilidades técnicas e experiências profissionais, confira meus <a class=p-link href=#assessment>Conhecimentos</a> e <a class=p-link href=/cv target=_blank rel=\"noopener noreferrer\">currículo</a>.",
 		"heading_2": "Conhecimentos",
 		"p_1": "Esta é uma lista de coisas que sei, porém não se limitando a elas:",
 		"li_1": "HTML, CSS, Javascript, PHP.<a href=\"#about_li_1_note\" class=\"p-link \"><sup>[1]</sup></a>",
@@ -60,7 +60,7 @@
 		"li_16": "Blender.",
 		"li_17": "Outros.",
 		"note": "Nota",
-		"p_3": "Para mais referências das minhas habilidades e conhecimentos, você também pode consultar a página do meu <a href=/pages/portfolio.php>portfólio e repositórios do Github.</a>",
+		"p_3": "Para mais referências das minhas habilidades e conhecimentos, você também pode consultar a página do meu <a href=/portfolio>portfólio e repositórios do Github.</a>",
 		"li_1_note": "* O código fonte desta página está arquivado <a href=https://github.com/andrec2709/andrecarvalho.io target=_blank class=p-link rel=\"noopener noreferrer\">neste repositório do Github</a>, por favor verifique-o."
 	},
 	"index": {

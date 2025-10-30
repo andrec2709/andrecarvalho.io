@@ -17,7 +17,7 @@ include __DIR__ . "/../api/StartSession.php";
 	<meta name="author" content="Andre Carvalho Filho">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<meta property="og:url" content="https://andrecarvalho.io/pages/about.php">
+	<meta property="og:url" content="https://andrecarvalho.io/about">
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="<?= $lang['about']['title'] ?>">
 	<meta property="og:description" content="<?= $lang['about']['description'] ?>">
@@ -25,7 +25,7 @@ include __DIR__ . "/../api/StartSession.php";
 
 	<meta name="twitter:card" content="summary">
 	<meta property="twitter:domain" content="andrecarvalho.io">
-	<meta property="twitter:url" content="https://andrecarvalho.io/pages/about.php">
+	<meta property="twitter:url" content="https://andrecarvalho.io/about">
 	<meta name="twitter:title" content="<?= $lang['about']['title'] ?>">
 	<meta name="twitter:description" content="<?= $lang['about']['description'] ?>">
 	<meta name="twitter:image" content="/assets/img/logo-with-bg.svg">
@@ -33,9 +33,9 @@ include __DIR__ . "/../api/StartSession.php";
 	<title data-i18n="about.title">
 		<?= $lang['about']['title'] ?>
 	</title>
-	<link rel="canonical" href="https://andrecarvalho.io/pages/about.php">
+	<link rel="canonical" href="https://andrecarvalho.io/about">
 	<link rel="icon" href="/favicon.svg" type="image/x-icon">
-	<link rel="stylesheet" href="../styles/main.css">
+	<link rel="stylesheet" href="/styles/main.css">
 	<script>
 		const theme = localStorage.getItem('theme') || '<?= $DEFAULT_THEME ?>';
 		document.documentElement.classList.add(`theme-${theme}`);
