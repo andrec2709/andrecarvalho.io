@@ -31,7 +31,8 @@
 .f-card-main{
     background-color: var(--color-surface-container);
     border: 1px solid var(--color-outline);
-    width: 100%;
+    /* width: 100%; */
+    width: 50%;
     cursor: pointer;
 }
 
@@ -144,6 +145,10 @@
     .f-card-main:first-of-type{
         margin-bottom: 2rem;
         margin-right: 0;
+    }
+
+    .f-card-main {
+        width: 100%;
     }
 
 }
