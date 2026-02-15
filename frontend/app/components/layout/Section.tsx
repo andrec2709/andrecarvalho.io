@@ -1,0 +1,35 @@
+import type { SectionProps } from "~/domain/section/types";
+
+type Props = SectionProps & {
+    children: React.ReactNode;
+};
+
+export const Section = ({ children, classNameContainer, classNameContent, variant = 'narrow' }: Props) => {
+    const contentNarrow = 'section-narrow';
+    const contentWide = 'section-wide';
+    const contentFull = 'section-full';
+
+    let contentStyle = contentNarrow;
+
+    switch (variant) {
+        case 'full':
+            contentStyle = contentFull;
+            break;
+        case 'wide':
+            contentStyle = contentWide;
+            break;
+    }
+
+    
+    return (
+        <div className={`w-full flex justify-center border not-last-of-type:border-b-0 border-border-background-2 ${classNameContainer}`}>
+            <section
+                className={`m-4 ${classNameContent} ${contentStyle}`}
+            >
+                {children}
+            </section>
+        </div>
+    );
+};
+
+export default Section;

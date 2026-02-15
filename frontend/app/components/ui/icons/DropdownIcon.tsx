@@ -1,0 +1,52 @@
+
+export const DropdownIcon = ({ className }: { className?: string }) => {
+    return (
+        <svg
+            width="5.4044013mm"
+            height="5.4044018mm"
+            viewBox="0 0 5.4044013 5.4044018"
+            version="1.1"
+            id="svg1"
+            xmlns="http://www.w3.org/2000/svg"
+            className={`${className}`}
+            aria-label="arrow icon"
+        >
+            <defs
+                id="defs1" />
+            <g
+                id="layer1"
+                transform="translate(-91.760447,-180.47953)">
+                <rect
+                    // style="display:inline;fill:none;stroke:none;stroke-width:0.861015;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
+                    style={{ display: 'inline', fill: 'none', stroke: 'none', strokeWidth: 0.861015, strokeLinecap: 'round', strokeLinejoin: 'round', strokeDasharray: 'none', paintOrder: 'markers fill stroke' }}
+                    id="rect3"
+                    width="5.4043999"
+                    height="5.4043999"
+                    x="91.760452"
+                    y="180.47954" />
+                <g
+                    id="g2"
+                    transform="translate(-0.26120379,-0.3079371)">
+                    <path
+                        // style="fill:#ffcc00;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+                        style={{ strokeWidth: 0.499999, strokeLinecap: 'round', strokeLinejoin: 'round', paintOrder: 'markers fill stroke' }}
+                        d="m 93.171006,184.2661 1.55285,-1.55285"
+                        id="path1"
+                        className="stroke-on-background-container"
+                    />
+
+                    <path
+                        // style="fill:#ffcc00;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+                        style={{ strokeWidth: 0.499999, strokeLinecap: 'round', strokeLinejoin: 'round', paintOrder: 'markers fill stroke' }}
+                        d="m 96.276706,184.2661 -1.55285,-1.55285"
+                        id="path2"
+                        className="stroke-on-background-container"
+                    />
+                </g>
+            </g>
+        </svg>
+
+    );
+};
+
+export default DropdownIcon;

@@ -1,0 +1,15 @@
+.DS_Store
+.env
+/frontend/.env
+/node_modules/
+/frontend/node_modules/
+/vendor/
+/backend/vendor
+.head-add
+/frontend/.head-add
+
+# React Router
+/.react-router/
+/frontend/.react-router/
+/build/
+/frontend/build/
