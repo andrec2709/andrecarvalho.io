@@ -5,7 +5,7 @@ header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With');
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
-error_log($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php <<<<<<<<_--------------');
+
 $CONFIG_PATH = getenv('CONFIG_PATH');
 
 include $CONFIG_PATH;
@@ -89,7 +89,6 @@ function create_assessment(
     }
 }
 
-// TODO: Replace the token and reCAPTCHA action variables before running the sample.
 create_assessment(
     $recaptchaSite,
     $_POST["token"],

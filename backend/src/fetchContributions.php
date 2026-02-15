@@ -1,11 +1,13 @@
 <?php
 
 $CONFIG_PATH = getenv('CONFIG_PATH');
-include_once __DIR__ . '/repositories/contributions/MySQLContributionsRepository.php';
+
+include_once __DIR__ . '/application/useContributionsRepo.php';
 include_once $CONFIG_PATH;
 
 $url = 'https://api.github.com/graphql';
-$repo = new MySQLContributionsRepository('localhost', $mysqlUser, $mysqlSecret, $mysqlDB, 3306);
+
+$repo = useContributionsRepo();
 
 $ch = curl_init($url);
 
@@ -41,8 +43,7 @@ $data = [
 $payload = json_encode($data);
 
 curl_setopt($ch, CURLOPT_USERAGENT, 'andrec2709');
-// Move token to configpath file
-curl_setopt($ch, CURLOPT_HTTPHEADER, ["Authorization: bearer TOKEN"]);
+curl_setopt($ch, CURLOPT_HTTPHEADER, ["Authorization: bearer $GITHUB_TOKEN"]);
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
