@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import { useToolTip } from "~/contexts/ToolTipContext";
 import { useValidity } from "~/application/other/useValidity";
 import { useLang } from "~/contexts/LangContext";
+import useGRecaptchaRepository from "~/application/grecaptcha/useGRecaptchaRepository";
 
 
 type Props = {
@@ -20,14 +21,15 @@ export const ContactFormSection = ({ classNameContainer, classNameContent }: Pro
     // Contexts
     const { showMessage } = useToolTip();
     const { translations } = useLang();
-    
-    
+
+
     // Hooks
     const formRef = useRef<HTMLFormElement>(null);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
-    
+    const recaptchaRepo = useGRecaptchaRepository();
+
     // provides ValidityState of name and email fields
     const [nameValidity, setNameValidity] = useValidity();
     const [emailValidity, setEmailValidity] = useValidity();
@@ -50,41 +52,33 @@ export const ContactFormSection = ({ classNameContainer, classNameContent }: Pro
             if (!nameValidity?.valid) {
                 showMessage('name is invalid', 'fail');
                 return;
-            }
-            else if (!emailValidity?.valid) {
+            } else if (!emailValidity?.valid) {
                 showMessage('email is invalid', 'fail');
                 return;
+            } else if (!formRef.current) {
+                return;
             }
-
+            
             const token = await window.grecaptcha.enterprise
-                .execute('6Lc9CuwrAAAAAJtuJ7rmpSjblUlXleYIXBjK6euL', { action: 'submit' })
-                .then(async (token) => {
-                    const API = import.meta.env.VITE_API_URL;
+                .execute('6Lc9CuwrAAAAAJtuJ7rmpSjblUlXleYIXBjK6euL', { action: 'submit' });
 
-                    if (!formRef.current) return;
-                    const formdt = new FormData(formRef.current);
-                    formdt.append("token", token);
+            const formData = new FormData(formRef.current);
 
-                    const response = await fetch(`${API}/ParseForm.php`, {
-                        body: formdt,
-                        method: "POST"
-                    });
+            const response = await recaptchaRepo.getAssessment(formData, token);
 
-                    const json = await response.json();
-                    if (json.success) {
-                        showMessage('e-mail sent', 'ok');
-                        setName('');
-                        setEmail('');
-                        setMessage('');
-                        setEmailValidity(null);
-                        setNameValidity(null);
-                    } else {
-                        showMessage('something went wrong, please try again', 'fail');
-                    }
-
-                });
+            if (response.success) {
+                showMessage('e-mail sent', 'ok');
+                setName('');
+                setEmail('');
+                setMessage('');
+                setEmailValidity(null);
+                setNameValidity(null);
+            } else {
+                showMessage('something went wrong, please try again', 'fail');
+            }
         });
-    } 
+
+    }
 
     return (
         <Section classNameContainer={classNameContainer} classNameContent={classNameContent}>

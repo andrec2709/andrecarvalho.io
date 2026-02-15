@@ -10,8 +10,8 @@ import { useLang } from "~/contexts/LangContext";
 const getReposInfo = async (): Promise<RepoCard[]> => {
     const API = import.meta.env.VITE_API_URL;
     const response = await fetch(`${API}/GetReposInfo.php`);
-    const json = await response.json();
-    json.sort((a: RepoCard, b: RepoCard) => b.commits - a.commits);
+    const json: RepoCard[] = await response.json();
+    json.sort((a, b) => b.commits - a.commits);
 
     return json;
 };

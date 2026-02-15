@@ -56,6 +56,7 @@ function create_assessment(
         if ($response->getTokenProperties()->getValid() == false) {
             error_log('The CreateAssessment() call failed because the token was invalid for the following reason: ');
             error_log(InvalidReason::name($response->getTokenProperties()->getInvalidReason()));
+            echo json_encode(['success' => false]);
             return;
         }
 
@@ -67,7 +68,7 @@ function create_assessment(
             error_log('The score for the protection action is:');
             error_log($response->getRiskAnalysis()->getScore());
 
-            if ($response->getRiskAnalysis()->getScore() >= .35){
+            if ($response->getRiskAnalysis()->getScore() >= .35) {
 
                 $to = "contato@andrecarvalho.io";
                 $subject = "E-mail from " . $_POST["username"] . " via andrecarvalho.io";
@@ -76,16 +77,19 @@ function create_assessment(
 
                 $resp = mail($to, $subject, $msg, $headers);
                 echo json_encode(['success' => $resp]);
-
+                return;
             }
 
         } else {
             error_log('The action attribute in your reCAPTCHA tag does not match the action you are expecting to score');
             error_log("Action is -> " . $response->getTokenProperties()->getAction());
+            echo json_encode(['success' => false]);
+            return;
         }
     } catch (exception $e) {
         error_log('CreateAssessment() call failed with the following error: ');
         error_log($e);
+        echo json_encode(['success' => false]);
     }
 }
 
