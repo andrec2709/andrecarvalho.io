@@ -5,29 +5,21 @@ import DropdownIcon from "./icons/DropdownIcon";
 import { v4 as uuidv4 } from "uuid";
 import Heading from "./Heading";
 import { useLang } from "~/contexts/LangContext";
-
-
-const getReposInfo = async (): Promise<RepoCard[]> => {
-    const API = import.meta.env.VITE_API_URL;
-    const response = await fetch(`${API}/GetReposInfo.php`);
-    const json: RepoCard[] = await response.json();
-    json.sort((a, b) => b.commits - a.commits);
-
-    return json;
-};
+import useReposRepository from "~/application/github/repos/useReposRepository";
 
 export const Carousel = () => {
     const wrapperRef = useRef<HTMLDivElement>(null);
     const carouselRef = useRef<HTMLDivElement>(null);
     const lastTouch = useRef(0);
     const moveThreshold = useRef(10);
+    const reposRepo = useReposRepository();
     const [cards, setCards] = useState<JSX.Element[] | null>(null);
 
     const { translations } = useLang();
 
     useEffect(() => {
         const fetchData = async () => {
-            const repos = await getReposInfo();
+            const repos = await reposRepo.getAll();
 
             let newCards = repos.map((repo, index) => {
                 const id = `id-${uuidv4()}`;
