@@ -8,11 +8,11 @@ type Props = {
 };
 
 export const CvSummarySection = ({ classNameContainer, classNameContent }: Props) => {
-    const { translations } = useLang();
+    const { translations, i18n } = useLang();
     return (
         <Section classNameContainer={classNameContainer} classNameContent={classNameContent}>
             <Heading as="h3" id="summary" className="text-2xl!">
-                {translations?.cv.pro_sum}
+                {i18n.t('cv.proSumm.heading')}
             </Heading>
             <p className="">
                 {translations?.cv.pro_sum_desc_part1}

@@ -20,7 +20,7 @@ export const ContactFormSection = ({ classNameContainer, classNameContent }: Pro
 
     // Contexts
     const { showMessage } = useToolTip();
-    const { translations } = useLang();
+    const { translations, i18n } = useLang();
 
 
     // Hooks
@@ -83,9 +83,9 @@ export const ContactFormSection = ({ classNameContainer, classNameContent }: Pro
     return (
         <Section classNameContainer={classNameContainer} classNameContent={classNameContent}>
             <Heading id="work-together">
-                {translations?.contact.heading_1}
+                {i18n.t('contact.workTogether.heading')}
             </Heading>
-            <p>{translations?.contact.paragraph_1}{" "}
+            <p>{i18n.t('contact.workTogether.p1')}{" "}
                 <a
                     className="body-link"
                     href="mailto:contato@andrecarvalho.io"
@@ -94,10 +94,10 @@ export const ContactFormSection = ({ classNameContainer, classNameContent }: Pro
                 >contato@andrecarvalho.io</a>{"."}
             </p>
             <br />
-            <p>{translations?.contact.paragraph_1_2}</p>
+            <p>{i18n.t('contact.workTogether.p2')}</p>
 
             <Heading as="h2" id="contact-me">
-                {translations?.contact.heading_3}
+                {i18n.t('contact.contactMe.heading')}
             </Heading>
 
             <Form
@@ -108,9 +108,9 @@ export const ContactFormSection = ({ classNameContainer, classNameContent }: Pro
                 onSubmit={e => e.preventDefault()}
             >
                 <Label className="form-field">
-                    <span className="block">{translations?.contact.name}</span>
+                    <span className="block">{i18n.t('contact.contactMe.name')}</span>
                     <InputText
-                        placeholder={translations?.contact.name}
+                        placeholder={i18n.t('contact.contactMe.name')}
                         required
                         name="username"
                         id="username-input"
@@ -154,14 +154,14 @@ export const ContactFormSection = ({ classNameContainer, classNameContent }: Pro
                     />
                 </Label>
                 <Label className="form-field">
-                    <span>{translations?.contact.message}</span>
+                    <span>{i18n.t('contact.contactMe.message')}</span>
                     <textarea
                         name="message"
                         id="message-input"
                         className="block resize-y w-full bg-input-background rounded-sm text-input-on-background 
                         border border-input-border/30 focus:border-input-border outline-0 px-2 py-1 min-h-80"
                         spellCheck={false}
-                        placeholder={translations?.contact.message}
+                        placeholder={i18n.t('contact.contactMe.message')}
                         value={message}
                         onChange={e => setMessage(e.target.value)}
                     >
@@ -171,7 +171,7 @@ export const ContactFormSection = ({ classNameContainer, classNameContent }: Pro
                     className="g-recaptcha mt-5 self-end"
                     onClick={handleSubmit}
                 >
-                    submit
+                    {i18n.t('contact.contactMe.send')}
                 </Button>
             </Form>
         </Section>

@@ -10,12 +10,12 @@ type Props = {
 };
 
 export const ProjectHeading = ({ id, children, sourceHref, appHref }: Props) => {
-    const { translations } = useLang();
+    const { translations, i18n } = useLang();
     return (
         <div className="mb-6">
             <Heading id={id}>{children}</Heading>
-            <Link to={sourceHref} target="_blank" className="body-link source">{translations?.portfolio.source_code}</Link>
-            <Link to={appHref} target="_blank" className="body-link source">{translations?.portfolio.checkout}</Link>
+            <Link to={sourceHref} target="_blank" className="body-link source">{i18n.t('portfolio.sourceCode')}</Link>
+            <Link to={appHref} target="_blank" className="body-link source">{i18n.t('portfolio.checkOut')}</Link>
         </div>
     );
 };

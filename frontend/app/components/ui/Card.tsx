@@ -4,16 +4,16 @@ import OpenNewIcon from "./icons/OpenNewIcon";
 import { useLang } from "~/contexts/LangContext";
 
 export const Card = ({ className, id, repoData }: { className?: string; id?: string; repoData: RepoCard }) => {
-    const { translations, currentLang } = useLang();
+    const { i18n, lang } = useLang();
 
-    const noDescriptionText = currentLang === 'pt' ? 'Descrição não disponível' : 'No description available';
+    const noDescriptionText = lang === 'ptBR' ? 'Descrição não disponível' : 'No description available';
     let repoDescription = repoData?.description ?? noDescriptionText;
     repoDescription = repoDescription.length < 50 ? repoDescription : repoDescription.substring(0, 50) + '...';
 
     
 
     const dt = new Date(repoData.updated_at);
-    const locale = currentLang === 'pt' ? 'pt-BR' : 'en-US';
+    const locale = lang === 'ptBR' ? 'pt-BR' : 'en-US';
     const formattedDate = dt.toLocaleString(locale, { month: 'short', day: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
 
     return (
@@ -22,24 +22,24 @@ export const Card = ({ className, id, repoData }: { className?: string; id?: str
             id={id}
         >
             <div className="card-section">
-                <h2 className="card-heading">{translations?.cards.project}</h2>
+                <h2 className="card-heading">{i18n.t('cards.project')}</h2>
                 <p className="card-text">{repoData?.repo_name}</p>
             </div>
             <div className="card-section">
-                <h2 className="card-heading">{translations?.cards.description}</h2>
+                <h2 className="card-heading">{i18n.t('cards.description')}</h2>
                 <p className="card-text">{repoDescription}</p>
             </div>
             <div className="card-section">
-                <h2 className="card-heading">{translations?.cards.commits}</h2>
+                <h2 className="card-heading">{i18n.t('cards.commits')}</h2>
                 <p className="card-text">{repoData?.commits}</p>
             </div>
             <div className="card-section">
-                <h2 className="card-heading">{translations?.cards.updated_at}</h2>
+                <h2 className="card-heading">{i18n.t('cards.updatedAt')}</h2>
                 <p className="card-text">{formattedDate}</p>
             </div>
             <GithubIcon className="self-center mt-auto select-none aspect-square"/>
             <a className="absolute self-end w-fit" href={`https://github.com/andrec2709/${repoData.repo_name}`} target="_blank">
-                <OpenNewIcon className="fill-card-links" hoverText={translations?.cards.hover_txt} />
+                <OpenNewIcon className="fill-card-links" hoverText={i18n.t('cards.goToGithubHoverTxt')} />
             </a>
         </div>
     );

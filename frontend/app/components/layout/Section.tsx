@@ -1,4 +1,5 @@
 import type { SectionProps } from "~/domain/section/types";
+import { cn } from "~/utils";
 
 type Props = SectionProps & {
     children: React.ReactNode;
@@ -22,7 +23,7 @@ export const Section = ({ children, classNameContainer, classNameContent, varian
 
     
     return (
-        <div className={`w-full flex justify-center border not-last-of-type:border-b-0 border-border-background-2 ${classNameContainer}`}>
+        <div className={cn(`w-full flex justify-center border not-last-of-type:border-b-0 border-border-background-2`, classNameContainer)}>
             <section
                 className={`m-4 ${classNameContent} ${contentStyle}`}
             >

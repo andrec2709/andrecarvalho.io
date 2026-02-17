@@ -8,6 +8,7 @@ import { useLang } from "~/contexts/LangContext";
 import type { Route } from "@rr/portfolio/+types/index";
 import LogoIcon from "../../assets/logo.svg";
 import RepositoriesCarouselSection from "~/components/sections/RepositoriesCarouselSection";
+import ProjectsOverviewSection from "~/components/sections/ProjectsOverviewSection";
 
 export function meta({ }: Route.MetaArgs) {
     return [
@@ -38,18 +39,16 @@ export function links() {
 }
 
 export const Portfolio = () => {
-    const { translations } = useLang();
     return (
         <>
             <Main>
                 <RepositoriesCarouselSection
                     classNameContainer="bg-background-2 pt-25 text-on-background-2"
                 />
-                <Section>
-                    <Heading as="h1" id="overview">{translations?.portfolio.projects_overview.title}</Heading>
-                    <p className="paragraph">{translations?.portfolio.projects_overview.p1}</p>
-                </Section>
-                <ColorpickerSection classNameContainer="bg-background-2 text-on-background-2" />
+                <ProjectsOverviewSection>
+                    <ColorpickerSection />
+                </ProjectsOverviewSection>
+                {/* <ColorpickerSection /> */}
             </Main>
         </>
     );

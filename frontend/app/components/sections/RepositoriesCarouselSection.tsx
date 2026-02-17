@@ -6,10 +6,12 @@ import { useState, type JSX, useEffect } from "react";
 import useReposRepository from "~/application/github/repos/useReposRepository";
 import Card from "../ui/Card";
 import Autoplay from "embla-carousel-autoplay";
+import { useLang } from "~/contexts/LangContext";
 
 export default function RepositoriesCarouselSection({ ...props }: SectionProps) {
     const repo = useReposRepository();
     const [data, setData] = useState<JSX.Element[]>([]);
+    const { i18n } = useLang();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -24,7 +26,7 @@ export default function RepositoriesCarouselSection({ ...props }: SectionProps) 
 
     return (
         <Section {...props} variant="wide">
-            <Heading id="repositories-section">Repositories</Heading>
+            <Heading id="repositories-section">{i18n.t('portfolio.repositories.heading')}</Heading>
             <EmblaCarousel
                 options={{ loop: true, align: 'start' }}
                 plugins={[Autoplay({ delay: 5000 })]}

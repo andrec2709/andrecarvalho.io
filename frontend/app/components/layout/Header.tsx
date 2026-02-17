@@ -5,22 +5,23 @@ import Dropdown, { type DropdownOptions } from "../ui/Dropdown";
 import { themes } from "~/domain/theme/types";
 import { useTheme } from "~/contexts/ThemeContext";
 import { useLang } from "~/contexts/LangContext";
-import { langs } from "~/domain/language/types";
+import { langs, validLanguages } from "~/domain/language/types";
 
 import SidebarIcon from "../ui/icons/SidebarIcon";
 import Sidebar from "./Sidebar";
 import { useSidebar } from "~/contexts/SidebarContext";
+import { isLanguage } from "~/domain/language/utils";
 
 export const Header = () => {
     const navigate = useNavigate();
 
     const { changeTheme } = useTheme();
-    const { currentLang, changeLang, translations } = useLang();
+    const { currentLang, i18n, setLang, lang } = useLang();
     const { toggleSidebar } = useSidebar();
 
     const themeOptions = themes.reduce<DropdownOptions[]>((acc, row) => {
         const option: DropdownOptions = {
-            text: translations?.themes[row],
+            text: i18n.t(`themes.${row}`),
             value: row,
         };
 
@@ -30,9 +31,9 @@ export const Header = () => {
 
     }, []);
 
-    const langOptions = langs.reduce<DropdownOptions[]>((acc, row) => {
+    const langOptions = validLanguages.reduce<DropdownOptions[]>((acc, row) => {
         const option: DropdownOptions = {
-            text: translations?.lang_options[row],
+            text: i18n.t(`langOptions.${row}`),
             value: row,
         };
 
@@ -48,12 +49,14 @@ export const Header = () => {
                 <Logo />
             </NavLink>
             <nav className="links hidden md:flex">
-                <HeaderButton text={`${translations?.header.start}`} onClick={() => navigate('/')} />
-                <HeaderButton text={`${translations?.header.about}`} onClick={() => navigate('/about')} />
-                <HeaderButton text={`${translations?.header.portfolio}`} onClick={() => navigate('/portfolio')} />
-                <HeaderButton text={`${translations?.header.contact}`} onClick={() => navigate('/contact')} />
-                <Dropdown options={themeOptions} value={`${translations?.header.theme}`} onClick={v => changeTheme(v)} className="self-center" />
-                <Dropdown options={langOptions} value={currentLang} onClick={v => changeLang(v)} className="self-center" />
+                <HeaderButton text={i18n.t('header.start')} onClick={() => navigate('/')} />
+                <HeaderButton text={i18n.t('header.about')} onClick={() => navigate('/about')} />
+                <HeaderButton text={i18n.t('header.portfolio')} onClick={() => navigate('/portfolio')} />
+                <HeaderButton text={i18n.t('header.contact')} onClick={() => navigate('/contact')} />
+                <Dropdown options={themeOptions} value={i18n.t('header.theme')} onClick={v => changeTheme(v)} className="self-center" />
+                <Dropdown options={langOptions} value={lang} onClick={v => {
+                    if (isLanguage(v)) setLang(v);
+                }} className="self-center" />
             </nav>
             <button
                 className="h-full cursor-pointer hover:opacity-80 active:opacity-50"

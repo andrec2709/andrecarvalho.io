@@ -27,8 +27,8 @@ type ReadonlyField = {
 
 type ProfessionalExperienceEntry = {
     company: string;
-    dateStart: string;
-    dateEnd: string | null;
+    startDate: string;
+    endDate: string | null;
     role: string;
 };
 
@@ -44,9 +44,10 @@ export type Translation = {
         contact: string;
         about: string;
         cv: string;
+        portfolio: string;
     };
     langOptions: {
-        pt: string;
+        ptBR: string;
         en: string;
     };
     contact: PageMetaData & {
@@ -120,8 +121,8 @@ export type Translation = {
         savePdf: string;
     };
     themes: {
-        themeDark: string;
-        themeLight: string;
+        'theme-dark': string;
+        'theme-light': string;
     };
     cards: {
         project: string;

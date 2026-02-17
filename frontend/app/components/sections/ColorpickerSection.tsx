@@ -16,11 +16,11 @@ export const ColorpickerSection = ({ classNameContainer, classNameContent }: Pro
     const { translations } = useLang();
 
     return (
-        <Section classNameContainer={classNameContainer} classNameContent={classNameContent}>
+        <section>
             <ProjectHeading
-            id="colorpicker"
-            sourceHref="https://github.com/andrec2709/colorpicker-react"
-            appHref="https://andrec2709.github.io/colorpicker-react"
+                id="colorpicker"
+                sourceHref="https://github.com/andrec2709/colorpicker-react"
+                appHref="https://andrec2709.github.io/colorpicker-react"
             >
                 colorpicker-react
             </ProjectHeading>
@@ -71,7 +71,7 @@ export const ColorpickerSection = ({ classNameContainer, classNameContent }: Pro
             </p>
             <br />
             <p className="paragraph">{translations?.colorpicker.p10}</p>
-        </Section>
+        </section>
     );
 };
 

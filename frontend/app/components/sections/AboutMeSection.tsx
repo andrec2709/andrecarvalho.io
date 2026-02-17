@@ -10,18 +10,18 @@ type Props = {
 };
 
 export const AboutMeSection = ({ classNameContainer, classNameContent }: Props) => {
-    const { translations } = useLang();
+    const { i18n } = useLang();
     return (
         <Section classNameContainer={classNameContainer} classNameContent={classNameContent}>
             <Heading id="about-me">
-                {translations?.about.heading_1}
+                {i18n.t('about.aboutMe.heading')}
             </Heading>
-            <p className="paragraph">{translations?.about.about_me_p_1}</p><br />
-            <p className="paragraph">{translations?.about.about_me_p_2}</p>
-            <Callout initialIsExpanded={false} title={translations?.words.note} titleId="callout_01">
-                {translations?.about.about_me_note_1_part1}{" "}
-                <Link to="/cv" className="body-link">{translations?.about.about_me_note_1_cv_link}</Link>{" "}
-                {translations?.about.about_me_note_1_part2}
+            <p className="paragraph">{i18n.t('about.aboutMe.p1')}</p><br />
+            <p className="paragraph">{i18n.t('about.aboutMe.p2')}</p>
+            <Callout initialIsExpanded={false} title={i18n.t('words.note')} titleId="callout_01">
+                {i18n.t('about.aboutMe.notePart1')}{" "}
+                <Link to="/cv" className="body-link">{i18n.t('about.aboutMe.noteCvLink')}</Link>{" "}
+                {i18n.t('about.aboutMe.notePart2')}
             </Callout>
         </Section>
     );

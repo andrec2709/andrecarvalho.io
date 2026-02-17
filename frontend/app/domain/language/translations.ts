@@ -11,10 +11,11 @@ const ptBR: Translation = {
     footer: {
         contact: "Contato",
         about: "Sobre",
-        cv: "Currículo",
+        cv: "Meu CV",
+        portfolio: 'Portfólio',
     },
     langOptions: {
-        pt: "Português",
+        ptBR: "Português",
         en: "Inglês",
     },
     contact: {
@@ -147,8 +148,8 @@ const ptBR: Translation = {
             heading: "Experiência",
             firstItem: {
                 company: "Cisco (via Foundever)",
-                dateStart: "Fev 2024",
-                dateEnd: "Dez 2024",
+                startDate: "Fev 2024",
+                endDate: "Dez 2024",
                 role: "Especialista em Pré-Vendas - Time Enterprise",
                 p1: "Eu dava assistência técnica a parceiros e times internos, relativo ao portfólio \"Enterprise\" dos produtos da Cisco. Nosso suporte cobria uma gama alta de tópicos, incluindo diferenças entre subscrições DNA, tecnologias e protocolos suportados por determinado equipamento de rede, compatibilidade de transceivers, e mais.",
                 p2: "Eu também trabalhei criando soluções dentro do Ekahau. O cliente nos enviava plantas da sua filial, e criávamos o design preditivo de uma rede wireless específica para eles.",
@@ -156,8 +157,8 @@ const ptBR: Translation = {
             },
             secondItem: {
                 company: "Cisco (via Foundever)",
-                dateStart: "Dez 2024",
-                dateEnd: "Set 2025",
+                startDate: "Dez 2024",
+                endDate: "Set 2025",
                 role: "Especialista de Compliance",
                 p1: "Como um agente de Compliance, minha função era garantir que serviços sendo adquiridos estavam de acordo com as políticas da Cisco e não se enquadravam na sua \"Política de Não-Concessão\".",
                 p2: "Nós inspecionávamos equipamentos de rede - especificamente comandos ambientais do sistema - com o propósito de verificar seu funcionamento pleno e que se tratavam de dispositivos legítimos da Cisco.",
@@ -166,8 +167,8 @@ const ptBR: Translation = {
         savePdf: "Salvar como PDF",
     },
     themes: {
-        themeDark: "Escuro",
-        themeLight: "Claro",
+        "theme-dark": "Escuro",
+        "theme-light": "Claro",
     },
     cards: {
         project: "Projeto:",
@@ -201,9 +202,10 @@ const en: Translation = {
         contact: "Contact",
         about: "About",
         cv: "My CV",
+        portfolio: 'Portfolio',
     },
     langOptions: {
-        pt: "Portuguese",
+        ptBR: "Portuguese",
         en: "English",
     },
     contact: {
@@ -336,8 +338,8 @@ const en: Translation = {
             heading: "Professional Experience",
             firstItem: {
                 company: "Cisco (via Foundever)",
-                dateStart: "Feb 2024",
-                dateEnd: "Dec 2024",
+                startDate: "Feb 2024",
+                endDate: "Dec 2024",
                 role: "Pre-sales Specialist - Enterprise Team",
                 p1: "I provided technical assistance to partners and internal teams regarding the Cisco Enterprise portfolio. Our support covered a wide range of topics, including differences between DNA subscriptions, supported features and protocols for specific network equipment, transceiver compatibility, and more.",
                 p2: "I also worked on creating predictive site surveys using Ekahau. Customers would send us floor plans, and we used the software to design predictive wireless network solutions tailored to their spaces.",
@@ -345,8 +347,8 @@ const en: Translation = {
             },
             secondItem: {
                 company: "Cisco (via Foundever)",
-                dateStart: "Dec 2024",
-                dateEnd: "Sept 2025",
+                startDate: "Dec 2024",
+                endDate: "Sept 2025",
                 role: "Compliance Specialist",
                 p1: "As a Compliance Agent, my role was to ensure that services being ordered complied with Cisco's policies and did not fall under their Non-Entitlement Policy.",
                 p2: "We inspected network equipment — specifically environmental system commands — to verify that the devices were functioning correctly and were legitimate Cisco products.",
@@ -355,8 +357,8 @@ const en: Translation = {
         savePdf: "Save as PDF",
     },
     themes: {
-        themeDark: "Dark",
-        themeLight: "Light",
+        "theme-dark": "Dark",
+        "theme-light": "Light",
     },
     cards: {
         project: "Project:",

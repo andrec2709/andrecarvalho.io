@@ -9,26 +9,26 @@ type Props = {
 };
 
 export const SkillAssessmentSection = ({ classNameContainer, classNameContent }: Props) => {
-    const { translations } = useLang();
+    const { i18n } = useLang();
 
     return (
         <Section classNameContainer={classNameContainer} classNameContent={classNameContent}>
             <Heading id="skill-assessment">
-                {translations?.about.heading_2}
+                {i18n.t('about.skillAssessment.heading')}
             </Heading>
-            <p className="paragraph">{translations?.about.h2_p1}</p>
+            <p className="paragraph">{i18n.t('about.skillAssessment.p1')}</p>
             <ul className="unordered">
                 {
-                    translations?.about.about_me_list_01_items // array of items from 1st list
+                    (i18n.t<string[]>('about.skillAssessment.firstSkillsList') as string[]) // array of items from 1st list
                         .map((i: string) => <li key={uuidv4()}>{i}</li>)
                 }
             </ul>
-            <p className="paragraph">{translations?.about.h2_p2}</p>
+            <p className="paragraph">{i18n.t('about.skillAssessment.p2')}</p>
             <br />
-            <p className="paragraph">{translations?.about.h2_p3}</p>
+            <p className="paragraph">{i18n.t('about.skillAssessment.p3')}</p>
             <ul className="unordered">
                 {
-                    translations?.about.about_me_list_02_items // array of items from 2nd list
+                    (i18n.t<string[]>('about.skillAssessment.secondSkillsList') as string[]) // array of items from 2nd list
                         .map((i: string) => <li key={uuidv4()}>{i}</li>)
                 }
             </ul>

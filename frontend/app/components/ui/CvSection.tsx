@@ -5,24 +5,24 @@ import LinkedinIcon from "./icons/LinkedinIcon";
 import { LocationIcon } from "./icons/LocationIcon";
 import MailIcon from "./icons/MailIcon";
 
-export const CvSidebar = () => {
-    const { translations } = useLang();
+export const CvSection = () => {
+    const { i18n } = useLang();
     
     return (
         <div className="flex flex-col min-[500px]:flex-row">
             <div className="flex flex-col text-on-background w-fit pl-10 max-w-80">
                 <div className="cv-name flex flex-col mb-2">
                     <h2 className="text-xl">André Carvalho Filho</h2>
-                    <h3 className="text-sm">{translations?.cv.role}</h3>
+                    <h3 className="text-sm">{i18n.t('cv.role')}</h3>
                 </div>
                 <div>
                     <h2 className="flex items-center text-xl text-nowrap my-5">
-                        Contact
+                        {i18n.t('cv.contact')}
                         <span className="bg-on-background h-0.5 w-full ml-4"></span>
                     </h2>
                     <p className="text-sm gap-x-1 flex items-center pr-5 mb-2"><CallIcon className="fill-on-background-container w-6" />+55 41 99678-5605</p>
                     <p className="text-sm gap-x-1 flex items-center pr-5 mb-2"><MailIcon className="fill-on-background-container w-6 inline" />contato@andrecarvalho.io</p>
-                    <p className="text-sm gap-x-1 flex items-center pr-5"><LocationIcon className="fill-on-background-container w-6 inline" />{translations?.cv.location_val}</p>
+                    <p className="text-sm gap-x-1 flex items-center pr-5"><LocationIcon className="fill-on-background-container w-6 inline" />{i18n.t('cv.location.value')}</p>
                 </div>
                 <div>
                     <h2 className="flex items-center text-xl my-5">
@@ -34,51 +34,51 @@ export const CvSidebar = () => {
                 </div>
                 <div>
                     <h2 className="flex items-center text-xl my-5 text-nowrap">
-                        {translations?.cv.tech_skills}
+                        {i18n.t('cv.techSkills.heading')}
                         <span className="bg-on-background h-0.5 w-full ml-4"></span>
                     </h2>
-                    <h3 className="text-lg">{translations?.cv.langs}</h3>
-                    <p className="text-xs">{translations?.cv.langs_val}</p>
-                    <h3 className="text-lg">Frameworks</h3>
-                    <p className="text-xs">React, Electron</p>
-                    <h3 className="text-lg">{translations?.cv.dbs}</h3>
-                    <p className="text-xs">{translations?.cv.dbs_val}</p>
-                    <h3 className="text-lg">{translations?.cv.oth_tools}</h3>
-                    <p className="text-xs">{translations?.cv.oth_tools_val}</p>
+                    <h3 className="text-lg">{i18n.t('cv.techSkills.langs.label')}</h3>
+                    <p className="text-xs">{i18n.t('cv.techSkills.langs.value')}</p>
+                    <h3 className="text-lg">{i18n.t('cv.techSkills.fws.label')}</h3>
+                    <p className="text-xs">{i18n.t('cv.techSkills.fws.value')}</p>
+                    <h3 className="text-lg">{i18n.t('cv.techSkills.dbs.label')}</h3>
+                    <p className="text-xs">{i18n.t('cv.techSkills.dbs.value')}</p>
+                    <h3 className="text-lg">{i18n.t('cv.techSkills.othTools.label')}</h3>
+                    <p className="text-xs">{i18n.t('cv.techSkills.othTools.value')}</p>
                 </div>
             </div>
             <div className="flex flex-col w-full px-5 gap-y-10">
                 <div>
                     <h2 className="flex items-center text-xl mb-10 text-nowrap">
-                        {translations?.cv.pro_sum}
+                        {i18n.t('cv.proSumm.heading')}
                         <span className="bg-on-background h-0.5 w-full ml-4"></span>
                     </h2>
-                    <p className="text-sm">{translations?.cv.pro_sum_desc_part1}</p>
+                    <p className="text-sm">{i18n.t('cv.proSumm.p1')}</p>
                     &nbsp;
-                    <p className="text-sm">{translations?.cv.pro_sum_desc_part2}</p>
+                    <p className="text-sm">{i18n.t('cv.proSumm.p2')}</p>
                 </div>
                 <div>
                     <h2 className="flex items-center text-xl mb-10 text-nowrap">
-                        {translations?.cv.pro_exp}
+                        {i18n.t('cv.proExp.heading')}
                         <span className="bg-on-background h-0.5 w-full ml-4"></span>
                     </h2>
                     <div className="mb-10">
-                        <p className="italic font-semibold">{translations?.cv.item1_company} {translations?.cv.item1_date}</p>
-                        <p className="italic font-light">{translations?.cv.item1_role}</p>
+                        <p className="italic font-semibold">{i18n.t('cv.proExp.firstItem.company')} {i18n.t('cv.proExp.firstItem.startDate')}{' - '}{i18n.t('cv.proExp.firstItem.endDate')}</p>
+                        <p className="italic font-light">{i18n.t('cv.proExp.firstItem.role')}</p>
                         <br />
-                        <p className="text-sm">{translations?.cv.item1_desc_part1}</p>
+                        <p className="text-sm">{i18n.t('cv.proExp.firstItem.p1')}</p>
                         <br />
-                        <p className="text-sm">{translations?.cv.item1_desc_part2}</p>
+                        <p className="text-sm">{i18n.t('cv.proExp.firstItem.p2')}</p>
                         <br />
-                        <p className="text-sm">{translations?.cv.item1_desc_part3}</p>
+                        <p className="text-sm">{i18n.t('cv.proExp.firstItem.p3')}</p>
                     </div>
                     <div>
-                        <p className="italic font-semibold">{translations?.cv.item2_company} {translations?.cv.item2_date}</p>
-                        <p className="italic font-light">{translations?.cv.item2_role}</p>
+                        <p className="italic font-semibold">{i18n.t('cv.proExp.secondItem.company')} {i18n.t('cv.proExp.secondItem.startDate')}{' - '}{i18n.t('cv.proExp.secondItem.endDate')}</p>
+                        <p className="italic font-light">{i18n.t('cv.proExp.secondItem.role')}</p>
                         <br />
-                        <p className="text-sm">{translations?.cv.item2_desc_part1}</p>
+                        <p className="text-sm">{i18n.t('cv.proExp.secondItem.p1')}</p>
                         <br />
-                        <p className="text-sm">{translations?.cv.item2_desc_part2}</p>
+                        <p className="text-sm">{i18n.t('cv.proExp.secondItem.p2')}</p>
                     </div>
                 </div>
             </div>
@@ -86,4 +86,4 @@ export const CvSidebar = () => {
     );
 };
 
-export default CvSidebar;
+export default CvSection;
