@@ -1,12 +1,14 @@
-export const langs = ["pt", "en"] as const;
+export const langs = ["pt", "en"] as const; // TODO: will be removed
+export const validLanguages = ['ptBR', 'en'] as const;
 
-export type Lang = (typeof langs)[number];
+export type Lang = (typeof langs)[number]; // TODO: will be removed
 
+// TODO: will be removed
 export const isLang = (value: string): value is Lang => {
     return langs.includes(value as Lang);
 };
 
-export type Language = 'pt-BR' | 'en';
+export type Language = (typeof validLanguages)[number];
 
 type PageMetaData = {
     title: string;
