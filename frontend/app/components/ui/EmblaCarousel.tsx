@@ -1,0 +1,61 @@
+import { type EmblaOptionsType, type EmblaPluginType } from 'embla-carousel';
+import useEmblaCarousel from 'embla-carousel-react';
+import { DotButton, useDotButton } from './EmblaCarouselDotButton';
+import { NextButton, PrevButton, usePrevNextButtons } from './EmblaCarouselArrowButtons';
+import { v4 as uuidv4 } from 'uuid';
+import React from 'react';
+import { cn } from '~/utils';
+
+type Props = {
+    options?: EmblaOptionsType;
+    plugins?: EmblaPluginType[];
+    children?: React.ReactNode;
+    wrapperClassName?: string;
+    viewportClassName?: string;
+    containerClassName?: string;
+    slideClassName?: string;
+    slideMediaQueriesOverride?: string;
+};
+
+export default function EmblaCarousel({ 
+    children, 
+    options,
+    plugins,
+    containerClassName,
+    slideClassName,
+    viewportClassName,
+    wrapperClassName,
+    slideMediaQueriesOverride
+}: Props) {
+    
+    const [emblaRef, emblaApi] = useEmblaCarousel(options, plugins);
+
+    const {
+        prevBtnDisabled,
+        nextBtnDisabled,
+        onNextButtonClick,
+        onPrevButtonClick
+    } = usePrevNextButtons(emblaApi);
+
+    return (
+        <div className={cn('m-auto', wrapperClassName)}>
+            <div className={cn('overflow-hidden', viewportClassName)} ref={emblaRef}>
+                <div className={cn('flex touch-pan-y touch-pinch-zoom -ml-4 min-[500px]:-ml-[1.6rem] min-[1000px]:-ml-8', containerClassName)}>
+                    {React.Children.map(children, child => (
+                        <div className={cn('py-2.5 min-w-0 flex-[0_0_100%] pl-4 flex justify-center overflow-visible ', slideClassName)}>
+                            {child}
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            <div className='embla__controls'>
+                <div className='embla__buttons'>
+                    <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
+                    <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
+                </div>
+            </div>
+        </div>
+
+    );
+}

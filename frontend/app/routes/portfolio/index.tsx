@@ -7,6 +7,7 @@ import Main from "~/components/ui/Main";
 import { useLang } from "~/contexts/LangContext";
 import type { Route } from "@rr/portfolio/+types/index";
 import LogoIcon from "../../assets/logo.svg";
+import RepositoriesCarouselSection from "~/components/sections/RepositoriesCarouselSection";
 
 export function meta({ }: Route.MetaArgs) {
     return [
@@ -41,12 +42,9 @@ export const Portfolio = () => {
     return (
         <>
             <Main>
-                <Section
-                    classNameContainer="bg-background-2 pt-25 text-on-background-2 "
-                    variant="wide"
-                >
-                    <Carousel />
-                </Section>
+                <RepositoriesCarouselSection
+                    classNameContainer="bg-background-2 pt-25 text-on-background-2"
+                />
                 <Section>
                     <Heading as="h1" id="overview">{translations?.portfolio.projects_overview.title}</Heading>
                     <p className="paragraph">{translations?.portfolio.projects_overview.p1}</p>
