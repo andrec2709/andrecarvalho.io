@@ -1,6 +1,6 @@
 import type { AnchorHTMLAttributes, ImgHTMLAttributes } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link, type LinkProps } from 'react-router';
-import { useLang } from '~/contexts/LangContext';
 
 type ProjectCardProps = {
     backgroundImgSrc: string;
@@ -14,9 +14,6 @@ type ProjectCardProps = {
 type ProjectCardButtonProps = Omit<LinkProps, 'className'> & {
     text: string;
 };
-// type ProjectCardButtonProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'className'> & {
-//     text: string;
-// };
 
 function ProjectCardButton({ text, ...props }: ProjectCardButtonProps) {
     return (
@@ -26,12 +23,12 @@ function ProjectCardButton({ text, ...props }: ProjectCardButtonProps) {
         >
             {text}
         </Link>
-        
+
     );
 }
 
 export default function ProjectCard({ tryHref, readMoreHref, backgroundImgSrc, imgProps, title, body }: ProjectCardProps) {
-    const { i18n } = useLang();
+    const { t } = useTranslation();
     return (
         <div className='w-70 min-[320px]:w-80 xs:w-80 h-100 select-none rounded-2xl overflow-hidden relative shadow-xl shadow-black/40 hover:scale-105 transition-transform'>
             <img
@@ -44,8 +41,8 @@ export default function ProjectCard({ tryHref, readMoreHref, backgroundImgSrc, i
                 <h2 className='text-white text-2xl border-b border-b-white/25 w-full text-nowrap overflow-clip font-bold'>{title}</h2>
                 <p className='text-white text-sm w-full overflow-y-hidden scrollbar-hidden wrap-break-word text-wrap'>{body}</p>
                 <div className='flex gap-x-2 h-fit items-end justify-end mt-auto'>
-                    <ProjectCardButton text={i18n.t('projectCards.tryIt')} to={tryHref} target='_blank' />
-                    <ProjectCardButton text={i18n.t('projectCards.readMore')} to={readMoreHref} target='_blank' />
+                    <ProjectCardButton text={t('projectCards.tryIt')} to={tryHref} target='_blank' />
+                    <ProjectCardButton text={t('projectCards.readMore')} to={readMoreHref} target='_blank' />
                 </div>
             </div>
 

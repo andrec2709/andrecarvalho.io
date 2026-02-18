@@ -4,7 +4,6 @@ import ColorpickerSection from "~/components/sections/ColorpickerSection";
 import Carousel from "~/components/ui/Carousel";
 import Heading from "~/components/ui/Heading";
 import Main from "~/components/ui/Main";
-import { useLang } from "~/contexts/LangContext";
 import type { Route } from "@rr/portfolio/+types/index";
 import LogoIcon from "../../assets/logo.svg";
 import RepositoriesCarouselSection from "~/components/sections/RepositoriesCarouselSection";
@@ -42,11 +41,9 @@ export const Portfolio = () => {
     return (
         <>
             <Main>
-                <RepositoriesCarouselSection
-                    classNameContainer="bg-background-2 pt-25 text-on-background-2"
-                />
-                <ProjectsOverviewSection />
-                <ColorpickerSection classNameContainer="bg-background-2 text-on-background-2"/>
+                <RepositoriesCarouselSection classNameContainer="pt-25" />
+                <ProjectsOverviewSection classNameContainer="bg-background-2 text-on-background-2" />
+                <ColorpickerSection />
                 {/* <ColorpickerSection /> */}
             </Main>
         </>

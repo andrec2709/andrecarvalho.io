@@ -6,12 +6,12 @@ import { useState, type JSX, useEffect } from "react";
 import useReposRepository from "~/application/github/repos/useReposRepository";
 import Card from "../ui/Card";
 import Autoplay from "embla-carousel-autoplay";
-import { useLang } from "~/contexts/LangContext";
+import { useTranslation } from "react-i18next";
 
 export default function RepositoriesCarouselSection({ ...props }: SectionProps) {
     const repo = useReposRepository();
     const [data, setData] = useState<JSX.Element[]>([]);
-    const { i18n } = useLang();
+    const { t } = useTranslation();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -26,11 +26,11 @@ export default function RepositoriesCarouselSection({ ...props }: SectionProps) 
 
     return (
         <Section {...props} variant="wide">
-            <Heading id="repositories-section">{i18n.t('portfolio.repositories.heading')}</Heading>
+            <Heading id="repositories-section">{t('portfolio.repositories.heading')}</Heading>
             <EmblaCarousel
                 options={{ loop: true, align: 'start' }}
                 plugins={[Autoplay({ delay: 5000 })]}
-                slideClassName="min-[500px]:flex-[0_0_calc(100%/2)] min-[700px]:flex-[0_0_calc(100%/3)] min-[1000px]:flex-[0_0_calc(100%/4)] min-[700px]:pl-[1.6rem] min-[1000px]:pl-8"
+                slideClassName="min-[570px]:flex-[0_0_calc(100%/2)] min-[800px]:flex-[0_0_calc(100%/3)] min-[1000px]:flex-[0_0_calc(100%/4)] min-[700px]:pl-[1.6rem] min-[1000px]:pl-8"
             >
                 {data}
             </EmblaCarousel>

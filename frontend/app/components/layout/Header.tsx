@@ -4,24 +4,24 @@ import Logo from "../ui/icons/Logo";
 import Dropdown, { type DropdownOptions } from "../ui/Dropdown";
 import { themes } from "~/domain/theme/types";
 import { useTheme } from "~/contexts/ThemeContext";
-import { useLang } from "~/contexts/LangContext";
 import { validLanguages } from "~/domain/language/types";
 
 import SidebarIcon from "../ui/icons/SidebarIcon";
 import Sidebar from "./Sidebar";
 import { useSidebar } from "~/contexts/SidebarContext";
 import { isLanguage } from "~/domain/language/utils";
+import { useTranslation } from "react-i18next";
 
 export const Header = () => {
     const navigate = useNavigate();
 
     const { changeTheme } = useTheme();
-    const { i18n, setLang, lang } = useLang();
+    const { t, i18n } = useTranslation();
     const { toggleSidebar } = useSidebar();
 
     const themeOptions = themes.reduce<DropdownOptions[]>((acc, row) => {
         const option: DropdownOptions = {
-            text: i18n.t(`themes.${row}`),
+            text: t(`themes.${row}`),
             value: row,
         };
 
@@ -33,7 +33,7 @@ export const Header = () => {
 
     const langOptions = validLanguages.reduce<DropdownOptions[]>((acc, row) => {
         const option: DropdownOptions = {
-            text: i18n.t(`langOptions.${row}`),
+            text: t(`langOptions.${row}`),
             value: row,
         };
 
@@ -49,13 +49,13 @@ export const Header = () => {
                 <Logo />
             </NavLink>
             <nav className="links hidden md:flex">
-                <HeaderButton text={i18n.t('header.start')} onClick={() => navigate('/')} />
-                <HeaderButton text={i18n.t('header.about')} onClick={() => navigate('/about')} />
-                <HeaderButton text={i18n.t('header.portfolio')} onClick={() => navigate('/portfolio')} />
-                <HeaderButton text={i18n.t('header.contact')} onClick={() => navigate('/contact')} />
-                <Dropdown options={themeOptions} value={i18n.t('header.theme')} onClick={v => changeTheme(v)} className="self-center" />
-                <Dropdown options={langOptions} value={i18n.t(`langOptions.${lang}`)} onClick={v => {
-                    if (isLanguage(v)) setLang(v);
+                <HeaderButton text={t('header.start')} onClick={() => navigate('/')} />
+                <HeaderButton text={t('header.about')} onClick={() => navigate('/about')} />
+                <HeaderButton text={t('header.portfolio')} onClick={() => navigate('/portfolio')} />
+                <HeaderButton text={t('header.contact')} onClick={() => navigate('/contact')} />
+                <Dropdown options={themeOptions} value={t('header.theme')} onClick={v => changeTheme(v)} className="self-center" />
+                <Dropdown options={langOptions} value={t(`langOptions.${i18n.resolvedLanguage}`)} onClick={v => {
+                    if (isLanguage(v)) i18n.changeLanguage(v);
                 }} className="self-center" />
             </nav>
             <button

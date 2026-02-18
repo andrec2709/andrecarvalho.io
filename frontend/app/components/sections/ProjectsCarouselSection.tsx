@@ -8,38 +8,36 @@ import EmblaCarousel from "../ui/EmblaCarousel";
 import ColorpickerImg from '../../assets/images/colorpicker-screenshot.png';
 import NotedImg from '../../assets/images/noted-shots.jpg';
 import WebsiteImg from '../../assets/images/website-shot.png';
-import { useLang } from "~/contexts/LangContext";
-import { useLocation, useNavigate } from "react-router";
+import { useTranslation } from "react-i18next";
 
 export default function ProjectsCarouselSection({ ...props }: SectionProps) {
-    const { i18n } = useLang();
-
+    const { t } = useTranslation();
 
     return (
         <Section {...props} variant="wide">
             <Heading id="projects-section">Projects</Heading>
             <EmblaCarousel
                 options={{ loop: true, align: 'start' }}
-                slideClassName={`min-[1000px]:flex-[0_0_calc(100%/3)] min-[700px]:flex-[0_0_calc(100%/2)] min-[1000px]:pl-10`}
+                slideClassName={`min-[850px]:flex-[0_0_calc(100%/2)] min-[850px]:pl-10`}
             >
                 <ProjectCard
                     backgroundImgSrc={ColorpickerImg}
-                    title={i18n.t('projectCards.colorpicker.title')}
-                    body={i18n.t('projectCards.colorpicker.description')}
+                    title={t('projectCards.colorpicker.title')}
+                    body={t('projectCards.colorpicker.description')}
                     readMoreHref="/portfolio#colorpicker"
                     tryHref="https://andrec2709.github.io/colorpicker-react"
                 />
                 <ProjectCard
                     backgroundImgSrc={NotedImg}
-                    title={i18n.t('projectCards.noted.title')}
-                    body={i18n.t('projectCards.noted.description')}
+                    title={t('projectCards.noted.title')}
+                    body={t('projectCards.noted.description')}
                     readMoreHref=""
                     tryHref="https://github.com/andrec2709/noted-rn"
                 />
                 <ProjectCard
                     backgroundImgSrc={WebsiteImg}
-                    title={i18n.t('projectCards.andrecarvalhoIo.title')}
-                    body={i18n.t('projectCards.andrecarvalhoIo.description')}
+                    title={t('projectCards.andrecarvalhoIo.title')}
+                    body={t('projectCards.andrecarvalhoIo.description')}
                     readMoreHref=""
                     tryHref="https://andrecarvalho.io"
                 />

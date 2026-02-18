@@ -39,9 +39,9 @@ export const About = () => {
     return (
         <>
             <Main>
-                <AboutMeSection classNameContainer="bg-background-2 text-on-background-2 pt-25" />
-                <TechStackSection variant="wide" />
-                <SkillAssessmentSection classNameContainer="bg-background-2 text-on-background-2" />
+                <AboutMeSection classNameContainer="pt-25" />
+                <TechStackSection variant="wide" classNameContainer="bg-background-2 text-on-background-2" />
+                <SkillAssessmentSection />
             </Main>
         </>
 

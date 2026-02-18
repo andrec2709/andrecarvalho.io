@@ -17,8 +17,8 @@ type Props = {
     slideMediaQueriesOverride?: string;
 };
 
-export default function EmblaCarousel({ 
-    children, 
+export default function EmblaCarousel({
+    children,
     options,
     plugins,
     containerClassName,
@@ -27,7 +27,7 @@ export default function EmblaCarousel({
     wrapperClassName,
     slideMediaQueriesOverride
 }: Props) {
-    
+
     const [emblaRef, emblaApi] = useEmblaCarousel(options, plugins);
 
     const {
@@ -38,7 +38,8 @@ export default function EmblaCarousel({
     } = usePrevNextButtons(emblaApi);
 
     return (
-        <div className={cn('m-auto', wrapperClassName)}>
+        <div className={cn('m-auto flex relative items-center justify-center', wrapperClassName)}>
+            <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} className='aspect-square w-fit p-2 flex items-center justify-center' />
             <div className={cn('overflow-hidden', viewportClassName)} ref={emblaRef}>
                 <div className={cn('flex touch-pan-y touch-pinch-zoom -ml-4 min-[500px]:-ml-[1.6rem] min-[1000px]:-ml-8', containerClassName)}>
                     {React.Children.map(children, child => (
@@ -48,13 +49,14 @@ export default function EmblaCarousel({
                     ))}
                 </div>
             </div>
+            <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} className='aspect-square w-fit p-2 flex items-center justify-center' />
 
-            <div className='embla__controls'>
+            {/* <div className='embla__controls'>
                 <div className='embla__buttons'>
                     <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
                     <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
                 </div>
-            </div>
+            </div> */}
         </div>
 
     );

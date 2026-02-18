@@ -4,12 +4,12 @@ import { useRef } from "react";
 import Dropdown from "../ui/Dropdown";
 import { useNavigate } from "react-router";
 import { useTheme } from "~/contexts/ThemeContext";
-import { useLang } from "~/contexts/LangContext";
 import { themes } from "~/domain/theme/types";
 import type { DropdownOptions } from "../ui/Dropdown";
 import SidebarItem from "./SidebarItem";
 import { validLanguages } from "~/domain/language/types";
 import { isLanguage } from "~/domain/language/utils";
+import { useTranslation } from "react-i18next";
 
 export const Sidebar = () => {
     const { sidebarVisible, toggleSidebar } = useSidebar();
@@ -17,11 +17,11 @@ export const Sidebar = () => {
     const navigate = useNavigate();
 
     const { changeTheme } = useTheme();
-    const { i18n, setLang, lang } = useLang();
+    const { t, i18n } = useTranslation();
 
     const themeOptions = themes.reduce<DropdownOptions[]>((acc, row) => {
         const option: DropdownOptions = {
-            text: i18n.t(`themes.${row}`),
+            text: t(`themes.${row}`),
             value: row,
         };
 
@@ -33,7 +33,7 @@ export const Sidebar = () => {
 
     const langOptions = validLanguages.reduce<DropdownOptions[]>((acc, row) => {
         const option: DropdownOptions = {
-            text: i18n.t(`langOptions.${row}`),
+            text: t(`langOptions.${row}`),
             value: row,
         };
 
@@ -61,12 +61,12 @@ export const Sidebar = () => {
                 <SidebarIcon open={false} className="h-7" />
             </button>
             <nav className="flex flex-col items-left w-full text-xl mt-4">
-                <SidebarItem text={i18n.t('header.start')} onClick={() => navigate('/')} />
-                <SidebarItem text={i18n.t('header.about')} onClick={() => navigate('/about')} />
-                <SidebarItem text={i18n.t('header.portfolio')} onClick={() => navigate('/portfolio')} />
-                <SidebarItem text={i18n.t('header.contact')} onClick={() => navigate('/contact')} />
-                <Dropdown options={themeOptions} value={i18n.t('header.theme')} onClick={v => changeTheme(v)} className="text-xl w-full" />
-                <Dropdown options={langOptions} value={i18n.t(`langOptions.${lang}`)} onClick={v => {if (isLanguage(v)) setLang(v);}} className="text-xl w-full" />
+                <SidebarItem text={t('header.start')} onClick={() => navigate('/')} />
+                <SidebarItem text={t('header.about')} onClick={() => navigate('/about')} />
+                <SidebarItem text={t('header.portfolio')} onClick={() => navigate('/portfolio')} />
+                <SidebarItem text={t('header.contact')} onClick={() => navigate('/contact')} />
+                <Dropdown options={themeOptions} value={t('header.theme')} onClick={v => changeTheme(v)} className="text-xl w-full" />
+                <Dropdown options={langOptions} value={t(`langOptions.${i18n.resolvedLanguage}`)} onClick={v => {if (isLanguage(v)) i18n.changeLanguage(v);}} className="text-xl w-full" />
             </nav>
         </div>
     );

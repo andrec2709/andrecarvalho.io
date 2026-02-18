@@ -4,9 +4,14 @@ import type { CardMeasure, RepoCard } from "../../domain/github/repos/types";
 import DropdownIcon from "./icons/DropdownIcon";
 import { v4 as uuidv4 } from "uuid";
 import Heading from "./Heading";
-import { useLang } from "~/contexts/LangContext";
 import useReposRepository from "~/application/github/repos/useReposRepository";
+import { useTranslation } from "react-i18next";
 
+/**
+ * This component is deprecated and not used anywhere, as it was
+ * replaced with Embla Carousel. It is kept here just for informational purposes.
+ * @returns 
+ */
 export const Carousel = () => {
     const wrapperRef = useRef<HTMLDivElement>(null);
     const carouselRef = useRef<HTMLDivElement>(null);
@@ -14,8 +19,7 @@ export const Carousel = () => {
     const moveThreshold = useRef(10);
     const reposRepo = useReposRepository();
     const [cards, setCards] = useState<JSX.Element[] | null>(null);
-
-    const { translations } = useLang();
+    const { t } = useTranslation();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -215,7 +219,7 @@ export const Carousel = () => {
     return (
         <div className="carousel-container flex flex-col relative items-center justify-center" role="complementary">
             <Heading id="projects">
-                {translations?.words.projects}
+                {t('words.projects')}
             </Heading>
             <div
                 className="carousel flex items-center text-white touch-pan-y h-[400px] w-full overflow-hidden"

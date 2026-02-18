@@ -1,6 +1,6 @@
 import type { Translation, Translations } from "./types";
 
-const ptBR: Translation = {
+export const ptBR: Translation = {
     header: {
         start: "Início",
         contact: "Contato",
@@ -104,13 +104,13 @@ const ptBR: Translation = {
             heading: "O que é?",
             p1: "Esse projeto é uma web aplicação de seleção de cores, desenvolvida utilizando React.",
             p2: "O propósito desse projeto era servir como um exercício de aprendizado, já que foi meu primeiro projeto real em React.",
-            p3: "Com o app, você pode modificar valores RGB, ou o valor HEX, para mudar a visualização das cores. Você pode criar paletas, salvar cores dentro delas, renomear ambas cores e paletas, reordenar os itens visualmente para organização, e mais.",
+            p3: "Com o app, você pode modificar valores RGB, ou o valor HEX, para mudar a visualização das cores. Você pode <1>criar paletas, salvar cores dentro delas, renomear ambas cores e paletas, reordenar os itens visualmente para organização, e mais.</1>",
             p4: "O app também te mostra a razão de contraste, a qual representa o contraste entre a cor de primeiro plano e a cor de segundo plano selecionadas.",
         },
         techOverview: {
             heading: "Visão Geral Técnica",
-            p1: "O app foi construido usando React + TypeScript no frontend, e utiliza IndexedDB e LocalStorage para armazenar os dados do usuário, como paletas, cores, a ordem destes, preferência de tema, de idioma, etc.",
-            p2: "Para internacionalização, eu usei o módulo i18n-js. Todas as traduções são armazenadas como objetos dentro do TypeScript para ter forte tipagem e segurança durante tempo de compilação.",
+            p1: "O app foi construido usando <1>React + TypeScript</1> no frontend, e utiliza IndexedDB e LocalStorage para armazenar os dados do usuário, como paletas, cores, a ordem destes, preferência de tema, de idioma, etc.",
+            p2: "Para internacionalização, eu usei o módulo <link>i18n-js</link>. Todas as traduções são armazenadas como objetos dentro do TypeScript para ter forte tipagem e segurança durante tempo de compilação.",
             p3: "Para o mecanismo de ordenação, eu utilizei o módulo dnd-kit para possibilitar reordenar as paletas e cores.",
         },
         challenges: {
@@ -232,7 +232,7 @@ const ptBR: Translation = {
     }
 };
 
-const en: Translation = {
+export const en: Translation = {
     header: {
         start: "Start",
         contact: "Contact",
@@ -336,13 +336,13 @@ const en: Translation = {
             heading: "What is it?",
             p1: "This project is a colorpicker web application built on top of React.",
             p2: "The purpose of this project was to serve as a learning exercise, since it was my first real React project.",
-            p3: "In the app, you have the ability to modify RGB values, or a HEX value, in order to change the display colors. You can create palettes, save colors into them, rename both colors and palettes, rearrange the items visually for organization, and more.",
+            p3: "In the app, you have the ability to modify RGB values, or a HEX value, in order to change the display colors. You can <1>create palettes, save colors into them, rename both colors and palettes, rearrange the items visually for organization, and more.</1>",
             p4: "The app also gives you a contrast ratio, which represents the contrast between the foreground color and background color you have selected.",
         },
         techOverview: {
             heading: "Technical Overview",
-            p1: "The app is built using React + TypeScript for the frontend, and uses IndexedDB and LocalStorage for storing user data, like palettes, colors, the order of colors and palettes, theme preference, language preference, etc.",
-            p2: "For internationalization, I used the i18n-js library. All translations are stored as objects inside Typescript itself for strong typing and compile-time safety.",
+            p1: "The app is built using <1>React + TypeScript</1> for the frontend, and uses IndexedDB and LocalStorage for storing user data, like palettes, colors, the order of colors and palettes, theme preference, language preference, etc.",
+            p2: "For internationalization, I used the <1>i18n-js</1> library. All translations are stored as objects inside Typescript itself for strong typing and compile-time safety.",
             p3: "For the ordering mechanism, I used dnd-kit to implement the sortable behavior of the palettes and colors.",
         },
         challenges: {

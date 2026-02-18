@@ -1,7 +1,6 @@
 import type { Route } from "@rr/home/+types/index";
 import Carousel from "~/components/ui/Carousel";
 import Main from "~/components/ui/Main";
-import { useLang } from "~/contexts/LangContext";
 import AboutMeSection from "~/components/sections/AboutMeSection";
 import Section from "~/components/layout/Section";
 import ContactFormSection from "~/components/sections/ContactFormSection";
@@ -66,19 +65,9 @@ export default function Home() {
   return (
     <>
       <Main>
-        {/* <Section classNameContainer="pt-25" variant="wide">
-          <EmblaCarousel
-            options={{ loop: true, align: 'start' }}
-            plugins={[Autoplay({delay: 5000})]}
-            slideClassName="min-[500px]:flex-[0_0_calc(100%/2)] min-[700px]:flex-[0_0_calc(100%/3)] min-[1000px]:flex-[0_0_calc(100%/4)] min-[700px]:pl-[1.6rem] min-[1000px]:pl-8"
-          >
-            {data}
-          </EmblaCarousel>
-        </Section> */}
-        <ProjectsCarouselSection classNameContainer="pt-25 bg-background-2 text-on-background-2" />
-        {/* <RepositoriesCarouselSection /> */}
-        <AboutMeSection />
-        <ContactFormSection classNameContainer="bg-background-2 text-on-background-2" />
+        <ProjectsCarouselSection classNameContainer="pt-25" />
+        <AboutMeSection classNameContainer="bg-background-2 text-on-background-2"/>
+        <ContactFormSection />
       </Main>
     </>
   );

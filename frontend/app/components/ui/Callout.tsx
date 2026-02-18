@@ -2,7 +2,7 @@ import { useState } from "react";
 import StylusIcon from "./icons/StylusIcon";
 import CollapseIcon from "./icons/CollapseIcon";
 import ExpandIcon from "./icons/ExpandIcon";
-import { useLang } from "~/contexts/LangContext";
+import { useTranslation } from "react-i18next";
 
 type Props = {
     type?: string;
@@ -14,7 +14,7 @@ type Props = {
 
 export const Callout = ({ type = 'note', title, titleId, children, initialIsExpanded = true }: Props) => {
     const [isExpanded, setIsExpanded] = useState(initialIsExpanded);
-    const { translations } = useLang();
+    const { t } = useTranslation();
 
     let typeIcon;
     switch (type) {
@@ -39,11 +39,11 @@ export const Callout = ({ type = 'note', title, titleId, children, initialIsExpa
                     isExpanded
                         ? <CollapseIcon
                             className="fill-callout-note-icons w-6 transition-transform duration-100 ease hover:scale-150"
-                            hoverText={translations?.general.callout_collapse}
+                            hoverText={t('callout.collapseHoverTxt')}
                         />
                         : <ExpandIcon
                             className="fill-callout-note-icons w-6 transition-transform duration-100 ease hover:scale-150"
-                            hoverText={translations?.general.callout_expand}
+                            hoverText={t('callout.expandHoverTxt')}
                         />
                 }
             </div>

@@ -446,8 +446,8 @@ body {
 }
 
 .embla__button__svg {
-  width: 35%;
-  height: 35%;
+  width: 18px;  
+  height: 18px;
   color: var(--embla-button-icon);
 }
 
