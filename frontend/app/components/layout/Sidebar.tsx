@@ -1,27 +1,27 @@
 import { useSidebar } from "~/contexts/SidebarContext";
 import SidebarIcon from "../ui/icons/SidebarIcon";
-import { useEffect, useRef } from "react";
-import HeaderButton from "./HeaderButton";
+import { useRef } from "react";
 import Dropdown from "../ui/Dropdown";
 import { useNavigate } from "react-router";
 import { useTheme } from "~/contexts/ThemeContext";
 import { useLang } from "~/contexts/LangContext";
 import { themes } from "~/domain/theme/types";
-import { langs } from "~/domain/language/types";
 import type { DropdownOptions } from "../ui/Dropdown";
 import SidebarItem from "./SidebarItem";
+import { validLanguages } from "~/domain/language/types";
+import { isLanguage } from "~/domain/language/utils";
 
 export const Sidebar = () => {
     const { sidebarVisible, toggleSidebar } = useSidebar();
     const sidebarRef = useRef<HTMLDivElement>(null);
     const navigate = useNavigate();
 
-    const { currentTheme, changeTheme } = useTheme();
-    const { currentLang, changeLang, translations } = useLang();
+    const { changeTheme } = useTheme();
+    const { i18n, setLang, lang } = useLang();
 
     const themeOptions = themes.reduce<DropdownOptions[]>((acc, row) => {
         const option: DropdownOptions = {
-            text: translations?.themes[row],
+            text: i18n.t(`themes.${row}`),
             value: row,
         };
 
@@ -31,9 +31,9 @@ export const Sidebar = () => {
 
     }, []);
 
-    const langOptions = langs.reduce<DropdownOptions[]>((acc, row) => {
+    const langOptions = validLanguages.reduce<DropdownOptions[]>((acc, row) => {
         const option: DropdownOptions = {
-            text: translations?.lang_options[row],
+            text: i18n.t(`langOptions.${row}`),
             value: row,
         };
 
@@ -61,12 +61,12 @@ export const Sidebar = () => {
                 <SidebarIcon open={false} className="h-7" />
             </button>
             <nav className="flex flex-col items-left w-full text-xl mt-4">
-                <SidebarItem text={translations?.header.start} onClick={() => navigate('/')} />
-                <SidebarItem text={translations?.header.about} onClick={() => navigate('/about')} />
-                <SidebarItem text={translations?.header.portfolio} onClick={() => navigate('/portfolio')} />
-                <SidebarItem text={translations?.header.contact} onClick={() => navigate('/contact')} />
-                <Dropdown options={themeOptions} value={translations?.header.theme} onClick={v => changeTheme(v)} className="text-xl w-full" />
-                <Dropdown options={langOptions} value={currentLang} onClick={v => changeLang(v)} className="text-xl w-full" />
+                <SidebarItem text={i18n.t('header.start')} onClick={() => navigate('/')} />
+                <SidebarItem text={i18n.t('header.about')} onClick={() => navigate('/about')} />
+                <SidebarItem text={i18n.t('header.portfolio')} onClick={() => navigate('/portfolio')} />
+                <SidebarItem text={i18n.t('header.contact')} onClick={() => navigate('/contact')} />
+                <Dropdown options={themeOptions} value={i18n.t('header.theme')} onClick={v => changeTheme(v)} className="text-xl w-full" />
+                <Dropdown options={langOptions} value={i18n.t(`langOptions.${lang}`)} onClick={v => {if (isLanguage(v)) setLang(v);}} className="text-xl w-full" />
             </nav>
         </div>
     );

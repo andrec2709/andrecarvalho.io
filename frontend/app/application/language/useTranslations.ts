@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import type { Lang } from "~/domain/language/types";
 import fallbackLang from '~/domain/language/en.json';
 
 const useTranslations = (lang: Lang) => {

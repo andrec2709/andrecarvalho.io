@@ -141,6 +141,8 @@ const ptBR: Translation = {
             title: "andrecarvalho.io",
             description: "Um website portfólio mostrando meus projetos.",
         },
+        readMore: "Ler mais",
+        tryIt: "Testar",
     },
     cv: {
         title: "Currículo Andre Carvalho Filho",
@@ -371,6 +373,8 @@ const en: Translation = {
             title: "andrecarvalho.io",
             description: "A portfolio website showcasing my projects.",
         },
+        readMore: "Read more",
+        tryIt: "Try it",
     },
     cv: {
         title: "Curriculum Andre Carvalho Filho",

@@ -9,9 +9,11 @@ import ColorpickerImg from '../../assets/images/colorpicker-screenshot.png';
 import NotedImg from '../../assets/images/noted-shots.jpg';
 import WebsiteImg from '../../assets/images/website-shot.png';
 import { useLang } from "~/contexts/LangContext";
+import { useLocation, useNavigate } from "react-router";
 
 export default function ProjectsCarouselSection({ ...props }: SectionProps) {
     const { i18n } = useLang();
+
 
     return (
         <Section {...props} variant="wide">
@@ -24,7 +26,7 @@ export default function ProjectsCarouselSection({ ...props }: SectionProps) {
                     backgroundImgSrc={ColorpickerImg}
                     title={i18n.t('projectCards.colorpicker.title')}
                     body={i18n.t('projectCards.colorpicker.description')}
-                    readMoreHref="https://andrecarvalho.io/portfolio#colorpicker"
+                    readMoreHref="/portfolio#colorpicker"
                     tryHref="https://andrec2709.github.io/colorpicker-react"
                 />
                 <ProjectCard

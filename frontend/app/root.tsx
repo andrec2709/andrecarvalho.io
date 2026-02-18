@@ -18,6 +18,7 @@ import Footer from "./components/layout/Footer";
 import Section from "./components/layout/Section";
 import { ToolTipProvider } from "./contexts/ToolTipContext";
 import ToolTip from "./components/ui/ToolTip";
+import { useEffect } from "react";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -55,6 +56,24 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    /* 
+    This effect helps scrolling sections into view
+    when the page loads.
+    */
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) {
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            el.scrollIntoView({ behavior: 'smooth' });
+          });
+        });
+      }
+    }
+  }, [hash]);
 
   return (
     <>
@@ -65,7 +84,7 @@ export default function App() {
               <Header />
               <Outlet />
               <Footer />
-              <ToolTip id="tooltip"/>
+              <ToolTip id="tooltip" />
             </ThemeProvider>
           </LangProvider>
         </SidebarProvider>

@@ -5,7 +5,7 @@ import Dropdown, { type DropdownOptions } from "../ui/Dropdown";
 import { themes } from "~/domain/theme/types";
 import { useTheme } from "~/contexts/ThemeContext";
 import { useLang } from "~/contexts/LangContext";
-import { langs, validLanguages } from "~/domain/language/types";
+import { validLanguages } from "~/domain/language/types";
 
 import SidebarIcon from "../ui/icons/SidebarIcon";
 import Sidebar from "./Sidebar";
@@ -16,7 +16,7 @@ export const Header = () => {
     const navigate = useNavigate();
 
     const { changeTheme } = useTheme();
-    const { currentLang, i18n, setLang, lang } = useLang();
+    const { i18n, setLang, lang } = useLang();
     const { toggleSidebar } = useSidebar();
 
     const themeOptions = themes.reduce<DropdownOptions[]>((acc, row) => {
@@ -54,7 +54,7 @@ export const Header = () => {
                 <HeaderButton text={i18n.t('header.portfolio')} onClick={() => navigate('/portfolio')} />
                 <HeaderButton text={i18n.t('header.contact')} onClick={() => navigate('/contact')} />
                 <Dropdown options={themeOptions} value={i18n.t('header.theme')} onClick={v => changeTheme(v)} className="self-center" />
-                <Dropdown options={langOptions} value={lang} onClick={v => {
+                <Dropdown options={langOptions} value={i18n.t(`langOptions.${lang}`)} onClick={v => {
                     if (isLanguage(v)) setLang(v);
                 }} className="self-center" />
             </nav>

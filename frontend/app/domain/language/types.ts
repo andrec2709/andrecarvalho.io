@@ -1,12 +1,4 @@
-export const langs = ["pt", "en"] as const; // TODO: will be removed
 export const validLanguages = ['ptBR', 'en'] as const;
-
-export type Lang = (typeof langs)[number]; // TODO: will be removed
-
-// TODO: will be removed
-export const isLang = (value: string): value is Lang => {
-    return langs.includes(value as Lang);
-};
 
 export type Language = (typeof validLanguages)[number];
 
@@ -121,6 +113,8 @@ export type Translation = {
         colorpicker: ProjectCardEntry;
         noted: ProjectCardEntry;
         andrecarvalhoIo: ProjectCardEntry;
+        tryIt: string;
+        readMore: string;
     };
     cv: PageMetaData & {
         role: string;
