@@ -99,8 +99,48 @@ const ptBR: Translation = {
         },
     },
     colorpicker: {
-        // TODO
         heading: "colorpicker-react",
+        whatIs: {
+            heading: "O que é?",
+            p1: "Esse projeto é uma web aplicação de seleção de cores, desenvolvida utilizando React.",
+            p2: "O propósito desse projeto era servir como um exercício de aprendizado, já que foi meu primeiro projeto real em React.",
+            p3: "Com o app, você pode modificar valores RGB, ou o valor HEX, para mudar a visualização das cores. Você pode criar paletas, salvar cores dentro delas, renomear ambas cores e paletas, reordenar os itens visualmente para organização, e mais.",
+            p4: "O app também te mostra a razão de contraste, a qual representa o contraste entre a cor de primeiro plano e a cor de segundo plano selecionadas.",
+        },
+        techOverview: {
+            heading: "Visão Geral Técnica",
+            p1: "O app foi construido usando React + TypeScript no frontend, e utiliza IndexedDB e LocalStorage para armazenar os dados do usuário, como paletas, cores, a ordem destes, preferência de tema, de idioma, etc.",
+            p2: "Para internacionalização, eu usei o módulo i18n-js. Todas as traduções são armazenadas como objetos dentro do TypeScript para ter forte tipagem e segurança durante tempo de compilação.",
+            p3: "Para o mecanismo de ordenação, eu utilizei o módulo dnd-kit para possibilitar reordenar as paletas e cores.",
+        },
+        challenges: {
+            heading: "Desafios",
+            p1: "Este aplicativo teve duas principais versões, vou chamá-las de versão 1 e 2.",
+            p2: "Quando eu desenvolvi a versão 1 desse app, eu ainda era muito novo no mundo de React, ainda estava aprendendo os conceitos básicos, e meu conhecimento de arquitetura de software era limitado. Ainda tinha muito para melhorar. Naquele tempo, muito do código do app não estava bem organizado, muito “código de teste” e funcionalidades experimentais. O app estava em um estado onde “funcionava”, mas não estava escalável.",
+            p3: "A versão 2 trouxe muitas (muitas) mudanças. Desde a primeira versão, eu aprendi muito sobre React, como usar e escrever hooks, usar efeitos, estados, contextos, etc. E também tinha praticado e estudado muito em outros projetos.",
+            p4: "Não apenas eu melhorei minhas habilidades em React, mas também estudei muito sobre Arquitetura de Software, Clean Architecture, e esse conhecimento refletiu muito em como escrevo código. Conceitos como domínio, casos de uso, repositórios, entidades, foram bem considerados durante o desenvolvimento da nova versão.",
+            p5: "O resultado não foi apenas uma base de código mais organizada, mas também uma aplicação mais funcional e escalável.",
+            p6: "Além disso, foi na versão 2 que decidi substituir LocalStorage por IndexedDB (eu não o conhecia até então). Algumas coisas ainda usam LocalStorage, como tema, e preferências de idioma, mas os principais dados, que são as paletas e cores salvas, são mantidas no IndexedDB. LocalStorage tinha limitações em relação a quantidade de dados que pode ser armazenado, e por isso decidi mover e substituir com IDB.",
+        },
+        conclusion: {
+            heading: "Conclusão",
+            p1: "Esse projeto me ensinou muito sobre React e seus conceitos, como usar IDB e LocalStorage, e também me permitiu aplicar o novo conhecimento de arquitetura de software que adquiri.",
+        },
+    },
+    projectCards: {
+        colorpicker: {
+            title: "colorpicker-react",
+            description: "Um web aplicativo de seleção de cores escrito usando React.",
+        },
+        noted: {
+            title: "Noted",
+            description: "Um aplicativo android de anotações escrito usando React Native.",
+
+        },
+        andrecarvalhoIo: {
+            title: "andrecarvalho.io",
+            description: "Um website portfólio mostrando meus projetos.",
+        },
     },
     cv: {
         title: "Currículo Andre Carvalho Filho",
@@ -289,8 +329,48 @@ const en: Translation = {
         },
     },
     colorpicker: {
-        // TODO
         heading: "colorpicker-react",
+        whatIs: {
+            heading: "What is it?",
+            p1: "This project is a colorpicker web application built on top of React.",
+            p2: "The purpose of this project was to serve as a learning exercise, since it was my first real React project.",
+            p3: "In the app, you have the ability to modify RGB values, or a HEX value, in order to change the display colors. You can create palettes, save colors into them, rename both colors and palettes, rearrange the items visually for organization, and more.",
+            p4: "The app also gives you a contrast ratio, which represents the contrast between the foreground color and background color you have selected.",
+        },
+        techOverview: {
+            heading: "Technical Overview",
+            p1: "The app is built using React + TypeScript for the frontend, and uses IndexedDB and LocalStorage for storing user data, like palettes, colors, the order of colors and palettes, theme preference, language preference, etc.",
+            p2: "For internationalization, I used the i18n-js library. All translations are stored as objects inside Typescript itself for strong typing and compile-time safety.",
+            p3: "For the ordering mechanism, I used dnd-kit to implement the sortable behavior of the palettes and colors.",
+        },
+        challenges: {
+            heading: "Challenges",
+            p1: "This app had two major versions, let’s refer to them as version 1 and 2.",
+            p2: "When I developed version 1 of this application, I was still really new to React and I was still learning its concepts, and my knowledge of software architecture was limited. Basically there was much room for improvement. At that time, much of the code of the application was not well organized, a bunch of testing code and experimental features. The app was in a state where “it worked”, but was not scalable whatsoever.",
+            p3: "Version 2 brought many (many) changes. Since version 1, I learned a lot about React, how to use and write hooks, use effects, states, contexts, etc. And I had also practiced and studied a lot in other projects.",
+            p4: "Not only I improved my React skills, but I also started studying a lot about Software Architecture, Clean Architecture, and that knowledge reflected a lot in how I write code. Concepts like domain, use cases, repositories, entities, have been well thought out while developing the new version.",
+            p5: "The result was not only a better organized codebase, but also a more functional and scalable application.",
+            p6: "Also, it was on version 2 that I decided to replace LocalStorage with IndexedDB (I didn’t know about it until that point). Some things still use LocalStorage, like theme, and language preferences, but the main data, which are the palettes data, is now kept in IndexedDB. LocalStorage had limitations with how much data it could store, hence why I decided to move and replace it with IDB.",
+        },
+        conclusion: {
+            heading: "Conclusion",
+            p1: "This project taught me a lot about React and its concepts, how to use IndexedDB and LocalStorage, and also allowed me to apply the knowledge I’ve acquired about software architecture.",
+        },
+    },
+    projectCards: {
+        colorpicker: {
+            title: "colorpicker-react",
+            description: "A colorpicker web application built using React.",
+        },
+        noted: {
+            title: "Noted",
+            description: "Note taking android application built with React Native.",
+
+        },
+        andrecarvalhoIo: {
+            title: "andrecarvalho.io",
+            description: "A portfolio website showcasing my projects.",
+        },
     },
     cv: {
         title: "Curriculum Andre Carvalho Filho",

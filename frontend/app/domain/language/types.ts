@@ -32,6 +32,11 @@ type ProfessionalExperienceEntry = {
     role: string;
 };
 
+type ProjectCardEntry = {
+    title: string;
+    description: string;
+};
+
 export type Translation = {
     header: {
         start: string;
@@ -89,7 +94,33 @@ export type Translation = {
         };
     };
     colorpicker: PageSection & {
-        // TODO
+        whatIs: PageSection & {
+            p1: string;
+            p2: string;
+            p3: string;
+            p4: string;
+        };
+        techOverview: PageSection & {
+            p1: string;
+            p2: string;
+            p3: string;
+        };
+        challenges: PageSection & {
+            p1: string;
+            p2: string;
+            p3: string;
+            p4: string;
+            p5: string;
+            p6: string;
+        };
+        conclusion: PageSection & {
+            p1: string;
+        };
+    };
+    projectCards: {
+        colorpicker: ProjectCardEntry;
+        noted: ProjectCardEntry;
+        andrecarvalhoIo: ProjectCardEntry;
     };
     cv: PageMetaData & {
         role: string;

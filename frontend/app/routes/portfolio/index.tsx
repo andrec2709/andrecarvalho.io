@@ -45,9 +45,8 @@ export const Portfolio = () => {
                 <RepositoriesCarouselSection
                     classNameContainer="bg-background-2 pt-25 text-on-background-2"
                 />
-                <ProjectsOverviewSection>
-                    <ColorpickerSection />
-                </ProjectsOverviewSection>
+                <ProjectsOverviewSection />
+                <ColorpickerSection classNameContainer="bg-background-2 text-on-background-2"/>
                 {/* <ColorpickerSection /> */}
             </Main>
         </>

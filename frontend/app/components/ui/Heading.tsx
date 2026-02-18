@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router";
 import LinkIcon from "./icons/LinkIcon";
 import { useLang } from "~/contexts/LangContext";
 import { useMemo, type JSX } from "react";
+import { cn } from "~/utils";
 
 export const Heading = ({ id, className, as: Tag = "h2", children }: { 
     id: string; 
@@ -11,24 +12,25 @@ export const Heading = ({ id, className, as: Tag = "h2", children }: {
 }) => {
     const location = useLocation();
     const href = `${document.URL}`;
-    const { translations } = useLang();
+    const { i18n } = useLang();
 
     const handleCopy = async () => {
-        const copy = href.includes(`#${id}`) ? href : `${href}#${id}`;
+        const cleanLink = href.replace(/#.*/, '');
+        const copy = cleanLink.concat(`#${id}`);
         await navigator.clipboard.writeText(copy);
     };
 
     return (
         <Tag 
         id={id} 
-        className={`text-[2rem] max-w-[600px] mx-auto w-full text-on-background scroll-mt-14 font-medium my-4 ${className}`}
+        className={cn(`text-[2rem] max-w-[600px] mx-auto w-full text-on-background scroll-mt-14 font-medium my-4`, className)}
         >
             {children}&nbsp;
             <Link
                 to={`${location.pathname}#${id}`}
                 className="opacity-10 hover:opacity-100 active:opacity-50 text-body-links"
                 onClick={handleCopy}
-                title={translations?.general.heading_title_copy}
+                title={i18n.t('general.headingCopyHoverTxt')}
             >
                 <LinkIcon className="fill-body-links -rotate-45 print:hidden" />
             </Link>

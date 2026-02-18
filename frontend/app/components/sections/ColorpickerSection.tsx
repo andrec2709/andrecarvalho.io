@@ -6,72 +6,63 @@ import AddPaletteImg from '../../assets/images/colorpicker-create-project.png';
 import AddColorImg from '../../assets/images/colorpicker-add-color.png';
 import RenameColorImg from '../../assets/images/colorpicker-rename-color.png';
 import ProjectHeading from "../ui/ProjectHeading";
+import Paragraph from "../ui/Paragraph";
+import type { SectionProps } from "~/domain/section/types";
 
-type Props = {
-    classNameContainer?: string;
-    classNameContent?: string;
-};
+type Props = SectionProps;
 
-export const ColorpickerSection = ({ classNameContainer, classNameContent }: Props) => {
-    const { translations } = useLang();
+export const ColorpickerSection = ({ ...props }: Props) => {
+    const { i18n } = useLang();
 
     return (
-        <section>
+        <Section {...props}>
             <ProjectHeading
                 id="colorpicker"
                 sourceHref="https://github.com/andrec2709/colorpicker-react"
                 appHref="https://andrec2709.github.io/colorpicker-react"
             >
-                colorpicker-react
+                {i18n.t('colorpicker.heading')}                
             </ProjectHeading>
-            <p className="paragraph">{translations?.colorpicker.p1}</p>
+            <Heading id="what-is-colorpicker" as="h3" className="text-[1.5rem]">
+                {i18n.t('colorpicker.whatIs.heading')}
+            </Heading>
+            <Paragraph>{i18n.t('colorpicker.whatIs.p1')}</Paragraph>
             <br />
-            <p className="paragraph">{translations?.colorpicker.p2}</p>
+            <Paragraph>{i18n.t('colorpicker.whatIs.p2')}</Paragraph>
             <br />
-            <p className="paragraph">{translations?.colorpicker.p3}</p>
+            <Paragraph>{i18n.t('colorpicker.whatIs.p3')}</Paragraph>
             <br />
-            <p className="paragraph">{translations?.colorpicker.p4}</p>
+            <Paragraph>{i18n.t('colorpicker.whatIs.p4')}</Paragraph>
             <br />
-            <p className="paragraph">{translations?.colorpicker.p5}</p>
+            <Heading id="technical-overview-colorpicker" as="h3" className="text-[1.5rem]">
+                {i18n.t('colorpicker.techOverview.heading')}
+            </Heading>
+            <Paragraph>{i18n.t('colorpicker.techOverview.p1')}</Paragraph>
             <br />
-            <figure className="figure">
-                <img src={AddPaletteImg} className="body-img" alt="Example adding a palette inside the colorpicker app." />
-                <figcaption>{translations?.colorpicker.add_palette_img_caption}</figcaption>
-            </figure>
+            <Paragraph>{i18n.t('colorpicker.techOverview.p2')}</Paragraph>
             <br />
-            <p className="paragraph">
-                {translations?.colorpicker.p6_part1}{" "}
-                <Link to="https://github.com/meodai/color-names" target="_blank" className="body-link">
-                    {translations?.colorpicker.p6_color_name_link}
-                </Link>
-                {translations?.colorpicker.p6_part2}{" "}
-            </p>
+            <Paragraph>{i18n.t('colorpicker.techOverview.p3')}</Paragraph>
             <br />
-            <figure className="figure">
-                <img src={AddColorImg} alt="Showind an example of adding colors to a palette." />
-                <figcaption>{translations?.colorpicker.add_color_img_caption}</figcaption>
-            </figure>
+            <Heading id="challenges-colorpicker" as="h3" className="text-[1.5rem]">
+                {i18n.t('colorpicker.challenges.heading')}
+            </Heading>
+            <Paragraph>{i18n.t('colorpicker.challenges.p1')}</Paragraph>
             <br />
-            <p className="paragraph">{translations?.colorpicker.p7}</p>
+            <Paragraph>{i18n.t('colorpicker.challenges.p2')}</Paragraph>
             <br />
-            <figure className="figure">
-                <img src={RenameColorImg} alt="Example of renaming a color." />
-                <figcaption>{translations?.colorpicker.rename_color_img_caption}</figcaption>
-            </figure>
+            <Paragraph>{i18n.t('colorpicker.challenges.p3')}</Paragraph>
             <br />
-            <p className="paragraph">{translations?.colorpicker.p8}</p>
+            <Paragraph>{i18n.t('colorpicker.challenges.p4')}</Paragraph>
             <br />
-            <p className="paragraph">{translations?.colorpicker.p9}{" "}
-                <Link
-                    to="https://andrec2709.github.io/colorpicker-react/"
-                    className="body-link" target="_blank"
-                >
-                    {translations?.colorpicker.p9_colorpicker_link}
-                </Link>
-            </p>
+            <Paragraph>{i18n.t('colorpicker.challenges.p5')}</Paragraph>
             <br />
-            <p className="paragraph">{translations?.colorpicker.p10}</p>
-        </section>
+            <Paragraph>{i18n.t('colorpicker.challenges.p6')}</Paragraph>
+            <br />
+            <Heading id="conclusion-colorpicker" as="h3" className="text-[1.5rem]">
+                {i18n.t('colorpicker.conclusion.heading')}
+            </Heading>
+            <Paragraph>{i18n.t('colorpicker.conclusion.p1')}</Paragraph>
+        </Section>
     );
 };
 

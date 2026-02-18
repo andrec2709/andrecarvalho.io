@@ -8,8 +8,11 @@ import EmblaCarousel from "../ui/EmblaCarousel";
 import ColorpickerImg from '../../assets/images/colorpicker-screenshot.png';
 import NotedImg from '../../assets/images/noted-shots.jpg';
 import WebsiteImg from '../../assets/images/website-shot.png';
+import { useLang } from "~/contexts/LangContext";
 
 export default function ProjectsCarouselSection({ ...props }: SectionProps) {
+    const { i18n } = useLang();
+
     return (
         <Section {...props} variant="wide">
             <Heading id="projects-section">Projects</Heading>
@@ -19,22 +22,22 @@ export default function ProjectsCarouselSection({ ...props }: SectionProps) {
             >
                 <ProjectCard
                     backgroundImgSrc={ColorpickerImg}
-                    title="colorpicker-react"
-                    body="A colorpicker web application built using react."
-                    readMoreHref=""
+                    title={i18n.t('projectCards.colorpicker.title')}
+                    body={i18n.t('projectCards.colorpicker.description')}
+                    readMoreHref="https://andrecarvalho.io/portfolio#colorpicker"
                     tryHref="https://andrec2709.github.io/colorpicker-react"
                 />
                 <ProjectCard
                     backgroundImgSrc={NotedImg}
-                    title="noted-rn"
-                    body="Note taking android application built with React Native."
+                    title={i18n.t('projectCards.noted.title')}
+                    body={i18n.t('projectCards.noted.description')}
                     readMoreHref=""
-                    tryHref=""
+                    tryHref="https://github.com/andrec2709/noted-rn"
                 />
                 <ProjectCard
                     backgroundImgSrc={WebsiteImg}
-                    title="andrecarvalho.io"
-                    body="A portfolio website showcasing my projects."
+                    title={i18n.t('projectCards.andrecarvalhoIo.title')}
+                    body={i18n.t('projectCards.andrecarvalhoIo.description')}
                     readMoreHref=""
                     tryHref="https://andrecarvalho.io"
                 />
