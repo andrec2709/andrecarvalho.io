@@ -15,7 +15,7 @@ export default function ProjectsCarouselSection({ ...props }: SectionProps) {
 
     return (
         <Section {...props} variant="wide">
-            <Heading id="projects-section">Projects</Heading>
+            <Heading id="projects-section">{t('words.projects')}</Heading>
             <EmblaCarousel
                 options={{ loop: true, align: 'start' }}
                 slideClassName={`min-[850px]:flex-[0_0_calc(100%/2)] min-[850px]:pl-10`}

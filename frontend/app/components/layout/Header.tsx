@@ -2,7 +2,7 @@ import { NavLink, useNavigate } from "react-router";
 import HeaderButton from "./HeaderButton";
 import Logo from "../ui/icons/Logo";
 import Dropdown, { type DropdownOptions } from "../ui/Dropdown";
-import { themes } from "~/domain/theme/types";
+import { isTheme, themes } from "~/domain/theme/types";
 import { useTheme } from "~/contexts/ThemeContext";
 import { validLanguages } from "~/domain/language/types";
 
@@ -15,7 +15,7 @@ import { useTranslation } from "react-i18next";
 export const Header = () => {
     const navigate = useNavigate();
 
-    const { changeTheme } = useTheme();
+    const { setTheme } = useTheme();
     const { t, i18n } = useTranslation();
     const { toggleSidebar } = useSidebar();
 
@@ -42,7 +42,7 @@ export const Header = () => {
         return acc;
 
     }, []);
-    
+
     return (
         <header id="header" className="header w-full text-sm z-999 h-14 flex items-center justify-evenly px-6 py-3 fixed bg-background border-b border-b-primary-container print:hidden">
             <NavLink to='/' className='logo'>
@@ -53,10 +53,22 @@ export const Header = () => {
                 <HeaderButton text={t('header.about')} onClick={() => navigate('/about')} />
                 <HeaderButton text={t('header.portfolio')} onClick={() => navigate('/portfolio')} />
                 <HeaderButton text={t('header.contact')} onClick={() => navigate('/contact')} />
-                <Dropdown options={themeOptions} value={t('header.theme')} onClick={v => changeTheme(v)} className="self-center" />
-                <Dropdown options={langOptions} value={t(`langOptions.${i18n.resolvedLanguage}`)} onClick={v => {
-                    if (isLanguage(v)) i18n.changeLanguage(v);
-                }} className="self-center" />
+                <Dropdown
+                    options={themeOptions}
+                    value={t('header.theme')}
+                    onClick={v => {
+                        if (isTheme(v)) setTheme(v);
+                    }}
+                    className="self-center"
+                />
+                <Dropdown
+                    options={langOptions}
+                    value={t(`langOptions.${i18n.resolvedLanguage as "ptBR" | "en"}`)}
+                    onClick={v => {
+                        if (isLanguage(v)) i18n.changeLanguage(v);
+                    }}
+                    className="self-center"
+                />
             </nav>
             <button
                 className="h-full cursor-pointer hover:opacity-80 active:opacity-50"

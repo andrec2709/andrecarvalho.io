@@ -4,7 +4,7 @@ import { useRef } from "react";
 import Dropdown from "../ui/Dropdown";
 import { useNavigate } from "react-router";
 import { useTheme } from "~/contexts/ThemeContext";
-import { themes } from "~/domain/theme/types";
+import { isTheme, themes } from "~/domain/theme/types";
 import type { DropdownOptions } from "../ui/Dropdown";
 import SidebarItem from "./SidebarItem";
 import { validLanguages } from "~/domain/language/types";
@@ -16,7 +16,7 @@ export const Sidebar = () => {
     const sidebarRef = useRef<HTMLDivElement>(null);
     const navigate = useNavigate();
 
-    const { changeTheme } = useTheme();
+    const { setTheme } = useTheme();
     const { t, i18n } = useTranslation();
 
     const themeOptions = themes.reduce<DropdownOptions[]>((acc, row) => {
@@ -65,8 +65,20 @@ export const Sidebar = () => {
                 <SidebarItem text={t('header.about')} onClick={() => navigate('/about')} />
                 <SidebarItem text={t('header.portfolio')} onClick={() => navigate('/portfolio')} />
                 <SidebarItem text={t('header.contact')} onClick={() => navigate('/contact')} />
-                <Dropdown options={themeOptions} value={t('header.theme')} onClick={v => changeTheme(v)} className="text-xl w-full" />
-                <Dropdown options={langOptions} value={t(`langOptions.${i18n.resolvedLanguage}`)} onClick={v => {if (isLanguage(v)) i18n.changeLanguage(v);}} className="text-xl w-full" />
+                <Dropdown
+                    options={themeOptions}
+                    value={t('header.theme')}
+                    onClick={v => {
+                        if (isTheme(v)) setTheme(v);
+                    }}
+                    className="text-xl w-full"
+                />
+                <Dropdown
+                    options={langOptions}
+                    value={t(`langOptions.${i18n.resolvedLanguage as "ptBR" | "en"}`)}
+                    onClick={v => { if (isLanguage(v)) i18n.changeLanguage(v); }}
+                    className="text-xl w-full"
+                />
             </nav>
         </div>
     );

@@ -1,9 +1,10 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import useThemeState from "~/application/theme/useThemeState";
 import { isTheme, type Theme } from "~/domain/theme/types";
 
 type ThemeContextValue = {
-    currentTheme: Theme;
-    changeTheme: (newTheme: Theme) => void;
+    theme: Theme;
+    setTheme: (next: Theme) => void;
 }
 
 export const ThemeContext = createContext<ThemeContextValue | null>(null);
@@ -23,22 +24,10 @@ type Props = {
 }
 
 export const ThemeProvider = ({ children }: Props) => {
-    const lastTheme = localStorage.getItem('theme') || 'theme-dark';
-
-    const [currentTheme, setCurrentTheme] = useState<Theme>(isTheme(lastTheme) ? lastTheme : 'theme-dark');
-
-    const changeTheme = (newTheme: Theme) => {
-        setCurrentTheme(newTheme);
-        localStorage.setItem('theme', newTheme);
-        document.documentElement.classList.replace(currentTheme, newTheme);
-    }
-
-    useEffect(() => {
-        document.documentElement.classList.add(currentTheme);
-    }, []);
+    const [theme, setTheme] = useThemeState('theme', 'theme-dark');
 
     return (
-        <ThemeContext.Provider value={{currentTheme, changeTheme}}>
+        <ThemeContext.Provider value={{ theme, setTheme }}>
             {children}
         </ThemeContext.Provider>
     );

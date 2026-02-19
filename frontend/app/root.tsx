@@ -14,12 +14,10 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import { SidebarProvider } from "./contexts/SidebarContext";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
-import Section from "./components/layout/Section";
 import { ToolTipProvider } from "./contexts/ToolTipContext";
 import ToolTip from "./components/ui/ToolTip";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import './domain/language/i18n';
-import i18next from "i18next";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -40,7 +38,7 @@ export const links: Route.LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="theme-dark">
+    <html>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -58,6 +56,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   const { hash } = useLocation();
+
   useEffect(() => {
     /* 
     This effect helps scrolling sections into view
