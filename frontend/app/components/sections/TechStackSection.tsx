@@ -40,6 +40,7 @@ export default function TechStackSection({ ...props }: SectionProps) {
                 <TechStackPill Icon={JavascriptIcon} text="JavaScript" />
                 <TechStackPill Icon={KotlinIcon} text="Kotlin" />
             </div>
+            <br />
         </Section>
     );
 }

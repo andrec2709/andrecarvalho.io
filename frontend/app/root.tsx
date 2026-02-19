@@ -67,7 +67,9 @@ export default function App() {
       if (el) {
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
-            el.scrollIntoView({ behavior: 'smooth' });
+            setTimeout(() => {
+              el.scrollIntoView({ behavior: 'smooth' });
+            }, 0);
           });
         });
       }

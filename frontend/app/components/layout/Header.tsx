@@ -44,7 +44,7 @@ export const Header = () => {
     }, []);
 
     return (
-        <header id="header" className="header w-full text-sm z-999 h-14 flex items-center justify-evenly px-6 py-3 fixed bg-background border-b border-b-primary-container print:hidden">
+        <header id="header" className="header w-full text-sm z-999 h-14 flex items-center justify-evenly px-6 py-3 fixed top-0 bg-background border-b border-b-primary-container print:hidden">
             <NavLink to='/' className='logo'>
                 <Logo />
             </NavLink>

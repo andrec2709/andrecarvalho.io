@@ -39,7 +39,7 @@ export default function EmblaCarousel({
 
     return (
         <div className={cn('m-auto flex relative items-center justify-center', wrapperClassName)}>
-            <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} className='aspect-square w-fit p-2 flex items-center justify-center' />
+            <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} className='aspect-square w-fit p-2 flex items-center justify-center cursor-pointer' />
             <div className={cn('overflow-hidden', viewportClassName)} ref={emblaRef}>
                 <div className={cn('flex touch-pan-y touch-pinch-zoom -ml-4 min-[500px]:-ml-[1.6rem] min-[1000px]:-ml-8', containerClassName)}>
                     {React.Children.map(children, child => (
@@ -49,14 +49,7 @@ export default function EmblaCarousel({
                     ))}
                 </div>
             </div>
-            <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} className='aspect-square w-fit p-2 flex items-center justify-center' />
-
-            {/* <div className='embla__controls'>
-                <div className='embla__buttons'>
-                    <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-                    <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
-                </div>
-            </div> */}
+            <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} className='aspect-square w-fit p-2 flex items-center justify-center cursor-pointer' />
         </div>
 
     );

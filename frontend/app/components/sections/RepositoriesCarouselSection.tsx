@@ -34,6 +34,7 @@ export default function RepositoriesCarouselSection({ ...props }: SectionProps) 
             >
                 {data}
             </EmblaCarousel>
+            <br />
         </Section>
 
     );

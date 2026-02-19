@@ -31,7 +31,7 @@ export default function ProjectsCarouselSection({ ...props }: SectionProps) {
                     backgroundImgSrc={NotedImg}
                     title={t('projectCards.noted.title')}
                     body={t('projectCards.noted.description')}
-                    readMoreHref=""
+                    readMoreHref="http://localhost:5173/portfolio#notedRn"
                     tryHref="https://github.com/andrec2709/noted-rn"
                 />
                 <ProjectCard
@@ -42,6 +42,7 @@ export default function ProjectsCarouselSection({ ...props }: SectionProps) {
                     tryHref="https://andrecarvalho.io"
                 />
             </EmblaCarousel>
+            <br />
         </Section>
 
     );

@@ -367,7 +367,7 @@ export const en: Translation = {
         },
         techOverview: {
             heading: "Technical Overview",
-            p1: "The app is built using <1>React</1> + <1>TypeScript</1> for the frontend, and uses IndexedDB and LocalStorage for storing user data, like palettes, colors, the order of colors and palettes, theme preference, language preference, etc.",
+            p1: "The app is built using <1>React</1> + <1>TypeScript</1> for the frontend, and uses <1>IndexedDB</1> and <1>LocalStorage</1> for storing user data, like palettes, colors, the order of colors and palettes, theme preference, language preference, etc.",
             p2: "For internationalization, I used the <1>i18n-js</1> library. All translations are stored as objects inside Typescript itself for strong typing and compile-time safety.",
             p3: "For the ordering mechanism, I used <1>dnd-kit</1> to implement the sortable behavior of the palettes and colors.",
         },

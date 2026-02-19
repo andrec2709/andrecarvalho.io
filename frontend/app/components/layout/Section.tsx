@@ -23,7 +23,7 @@ export const Section = ({ children, classNameContainer, classNameContent, varian
 
     
     return (
-        <div className={cn(`w-full flex justify-center border not-last-of-type:border-b-0 border-border-background-2`, classNameContainer)}>
+        <div className={cn(`w-full flex justify-center border not-last-of-type:border-b-0 border-border-background-2 print:border-0`, classNameContainer)}>
             <section
                 className={`m-4 ${classNameContent} ${contentStyle}`}
             >
