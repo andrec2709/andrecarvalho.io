@@ -68,7 +68,22 @@ export const ColorpickerSection = ({ ...props }: Props) => {
                 />
             </Paragraph>
             <br />
-            <Paragraph>{t('colorpicker.techOverview.p3')}</Paragraph>
+            <Paragraph>
+                <Trans 
+                    i18nKey={'colorpicker.techOverview.p3'}
+                    components={{
+                        1: (
+                            <a
+                                href="https://dndkit.com/overview"
+                                className="body-link"
+                                rel="noopener noreferrer"
+                                target="_blank"
+                            >
+                            </a>
+                        )
+                    }}
+                />
+            </Paragraph>
             <br />
             <Heading id="challenges-colorpicker" as="h3" className="text-[1.5rem]">
                 {t('colorpicker.challenges.heading')}

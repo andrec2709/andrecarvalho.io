@@ -109,6 +109,23 @@ export type Translation = {
             p1: string;
         };
     };
+    notedRn: PageSection & {
+        whatIs: PageSection & {
+            p1: string;
+            p2: string;
+            p3: string;
+            p3List: string[];
+        };
+        techOverview: PageSection & {
+            p1: string;
+            p2: string;
+            p3: string;
+            p4: string;
+        };
+        conclusion: PageSection & {
+            p1: string;
+        };
+    };
     projectCards: {
         colorpicker: ProjectCardEntry;
         noted: ProjectCardEntry;

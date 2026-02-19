@@ -14,14 +14,10 @@ i18next
         },
         resources: {
             en: {
-                translation: {
-                    ...en
-                },
+                translation: en,
             },
             ptBR: {
-                translation: {
-                    ...ptBR
-                },
+                translation: ptBR,
             }
         },
         fallbackLng: "en",

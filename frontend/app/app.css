@@ -168,6 +168,10 @@
   --embla-button-border: #f1f1f1;
   --embla-button-icon: #f1f1f1;
 
+  --code-border: #363636;
+  --code-background: #222222;
+  --code-on-background: #f0f0f0;
+
 }
 
 :root.theme-light {
@@ -218,6 +222,10 @@
   --embla-button-border: #000;
   --embla-button-icon: #000;
 
+  --code-border: #838383;
+  --code-background: #bbbbbb;
+  --code-on-background: #000;
+
 }
 
 
@@ -264,6 +272,10 @@
   --color-ts-pill-bg: var(--ts-pill-bg);
   --color-ts-pill-fg: var(--ts-pill-fg);
   --color-ts-pill-border: var(--ts-pill-border);
+
+  --color-code-border: var(--code-border);
+  --color-code-background: var(--code-background);
+  --color-code-on-background: var(--code-on-background);
 }
 
 * {

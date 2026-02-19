@@ -8,6 +8,7 @@ import type { Route } from "@rr/portfolio/+types/index";
 import LogoIcon from "../../assets/logo.svg";
 import RepositoriesCarouselSection from "~/components/sections/RepositoriesCarouselSection";
 import ProjectsOverviewSection from "~/components/sections/ProjectsOverviewSection";
+import NotedRnSection from "~/components/sections/NotedRnSection";
 
 export function meta({ }: Route.MetaArgs) {
     return [
@@ -44,7 +45,7 @@ export const Portfolio = () => {
                 <RepositoriesCarouselSection classNameContainer="pt-25" />
                 <ProjectsOverviewSection classNameContainer="bg-background-2 text-on-background-2" />
                 <ColorpickerSection />
-                {/* <ColorpickerSection /> */}
+                <NotedRnSection classNameContainer="bg-background-2 text-on-background-2" />
             </Main>
         </>
     );

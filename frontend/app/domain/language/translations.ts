@@ -109,9 +109,9 @@ export const ptBR: Translation = {
         },
         techOverview: {
             heading: "Visão Geral Técnica",
-            p1: "O app foi construido usando <1>React + TypeScript</1> no frontend, e utiliza IndexedDB e LocalStorage para armazenar os dados do usuário, como paletas, cores, a ordem destes, preferência de tema, de idioma, etc.",
-            p2: "Para internacionalização, eu usei o módulo <link>i18n-js</link>. Todas as traduções são armazenadas como objetos dentro do TypeScript para ter forte tipagem e segurança durante tempo de compilação.",
-            p3: "Para o mecanismo de ordenação, eu utilizei o módulo dnd-kit para possibilitar reordenar as paletas e cores.",
+            p1: "O app foi construido usando <1>React</1> + <1>TypeScript</1> no frontend, e utiliza <1>IndexedDB</1> e <1>LocalStorage</1> para armazenar os dados do usuário, como paletas, cores, a ordem destes, preferência de tema, de idioma, etc.",
+            p2: "Para internacionalização, eu usei o módulo <1>i18n-js</1>. Todas as traduções são armazenadas como objetos dentro do TypeScript para ter forte tipagem e segurança durante tempo de compilação.",
+            p3: "Para o mecanismo de ordenação, eu utilizei o módulo <1>dnd-kit</1> para possibilitar reordenar as paletas e cores.",
         },
         challenges: {
             heading: "Desafios",
@@ -125,6 +125,32 @@ export const ptBR: Translation = {
         conclusion: {
             heading: "Conclusão",
             p1: "Esse projeto me ensinou muito sobre React e seus conceitos, como usar IDB e LocalStorage, e também me permitiu aplicar o novo conhecimento de arquitetura de software que adquiri.",
+        },
+    },
+    notedRn: {
+        heading: "noted-rn",
+        whatIs: {
+            heading: "O que é?",
+            p1: "Noted é um aplicativo de notas, feito em React Native para android.",
+            p2: "O propósito desse projeto foi de servir como um exercício de estudo de React Native, já que foi meu primeiro projeto real com o framework.",
+            p3: "O app tem algumas <1>funcionalidades interessantes:</1>",
+            p3List: [
+                "Um rico editor de texto para escrever suas notas. Com ele, você pode escrever texto em negrito, sublinhado, ou itálico, criar titulos, listas e citações em bloco.",
+                "Você pode criar listas de tarefas (listas de afazeres), podendo marcar itens como completados, mostrar itens completados vs não completados separadamente, reordená-los, ou removê-los.",
+                "Você pode filtrar e buscar suas notas pelo título e conteúdo.",
+                "E você também tem a habilidade de reordenar suas notas, ou deletá-las.",
+            ],
+        },
+        techOverview: {
+            heading: "Visão Geral Técnica",
+            p1: "O app foi escrito em <1>React Native</1> + <1>Typescript</1>, e utiliza <1>SQLite</1> + <1>AsyncStorage</1> para armazenar dados do usuário, como notas, e preferência de linguagem e tema.",
+            p2: "Para internacionalização, eu utilizei o módulo <1>i18n-js</1>. O app está disponível em português brasileiro e inglês.",
+            p3: "As partes reordenáveis da interface, como as notas e checklists, são implementadas utilizando o módulo <1>react-native-sortables</1>.",
+            p4: "Para o rico editor de texto, eu usei o módulo <1>react-native-enriched</1>. Inicialmente, eu queria ter usado o <2>Lexical</2>, porém para utilizar ele no android você precisa implementar WebView, o que tem algumas desvantagens e limitações. Eu optei por usar o enriched.",
+        },
+        conclusion: {
+            heading: "Conclusão",
+            p1: "Esse app foi um excelente projeto de estudo para React Native. Não apenas eu aprendi a desenvolver aplicações android, mas também aprendi como ricos editores de texto funcionam e são implementados.",
         },
     },
     projectCards: {
@@ -341,9 +367,9 @@ export const en: Translation = {
         },
         techOverview: {
             heading: "Technical Overview",
-            p1: "The app is built using <1>React + TypeScript</1> for the frontend, and uses IndexedDB and LocalStorage for storing user data, like palettes, colors, the order of colors and palettes, theme preference, language preference, etc.",
+            p1: "The app is built using <1>React</1> + <1>TypeScript</1> for the frontend, and uses IndexedDB and LocalStorage for storing user data, like palettes, colors, the order of colors and palettes, theme preference, language preference, etc.",
             p2: "For internationalization, I used the <1>i18n-js</1> library. All translations are stored as objects inside Typescript itself for strong typing and compile-time safety.",
-            p3: "For the ordering mechanism, I used dnd-kit to implement the sortable behavior of the palettes and colors.",
+            p3: "For the ordering mechanism, I used <1>dnd-kit</1> to implement the sortable behavior of the palettes and colors.",
         },
         challenges: {
             heading: "Challenges",
@@ -357,6 +383,32 @@ export const en: Translation = {
         conclusion: {
             heading: "Conclusion",
             p1: "This project taught me a lot about React and its concepts, how to use IndexedDB and LocalStorage, and also allowed me to apply the knowledge I’ve acquired about software architecture.",
+        },
+    },
+    notedRn: {
+        heading: "noted-rn",
+        whatIs: {
+            heading: "What is it?",
+            p1: "Noted is a note taking application for android, built with React Native.",
+            p2: "This purpose of this project was to serve as a React Native learning exercise, as it was my first real RN project.",
+            p3: "The app has some <1>interesting features:</1>",
+            p3List: [
+                "A rich text editor to write your notes. With it, you can write bold, underlined, or italic text, headings, create lists and blockquotes.",
+                "You can create checklists (to-do lists), which allows you to check items as completed, show completed vs incomplete items separately, reorder, or remove them.",
+                "You can filter and search your notes by their title and content.",
+                "And you also have the ability to reorder your notes, or delete them.",
+            ],
+        },
+        techOverview: {
+            heading: "Technical Overview",
+            p1: "The app was built using <1>React Native</1> + <1>Typescript</1>, and uses <1>SQLite</1> + <1>AsyncStorage</1> to keep user data, like notes, and language and theme preferences.",
+            p2: "For internationalization, I used the <1>i18n-js</1> library. The app is available in english and brazilian portuguese.",
+            p3: "The sortable containers for both notes and checklists is implemented using the <1>react-native-sortables</1> package.",
+            p4: "For the rich text editor, I used the <1>react-native-enriched</1> package. Initially, I wanted to use <2>Lexical</2>, but since Lexical needs to be implemented as a WebView on mobile and there are some tradeoffs with webviews, I opted to go with enriched.",
+        },
+        conclusion: {
+            heading: "Conclusion",
+            p1: "This app was a great React Native study project. Not only I got to learn how to develop android applications, I also learned more about how rich text editors work and how to implement it.",
         },
     },
     projectCards: {

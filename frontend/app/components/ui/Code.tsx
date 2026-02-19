@@ -10,7 +10,7 @@ export default function Code({ children, ...props }: Props) {
     return (
         <code
             {...props}
-            className={cn('', props.className ?? '')}
+            className={cn('font-mono! border border-code-border bg-code-background text-code-on-background px-1 rounded-md', props.className ?? '')}
         >
             {children}
         </code>
