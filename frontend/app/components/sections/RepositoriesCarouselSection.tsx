@@ -29,7 +29,7 @@ export default function RepositoriesCarouselSection({ ...props }: SectionProps) 
             <Heading id="repositories-section">{t('portfolio.repositories.heading')}</Heading>
             <EmblaCarousel
                 options={{ loop: true, align: 'start' }}
-                plugins={[Autoplay({ delay: 5000 })]}
+                plugins={[Autoplay({ delay: 3000 })]}
                 slideClassName="min-[570px]:flex-[0_0_calc(100%/2)] min-[800px]:flex-[0_0_calc(100%/3)] min-[1000px]:flex-[0_0_calc(100%/4)] min-[700px]:pl-[1.6rem] min-[1000px]:pl-8"
             >
                 {data}

@@ -9,6 +9,7 @@ import LogoIcon from "../../assets/logo.svg";
 import RepositoriesCarouselSection from "~/components/sections/RepositoriesCarouselSection";
 import ProjectsOverviewSection from "~/components/sections/ProjectsOverviewSection";
 import NotedRnSection from "~/components/sections/NotedRnSection";
+import AndreCarvalhoIoSection from "~/components/sections/AndreCarvalhoIoSection";
 
 export function meta({ }: Route.MetaArgs) {
     return [
@@ -46,6 +47,7 @@ export const Portfolio = () => {
                 <ProjectsOverviewSection classNameContainer="bg-background-2 text-on-background-2" />
                 <ColorpickerSection />
                 <NotedRnSection classNameContainer="bg-background-2 text-on-background-2" />
+                <AndreCarvalhoIoSection />
             </Main>
         </>
     );

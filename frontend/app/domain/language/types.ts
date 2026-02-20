@@ -24,9 +24,16 @@ type ProfessionalExperienceEntry = {
     role: string;
 };
 
+type LabeledContent = {
+    label: string;
+};
+
+type ImageContent = LabeledContent & {};
+
 type ProjectCardEntry = {
     title: string;
     description: string;
+    image: ImageContent;
 };
 
 export type Translation = {
@@ -126,6 +133,24 @@ export type Translation = {
             p1: string;
         };
     };
+    andreCarvalhoIo: PageSection & {
+        whatIs: PageSection & {
+            p1: string;
+            p2: string;
+        };
+        techOverview: PageSection & {
+            p1: string;
+            p2: string;
+            p3: string;
+            p4: string;
+        };
+        challenges: PageSection & {
+            p1: string;
+        };
+        conclusion: PageSection & {
+            p1: string;
+        };
+    };
     projectCards: {
         colorpicker: ProjectCardEntry;
         noted: ProjectCardEntry;
@@ -180,10 +205,22 @@ export type Translation = {
     callout: {
         collapseHoverTxt: string;
         expandHoverTxt: string;
-    }
+    };
     general: {
         headingCopyHoverTxt: string;
-    }
+    };
+    carousel: {
+        prevButtonLabel: string;
+        nextButtonLabel: string;
+        prevButtonIconLabel: string;
+        nextButtonIconLabel: string;
+    };
+    icons: {
+        mailIcon: ImageContent;
+        callIcon: ImageContent;
+        locationIcon: ImageContent;
+        linkedinIcon: ImageContent;
+    };
 };
 
 export type Translations = Record<Language, Translation>;

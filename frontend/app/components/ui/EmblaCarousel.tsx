@@ -38,9 +38,24 @@ export default function EmblaCarousel({
     } = usePrevNextButtons(emblaApi);
 
     return (
-        <div className={cn('m-auto flex relative items-center justify-center', wrapperClassName)}>
+        <div
+            className={cn('m-auto flex relative items-center justify-center', wrapperClassName)}
+            onPointerEnter={() => emblaApi?.plugins().autoplay?.stop()}
+            onPointerLeave={() => emblaApi?.plugins().autoplay?.play()}
+        >
             <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} className='aspect-square w-fit p-2 flex items-center justify-center cursor-pointer' />
-            <div className={cn('overflow-hidden', viewportClassName)} ref={emblaRef}>
+            <div
+                role='group'
+                aria-roledescription='carousel'
+                tabIndex={0}
+                aria-label='carousel'
+                className={cn('overflow-hidden', viewportClassName)}
+                ref={emblaRef}
+                onKeyDown={e => {
+                    if (e.key === 'ArrowLeft' && emblaApi?.canScrollPrev()) emblaApi.scrollPrev();
+                    if (e.key === 'ArrowRight' && emblaApi?.canScrollNext()) emblaApi.scrollNext();
+                }}
+            >
                 <div className={cn('flex touch-pan-y touch-pinch-zoom -ml-4 min-[500px]:-ml-[1.6rem] min-[1000px]:-ml-8', containerClassName)}>
                     {React.Children.map(children, child => (
                         <div className={cn('py-2.5 min-w-0 flex-[0_0_100%] pl-4 flex justify-center overflow-visible ', slideClassName)}>

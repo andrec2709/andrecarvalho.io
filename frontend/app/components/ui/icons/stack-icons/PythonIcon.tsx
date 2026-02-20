@@ -9,7 +9,6 @@ export default function PythonIcon({ color = 'none', size = 24, ...props }: Icon
             xmlnsXlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 128 128"
             height={size}
-            width='auto'
             {...props}
         >
             <defs>

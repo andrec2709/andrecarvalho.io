@@ -153,19 +153,50 @@ export const ptBR: Translation = {
             p1: "Esse app foi um excelente projeto de estudo para React Native. Não apenas eu aprendi a desenvolver aplicações android, mas também aprendi como ricos editores de texto funcionam e são implementados.",
         },
     },
+    andreCarvalhoIo: {
+        heading: "andrecarvalho.io",
+        whatIs: {
+            heading: "O que é?",
+            p1: "Esse projeto é um website que serve como meu portfólio, onde eu apresento todos os meus projetos.",
+            p2: "O propósito desse projeto é de ser um lugar central onde posso demonstrar minhas habilidades e conhecimentos em programação, minhas experiências profissionais, minhas informações de contato, para que qualquer pessoa interessada possa me contactar com oportunidades de trabalho.",
+        },
+        techOverview: {
+            heading: "Visão Geral Técnica",
+            p1: "Este site é hosteado no plano the hosting compartilhado da Hostinger e construído usando <1>React</1> e <1>TypeScript</1> no frontend, e <1>PHP</1> no backend. Preferências de usuário como tema e idioma são persistidas utilizando <1>LocalStorage</1>.",
+            p2: "A Internacionalização é implementada usando o módulo <1>react-i18next</1>. Todas as traduções são definidas como objetos dentro do Typescript, para garantir forte tipagem e segurança em tempo de compilação. Essa abordagem garante preenchimento automático e verificação dos tipos das chaves de tradução, quando trabalhando com i18next em um ambiente usando Typescript, o que ajuda prevenir erros em tempo de execução causados por chaves inválidas ou faltantes.",
+            p3: "Para exibir minha atividade de desenvolvimento e informação de repositórios, o aplicativo integra com as API’s de <1>GraphQL</1> e <1>REST</1> do GitHub. Dados como histórico de contribuição e metadados dos repositórios são adquiridos e utilizados para renderizar componentes como o calendário de contribuição do GitHub (implementado com <2>react-activity-calendar</2>) e o carrossel de repositórios (implementado com <3>embla-carousel</3>). As informações recuperadas são armazenadas em cache em um banco de dados PHP chamado <5>github_api</5>. Mais informações sobre o esquema do banco de dados pode ser encontrado no README.md do <4>projeto no GitHub.</4>",
+            p4: "O formulário de contato é protegido usando <1>Google reCAPTCHA Enterprise</1>, fornecendo detecção de bot no servidor e ajudando a prevenir submissões automatizadas de spam.",
+        },
+        challenges: {
+            heading: "Desafios",
+            p1: "Inicialmente, esse website foi construído sem nenhum framework, apenas PHP+JS+CSS, com HTML gerado por PHP. Assim que eu <1>desenvolvi a primeira versão do aplicativo de seleção de cores</1>, eu decidi que queria reconstruir o site usando React.",
+        },
+        conclusion: {
+            heading: "Conclusão",
+            p1: "Construir esse website me ensinou muitas coisas. Não só melhorou minhas habilidades de React, mas também me ensinou a configurar um servidor web, como configurar recaptcha, etc."
+        },
+    },
     projectCards: {
         colorpicker: {
             title: "colorpicker-react",
             description: "Um web aplicativo de seleção de cores escrito usando React.",
+            image: {
+                label: "Imagem da aplicação colorpicker-react",
+            },
         },
         noted: {
             title: "Noted",
             description: "Um aplicativo android de anotações escrito usando React Native.",
-
+            image: {
+                label: "Imagem da aplicação Noted",
+            },
         },
         andrecarvalhoIo: {
             title: "andrecarvalho.io",
             description: "Um website portfólio mostrando meus projetos.",
+            image: {
+                label: "Imagem do website andrecarvalho.io",
+            },
         },
         readMore: "Ler mais",
         tryIt: "Testar",
@@ -255,7 +286,27 @@ export const ptBR: Translation = {
     },
     general: {
         headingCopyHoverTxt: "Copiar o link desta seção.",
-    }
+    },
+    carousel: {
+        nextButtonLabel: "Próximo slide",
+        prevButtonLabel: "Voltar slide",
+        nextButtonIconLabel: "Ícone de seta para a direita",
+        prevButtonIconLabel: "Ícone de seta para a esquerda",
+    },
+    icons: {
+        callIcon: {
+            label: "Ícone de telefone",
+        },
+        linkedinIcon: {
+            label: "Ícone do linkedin",
+        },
+        locationIcon: {
+            label: "Ícone de localização",
+        },
+        mailIcon: {
+            label: "Ícone de uma carta",
+        },
+    },
 };
 
 export const en: Translation = {
@@ -411,19 +462,50 @@ export const en: Translation = {
             p1: "This app was a great React Native study project. Not only I got to learn how to develop android applications, I also learned more about how rich text editors work and how to implement it.",
         },
     },
+    andreCarvalhoIo: {
+        heading: "andrecarvalho.io",
+        whatIs: {
+            heading: "What is it?",
+            p1: "This project is my portfolio website, where I showcase all my projects.",
+            p2: "The purpose of this project is to have a single place where I can display my programming skills and knowledge, my professional experiences, my contact information, so anyone interested can contact me for job opportunities.",
+        },
+        techOverview: {
+            heading: "Technical Overview",
+            p1: "This website is hosted on Hostinger’s shared hosting infrastructure and built using <1>React</1> with <1>TypeScript</1> on the frontend, alongside <1>PHP</1> on the backend. Client-side preferences such as theme and language selection are persisted using <1>LocalStorage</1>.",
+            p2: "Internationalization is handled through <1>react-i18next</1>. All translation resources are defined as TypeScript objects to ensure strong typing and compile-time safety. This approach enables full autocompletion and type checking of translation keys when working with i18next in a TypeScript environment, helping prevent runtime errors caused by invalid or missing keys.",
+            p3: "To dynamically display development activity and repository information, the application integrates with GitHub’s <1>GraphQL</1> and <1>REST</1> APIs. Data such as contribution history and repository metadata is retrieved and used to render components like the GitHub contribution calendar (implemented with <2>react-activity-calendar</2>) and the “Repositories” carousel (implemented with <3>embla-carousel</3>). Retrieved data is cached in a PHP-managed database named <1>github_api</1>. Additional information regarding the database schema can be found in the <4>project’s README.md file on GitHub</4>.",
+            p4: "The contact form is protected using <1>Google reCAPTCHA Enterprise</1>, providing server-side bot detection and helping prevent automated spam submissions.",
+        },
+        challenges: {
+            heading: "Challenges",
+            p1: "Initially, this website was built with no framework, just PHP+JS+CSS, with HTML generated by PHP. Once I <1>developed the first version of the Colorpicker application</1>, I decided I wanted to rebuild the whole website using React.",
+        },
+        conclusion: {
+            heading: "Conclusion",
+            p1: "Building this website taught me a lot of things. Not only I improved my React skills, but I also learned how to setup a web server, how to setup recaptcha, etc.",
+        },
+    },
     projectCards: {
         colorpicker: {
             title: "colorpicker-react",
             description: "A colorpicker web application built using React.",
+            image: {
+                label: "Image of the colorpicker-react application",
+            },
         },
         noted: {
             title: "Noted",
             description: "Note taking android application built with React Native.",
-
+            image: {
+                label: "Image of the Noted application",
+            },
         },
         andrecarvalhoIo: {
             title: "andrecarvalho.io",
             description: "A portfolio website showcasing my projects.",
+            image: {
+                label: "Image of the andrecarvalho.io website",
+            },
         },
         readMore: "Read more",
         tryIt: "Try it",
@@ -513,7 +595,27 @@ export const en: Translation = {
     },
     general: {
         headingCopyHoverTxt: "Click to copy the link to this section.",
-    }
+    },
+    carousel: {
+        nextButtonLabel: "Next slide",
+        prevButtonLabel: "Previous slide",
+        nextButtonIconLabel: "Right arrow icon",
+        prevButtonIconLabel: "Left arrow icon",
+    },
+    icons: {
+        callIcon: {
+            label: "Phone icon",
+        },
+        linkedinIcon: {
+            label: "Linkedin icon",
+        },
+        locationIcon: {
+            label: "location icon",
+        },
+        mailIcon: {
+            label: "mail icon",
+        },
+    },
 };
 
 export const _translations: Translations = {

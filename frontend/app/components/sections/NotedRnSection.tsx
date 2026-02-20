@@ -18,7 +18,7 @@ export default function NotedRnSection({ ...props }: SectionProps) {
             >
                 {t('notedRn.heading')}
             </ProjectHeading>
-            <Heading id="what-is-notedRn" as="h3">
+            <Heading id="what-is-notedRn" as="h3" className="text-[1.5rem]">
                 {t('notedRn.whatIs.heading')}
             </Heading>
             <Paragraph>{t('notedRn.whatIs.p1')}</Paragraph>
@@ -40,7 +40,7 @@ export default function NotedRnSection({ ...props }: SectionProps) {
                 }
             </ul>
             <br />
-            <Heading id="tech-overview-notedRn" as="h3">
+            <Heading id="tech-overview-notedRn" as="h3" className="text-[1.5rem]">
                 {t('notedRn.techOverview.heading')}
             </Heading>
             <Paragraph>
@@ -112,7 +112,7 @@ export default function NotedRnSection({ ...props }: SectionProps) {
                 />
             </Paragraph>
             <br />
-            <Heading id="conclusion-notedRn" as="h3">
+            <Heading id="conclusion-notedRn" as="h3" className="text-[1.5rem]">
                 {t('notedRn.conclusion.heading')}
             </Heading>
             <Paragraph>{t('notedRn.conclusion.p1')}</Paragraph>
