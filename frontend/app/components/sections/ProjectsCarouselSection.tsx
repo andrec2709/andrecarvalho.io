@@ -36,7 +36,7 @@ export default function ProjectsCarouselSection({ ...props }: SectionProps) {
                     backgroundImgSrc={NotedImg}
                     title={t('projectCards.noted.title')}
                     body={t('projectCards.noted.description')}
-                    readMoreHref="http://localhost:5173/portfolio#notedRn"
+                    readMoreHref="/portfolio#notedRn"
                     tryHref="https://github.com/andrec2709/noted-rn"
                     imgProps={{
                         "aria-label": t('projectCards.noted.image.label'),
@@ -46,7 +46,7 @@ export default function ProjectsCarouselSection({ ...props }: SectionProps) {
                     backgroundImgSrc={WebsiteImg}
                     title={t('projectCards.andrecarvalhoIo.title')}
                     body={t('projectCards.andrecarvalhoIo.description')}
-                    readMoreHref=""
+                    readMoreHref="/portfolio#andrecarvalho-io"
                     tryHref="https://andrecarvalho.io"
                     imgProps={{
                         "aria-label": t('projectCards.andrecarvalhoIo.image.label'),

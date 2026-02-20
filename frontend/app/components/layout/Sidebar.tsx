@@ -7,7 +7,7 @@ import { useTheme } from "~/contexts/ThemeContext";
 import { isTheme, themes } from "~/domain/theme/types";
 import type { DropdownOptions } from "../ui/Dropdown";
 import SidebarItem from "./SidebarItem";
-import { validLanguages } from "~/domain/language/types";
+import { validLanguages, type Language } from "~/domain/language/types";
 import { isLanguage } from "~/domain/language/utils";
 import { useTranslation } from "react-i18next";
 
@@ -75,7 +75,7 @@ export const Sidebar = () => {
                 />
                 <Dropdown
                     options={langOptions}
-                    value={t(`langOptions.${i18n.resolvedLanguage as "ptBR" | "en"}`)}
+                    value={t(`langOptions.${i18n.resolvedLanguage as Language}`)}
                     onClick={v => { if (isLanguage(v)) i18n.changeLanguage(v); }}
                     className="text-xl w-full"
                 />

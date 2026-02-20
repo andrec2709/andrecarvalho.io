@@ -1,24 +1,15 @@
 import type { Route } from "@rr/home/+types/index";
-import Carousel from "~/components/ui/Carousel";
 import Main from "~/components/ui/Main";
 import AboutMeSection from "~/components/sections/AboutMeSection";
-import Section from "~/components/layout/Section";
 import ContactFormSection from "~/components/sections/ContactFormSection";
 import LogoIcon from "../../assets/logo.svg";
-import EmblaCarousel from "~/components/ui/EmblaCarousel";
 import useReposRepository from "~/application/github/repos/useReposRepository";
 import { useEffect, useState, type JSX } from "react";
-import { type RepoCard } from "~/domain/github/repos/types";
 import Card from "~/components/ui/Card";
-import ProjectCard from "~/components/ui/ProjectCard";
-import ColorpickerImg from '../../assets/images/colorpicker-screenshot.png';
-import NotedImg from '../../assets/images/noted-shots.jpg';
-import WebsiteImg from '../../assets/images/website-shot.png';
 
-import Heading from "~/components/ui/Heading";
-import Autoplay from "embla-carousel-autoplay";
 import ProjectsCarouselSection from "~/components/sections/ProjectsCarouselSection";
-import RepositoriesCarouselSection from "~/components/sections/RepositoriesCarouselSection";
+import GithubCalendar from "~/components/ui/GithubCalendar";
+import GithubCalendarSection from "~/components/sections/GithubCalendarSection";
 
 export function meta({ }: Route.MetaArgs) {
   return [
@@ -49,18 +40,6 @@ export function links() {
 }
 
 export default function Home() {
-  const repo = useReposRepository();
-  const [data, setData] = useState<JSX.Element[]>([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const items = await repo.getAll();
-      const newData = items.map(item => <Card repoData={item} key={item.id} />);
-      setData(newData);
-
-    };
-    fetchData();
-  }, []);
 
   return (
     <>
@@ -68,6 +47,7 @@ export default function Home() {
         <ProjectsCarouselSection classNameContainer="pt-25" />
         <AboutMeSection classNameContainer="bg-background-2 text-on-background-2"/>
         <ContactFormSection />
+        <GithubCalendarSection />
       </Main>
     </>
   );

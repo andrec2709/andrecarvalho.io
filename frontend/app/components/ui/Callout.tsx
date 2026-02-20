@@ -3,6 +3,7 @@ import StylusIcon from "./icons/StylusIcon";
 import CollapseIcon from "./icons/CollapseIcon";
 import ExpandIcon from "./icons/ExpandIcon";
 import { useTranslation } from "react-i18next";
+import { cn } from "~/utils";
 
 type Props = {
     type?: string;
@@ -14,6 +15,7 @@ type Props = {
 
 export const Callout = ({ type = 'note', title, titleId, children, initialIsExpanded = true }: Props) => {
     const [isExpanded, setIsExpanded] = useState(initialIsExpanded);
+    const [isHovering, setIsHovering] = useState(false);
     const { t } = useTranslation();
 
     let typeIcon;
@@ -30,6 +32,8 @@ export const Callout = ({ type = 'note', title, titleId, children, initialIsExpa
             <div
                 className="callout__header flex items-center gap-x-2 w-full h-fit cursor-pointer"
                 onClick={e => setIsExpanded(!isExpanded)}
+                onPointerEnter={() => setIsHovering(true)}
+                onPointerLeave={() => setIsHovering(false)}
                 tabIndex={0}
                 role="button"
             >
@@ -38,16 +42,16 @@ export const Callout = ({ type = 'note', title, titleId, children, initialIsExpa
                 {
                     isExpanded
                         ? <CollapseIcon
-                            className="fill-callout-note-icons w-6 transition-transform duration-100 ease hover:scale-150"
+                            className={cn("fill-callout-note-icons w-6 transition-transform duration-100 ease", isHovering && 'scale-150')}
                             hoverText={t('callout.collapseHoverTxt')}
                         />
                         : <ExpandIcon
-                            className="fill-callout-note-icons w-6 transition-transform duration-100 ease hover:scale-150"
+                            className={cn("fill-callout-note-icons w-6 transition-transform duration-100 ease", isHovering && 'scale-150')}
                             hoverText={t('callout.expandHoverTxt')}
                         />
                 }
             </div>
-            <p className={`${isExpanded ? 'block' : 'hidden'} mt-5 mb-auto w-full text-callout-note-on-background`}>{children}</p>
+            <p className={cn(`mt-5 mb-auto w-full text-callout-note-on-background`, isExpanded ? 'block' : 'hidden')}>{children}</p>
         </button>
     );
 };

@@ -29,12 +29,7 @@ export const ColorpickerSection = ({ ...props }: Props) => {
             <Paragraph>{t('colorpicker.whatIs.p2')}</Paragraph>
             <br />
             <Paragraph>
-                <Trans
-                    i18nKey={'colorpicker.whatIs.p3'}
-                    components={{
-                        1: <strong />,
-                    }}
-                />
+                {t('colorpicker.whatIs.p3')}
             </Paragraph>
             <br />
             <Paragraph>{t('colorpicker.whatIs.p4')}</Paragraph>
@@ -43,7 +38,7 @@ export const ColorpickerSection = ({ ...props }: Props) => {
                 {t('colorpicker.techOverview.heading')}
             </Heading>
             <Paragraph>
-                <Trans 
+                <Trans
                     i18nKey={'colorpicker.techOverview.p1'}
                     components={{
                         1: <Code />
@@ -69,7 +64,7 @@ export const ColorpickerSection = ({ ...props }: Props) => {
             </Paragraph>
             <br />
             <Paragraph>
-                <Trans 
+                <Trans
                     i18nKey={'colorpicker.techOverview.p3'}
                     components={{
                         1: (

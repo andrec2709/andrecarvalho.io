@@ -6,6 +6,7 @@ import Heading from "../ui/Heading";
 import Paragraph from "../ui/Paragraph";
 import Code from "../ui/Code";
 import { Link } from "react-router-dom";
+import Callout from "../ui/Callout";
 
 export default function AndreCarvalhoIoSection({ ...props }: SectionProps) {
     const { t } = useTranslation();
@@ -30,7 +31,7 @@ export default function AndreCarvalhoIoSection({ ...props }: SectionProps) {
                 {t('andreCarvalhoIo.techOverview.heading')}
             </Heading>
             <Paragraph>
-                <Trans 
+                <Trans
                     i18nKey={'andreCarvalhoIo.techOverview.p1'}
                     components={{
                         1: <Code />,
@@ -39,7 +40,7 @@ export default function AndreCarvalhoIoSection({ ...props }: SectionProps) {
             </Paragraph>
             <br />
             <Paragraph>
-                <Trans 
+                <Trans
                     i18nKey={'andreCarvalhoIo.techOverview.p2'}
                     components={{
                         1: <a href="https://react.i18next.com/" rel="noopener noreferrer" className="body-link" target="_blank"></a>,
@@ -48,20 +49,30 @@ export default function AndreCarvalhoIoSection({ ...props }: SectionProps) {
             </Paragraph>
             <br />
             <Paragraph>
-                <Trans 
+                <Trans
                     i18nKey={'andreCarvalhoIo.techOverview.p3'}
                     components={{
                         1: <Code />,
                         2: <a href="https://github.com/grubersjoe/react-activity-calendar" rel="noopener noreferrer" className="body-link" target="_blank"></a>,
                         3: <a href="https://github.com/davidjerleke/embla-carousel" rel="noopener noreferrer" className="body-link" target="_blank"></a>,
-                        4: <a href="https://github.com/andrec2709/andrecarvalho.io" rel="noopener noreferrer" className="body-link" target="_blank"></a>,
                         5: <strong />,
                     }}
                 />
             </Paragraph>
+            <Callout
+                title={t('andreCarvalhoIo.techOverview.p3Note.title')}
+                titleId="github-api-note"
+            >
+                <Trans 
+                    i18nKey={'andreCarvalhoIo.techOverview.p3Note.body'}
+                    components={{
+                        1: <a href="https://github.com/andrec2709/andrecarvalho.io" rel="noopener noreferrer" className="body-link" target="_blank"></a>,
+                    }}
+                />
+            </Callout>
             <br />
             <Paragraph>
-                <Trans 
+                <Trans
                     i18nKey={'andreCarvalhoIo.techOverview.p4'}
                     components={{
                         1: <strong />,
@@ -73,7 +84,7 @@ export default function AndreCarvalhoIoSection({ ...props }: SectionProps) {
                 {t('andreCarvalhoIo.challenges.heading')}
             </Heading>
             <Paragraph>
-                <Trans 
+                <Trans
                     i18nKey={'andreCarvalhoIo.challenges.p1'}
                     components={{
                         1: <Link to="/portfolio#colorpicker" rel="noopener noreferrer" className="body-link" target="_blank"></Link>,

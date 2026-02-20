@@ -6,14 +6,14 @@ import OpenNewIcon from "./icons/OpenNewIcon";
 export const Card = ({ className, id, repoData }: { className?: string; id?: string; repoData: RepoCard }) => {
     const { t, i18n } = useTranslation();
 
-    const noDescriptionText = i18n.resolvedLanguage === 'ptBR' ? 'Descrição não disponível' : 'No description available';
+    const noDescriptionText = i18n.resolvedLanguage === 'pt-BR' ? 'Descrição não disponível' : 'No description available';
     let repoDescription = repoData?.description ?? noDescriptionText;
     repoDescription = repoDescription.length < 50 ? repoDescription : repoDescription.substring(0, 50) + '...';
 
 
 
     const dt = new Date(repoData.updated_at);
-    const locale = i18n.resolvedLanguage === 'ptBR' ? 'pt-BR' : 'en-US';
+    const locale = i18n.resolvedLanguage === 'pt-BR' ? 'pt-BR' : 'en-US';
     const formattedDate = dt.toLocaleString(locale, { month: 'short', day: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
 
     return (

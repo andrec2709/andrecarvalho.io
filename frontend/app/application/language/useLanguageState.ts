@@ -7,7 +7,7 @@ export default function useLanguageState(key: string) {
 
     const userPref: Language =
         (navigator.language === 'pt-BR' || navigator.language === 'pt')
-            ? 'ptBR'
+            ? 'pt-BR'
             : 'en'
 
     const [value, setValue] = useState(() => userPref);

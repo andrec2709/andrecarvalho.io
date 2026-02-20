@@ -1,4 +1,4 @@
-export const validLanguages = ['ptBR', 'en'] as const;
+export const validLanguages = ['pt-BR', 'en'] as const;
 
 export type Language = (typeof validLanguages)[number];
 
@@ -36,6 +36,16 @@ type ProjectCardEntry = {
     image: ImageContent;
 };
 
+type CalloutEntry = {
+    title: string;
+    body: string;
+};
+
+type withAbbreviation = {
+    fullName: string;
+    abbr: string;
+};
+
 export type Translation = {
     header: {
         start: string;
@@ -51,7 +61,7 @@ export type Translation = {
         portfolio: string;
     };
     langOptions: {
-        ptBR: string;
+        "pt-BR": string;
         en: string;
     };
     contact: PageMetaData & {
@@ -142,6 +152,7 @@ export type Translation = {
             p1: string;
             p2: string;
             p3: string;
+            p3Note: CalloutEntry;
             p4: string;
         };
         challenges: PageSection & {
@@ -220,7 +231,43 @@ export type Translation = {
         callIcon: ImageContent;
         locationIcon: ImageContent;
         linkedinIcon: ImageContent;
+        linkIcon: ImageContent;
     };
+    githubCalendar: PageSection & {
+        tooltips: {
+            activityText: string;
+        };
+        labels: {
+            totalCount: string;
+            legend: {
+                less: string;
+                more: string;
+            };
+        };
+    };
+    months: {
+        jan: withAbbreviation;
+        feb: withAbbreviation;
+        mar: withAbbreviation;
+        apr: withAbbreviation;
+        may: withAbbreviation;
+        jun: withAbbreviation;
+        jul: withAbbreviation;
+        aug: withAbbreviation;
+        sep: withAbbreviation;
+        oct: withAbbreviation;
+        nov: withAbbreviation;
+        dec: withAbbreviation;
+    };
+    weekdays: {
+        sun: withAbbreviation;
+        mon: withAbbreviation;
+        tue: withAbbreviation;
+        wed: withAbbreviation;
+        thu: withAbbreviation;
+        fri: withAbbreviation;
+        sat: withAbbreviation;
+    }
 };
 
 export type Translations = Record<Language, Translation>;

@@ -18,6 +18,7 @@ import { ToolTipProvider } from "./contexts/ToolTipContext";
 import ToolTip from "./components/ui/ToolTip";
 import { useEffect, useState } from "react";
 import './domain/language/i18n';
+import { useTranslation } from "react-i18next";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -34,6 +35,20 @@ export const links: Route.LinksFunction = () => [
     rel: "icon",
     href: "/favicon.svg"
   }
+];
+
+export const meta: Route.MetaFunction = () => [
+  { title: 'Andre Carvalho – Developer & Designer' },
+  { name: 'description', content: 'Portfolio, projects and contact information for Andre Carvalho. Web development, frontend, design and more.' },
+  { property: 'og:type', content: 'website' },
+  { property: 'og:title', content: 'Andre Carvalho – Portfolio' },
+  { property: 'og:description', content: 'Developer & designer portfolio showing my projects and work.' },
+  { property: 'og:image', content: 'https://andrecarvalho.io/assets/logo.svg' },
+  { property: 'og:image:alt', content: 'Andre Carvalho logo' },
+  { name: 'twitter:card', content: 'summary_large_image' },
+  { name: 'twitter:title', content: 'Andre Carvalho – Portfolio' },
+  { name: 'twitter:description', content: 'Developer & designer portfolio showing my projects and work.' },
+  { name: 'twitter:image', content: 'https://andrecarvalho.io/assets/logo.svg' },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -56,6 +71,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   const { hash } = useLocation();
+  const { i18n } = useTranslation();
 
   useEffect(() => {
     /* 
@@ -75,6 +91,13 @@ export default function App() {
       }
     }
   }, [hash]);
+
+  useEffect(() => {
+    /* 
+    Updates the <html> tag's lang attribute, whenever resolvedLanguage changes.
+    */
+    if (i18n.resolvedLanguage) document.documentElement.setAttribute('lang', i18n.resolvedLanguage);
+  }, [i18n.resolvedLanguage]);
 
   return (
     <>

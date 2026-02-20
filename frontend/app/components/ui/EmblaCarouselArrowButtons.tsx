@@ -39,8 +39,12 @@ export const usePrevNextButtons = (
     useEffect(() => {
         if (!emblaApi) return
 
-        onSelect(emblaApi)
-        emblaApi.on('reInit', onSelect).on('select', onSelect)
+        const id = requestAnimationFrame(() => {
+            onSelect(emblaApi);
+            emblaApi.on('reInit', onSelect).on('select', onSelect);
+        });
+
+        () => cancelAnimationFrame(id);
     }, [emblaApi, onSelect])
 
     return {
@@ -77,7 +81,7 @@ export const PrevButton = (props: PropType) => {
 
 export const NextButton = (props: PropType) => {
     const { children, disabled, ...restProps } = props
-    const {t} = useTranslation();
+    const { t } = useTranslation();
 
     return (
         <button

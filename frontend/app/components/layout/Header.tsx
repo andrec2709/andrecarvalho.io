@@ -4,7 +4,7 @@ import Logo from "../ui/icons/Logo";
 import Dropdown, { type DropdownOptions } from "../ui/Dropdown";
 import { isTheme, themes } from "~/domain/theme/types";
 import { useTheme } from "~/contexts/ThemeContext";
-import { validLanguages } from "~/domain/language/types";
+import { validLanguages, type Language } from "~/domain/language/types";
 
 import SidebarIcon from "../ui/icons/SidebarIcon";
 import Sidebar from "./Sidebar";
@@ -63,7 +63,7 @@ export const Header = () => {
                 />
                 <Dropdown
                     options={langOptions}
-                    value={t(`langOptions.${i18n.resolvedLanguage as "ptBR" | "en"}`)}
+                    value={t(`langOptions.${i18n.resolvedLanguage as Language}`)}
                     onClick={v => {
                         if (isLanguage(v)) i18n.changeLanguage(v);
                     }}

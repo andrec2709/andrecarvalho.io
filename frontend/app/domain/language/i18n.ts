@@ -3,12 +3,11 @@ import { initReactI18next } from 'react-i18next';
 import { en, ptBR } from './translations';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
-
 i18next
     .use(LanguageDetector)
     .use(initReactI18next)
     .init({
-        supportedLngs: ['en', 'ptBR'],
+        supportedLngs: ['en', 'pt-BR'],
         detection: {
             lookupLocalStorage: 'lang',
         },
@@ -16,7 +15,7 @@ i18next
             en: {
                 translation: en,
             },
-            ptBR: {
+            "pt-BR": {
                 translation: ptBR,
             }
         },

@@ -10,7 +10,6 @@ export default function ProjectsOverviewSection({ ...props }: SectionProps) {
 
     return (
         <Section {...props}>
-            {/* <Heading as="h1" id="overview">{i18n.t('portfolio.projectsOverview.heading')}</Heading> */}
             <Heading as="h1" id="overview">{t('portfolio.projectsOverview.heading')}</Heading>
             <Paragraph>{t('portfolio.projectsOverview.p1')}</Paragraph>
             <br />

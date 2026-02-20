@@ -172,6 +172,13 @@
   --code-background: #222222;
   --code-on-background: #f0f0f0;
 
+  --gh-calendar-tooltip-background: #00c090;
+  --gh-calendar-tooltip-foreground: #000000;
+  --gh-calendar-label: #fff;
+
+  --gh-calendar-low-color: #04110d;
+  --gh-calendar-high-color: #04ff7e;
+
 }
 
 :root.theme-light {
@@ -226,6 +233,11 @@
   --code-background: #bbbbbb;
   --code-on-background: #000;
 
+  --gh-calendar-tooltip-background: #000;
+  --gh-calendar-tooltip-foreground: #fff;
+  --gh-calendar-label: #000;
+  --gh-calendar-low-color: #baf7c1;
+  --gh-calendar-high-color: #009987;
 }
 
 
@@ -276,6 +288,13 @@
   --color-code-border: var(--code-border);
   --color-code-background: var(--code-background);
   --color-code-on-background: var(--code-on-background);
+
+  --color-gh-calendar-tooltip-background: var(--gh-calendar-tooltip-background);
+  --color-gh-calendar-tooltip-foreground: var(--gh-calendar-tooltip-foreground);
+  --color-gh-calendar-label: var(--gh-calendar-label);
+
+  --color-gh-calendar-low-color: var(--gh-calendar-low-color);
+  --color-gh-calendar-high-color: var(--gh-calendar-high-color);
 }
 
 * {
@@ -463,6 +482,22 @@ body {
   color: var(--embla-button-icon);
 }
 
+/* Github Calendar */
+
+.react-activity-calendar__tooltip {
+  width: max-content;
+  max-width: calc(100vw - 20px);
+  padding: .2rem .5rem;
+  border-radius: .25rem;
+  background-color: var(--gh-calendar-tooltip-background);
+  color: var(--gh-calendar-tooltip-foreground);
+  font-size: .8rem;
+
+  .react-activity-calendar__tooltip-arrow {
+    fill: var(--gh-calendar-tooltip-background);
+  }
+
+}
 
 
 @media print {

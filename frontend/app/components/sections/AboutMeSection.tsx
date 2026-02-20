@@ -13,7 +13,7 @@ export const AboutMeSection = ({ classNameContainer, classNameContent }: Props) 
     const {t} = useTranslation();
     return (
         <Section classNameContainer={classNameContainer} classNameContent={classNameContent}>
-            <Heading id="about-me">
+            <Heading id="about-me" as="h1">
                 {t('about.aboutMe.heading')}
             </Heading>
             <p className="paragraph">{t('about.aboutMe.p1')}</p><br />
