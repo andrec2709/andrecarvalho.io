@@ -477,7 +477,7 @@ body {
 }
 
 .embla__button__svg {
-  width: 18px;  
+  width: 18px;
   height: 18px;
   color: var(--embla-button-icon);
 }
@@ -497,6 +497,10 @@ body {
     fill: var(--gh-calendar-tooltip-background);
   }
 
+}
+
+.react-activity-calendar__scroll-container {
+  scrollbar-width: none;
 }
 
 .grecaptcha-badge {
