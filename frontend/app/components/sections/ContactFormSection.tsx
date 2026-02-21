@@ -174,6 +174,7 @@ export const ContactFormSection = ({ classNameContainer, classNameContent }: Pro
                     {t('contact.contactMe.send')}
                 </Button>
             </Form>
+            <br />
         </Section>
     );
 };

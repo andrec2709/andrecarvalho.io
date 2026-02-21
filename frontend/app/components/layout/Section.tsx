@@ -23,7 +23,7 @@ export const Section = ({ children, classNameContainer, classNameContent, varian
 
     
     return (
-        <div className={cn(`w-full p-4 flex justify-center border not-last-of-type:border-b-0 border-border-background-2 print:border-0`, classNameContainer)}>
+        <div className={cn(`w-full p-4 flex justify-center border not-last-of-type:border-b-0 first-of-type:border-t-0 first-of-type:pt-10 border-border-background-2 print:border-0`, classNameContainer)}>
             <section
                 className={cn(classNameContent, contentStyle)}
             >

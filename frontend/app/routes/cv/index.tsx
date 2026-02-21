@@ -18,7 +18,7 @@ export function links() {
 export default function Cv() {
     return (
         <Main>
-            <Section classNameContainer="pt-25 print:pt-0 border-0" classNameContent="max-w-300">
+            <Section classNameContainer="print:pt-0 border-0" classNameContent="max-w-300">
                 <CvSection />
             </Section>
         </Main>

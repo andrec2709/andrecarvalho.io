@@ -12,6 +12,7 @@ export default function GithubCalendarSection({ ...props }: SectionProps) {
                 {t('githubCalendar.heading')}
             </Heading>
             <GithubCalendar />
+            <br />
         </Section>
     );
 }

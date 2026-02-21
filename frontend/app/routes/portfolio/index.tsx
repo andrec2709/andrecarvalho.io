@@ -43,7 +43,7 @@ export const Portfolio = () => {
     return (
         <>
             <Main>
-                <RepositoriesCarouselSection classNameContainer="pt-25" />
+                <RepositoriesCarouselSection />
                 <ProjectsOverviewSection classNameContainer="bg-background-2 text-on-background-2" />
                 <ColorpickerSection />
                 <NotedRnSection classNameContainer="bg-background-2 text-on-background-2" />

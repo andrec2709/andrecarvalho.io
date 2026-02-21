@@ -36,7 +36,7 @@ export const Contact = () => {
   return (
     <>
       <Main>
-        <ContactFormSection classNameContainer="pt-25" />
+        <ContactFormSection />
       </Main>
     </>
   );

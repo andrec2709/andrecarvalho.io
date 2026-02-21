@@ -44,7 +44,7 @@ export default function Home() {
   return (
     <>
       <Main>
-        <ProjectsCarouselSection classNameContainer="pt-25" />
+        <ProjectsCarouselSection />
         <AboutMeSection classNameContainer="bg-background-2 text-on-background-2"/>
         <ContactFormSection />
         <GithubCalendarSection />

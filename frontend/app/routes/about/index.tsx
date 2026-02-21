@@ -39,7 +39,7 @@ export const About = () => {
     return (
         <>
             <Main>
-                <AboutMeSection classNameContainer="pt-25" />
+                <AboutMeSection />
                 <TechStackSection variant="wide" classNameContainer="bg-background-2 text-on-background-2" />
                 <SkillAssessmentSection />
             </Main>
