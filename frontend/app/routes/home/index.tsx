@@ -20,13 +20,13 @@ export function meta({ }: Route.MetaArgs) {
     { name: "twitter:card", content: "summary" },
     { name: "twitter:title", content: "Home - André Carvalho" },
     { name: "twitter:description", content: "Hello, I am André, a 24-year-old developer living in Curitiba, south of Brazil." },
-    { name: "twitter:image", content: LogoIcon },
+    { name: "twitter:image", content: 'https://andrecarvalho.io/assets/logo.svg' },
 
     { property: "og:url", content: "https://andrecarvalho.io/" },
     { property: "og:type", content: "website" },
     { property: "og:title", content: "Home - André Carvalho" },
     { property: "og:description", content: "Hello, I am André, a 24-year-old developer living in Curitiba, south of Brazil." },
-    { property: "og:image", content: LogoIcon },
+    { property: "og:image", content: 'https://andrecarvalho.io/assets/logo.svg' },
   ];
 }
 
