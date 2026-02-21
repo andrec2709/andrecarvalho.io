@@ -27,7 +27,7 @@ export const Callout = ({ type = 'note', title, titleId, children, initialIsExpa
 
     return (
         <button
-            className={`callout-container relative w-[clamp(200px,500px,90vw)] ${isExpanded ? 'min-h-[150px]' : ''} h-fit text-wrap wrap-break-word px-5 py-3 mt-10 mb-10 rounded-2x bg-callout-note-background border border-callout-note-border rounded-2xl flex flex-col items-start text-left`}
+            className={cn(`callout-container relative w-[clamp(200px,500px,90vw)] h-fit text-wrap wrap-break-word px-5 py-3 mt-10 mb-10 rounded-2x bg-callout-note-background border border-callout-note-border rounded-2xl flex flex-col items-start text-left`,  isExpanded && 'min-h-[150px]')}
         >
             <div
                 className="callout__header flex items-center gap-x-2 w-full h-fit cursor-pointer"
@@ -38,7 +38,7 @@ export const Callout = ({ type = 'note', title, titleId, children, initialIsExpa
                 role="button"
             >
                 {typeIcon}
-                <h3 id={titleId} className="callout__heading w-[80%] mr-auto wrap-break-word text-wrap text-xl text-callout-note-on-background">{title}</h3>
+                <p id={titleId} className="w-[80%] mr-auto wrap-break-word text-wrap text-xl text-callout-note-on-background">{title}</p>
                 {
                     isExpanded
                         ? <CollapseIcon

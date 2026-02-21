@@ -1,6 +1,7 @@
 import type { AnchorHTMLAttributes, ImgHTMLAttributes } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, type LinkProps } from 'react-router';
+import { cn } from '~/utils';
 
 type ProjectCardProps = {
     backgroundImgSrc: string;
@@ -19,7 +20,7 @@ function ProjectCardButton({ text, ...props }: ProjectCardButtonProps) {
     return (
         <Link
             {...props}
-            className='text-white text-center text-sm bg-cyan-950/50 hover:bg-cyan-900/75 active:bg-cyan-600/50 transition-[background-color,translate] hover:-translate-y-1 duration-100 border border-cyan-400 rounded-md font-bold p-2 h-fit min-w-20'
+            className='text-white text-center text-sm bg-cyan-950/50 hover:bg-cyan-900/75 active:bg-cyan-600/50 transition-[background-color,translate] hover:-translate-y-1 duration-100 border border-cyan-400 rounded-md font-bold p-2 h-fit min-w-10'
         >
             {text}
         </Link>
@@ -38,7 +39,11 @@ export default function ProjectCard({ tryHref, readMoreHref, backgroundImgSrc, i
                 {...imgProps}
             />
             <div className='w-full h-1/2 hover:h-2/3 transition-[height] bg-black/75 absolute bottom-0 rounded-2xl backdrop-blur-md border border-white/20 p-4 flex flex-col gap-y-2'>
-                <h2 className='text-white text-2xl border-b border-b-white/25 w-full text-nowrap overflow-clip font-bold'>{title}</h2>
+                <p
+                    className={cn('text-white text-lg min-[375px]:text-2xl border-b border-b-white/25 w-full overflow-clip font-bold')}
+                >
+                    {title}
+                </p>
                 <p className='text-white text-sm w-full overflow-y-hidden scrollbar-hidden wrap-break-word text-wrap'>{body}</p>
                 <div className='flex gap-x-2 h-fit items-end justify-end mt-auto'>
                     <ProjectCardButton text={t('projectCards.tryIt')} to={tryHref} target='_blank' />

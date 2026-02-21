@@ -499,6 +499,9 @@ body {
 
 }
 
+.grecaptcha-badge {
+  z-index: 999;
+}
 
 @media print {
   .grecaptcha-badge {

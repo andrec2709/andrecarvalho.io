@@ -314,7 +314,7 @@ export const en: Translation = {
         },
     },
     githubCalendar: {
-        heading: "Github Activity Calendar",
+        heading: "Activity Calendar",
         tooltips: {
             activityText: "{{count}} activities on {{date}}",
         },
