@@ -312,6 +312,18 @@ export const ptBR: Translation = {
         linkIcon: {
             label: "Ícone indicando que um link pode ser copiado"
         },
+        stylusIcon: {
+            label: "Ícone de uma caneta"
+        },
+        collapseIcon: {
+            label: "Fechar"
+        },
+        expandIcon: {
+            label: "Expandir"
+        },
+        openExternalIcon: {
+            label: "Abrir em nova aba"
+        },
     },
     githubCalendar: {
         heading: "Contribuições",

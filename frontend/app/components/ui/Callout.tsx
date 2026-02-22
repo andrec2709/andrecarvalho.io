@@ -26,19 +26,17 @@ export const Callout = ({ type = 'note', title, titleId, children, initialIsExpa
     }
 
     return (
-        <button
+        <div
             className={cn(`callout-container relative w-[clamp(200px,500px,90vw)] h-fit text-wrap wrap-break-word px-5 py-3 mt-10 mb-10 rounded-2x bg-callout-note-background border border-callout-note-border rounded-2xl flex flex-col items-start text-left`,  isExpanded && 'min-h-[150px]')}
         >
-            <div
+            <button
                 className="callout__header flex items-center gap-x-2 w-full h-fit cursor-pointer"
                 onClick={e => setIsExpanded(!isExpanded)}
                 onPointerEnter={() => setIsHovering(true)}
                 onPointerLeave={() => setIsHovering(false)}
-                tabIndex={0}
-                role="button"
             >
                 {typeIcon}
-                <p id={titleId} className="w-[80%] mr-auto wrap-break-word text-wrap text-xl text-callout-note-on-background">{title}</p>
+                <p id={titleId} className="w-[80%] mr-auto wrap-break-word text-left text-wrap text-xl text-callout-note-on-background">{title}</p>
                 {
                     isExpanded
                         ? <CollapseIcon
@@ -50,9 +48,9 @@ export const Callout = ({ type = 'note', title, titleId, children, initialIsExpa
                             hoverText={t('callout.expandHoverTxt')}
                         />
                 }
-            </div>
+            </button>
             <p className={cn(`mt-5 mb-auto w-full text-callout-note-on-background`, isExpanded ? 'block' : 'hidden')}>{children}</p>
-        </button>
+        </div>
     );
 };
 

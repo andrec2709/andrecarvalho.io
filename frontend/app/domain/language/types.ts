@@ -232,6 +232,10 @@ export type Translation = {
         locationIcon: ImageContent;
         linkedinIcon: ImageContent;
         linkIcon: ImageContent;
+        stylusIcon: ImageContent;
+        expandIcon: ImageContent;
+        collapseIcon: ImageContent;
+        openExternalIcon: ImageContent;
     };
     githubCalendar: PageSection & {
         tooltips: {

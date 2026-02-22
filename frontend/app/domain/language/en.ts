@@ -312,6 +312,18 @@ export const en: Translation = {
         linkIcon: {
             label: "An icon indicating a link can be copied",
         },
+        stylusIcon: {
+            label: "Icon of a pen",
+        },
+        collapseIcon: {
+            label: "Collapse",
+        },
+        expandIcon: {
+            label: "Expand",
+        },
+        openExternalIcon: {
+            label: "Open in new tab"
+        },
     },
     githubCalendar: {
         heading: "Contributions",

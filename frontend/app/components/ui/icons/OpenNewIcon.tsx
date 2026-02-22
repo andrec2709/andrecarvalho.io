@@ -1,11 +1,23 @@
+import { useTranslation } from "react-i18next";
+import type { IconProps } from "~/types/icon";
+import { cn } from "~/utils";
 
-export const OpenNewIcon = ({ className, hoverText }: { className?: string; hoverText?: string }) => {
+type Props = Omit<IconProps, 'variant' | 'className'> & {
+    hoverText?: string;
+    className?: string;
+};
+
+export const OpenNewIcon = ({ className = '', size = 24, hoverText = '', ...props }: Props) => {
+    const { t } = useTranslation();
+
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 -960 960 960"
-            aria-label="click to open link"
-            className={`w-6 aspect-square cursor-pointer hover:scale-150 transition-transform duration-100 ease ${className}`}
+            aria-label={t('icons.openExternalIcon.label')}
+            height={size}
+            {...props}
+            className={cn(`aspect-square cursor-pointer hover:scale-150 transition-transform duration-100 ease`, className)}
         >
             <title>{hoverText}</title>
             <path
