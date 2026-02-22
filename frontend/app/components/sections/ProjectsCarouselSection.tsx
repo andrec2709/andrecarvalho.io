@@ -37,7 +37,7 @@ export default function ProjectsCarouselSection({ ...props }: SectionProps) {
                     title={t('projectCards.noted.title')}
                     body={t('projectCards.noted.description')}
                     readMoreHref="/portfolio#notedRn"
-                    tryHref="https://github.com/andrec2709/noted-rn"
+                    tryHref="https://github.com/andrec2709/noted-rn/releases/latest"
                     imgProps={{
                         "aria-label": t('projectCards.noted.image.label'),
                     }}
