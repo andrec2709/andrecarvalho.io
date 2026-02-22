@@ -503,6 +503,22 @@ body {
   scrollbar-width: none;
 }
 
+.react-activity-calendar__footer {
+  margin-left: 0 !important;
+}
+
+@media (width < 320px ) {
+  .react-activity-calendar__footer {
+    display: flex !important;
+    flex-direction: column-reverse !important;
+    
+  }
+
+  .react-activity-calendar__legend-colors {
+    margin-left: 0 !important;
+  }
+}
+
 .grecaptcha-badge {
   z-index: 999;
 }

@@ -314,12 +314,12 @@ export const en: Translation = {
         },
     },
     githubCalendar: {
-        heading: "Activity Calendar",
+        heading: "Contributions",
         tooltips: {
-            activityText: "{{count}} activities on {{date}}",
+            activityText: "{{count}} contributions on {{date}}",
         },
         labels: {
-            totalCount: "{{count}} activities",
+            totalCount: "{{count}} contributions",
             legend: {
                 less: "less",
                 more: "more",

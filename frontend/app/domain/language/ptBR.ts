@@ -314,9 +314,9 @@ export const ptBR: Translation = {
         },
     },
     githubCalendar: {
-        heading: "Calendário de Atividade",
+        heading: "Contribuições",
         tooltips: {
-            activityText: "{{count}} atividades em {{date}}"
+            activityText: "{{count}} contribuições em {{date}}"
         },
         labels: {
             totalCount: "{{count}} atividades",
