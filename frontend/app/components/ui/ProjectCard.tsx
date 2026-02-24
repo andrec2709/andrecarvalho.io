@@ -34,7 +34,7 @@ export default function ProjectCard({ backgroundImgSrc, imgProps, title, body, .
                 <p className='text-white text-sm w-full overflow-y-hidden scrollbar-hidden wrap-break-word text-wrap'>{body}</p>
                 <div className='flex gap-x-2 h-fit items-end justify-end mt-auto'>
                     <p
-                        className="transition-transform hover:-translate-x-2 w-full text-right text-cyan-400"
+                        className="transition-transform hover:-translate-x-2 w-full hover:underline text-right text-cyan-400"
                     >
                         {t('projectCards.readMore')} &rarr;
                     </p>
