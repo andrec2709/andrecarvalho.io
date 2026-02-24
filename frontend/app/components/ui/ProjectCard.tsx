@@ -1,37 +1,24 @@
-import type { AnchorHTMLAttributes, ImgHTMLAttributes } from 'react';
+import { useState, type AnchorHTMLAttributes, type ImgHTMLAttributes } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, type LinkProps } from 'react-router';
 import { cn } from '~/utils';
 
-type ProjectCardProps = {
+type ProjectCardProps = Omit<React.ComponentPropsWithRef<'a'>, 'className'> & {
     backgroundImgSrc: string;
     title: string;
     body: string;
-    tryHref: string;
-    readMoreHref: string;
     imgProps?: Omit<ImgHTMLAttributes<HTMLImageElement>, 'src' | 'className'>;
 };
 
-type ProjectCardButtonProps = Omit<LinkProps, 'className'> & {
-    text: string;
-};
-
-function ProjectCardButton({ text, ...props }: ProjectCardButtonProps) {
-    return (
-        <Link
-            {...props}
-            className='text-white text-center text-sm bg-cyan-950/50 hover:bg-cyan-900/75 active:bg-cyan-600/50 transition-[background-color,translate] hover:-translate-y-1 duration-100 border border-cyan-400 rounded-md font-bold p-2 h-fit min-w-10'
-        >
-            {text}
-        </Link>
-
-    );
-}
-
-export default function ProjectCard({ tryHref, readMoreHref, backgroundImgSrc, imgProps, title, body }: ProjectCardProps) {
+export default function ProjectCard({ backgroundImgSrc, imgProps, title, body, ...props }: ProjectCardProps) {
     const { t } = useTranslation();
+
     return (
-        <div className='w-70 min-[320px]:w-80 xs:w-80 h-100 select-none rounded-2xl overflow-hidden relative shadow-xl shadow-black/40 hover:scale-105 transition-transform'>
+        <a
+            className='w-70 min-[320px]:w-80 xs:w-80 h-100 select-none rounded-2xl overflow-hidden relative shadow-xl shadow-black/40 hover:scale-105 transition-transform'
+            target='_blank'
+            {...props}
+        >
             <img
                 src={backgroundImgSrc}
                 draggable={false}
@@ -46,11 +33,14 @@ export default function ProjectCard({ tryHref, readMoreHref, backgroundImgSrc, i
                 </p>
                 <p className='text-white text-sm w-full overflow-y-hidden scrollbar-hidden wrap-break-word text-wrap'>{body}</p>
                 <div className='flex gap-x-2 h-fit items-end justify-end mt-auto'>
-                    <ProjectCardButton text={t('projectCards.tryIt')} to={tryHref} target='_blank' />
-                    <ProjectCardButton text={t('projectCards.readMore')} to={readMoreHref} target='_blank' />
+                    <p
+                        className="transition-transform hover:-translate-x-2 w-full text-right text-cyan-400"
+                    >
+                        {t('projectCards.readMore')} &rarr;
+                    </p>
                 </div>
             </div>
 
-        </div>
+        </a>
     );
 }

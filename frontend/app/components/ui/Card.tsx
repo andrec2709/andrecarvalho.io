@@ -17,9 +17,11 @@ export const Card = ({ className, id, repoData }: { className?: string; id?: str
     const formattedDate = dt.toLocaleString(locale, { month: 'short', day: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
 
     return (
-        <div
+        <a
             className={`card-item w-[220px] h-[350px] relative select-none border border-card-border shrink-0 snap-center flex flex-col p-4 bg-card-background text-card-on-background rounded-xl transition-transform duration-200 ease shadow-[2px_2px_6px_rgba(0,0,0,0.2)] hover:scale-105 ${className}`}
             id={id}
+            href={`https://github.com/andrec2709/${repoData.repo_name}`}
+            target="_blank"
         >
             <div className="card-section">
                 <h2 className="card-heading">{t('cards.project')}</h2>
@@ -38,10 +40,14 @@ export const Card = ({ className, id, repoData }: { className?: string; id?: str
                 <p className="card-text">{formattedDate}</p>
             </div>
             <GithubIcon className="self-center mt-auto select-none aspect-square" />
-            <a className="absolute self-end w-fit" href={`https://github.com/andrec2709/${repoData.repo_name}`} target="_blank">
+            <OpenNewIcon
+                className="fill-card-links absolute self-end w-fit"
+                hoverText={t('cards.goToGithubHoverTxt')}
+            />
+            {/* <a className="absolute self-end w-fit" href={`https://github.com/andrec2709/${repoData.repo_name}`} target="_blank">
                 <OpenNewIcon className="fill-card-links" hoverText={t('cards.goToGithubHoverTxt')} />
-            </a>
-        </div>
+            </a> */}
+        </a>
     );
 };
 

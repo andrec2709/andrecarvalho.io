@@ -26,8 +26,7 @@ export default function ProjectsCarouselSection({ ...props }: SectionProps) {
                     backgroundImgSrc={ColorpickerImg}
                     title={t('projectCards.colorpicker.title')}
                     body={t('projectCards.colorpicker.description')}
-                    readMoreHref="/portfolio#colorpicker"
-                    tryHref="https://andrec2709.github.io/colorpicker-react"
+                    href="/portfolio#colorpicker"
                     imgProps={{
                         "aria-label": t('projectCards.colorpicker.image.label'),
                     }}
@@ -36,8 +35,7 @@ export default function ProjectsCarouselSection({ ...props }: SectionProps) {
                     backgroundImgSrc={NotedImg}
                     title={t('projectCards.noted.title')}
                     body={t('projectCards.noted.description')}
-                    readMoreHref="/portfolio#notedRn"
-                    tryHref="https://github.com/andrec2709/noted-rn/releases/latest"
+                    href="/portfolio#notedRn"
                     imgProps={{
                         "aria-label": t('projectCards.noted.image.label'),
                     }}
@@ -46,8 +44,7 @@ export default function ProjectsCarouselSection({ ...props }: SectionProps) {
                     backgroundImgSrc={WebsiteImg}
                     title={t('projectCards.andrecarvalhoIo.title')}
                     body={t('projectCards.andrecarvalhoIo.description')}
-                    readMoreHref="/portfolio#andrecarvalho-io"
-                    tryHref="https://andrecarvalho.io"
+                    href="/portfolio#andrecarvalho-io"
                     imgProps={{
                         "aria-label": t('projectCards.andrecarvalhoIo.image.label'),
                     }}

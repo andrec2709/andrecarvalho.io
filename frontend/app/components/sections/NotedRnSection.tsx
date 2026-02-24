@@ -12,13 +12,13 @@ export default function NotedRnSection({ ...props }: SectionProps) {
     return (
         <Section {...props}>
             <ProjectHeading
-                id="notedRn"
+                id="noted-rn"
                 sourceHref="https://github.com/andrec2709/noted-rn"
-                appHref="https://github.com/andrec2709/noted-rn"
+                appHref="https://github.com/andrec2709/noted-rn/releases/latest"
             >
                 {t('notedRn.heading')}
             </ProjectHeading>
-            <Heading id="what-is-notedRn" as="h3" className="text-[1.5rem]">
+            <Heading id="what-is-noted-rn" as="h3" className="text-[1.5rem]">
                 {t('notedRn.whatIs.heading')}
             </Heading>
             <Paragraph>{t('notedRn.whatIs.p1')}</Paragraph>
