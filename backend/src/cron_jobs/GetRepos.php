@@ -29,6 +29,13 @@ $stmt = $mysqli->prepare("INSERT INTO repos (id, repo_name, description, updated
                         ON DUPLICATE KEY UPDATE repo_name=?, description=?, updated_at=?, commits_url=?, avatar_url=?");
 $stmt->bind_param('sssssssssss', $id, $name, $description, $updated_at, $commits_url, $avatar_url, $name, $description, $updated_at, $commits_url, $avatar_url);
 
+if (
+    key_exists("message", $body_json) 
+    && str_starts_with($body_json["message"], "API rate")
+) {
+    return;
+}
+
 foreach ($body_json as $i){
     $id = $i['id'];
     $name = $i['name'];

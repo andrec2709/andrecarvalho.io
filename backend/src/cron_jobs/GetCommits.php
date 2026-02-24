@@ -27,8 +27,8 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 
 
-foreach ($stmt->get_result() as $line){
-    
+foreach ($stmt->get_result() as $line) {
+
     $total = 0;
 
     // Removes the '{/sha}' bit from the end of commits_url
@@ -43,23 +43,30 @@ foreach ($stmt->get_result() as $line){
 
     $header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
 
-    $header = explode( "\r\n", substr($response, 0, $header_size));
-    
+    $header = explode("\r\n", substr($response, 0, $header_size));
+
     $body = json_decode(substr($response, $header_size), true);
+
+    if (
+        array_key_exists("message", $body)
+        && str_starts_with($body["message"], "API rate")
+    ) {
+        continue;
+    }
 
     $total = count($body);
 
-    $link_header = array_find($header, function (string $value){
-    
+    $link_header = array_find($header, function (string $value) {
+
         return strpos($value, "link: ") !== false;
 
     });
 
-    if ($link_header !== null){
-        
-        $links = explode("," ,$link_header);
+    if ($link_header !== null) {
 
-        $last = array_find($links, function (string $value){
+        $links = explode(",", $link_header);
+
+        $last = array_find($links, function (string $value) {
 
             return strpos($value, "rel=\"last\"") !== false;
 
@@ -68,9 +75,9 @@ foreach ($stmt->get_result() as $line){
         $last = str_replace(["<", ">"], "", explode(";", $last)[0]);
         $index = strpos($last, "page=");
 
-        $ref_url = substr($last, 0, $index+5);
-        $last_page_num = intval(substr($last, $index+5));
-        
+        $ref_url = substr($last, 0, $index + 5);
+        $last_page_num = intval(substr($last, $index + 5));
+
         unset($index);
         unset($links);
         unset($last);
@@ -80,7 +87,7 @@ foreach ($stmt->get_result() as $line){
         unset($header_size);
 
         // cpage = Current page. Makes requests until reach $last_page_num
-        for ($cpage = 2; $cpage <= $last_page_num; $cpage++){
+        for ($cpage = 2; $cpage <= $last_page_num; $cpage++) {
 
             $url = trim($ref_url . $cpage);
             curl_setopt($ch, CURLOPT_URL, $url);
@@ -91,15 +98,13 @@ foreach ($stmt->get_result() as $line){
             $body = json_decode(substr($response, $header_size), true);
 
             $total += count($body);
-
         }
 
     }
-
     $stmt = $mysqli->prepare("INSERT INTO total_commits (id, commits)
                              VALUES (?, ?)
                              ON DUPLICATE KEY UPDATE commits=?");
-    
+
     $id = $line['id'];
 
     $stmt->bind_param('sdd', $id, $total, $total);
