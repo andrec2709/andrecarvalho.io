@@ -1,5 +1,9 @@
 # andrecarvalho.io
 
+> [!WARNING]
+> The website andrecarvalho.io is not currently available, since it used to be hosted on Hostinger but I have not renewed my subscription.
+> I plan on the near future to host the website on Vercel or similar platforms. Until then, live will be unavailable.
+
 Repository for andrecarvalho.io website.
 
 The purpose for this repository is to be part of my portfolio, it is a demonstration of my knowledge with:
